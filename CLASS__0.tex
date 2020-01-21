@@ -1,0 +1,69 @@
+\documentclass[10pt]{article}
+\usepackage{NotesTeX} %/Path/to/package should be replaced with package location
+\usepackage{lipsum}
+\usepackage{tensor}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{hyperref}
+
+\newcommand{\bs}{\textbackslash}
+
+
+\title{{\Huge General Relativity}\\{\Large{Class 0}}} %replace with class number
+\author{Maria Jose Bustamante Rosell}
+
+\emailAdd{majoburo@utexas.edu} %replace with your email
+\begin{document}
+    \maketitle
+    \flushbottom
+    \newpage
+    \pagestyle{fancynotes}
+    \part{HELLO \LaTeX\,}
+	Use the uncompiled version of this document in itself as a \LaTeX\, style guide for the class you'll be responsible for.
+              	\section{Class notes style package}\label{sec:class_style}
+              		The package for the class notes will be NotesTex. 
+    			Please read this \href{https://github.com/Adhumunt/NotesTeX/blob/master/NoTeX/NotesTeX.pdf}{document} to understand how to use the package. 
+    			If you already installed \LaTeX\, it most likely already has NotesTex. 
+    			Try putting \texttt{\bs usepackage\{NotesTex\}} in your preamble.  
+    			Otherwise you can install it through you regular \LaTeX\, package manager or follow the instructions on the \href{https://github.com/Adhumunt/NotesTeX}{\textit{git repository}}.
+    			\sn{If you are totally new to \LaTeX\, \href{https://www.latex-tutorial.com/tutorials/}{this} looks like a nice guide.}
+    			\sn{If you are totally new to git, I'm sorry, you will need it. I'll talk briefly about what will be required in this document.}  
+               	\section{Other useful packages}\label{sec:useful_pkg}
+               		\begin{itemize}
+               			\item \texttt{\bs usepackage\{tensor\}} Putting upper and lower indices in the right order has proven hard for me. If you agree, use this package. Here's a nice example of it's usage:
+                				\begin{align*}
+            					\partial_\lambda \tensor{\mathcal{M}}{^\mu^\nu^\lambda} &= \tensor{\delta}{^\mu_\lambda} T^{\nu \lambda}-\tensor{\delta}{^\nu_\lambda} T^{\mu \lambda}\\
+                    					&= T^{\nu\mu}-T^{\mu\nu} =0
+                				\end{align*}   \
+               			\item \texttt{\bs usepackage\{hyperref\}} Use this at the very end of your preambles. 
+    					It will make a clickable link to all your references :).
+               			\item \texttt{\bs usepackage\{amsmath,amsthm,amssymb\}} The AMSmaths packages. 
+    					Add math symbols and align environment (best way to write equations).
+               			\item \texttt{\bs usepackage\{graphicx\}} You need this to include figures. 
+    					\sn{This is kinda like a "if you are using \LaTeX\, you should use this package", this not meant to be a comprehensive list.}
+               		\end{itemize}
+               	\section{Best practices}\label{sec:best_prac}
+               		\begin{itemize}
+    				\item Label your equations, figures, tables and sections in a meaningful fashion. Like for instance, \eqref{eq:EFE}, the Einstein Field Equation:
+               				\begin{align}\label{eq:EFE}
+                					\tensor{G}{_\mu_\nu}=8 \pi \tensor{T}{_\mu_\nu}
+               				\end{align}
+    				\item Use indentation in your document to make it readable. 
+    				\item Have one phrase per line.
+    					\sn{
+    						\LaTeX\, don't care.
+    						 \LaTeX\, only care about \texttt{\bs \bs}
+    						}
+    			\end{itemize}
+    \newpage
+    \part{HELLO GIT}
+    	There are plenty good videos and tutorials online on how to use git.
+	Please feel free to look around, ask your peers and me or Aaron for help if you get stuck. \\
+        The class will be kept in a public Github repository. 
+        You can clone it, branch it, edit the part you are responsible for and then request for a merge to the main repository.
+        You will be mostly evaluated on this regard. 
+        You will also be evaluated on relevant comments on the rest of the class material.
+        For some of you, that will be the meat of you evaluation.
+        \sn{There are more students enlisted than classes in the semester.}
+        If you spot something wrong in the equations, figures or text, raise an issue or push an edit with the appropriate comment.
+        If you think a section is unclear or it could use any addition feel free as well to raise the issue.
+\end{document}
