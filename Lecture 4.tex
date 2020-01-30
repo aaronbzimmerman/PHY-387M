@@ -1,0 +1,411 @@
+\documentclass[11pt]{article}
+% DEFINE COMMANDS
+
+\usepackage{NotesTeX}
+
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{enumerate}
+\usepackage{amsmath,amssymb,amscd,amsfonts}
+\usepackage{xcolor}
+\usepackage{color}
+
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\tikzcdset{every label/.append style = {font = \small}}
+\tikzcdset{row sep/normal=3.5em}
+\tikzcdset{column sep/normal=3.5em}
+
+\usetikzlibrary{matrix}
+\usetikzlibrary{decorations.markings,calc,shapes}
+\usetikzlibrary{positioning}
+\usepackage{graphicx}
+\usepackage{empheq}
+\usepackage{physics}
+\usepackage{siunitx}
+\usepackage{tensor}
+
+\usepackage{multicol}
+
+\usepackage{youngtab}
+\usepackage{cancel}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{hyperref}
+
+% added by Jingtian Shi
+\usepackage{indentfirst}
+\usepackage{cases}
+\usepackage{bbm}
+
+% % % % % % % % % % % % % % % % % % % % % % %
+
+\title{{\Huge General Relativity}\\{\Large{Class 4 --- January 29, 2020}}} %replace with class number
+\author{Gina Chen}
+
+\emailAdd{gina.chen599@gmail.com} %replace with your email
+\begin{document}
+\maketitle
+\flushbottom
+\newpage
+\pagestyle{fancynotes}
+
+\part{The Twin ``Paradox''}
+\section{Resolving the Twin ``Paradox''}
+A commonly cited paradox in special relativity is known as the Twin Paradox. Consider two twins that start at the same space-time event $A$, travel along two different paths, and meet again at event $C$. In $\mathcal{O}$'s reference frame, they stay stationary and move along the worldline from $A$ to $C$ shown in Figure \ref{fig:twinparadox}. $\mathcal{O}'$ moves with a velocity relative to $\mathcal{O}$ to $B$, changes direction, and moves with the opposite velocity relative to $\mathcal{O}$ to $C$.
+
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+  %uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+  %Straight Lines [id:da14108709021414279]
+  \draw    (200,36) -- (200,201) ;
+
+  \draw [shift={(200,34)}, rotate = 90] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-4.9) .. controls (6.95,-2.3) and (3.31,-0.67) .. (0,0) .. controls (3.31,0.67) and (6.95,2.3) .. (10.93,4.9)   ;
+  %Straight Lines [id:da07523254543879809]
+  \draw    (200,201) -- (347.5,201) ;
+  \draw [shift={(349.5,201)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-4.9) .. controls (6.95,-2.3) and (3.31,-0.67) .. (0,0) .. controls (3.31,0.67) and (6.95,2.3) .. (10.93,4.9)   ;
+
+  %Straight Lines [id:da4291781608530778]
+  \draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (200,90) -- (200,201) ;
+  \draw [shift={(200,201)}, rotate = 90] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+  \draw [shift={(200,90)}, rotate = 90] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+  %Straight Lines [id:da6771125587618976]
+  \draw [color={rgb, 255:red, 36; green, 10; blue, 238 }  ,draw opacity=1 ][line width=1.5]    (200,90) -- (200,201) ;
+
+  %Straight Lines [id:da779551151720479]
+  \draw    (240.5,145) -- (200,201) ;
+
+  \draw [shift={(240.5,145)}, rotate = 125.87] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+  %Straight Lines [id:da041676446993607064]
+  \draw [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ][line width=1.5]    (240.5,145) -- (200,201) ;
+
+  %Straight Lines [id:da6163136144118151]
+  \draw [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ][line width=1.5]    (200,90) -- (240.5,145) ;
+
+  % Text Node
+  \draw (193,209) node    {$A$};
+  % Text Node
+  \draw (263,146) node    {$B$};
+  % Text Node
+  \draw (189,88) node    {$C$};
+  % Text Node
+  \draw (359,198) node    {$x$};
+  % Text Node
+  \draw (204,23) node    {$t$};
+  % Text Node
+  \draw (266,93) node   [align=left] {\textcolor[rgb]{0.82,0.01,0.11}{worldline of $\mathcal{O}$'}};
+  % Text Node
+  \draw (241,117) node  [font=\footnotesize,color={rgb, 255:red, 208; green, 2; blue, 27 }  ,opacity=1 ]  {$\Delta \tau _{BC}$};
+  % Text Node
+  \draw (147,129) node  [color={rgb, 255:red, 36; green, 10; blue, 238 }  ,opacity=1 ] [align=left] {worldline of $\mathcal{O}$};
+  % Text Node
+  \draw (241,173) node  [font=\footnotesize,color={rgb, 255:red, 208; green, 2; blue, 27 }  ,opacity=1 ]  {$\Delta \tau _{AB}$};
+  % Text Node
+  \draw (304,148) node  [font=\footnotesize]  {$\left(\frac{\Delta \tau _{AC}}{2} ,\Delta x\right)$};
+  % Text Node
+  \draw (177,149) node  [font=\footnotesize,color={rgb, 255:red, 36; green, 10; blue, 238 }  ,opacity=1 ]  {$\Delta \tau _{AC}$};
+  \end{tikzpicture}
+    \caption{Twin paradox.}
+    \label{fig:twinparadox}
+\end{figure}
+
+While twin $\mathcal{O}'$ travels along $AB$, each twin will rightly observe the other twin's clock ticking more slowly than their's. Similarly, they can make the same observation while twin $\mathcal{O'}$ travels from $B$ to $C$. Since they both observe the other's clock running slower than theirs, would they not disagree on which of them is older when they reached point $C$?
+
+We can calculate the proper time, or the amount of time elapsed that each of them measures as follows. Clearly, $\mathcal{O}$ measures the amount of time elapsed as $\Delta\tau_{AC} = \Delta t$. Observer $\mathcal{O'}$ measures
+
+\begin{equation}\label{eq:abc}
+  \Delta\tau_{ABC} = \Delta\tau_{AB} + \Delta\tau_{BC} = 2\Delta\tau_{AB}
+\end{equation}
+
+Using the spacetime invariant, we can calculate $\Delta\tau_{AB}$:
+
+\begin{equation}\label{eq:ab}
+  \Delta\tau_{AB}^2 = \left(\frac{\Delta t}{2}\right)^2 - (\Delta x)^2 = \left(\frac{\Delta t}{2}\right)^2 \left(1 - \left(\frac{2\Delta x}{\Delta t}\right)^2\right) = \left(\frac{\Delta t}{2}\right)^2(1 - v^2)
+\end{equation}
+
+We can plug this back in to Equation \ref{eq:abc} to get
+
+\begin{equation}\label{eq:abc_vs_ac}
+  \Delta\tau_{ABC} = 2\Delta\tau_{AB} = \Delta t(1 - v^2)^{1/2} < \Delta\tau_{AC}
+\end{equation}
+
+So the twin that travels the path $ABC$ is younger than the twin that travels the path $AC$ when they meet back up at $C$!
+
+Let's reconsider Figure \ref{fig:twinparadox} again, with observer $\mathcal{O'}$'s lines of simultaneity drawn in:
+
+
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+  %uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+  %Straight Lines [id:da2080984780157471]
+  \draw    (200,36) -- (200,201) ;
+
+  \draw [shift={(200,34)}, rotate = 90] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-4.9) .. controls (6.95,-2.3) and (3.31,-0.67) .. (0,0) .. controls (3.31,0.67) and (6.95,2.3) .. (10.93,4.9)   ;
+  %Straight Lines [id:da760731881021173]
+  \draw    (200,201) -- (347.5,201) ;
+  \draw [shift={(349.5,201)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-4.9) .. controls (6.95,-2.3) and (3.31,-0.67) .. (0,0) .. controls (3.31,0.67) and (6.95,2.3) .. (10.93,4.9)   ;
+
+  %Straight Lines [id:da6938218307325541]
+  \draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (200,90) -- (200,201) ;
+  \draw [shift={(200,201)}, rotate = 90] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+  \draw [shift={(200,90)}, rotate = 90] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+  %Straight Lines [id:da9597717206868717]
+  \draw [color={rgb, 255:red, 36; green, 10; blue, 238 }  ,draw opacity=1 ][line width=1.5]    (200,90) -- (200,201) ;
+
+  %Straight Lines [id:da8027385678001273]
+  \draw    (240.5,145) -- (200,201) ;
+
+  \draw [shift={(240.5,145)}, rotate = 125.87] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+  %Straight Lines [id:da5749433129806552]
+  \draw [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ][line width=1.5]    (240.5,145) -- (200,201) ;
+
+  %Straight Lines [id:da40793096873926804]
+  \draw [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ][line width=1.5]    (200,90) -- (240.5,145) ;
+
+  %Straight Lines [id:da8220134774691716]
+  \draw [color={rgb, 255:red, 245; green, 166; blue, 35 }  ,draw opacity=1 ] [dash pattern={on 4.5pt off 4.5pt}]  (308.5,118) -- (159.5,231) ;
+
+  %Straight Lines [id:da9655110168847696]
+  \draw [color={rgb, 255:red, 245; green, 166; blue, 35 }  ,draw opacity=1 ] [dash pattern={on 4.5pt off 4.5pt}]  (303.75,109.5) -- (154.75,222.5) ;
+
+  %Straight Lines [id:da24772587489712095]
+  \draw [color={rgb, 255:red, 245; green, 166; blue, 35 }  ,draw opacity=1 ] [dash pattern={on 4.5pt off 4.5pt}]  (299.5,100) -- (150.5,213) ;
+
+  %Straight Lines [id:da8693630318353731]
+  \draw [color={rgb, 255:red, 245; green, 166; blue, 35 }  ,draw opacity=1 ] [dash pattern={on 4.5pt off 4.5pt}]  (149.5,76) -- (298.5,189) ;
+
+  %Straight Lines [id:da4839600981780161]
+  \draw [color={rgb, 255:red, 245; green, 166; blue, 35 }  ,draw opacity=1 ] [dash pattern={on 4.5pt off 4.5pt}]  (154.25,67.5) -- (303.25,180.5) ;
+
+  %Straight Lines [id:da615303781317398]
+  \draw [color={rgb, 255:red, 245; green, 166; blue, 35 }  ,draw opacity=1 ] [dash pattern={on 4.5pt off 4.5pt}]  (158.5,58) -- (307.5,171) ;
+
+  % Text Node
+  \draw (193,209) node    {$A$};
+  % Text Node
+  \draw (263,146) node    {$B$};
+  % Text Node
+  \draw (189,88) node    {$C$};
+  % Text Node
+  \draw (359,198) node    {$x$};
+  % Text Node
+  \draw (204,23) node    {$t$};
+  \end{tikzpicture}
+  \caption{The twin paradox spacetime diagram with $\mathcal{O'}$'s lines of simultaneity drawn in orange.}
+	\label{axes}
+\end{figure}
+
+Note the gap in the lines of simultaneity in twin $\mathcal{O}$'s reference frame. At $B$, as twin $\mathcal{O'}$ accelerates, from $\mathcal{O'}$'s perspective, their twin $\mathcal{O}$ appears to age very rapidly! This resolves the paradox, which occurs because $\mathcal{O'}$ is not an inertial observer.
+
+\part{Proper Time Along a Curved Path}
+\section{Calculating Proper Time}
+
+For two very nearby points,
+
+\begin{equation}\label{eq:ds2}
+  ds^2 = -dt^2 + dx^2 + dy^2 + dz^2 = \eta_{\mu\nu}dx^\mu dx^\nu
+\end{equation}
+
+Since $\Delta\tau^2 = -\Delta s^2$, we can rewrite Equation \ref{eq:ds2} in terms of $\Delta\tau$ as:
+
+\begin{equation}\label{eq:dtau}
+  d\tau^2 = -\eta_{\mu\nu}dx^\mu dx^\nu
+\end{equation}
+
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+  %Curve Lines [id:da9830696754893888]
+  \draw    (201.5,50) .. controls (222.5,86) and (155.5,116) .. (174.5,169) ;
+  \draw [shift={(174.5,169)}, rotate = 70.28] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+  \draw [shift={(201.5,50)}, rotate = 59.74] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+  %Curve Lines [id:da31550810287525244]
+  \draw    (221.22,78.71) .. controls (308.86,69.5) and (179.44,93.9) .. (272.5,84) ;
+
+  \draw [shift={(218.5,79)}, rotate = 353.86] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+  %Straight Lines [id:da6743823578995105]
+  \draw    (179.5,118) -- (174.5,129) ;
+  \draw [shift={(174.5,129)}, rotate = 294.44] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+  \draw [shift={(179.5,118)}, rotate = 294.44] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+  %Curve Lines [id:da8120116443352696]
+  \draw    (183.9,126.85) .. controls (261.18,154.41) and (147.32,125.27) .. (228.5,152) ;
+
+  \draw [shift={(181.5,126)}, rotate = 19.48] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+  % Text Node
+  \draw (173,181) node    {$P$};
+  % Text Node
+  \draw (202,33) node    {$Q$};
+  % Text Node
+  \draw (294,79) node    {$x^{\mu }( \lambda )$};
+  % Text Node
+  \draw (270,155) node    {$-ds^{2} =d\tau ^{2}$};
+  \end{tikzpicture}
+  \caption{A infinitesimal segment of the curved path.}
+  \label{fig:curve}
+\end{figure}
+
+Calculating $\Delta\tau$ for a curved path is very similar to the way we calculate the arc length of a curve in vector calculus. We will parameterize the curve and define a tangent vector $\frac{dx^\mu}{d\lambda}(\lambda)$. For a time-like path, the ``length'' of the path is equivalent to the proper time elapsed on that path.
+
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+  %uncomment if require: \path (0,201); %set diagram left start at 0, and has height of 201
+
+  %Curve Lines [id:da9280664920714929]
+  \draw    (201.5,50) .. controls (222.5,86) and (155.5,116) .. (174.5,169) ;
+  \draw [shift={(174.5,169)}, rotate = 70.28] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+  \draw [shift={(201.5,50)}, rotate = 59.74] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+  %Curve Lines [id:da15736016329704539]
+  \draw    (212.22,63.71) .. controls (299.86,54.5) and (170.44,78.9) .. (263.5,69) ;
+
+  \draw [shift={(209.5,64)}, rotate = 353.86] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+  %Straight Lines [id:da3699616605608489]
+  \draw    (184.5,110) -- (210.23,78.55) ;
+  \draw [shift={(211.5,77)}, rotate = 489.29] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+  % Text Node
+  \draw (173,181) node    {$P$};
+  % Text Node
+  \draw (202,33) node    {$Q$};
+  % Text Node
+  \draw (285,64) node    {$x^{\mu }( \lambda )$};
+  % Text Node
+  \draw (213,102) node    {$\frac{dx^{\mu }}{d\lambda }$};
+  \end{tikzpicture}
+  \caption{A curved path in spacetime and its tangent vector.}
+  \label{fig:tangent}
+\end{figure}
+
+Using this parameterization, we can calculate the ``length'' of the curve:
+
+\begin{equation}\label{eq:dist}
+  \left(\frac{d\tau}{d\lambda}\right)^2 = \eta_{\mu\nu}\frac{dx^\mu}{d\lambda}\frac{dx^\nu}{d\lambda}
+\end{equation}
+
+Rearranging and integrating Equation \ref{eq:dist}, we get
+
+\begin{equation}\label{eq:time}
+  \Delta\tau_{PQ} = \int\limits_{\mathcal{C}} d\lambda \sqrt{-\eta_{\mu\nu}\frac{dx^\mu}{d\lambda}\frac{dx^\nu}{d\lambda}}
+\end{equation}
+
+The result of Equation \ref{eq:time} is a measurable quantity: it is the time elapsed as measured by an observer that travels on that path from $P$ to $Q$.
+\sn{For a space-like path, $$\Delta s_{PQ} = \int_{P}^{Q} d\lambda \sqrt{\eta_{\mu\nu}\frac{dx^\mu}{d\lambda}\frac{dx^\nu}{d\lambda}}$$. For a path that is neither space-like nor time-like, we will  break it into segments that are space-like, time-like, or null. We will always talk about these segments separately. Since no observer can travel along such a path, it is unlikely that this situation will come up in this class.}
+
+\section{Proof That a Straight Line Maximizes Proper Time}
+
+Now that we can calculate the proper time along a path, we can ask the question: which path extremizes $\Delta\tau$? To answer this question, consider two events $P$ and $Q$ and the set of paths between them.
+
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+  %uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+  %Curve Lines [id:da30190546146372643]
+  \draw    (153.46,189.32) .. controls (139.77,148.56) and (166.26,111.18) .. (197.54,100.68) ;
+
+  %Curve Lines [id:da9161509173783595]
+  \draw    (153.46,189.32) .. controls (194.22,175.63) and (208.04,131.96) .. (197.54,100.68) ;
+
+  %Straight Lines [id:da36159716365798245]
+  \draw    (153.46,189.32) -- (197.54,100.68) ;
+  \draw [shift={(197.54,100.68)}, rotate = 296.44] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+  \draw [shift={(153.46,189.32)}, rotate = 296.44] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+  %Straight Lines [id:da7233946698438951]
+  \draw    (184,129.49) -- (198.6,134.37) ;
+  \draw [shift={(200.5,135)}, rotate = 198.48] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+  \draw   (151.37,138.71) .. controls (154.3,137.52) and (156.56,135.94) .. (158.15,133.97) .. controls (157.23,136.33) and (156.99,139.08) .. (157.43,142.21) ;
+  \draw   (169.41,148.47) .. controls (172.34,147.28) and (174.61,145.7) .. (176.2,143.73) .. controls (175.28,146.09) and (175.04,148.84) .. (175.47,151.98) ;
+  \draw   (188.72,155.71) .. controls (191.65,154.52) and (193.91,152.94) .. (195.5,150.96) .. controls (194.59,153.33) and (194.35,156.08) .. (194.78,159.21) ;
+
+  % Text Node
+  \draw (144,199) node    {$P$};
+  % Text Node
+  \draw (212,91) node    {$Q$};
+  \end{tikzpicture}
+  \caption{Possible paths between two events $P$ and $Q$ and a small displacement from one possible path to another.}
+  \label{fig:variation}
+\end{figure}
+
+Define $S$ as follows:
+
+\begin{equation}\label{eq:defineS}
+  S \equiv \Delta\tau_{PQ} = \int\limits_{\mathcal{C}}d\lambda \sqrt{-\eta_{\mu\nu}\frac{dx^\mu}{d\lambda}\frac{dx^\nu}{d\lambda}}
+\end{equation}
+
+For convenience, we will define $L$ as follows:
+
+\begin{equation}\label{eq:defineL}
+  L \equiv \sqrt{-\eta_{\mu\nu}\frac{dx^\mu}{d\lambda}\frac{dx^\nu}{d\lambda}} \implies S = \int\limits_{\mathcal{C}} L \\ d\lambda
+\end{equation}
+
+Since $S$ depends on the path taken between $P$ and $Q$, let's consider a small variation in $S$, $\delta S$. To find the extrema of $S$, we need to solve
+
+\begin{equation}\label{eq:var}
+  \delta S = \delta \int\limits_{\mathcal{C}} L \\ d\lambda = 0
+\end{equation}
+
+From Equation \ref{eq:var}, we will get the Euler-Lagrange equations for $L$: \sn{In Equation \ref{eq:euler}, $\dot{x}^\mu = \frac{dx^\mu}{d\lambda}$. Also note that Equation \ref{eq:euler} is really four equations: one for time and one for each spatial coordinate.}
+
+\begin{equation}\label{eq:euler}
+  \frac{d}{d\lambda}\del{L}{\dot{x}^\mu} - \del{L}{x^\mu} = 0
+\end{equation}
+
+By the definition of $L$, we know that
+
+\begin{equation}\label{eq:L2}
+  L^2 = \left(\frac{dt}{d\lambda}\right)^2 - \left(\frac{dx}{d\lambda}\right)^2 - \left(\frac{dy}{d\lambda}\right)^2 - \left(\frac{dz}{d\lambda}\right)^2
+\end{equation}
+
+From Equation \ref{eq:L2}, we can see that the second term of Equation \ref{eq:euler} is equal to 0. So all we are left with is the first term. Let's first consider the second part of the first term. \sn{Note that $\del{\dot{x}^\alpha}{\dot{x}^\mu} = \tensor{\delta}{_\mu^\alpha}$.}
+
+\begin{equation}\label{eq:simplify}
+  \begin{split}
+    \del{L}{\dot{x}^\mu} & = - \frac{1}{2L} \del{}{\dot{x}^\mu}\left(\eta_{\alpha\beta} \dot{x}^\alpha \dot{x}^\beta \right) \\
+    & = -\frac{1}{2L} \left(\eta_{\alpha\beta} \tensor{\delta}{_\mu^\alpha} \dot{x}^\beta + \eta_{\alpha\beta} \tensor{\delta}{_\mu^\beta} \dot{x}^\alpha \right) \\
+    & = -\frac{1}{2L} \left(\eta_{\mu\beta} \dot{x}^\beta + \eta_{\alpha\mu} \dot{x}^\alpha \right) \\
+    & = -\frac{1}{2L} \left(\eta_{\mu\beta} \dot{x}^\beta + \eta_{\mu\alpha} \dot{x}^\alpha \right) \\
+    & = -\frac{1}{2L} \left(2 \eta_{\alpha\mu}\dot{x}^\alpha \right) \\
+    & = -\frac{1}{L} \eta_{\alpha\mu}\dot{x}^\alpha
+  \end{split}
+\end{equation}
+
+Returning to our definition of $L$ (Equation \ref{eq:defineL}),
+
+\begin{equation}\label{eq:dlambda}
+  S = \Delta\tau = \int\limits_{\mathcal{C}} d\lambda L \implies d\tau = L d\lambda = \frac{d\tau}{d\lambda} = L \implies \frac{1}{L}\frac{d}{d\lambda} = \frac{d}{d\tau}
+\end{equation}
+
+Combining the results of Equations \ref{eq:simplify} and \ref{eq:dlambda} give the following result:
+
+\begin{equation}\label{eq:dLdxdot}
+  \frac{dL}{d\dot{x}^\mu} = -\eta_{\alpha\mu}\frac{dx^\alpha}{d\tau}
+\end{equation}
+
+Substituting this into Equation \ref{eq:euler} gives us the following result:
+
+\begin{equation}\label{eq:eulsimplified}
+  \frac{d}{d\lambda} \left(\del{L}{\dot{x}^\mu} \right) - \del{L}{x^\mu} = \frac{d}{d\lambda} \left(-\eta_{\alpha\mu} \frac{dx^\alpha}{d\tau} \right) = 0
+\end{equation}
+
+We can multiply both sides by $\frac{1}{L}$ to get
+
+\begin{equation}\label{eq:dividebyL}
+  \frac{1}{L} \frac{d}{d\lambda} \left(-\eta_{\alpha\mu} \frac{dx^\alpha}{d\tau} \right) = \eta_{\alpha\mu} \frac{d^2 x^\alpha}{d\tau^2} = 0
+\end{equation}
+
+Finally, we can multiply both sides by the the inverse of the metric to get
+
+\begin{equation}\label{eq:linear}
+  \frac{d^2x^\alpha}{d\tau^2} = 0
+\end{equation}
+
+The only $x^\mu{\tau}$ that satisfy this condition are straight lines in spacetime. So far we have only proven that straight lines give extrema for $\Delta\tau$. But in Part I, we showed that the twin who moved in a straight line measured a larger proper time than the other twin. Therefore, straight lines must maximize $\Delta\tau$.
+
+In conclusion, straight lines (observers with constant velocity) measure the maximal proper time, $\Delta\tau$.
+
+\end{document}
