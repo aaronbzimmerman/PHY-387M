@@ -1,0 +1,295 @@
+\documentclass[11pt]{article}
+% DEFINE COMMANDS
+
+\usepackage{NotesTeX}
+
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{enumerate}
+\usepackage{amsmath,amssymb,amscd,amsfonts}
+\usepackage{xcolor}
+\usepackage{color}
+
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\tikzcdset{every label/.append style = {font = \small}}
+\tikzcdset{row sep/normal=3.5em}
+\tikzcdset{column sep/normal=3.5em}
+
+\usetikzlibrary{matrix}
+\usetikzlibrary{decorations.markings,calc,shapes}
+\usetikzlibrary{positioning}
+\usepackage{graphicx}
+\usepackage{empheq}
+\usepackage{physics}
+\usepackage{siunitx}
+\usepackage{tensor}
+
+\usepackage{multicol}
+
+\usepackage{youngtab}
+\usepackage{cancel}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{hyperref}
+
+% added by Jingtian Shi
+\usepackage{indentfirst}
+\usepackage{cases}
+\usepackage{bbm}
+
+% % % % % % % % % % % % % % % % % % % % % % %
+
+\title{{\Huge General Relativity}\\{\Large{Class 3 --- January 27, 2020}}} %replace with class number
+\author{Jingtian Shi}
+
+\emailAdd{simonerhra897@gmail.com} %replace with your email
+\begin{document}
+\maketitle
+\flushbottom
+\newpage
+\pagestyle{fancynotes}
+
+\section{Spacetime Diagram of Lorentz Transformation}
+
+We have derived the Lorentz transformation of spacetime coordinates from an inertial frame $\mathcal{O}$ to another inertia frame $\mathcal{O}'$ which is moving at constant velocity $v$ in $+x$ direction with respect to $\mathcal{O}$,
+\begin{equation}
+    \begin{cases}
+        t'=\gamma(t-vx) \\
+        x'=\gamma(x-vt) \\
+        y'=y \\
+        z'=z
+    \end{cases}
+    \label{eq_Lorentz}
+\end{equation}
+We want to manifest this transformation in spacetime diagram, i.e. given the $t$ and $x$ axes in frame $\mathcal{O}$, we want to know what $t'$ and $x'$ axes look like in $\mathcal{O}$. To find $t'$ axis, solve Eq. (\ref{eq_Lorentz}) under the condition $x'=0$, and we get the relation $x=vt$, which is a line with slope
+\begin{equation}
+    \frac{\Delta t}{\Delta x}=\frac{1}{v}
+\end{equation}
+Similarly, to find $x'$ axis, solve Eq. (\ref{eq_Lorentz}) under the condition $t'=0$, and we get the relation $t=vx$, which is a line with slope
+\begin{equation}
+    \frac{\Delta t}{\Delta x}=v
+\end{equation}
+Thus in spacetime diagram, a boost of velocity $v$ is represented by rotating the $t$ and $x$ axes towards each other by the same angle $\alpha=\arctan v$ (Fig. \ref{fig_sptdiagram}).
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \draw[->] (0,0)->(5,0); \draw[->] (0,0)->(0,5); \draw[->,color=blue] (0,0)->(5,1.5); \draw[->,color=blue] (0,0)->(1.5,5);
+        \node at (5.3,0) {$x$}; \node at (0,5.3) {$t$}; \node[color=blue] at (5.3,1.5) {$x'$}; \node[color=blue] at (1.5,5.3) {$t'$};
+        \draw[-] (1.5,0) arc (0:16.7:1.5); \draw[-] (0,1.5) arc (90:73.3:1.5);
+        \node at (1.8,0.25) {$\alpha$}; \node at (0.25,1.8) {$\alpha$};
+
+        \node at (2.5,0.75) {$\bullet$}; \node at (4,1.2) {$\bullet$};
+        \node at (2.6,0.5) {$P$}; \node at (4.1,0.95) {$Q$};
+
+        \draw[-,color=blue,dashed] (0,1)->(5,2.5); \draw[-,color=blue,dashed] (1,0)->(2.5,5);
+        \node[color=blue] at (5,2.8) {constant $t'$}; \node[color=blue] at (3.5,5) {constant $x'$};
+    \end{tikzpicture}
+    \caption{Spacetime diagram of Lorentz transformation}
+    \label{fig_sptdiagram}
+\end{figure}
+
+The worldline of an object which $\mathcal{O}'$ sees as being stationary is parallel to $t'$ axis. Meanwhile, a set of events which $\mathcal{O}'$ sees as being simultaneous is represented by a line parallel to the $x'$ axis. An example is the two events $P$ and $Q$ labeled in Fig. \ref{fig_sptdiagram}, which are simultaneous as seen by $\mathcal{O}'$ but are \textbf{not} simultaneous from the perspective of $\mathcal{O}$. This leads to a very important result of special relativity: \textit{relativity of simultaneity}. In fact, lots of paradoxes in relativity are resolved by noting the relativity of simultaneity, and the spacetime diagram does great help to easily understand this.
+
+\section{Inverse Lorentz Transform}
+
+We know the transformation law from frame $\mathcal{O}$ to $\mathcal{O}'$,
+\begin{equation}
+    x^{\mu'}=\tensor{\Lambda}{^{\mu'}_\nu}x^\nu, \quad \tensor{\Lambda}{^{\mu'}_\nu}=
+    \begin{pmatrix}
+        \gamma & -v\gamma & 0 & 0 \\
+        -v\gamma & \gamma & 0 & 0 \\
+        0 & 0 & 1 & 0 \\
+        0 & 0 & 0 & 1
+    \end{pmatrix},\quad
+    \gamma=\frac{1}{\sqrt{1-v^2}}
+\end{equation}
+and we want the transformation law from $\mathcal{O}'$ back to $\mathcal{O}$, whose transform matrix is denoted by $\Lambda^{-1}$ \footnote{This is a temporary notation to remind starters that it is the \textbf{inverse} transform. The standard notation without superscript ``$-1$'' will be introduced soon.}:
+\begin{equation}
+    x^\mu=\tensor{\left(\Lambda^{-1}\right)}{^\mu_{\nu'}}x^{\nu'}
+\end{equation}
+The most physically intuitive way is to note that from $\mathcal{O}'$'s perspective, $\mathcal{O}$ is moving at velocity $-v$ in $x$ direction, thus all we need to do is to flip the sign of $v$ and get
+\begin{equation}
+    \tensor{\left(\Lambda^{-1}\right)}{^\mu_{\nu'}}=
+    \begin{pmatrix}
+        \gamma & +v\gamma & 0 & 0 \\
+        +v\gamma & \gamma & 0 & 0 \\
+        0 & 0 & 1 & 0 \\
+        0 & 0 & 0 & 1
+    \end{pmatrix}
+\end{equation}
+As an exercise one can check that the matrix product of $\Lambda$ and $\Lambda^{-1}$ indeed gives the identity.
+
+From now on, we will denote the inverse Lorentz transform as $\tensor{\Lambda}{^\mu_{\nu'}}$ instead of $\tensor{\left(\Lambda^{-1}\right)}{^\mu_{\nu'}}$. To distinguish it from the forward Lorentz transform $\tensor{\Lambda}{^{\mu'}_\nu}$, we specify that whenever the primed ($\prime$) index comes first than the unprimed, it is the forward Lorentz transform from $\mathcal{O}$ to $\mathcal{O}'$; whenever the unprimed index comes first, it is the inverse Lorentz transform. In other words, the matrix entries depend on the frames the two indices belong to. This convention has the advantage that for a sequence of boosts, say from frame $\mathcal{O}$ to $\mathcal{O}'$ and then to $\mathcal{O}''$ and so on, we can just write
+\begin{equation}
+    \tensor{\Lambda}{^{\mu''}_{\nu'}}\tensor{\Lambda}{^{\nu'}_\sigma}=\tensor{\Lambda}{^{\mu''}_\sigma}
+\end{equation}
+\footnote{Proof: for any 4-position vector $x^\mu$, we have $\tensor{\Lambda}{^{\mu''}_{\nu'}}\tensor{\Lambda}{^{\nu'}_\sigma}x^\sigma=\tensor{\Lambda}{^{\mu''}_{\nu'}}x^{\nu'}=x^{\mu''} =\tensor{\Lambda}{^{\mu''}_\sigma}x^\sigma$.}
+without worrying about running out of letters. Again as an exercise one can show mathematically that the total transform matrix $\tensor{\Lambda}{^{\mu''}_\sigma}$ one gets from taking such matrix product is indeed the Lorentz transform matrix from $\mathcal{O}$ to $\mathcal{O}''$ which moves relative to $\mathcal{O}$ at the velocity obtained by \textbf{relativistically} adding together the velocity\footnote{The relativistic transform of velocity will be addressed in later notes.} of $\mathcal{O}'$ with respect to $\mathcal{O}$ and the velocity of $\mathcal{O}''$ with respect to $\mathcal{O}'$. % This was not taught on class but what I came up with.
+
+We notice immediately that a transform from $\mathcal{O}$ to $\mathcal{O}'$ then back to $\mathcal{O}$ gives the transform from $\mathcal{O}$ to itself, which is basically doing nothing:
+\begin{equation}
+    \tensor{\Lambda}{^{\mu}_{\nu'}}\tensor{\Lambda}{^{\nu'}_\sigma}=\delta_\sigma^\mu
+    \label{eq_Lorentzandback}
+\end{equation}
+where $\delta_\sigma^\mu$ is the Kronecker delta.
+\sn{
+    Kronecker delta is a very useful function in math and physics, which is defined as
+    \[
+        \delta_\sigma^\mu=\begin{cases}
+            0,\text{ if }\mu\neq\sigma \\
+            1,\text{ if }\mu=\sigma
+        \end{cases}
+    \]
+    It is commonly understood as a ``replacement rule'' due to its property that for any vector $x^\mu$,
+    \[
+        \delta_\sigma^\mu x^\sigma=x^\mu
+    \]
+    Obviously it is okay to align the two indices up since Kronecker delta is symmetric.
+}
+
+\section{Transform of Metric}
+
+In frame $\mathcal{O}$, we have the form of line element in spacetime:
+\begin{equation}
+    (\Delta s)^2=\eta_{\mu\nu}\Delta x^\mu\Delta x^\nu, \quad \eta_{\mu\nu}=
+    \begin{pmatrix}
+        -1 & 0 & 0 & 0 \\
+        0 & 1 & 0 & 0 \\
+        0 & 0 & 1 & 0 \\
+        0 & 0 & 0 & 1
+    \end{pmatrix}
+\end{equation}
+Now in another frame we claim that the \textbf{same} line element (which is invariant under boost) can be expressed upon a new metric:
+\begin{equation}
+    (\Delta s)^2=\eta_{\mu'\nu'}\Delta x^{\mu'}\Delta x^{\nu'}
+\end{equation}
+Knowing the transform relation between the $\Delta x$'s, now we derive the transform relation between the $\eta$'s:
+\begin{equation}\begin{aligned}
+    & \eta_{\mu\nu}\Delta x^\mu\Delta x^\nu=\eta_{\mu'\nu'}\Delta x^{\mu'}\Delta x^{\nu'} \\
+    = & \eta_{\mu'\nu'}\left(\tensor{\Lambda}{^{\mu'}_\sigma}\Delta x^\sigma\right)\left(\tensor{\Lambda}{^{\nu'}_\rho}\Delta x^\rho\right) \\
+    = & \left(\tensor{\Lambda}{^{\mu'}_\sigma}\tensor{\Lambda}{^{\nu'}_\rho}\eta_{\mu'\nu'}\right)\Delta x^\sigma\Delta x^\rho
+\end{aligned}\end{equation}
+By dummy index replacement, $\eta_{\mu\nu}\Delta x^\mu\Delta x^\nu=\eta_{\sigma\rho}\Delta x^\sigma\Delta x^\rho$ and then we get the relation
+\begin{equation}
+    \eta_{\sigma\rho}=\tensor{\Lambda}{^{\mu'}_\sigma}\tensor{\Lambda}{^{\nu'}_\rho}\eta_{\mu'\nu'}
+\end{equation}
+which is the opposite transform law of metric from $\mathcal{O}'$ back to $\mathcal{O}$. As an exercise, one can find its inverse transformation law using Eq. (\ref{eq_Lorentzandback}):
+\begin{equation}
+    \eta_{\mu'\nu'}=\tensor{\Lambda}{^\sigma_{\mu'}}\tensor{\Lambda}{^\rho_{\nu'}}\eta_{\sigma\rho}
+    \label{eq_metrictransform}
+\end{equation}
+We notice from this relation that the metric transforms like the \textbf{inverse} transform of a vector.
+\sn{
+    In fact, any tensor of any rank has similar transformation laws. To be explicit, all indices upstairs transform like a vector while all downstairs transform like the inverse transform of vector.
+}
+
+\section{Lorentz Group}
+
+Written in matrix form, Eq. (\ref{eq_metrictransform}) becomes
+\begin{equation}
+    \bm{\eta}'=\mathbf{\Lambda}^T\bm{\eta}\mathbf{\Lambda}
+\end{equation}
+and if we carry out the matrix product calculation, $\bm{\eta}'$ turns out to be the same as $\bm{\eta}$:
+\begin{equation}
+    \bm{\eta}'=\bm{\eta}=\begin{pmatrix}
+        -1 & 0 & 0 & 0 \\
+        0 & 1 & 0 & 0 \\
+        0 & 0 & 1 & 0 \\
+        0 & 0 & 0 & 1
+    \end{pmatrix}
+\end{equation}
+which is not surprising since the Lorentz transform $\Lambda$ was derived from the principle of invariance $\left(\Delta s\right)^2=-(\Delta t')^2+(\Delta x')^2+(\Delta y')^2+(\Delta z')^2=-\Delta t^2+\Delta x^2+\Delta y^2+\Delta z^2$ which itself indicates that the metric in both frames is ${\rm diag}\{-1,1,1,1\}$. In other words, \textbf{Lorentz transform preserves the metric}.
+
+Recall that in 3-dimensional Euclidean space, the orthogonal group $O(3)$ is defined as the group of all $3\times3$ real matrices $\mathbf{R}$ that preserves the identity matrix:
+\begin{equation}
+    \mathbf{R}^T\mathbbm{1}\mathbf{R}=\mathbf{R}^T\mathbf{R}=\mathbbm{1}
+\end{equation}
+\sn{
+    Also note that the identity matrix is the metric of 3-dimensional Euclidean space: $\left(\Delta s\right)^2=\Delta x^2+\Delta y^2+\Delta z^2$
+}
+In analogy, we introduce the \textit{Lorentz group}, which is defined as the group of all $4\times4$ real matrices $\mathbf{\Lambda}$ that preserves the $(3+1)$-dimensional\footnote{This means there are 3 spatial dimensions and 1 dimension of time.} spacetime metric:
+\begin{equation}
+    \mathbf{\Lambda}^T\bm{\eta}\mathbf{\Lambda}=\bm{\eta}
+\end{equation}
+The Lorentz group is denoted by $O(3,1)$.\footnote{
+    Of course one can generalize this concept to $O(n,m)$, which means all $(n+m)\times(n+m)$ real matrices that preserves the metric of $(n+m)$-dimensional space, which is an $(n+m)\times(n+m)$ diagonal matrix with $n$ elements being $+1$ and $m$ elements being $-1$.
+}
+We can see that Lorentz group contains not only boosts but also pure spatial rotations like
+\[
+    \begin{pmatrix}
+        1 & 0 & 0 & 0 \\
+        0 & R_{11} & R_{12} & R_{13} \\
+        0 & R_{21} & R_{22} & R_{23} \\
+        0 & R_{31} & R_{32} & R_{33}
+    \end{pmatrix}\text{ where }\mathbf{R}^T\mathbf{R}=\mathbbm{1}
+\]
+since they also preserve the metric.
+
+Just like in 3-dimensional Euclidean space we defined the special orthogonal group $SO(3)$ to exclude those physically unrealizable transforms from $O(3)$, namely those involving parity inversion ($\det R=-1$), in $O(3,1)$ we also want to exclude those physically unrealizable transforms, namely those involving one or two of the following operations:
+\begin{itemize}
+    \item parity inversion
+    \item time reversal
+\end{itemize}
+One thing we can do is to impose the restriction $\det\Lambda=+1$, which gives the \textit{proper Lorentz group} $SO(3,1)$. However, it only rules out those involving \textbf{either} parity inversion \textbf{or} time reversal but not both. To eliminate those involving both, we should furthermore demand that $\tensor{\Lambda}{^0_0}\geq1$, which gives what is sometimes called the ``restricted'' Lorentz group and sometimes denoted as $SO(3,1)^\uparrow$ but we will not care about the notation in this course.
+
+Both orthogonal group and Lorentz group are Lie groups, which means that the elements of the group can be specified by several parameters that can change continuously. In $SO(3)$ there are 3 parameters, which correspond to rotation about the 3 axes. In Lorentz group\footnote{More precisely the ``restricted'' Lorentz group.}, besides rotations there are 3 boosts along the 3 axes, hence 6 parameters in total. In addition, translational symmetry along space and time
+\[
+    x^\mu\rightarrow x^\mu+a^\mu,\quad\text{where $a^\mu$ is a constant 4-vector}
+\]
+gives 4 parameters. All rotations, boosts and spacetime shifts add together giving the \textit{Poincare group}, which has 10 parameters and thus lead to 10 conserved quantities:
+\begin{itemize}
+    \item 3 rotations and 3 boosts give the 4D-angular momentum conservation\footnote{The 4D-angular momentum tensor is useful in quantum field theory but will not be introduced in this course.}.
+    \item 4 translations give the conservation of momentum and energy.
+\end{itemize}
+
+\section{Proper Time}
+
+For any two time-like separated events $P$ and $Q$, it is always possible to let an observer $\mathcal{O}'$ travel between these two events at constant velocity. Assume $Q$ happens later, and then the worldline of $\mathcal{O}'$ is represented by the $t'$ axis in Fig. \ref{fig_propertime}. The \textit{proper time} from events $P$ to $Q$, $\Delta\tau_{PQ}$, is defined as the time elapsed from $P$ to $Q$ as measured by $\mathcal{O}'$.
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \draw[->] (0,0)->(5,0); \draw[->] (0,0)->(0,5); \draw[->,color=blue] (0,0)->(5,1.5); \draw[->,color=blue] (0,0)->(1.5,5);
+        \node at (5.3,0) {$x$}; \node at (0,5.3) {$t$}; \node[color=blue] at (5.3,1.5) {$x'$}; \node[color=blue] at (1.5,5.3) {$t'$};
+        \node at (0,0) {$\bullet$}; \node at (0.9,3) {$\bullet$};
+        \node at (-0.2,-0.2) {$P$}; \node at (1.2,3) {$Q$};
+    \end{tikzpicture}
+    \caption{Proper time.}
+    \label{fig_propertime}
+\end{figure}
+Standing on $\mathcal{O}'$'s perspective, we immediately know that
+\begin{equation}
+    (\Delta s)^2=-(\Delta t')^2=-\Delta\tau_{PQ}^2
+\end{equation}
+This is to say the spacetime interval $(\Delta s)^2$ along the worldline of observers is always negative, so of course the newly defined concept of proper time helps to cope with the annoying minus sign. Nevertheless, the physical significance of proper time is far more profound than this. First, the proper time is the \textbf{minimal} of the time separation measured by different observers in different inertial frames. This is easy to conclude by looking from another observer's perspective:
+\begin{equation}
+    \Delta\tau_{PQ}^2=-(\Delta s)^2=\Delta t^2-\Delta x^2<\Delta t^2
+\end{equation}
+
+Second, of all observers traveling between the two events in different routes (not necessarily at constant velocity), the proper time is the \textbf{maximal} time they measure. To show this, consider the scenario of the well-known twin paradox shown in Fig. \ref{fig_twinparadox}, where we stand in frame $\mathcal{O}'$ and (as an example) let another observer $\mathcal{O}''$ travel away from where $P$ happens to $R$ and then back.
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \draw[->] (0,0)->(5,0); \draw[->] (0,0)->(0,5); \node at (5.3,0) {$x$}; \node at (0,5.3) {$t$};
+        
+        \node at (0,0) {$\bullet$}; \node at (0,4) {$\bullet$}; \node at (1.5,2) {$\bullet$};
+        \node at (-0.2,-0.2) {$P$}; \node at (-0.3,4) {$Q$}; \node at (2.8,2) {$R$ $\left(\frac{\Delta\tau_{PQ}}{2},\Delta x\right)$};
+        
+        \draw[-,color=blue,very thick] (0,0)->(0,4); \draw[-,color=red,very thick] (0,0)->(1.5,2)->(0,4);
+        \node[color=blue] at (-0.5,2) {$\Delta\tau_{PQ}$}; \node[color=red] at (1.2,0.8) {$\Delta\tau_{PR}$}; \node[color=red] at (1.5,2.8) {$\Delta\tau_{RQ}$};
+        \node[color=blue] at (-1.5,3) {worldline of $\mathcal{O}'$}; \node[color=red] at (2,3.6) {worldline of $\mathcal{O}''$}; 
+    \end{tikzpicture}
+    \caption{Twin paradox.}
+    \label{fig_twinparadox}
+\end{figure}
+The time measured by $\mathcal{O}''$ is
+\begin{equation}\begin{aligned}
+    \Delta t'' & =\Delta\tau_{PR}+\Delta\tau_{RQ}=\sqrt{\left(\frac{\Delta\tau_{PQ}}{2}\right)^2-\Delta x^2}+\sqrt{\left(\frac{\Delta\tau_{PQ}}{2}\right)^2-\Delta x^2} \\
+    & =\sqrt{\Delta\tau_{PQ}^2-4\Delta x^2}<\Delta\tau_{PQ}
+\end{aligned}\end{equation}
+
+Since it may be confusing at first sight that the proper time is both minimal and maximal, it is important to keep in mind among what it is minimal and among what it is maximal.
+
+
+\end{document}
