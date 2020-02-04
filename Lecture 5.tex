@@ -1,0 +1,411 @@
+\documentclass[11pt]{article}
+\usepackage{NotesTeX} %/Path/to/package should be replaced with package location
+\usepackage{lipsum}
+\usepackage{tensor}
+\usepackage{amsmath,amsthm,amssymb,amsfonts,amscd}
+\usepackage{hyperref}
+
+\usepackage{url}
+\usepackage{color}
+\usepackage{setspace}
+\usepackage{enumitem}
+
+\usepackage{undertilde}
+
+\linespread{1}
+
+\usepackage{tikz-cd}
+
+
+\theoremstyle{plain}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{fact}[theorem]{Fact}
+
+
+\newcommand{\bs}{\textbackslash}
+
+
+\title{{\Huge General Relativity}\\{\Large{Class 5--- January 31, 2020}}} %replace with class number
+\author{Carlos Perez}
+
+\emailAdd{cjp3247@utexas.edu} %replace with your email
+\begin{document}
+    \maketitle
+    \flushbottom
+    \newpage
+    \pagestyle{fancynotes}
+    \part{Vectors and covectors}
+
+
+\section{Four-velocity}
+
+We have been considering objects in a four-dimensional space traversing paths (curves) called worldlines. These worldlines are specified by four functions 
+
+\begin{align*}
+t(\lambda)	\\
+x(\lambda)	\\
+y(\lambda)	\\
+z(\lambda)	
+\end{align*}
+where we typically say that $\lambda$ is a parameter which increases along the worldline. However, for timelike curves there is a natural candidate to parameterise them, proper time $\tau$. 
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+
+\begin{figure}[h!]
+	\begin{centering}
+\begin{tikzpicture}[x=0.50pt,y=0.50pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,304.1079559326172); %set diagram left start at 0, and has height of 304.1079559326172
+
+%Curve Lines [id:da41024636577771667] 
+\draw    (283.79,247.11) .. controls (377.5,212.57) and (237.5,76.57) .. (332.79,38.11) ;
+
+
+%Curve Lines [id:da4259021835539958] 
+\draw    (299.5,167.57) .. controls (303.36,154.06) and (286.73,129.38) .. (289.16,111.49) ;
+\draw [shift={(289.5,109.57)}, rotate = 462.53] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+%Curve Lines [id:da2913515390795469] 
+\draw    (300.5,113.57) .. controls (401,69.14) and (292.5,136.57) .. (389.5,92.57) ;
+
+
+%Shape: Circle [id:dp06661434454917625] 
+\draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (297.82,113.57) .. controls (297.82,112.09) and (299.02,110.89) .. (300.5,110.89) .. controls (301.98,110.89) and (303.18,112.09) .. (303.18,113.57) .. controls (303.18,115.05) and (301.98,116.25) .. (300.5,116.25) .. controls (299.02,116.25) and (297.82,115.05) .. (297.82,113.57) -- cycle ;
+
+% Text Node
+\draw (281,151) node    {$\tau $};
+% Text Node
+\draw (349,31) node    {$Q$};
+% Text Node
+\draw (269,252) node    {$P$};
+% Text Node
+\draw (424,89) node    {$X^{\mu }( \tau )$};
+
+\end{tikzpicture}
+\caption{Any curve in spacetime between $P$ and $Q$ is just a specification of the coordinates parameterised by proper time.}
+\end{centering}
+\end{figure}
+
+This gives us a unique parametrisation of our worldline as 
+
+\begin{equation}
+X^{\mu} = X^{\mu}(\tau).
+\end{equation}
+
+Since our worldline is a curve in spacetime we can find the tangent vector at any point. We call this tangent vector the four-velocity
+\begin{equation}
+U^{\mu} = \frac{d X^{\mu}}{d \tau}.
+\end{equation}
+where we have omitted the evaluation at a point for simplicity. What we have written is not really a vector (as we will see) but the components of a vector (or a Lorentz vector ($\ref{eq0}$)). We can use the chain rule to write
+
+\begin{align*}
+U^{\mu} = \frac{d X^{\mu}}{d \tau} = \frac{d t}{d \tau} 
+	\begin{pmatrix}
+		1 \\
+		V^{i} 
+	\end{pmatrix} = \gamma	\begin{pmatrix}
+							1 \\
+							V^{i} 
+							\end{pmatrix}
+\end{align*}
+where in the last equality we have used a fact from the homework $\frac{d t}{d \tau} = \gamma$ and $\frac{d x}{d t} =V^{i}$ are the usual velocity compnents.
+We observe that the four-velocity is a normalised timelike vector, which means that 
+
+\begin{equation}
+U^{\mu} U^{\nu} \eta_{\mu \nu} = -1
+\end{equation}
+Furthermore, since 
+\begin{equation}
+X^{\mu'} = \tensor{\Lambda}{^{\mu'}_\nu} X^{\nu} \Rightarrow U^{\mu'} = \frac{d x^{\mu '}}{d \tau} = \tensor{\Lambda}{^{\mu'}_\nu} \frac{X^{\nu}}{d \tau} =  \tensor{\Lambda}{^{\mu'}_\nu} U^{\nu} \label{eq0}
+\end{equation}
+This provides the transformation rule for the four velocity.
+
+
+
+\newpage
+
+
+\section{Vectors}
+
+
+We usually think of vectors as arrows or objects with direction and magnitude. In special relativity the spacetime is usually $\mathbb{R}^{4}$ or Minkowski spacetime. Both have the structure of a vector space, which means that it is natural to define vectors (and think of them as arrows) and operations between them. However this structure doesn’t extend to more general geometries, e.g. $S^{2}$ and so we need to ditch our notion of vectors as arrows
+
+
+\begin{figure}[h!]
+\begin{centering}
+\begin{tikzpicture}[x=0.55pt,y=0.55pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,304.1079559326172); %set diagram left start at 0, and has height of 304.1079559326172
+
+%Shape: Circle [id:dp5223199967668253] 
+\draw   (207.17,139.38) .. controls (207.17,71.48) and (262.21,16.43) .. (330.12,16.43) .. controls (398.02,16.43) and (453.07,71.48) .. (453.07,139.38) .. controls (453.07,207.29) and (398.02,262.33) .. (330.12,262.33) .. controls (262.21,262.33) and (207.17,207.29) .. (207.17,139.38) -- cycle ;
+%Curve Lines [id:da789045278227748] 
+\draw    (374.25,144.21) .. controls (374.25,111.23) and (363.43,91.9) .. (352.74,74.8) ;
+\draw [shift={(351.75,73.21)}, rotate = 417.85] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+%Straight Lines [id:da8519735632881718] 
+\draw  [dash pattern={on 4.5pt off 4.5pt}]  (351.96,78.58) -- (371.44,142.32) ;
+
+
+%Shape: Circle [id:dp029043217908276908] 
+\draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (372.38,146.09) .. controls (372.38,145.05) and (373.21,144.21) .. (374.25,144.21) .. controls (375.29,144.21) and (376.13,145.05) .. (376.13,146.09) .. controls (376.13,147.12) and (375.29,147.96) .. (374.25,147.96) .. controls (373.21,147.96) and (372.38,147.12) .. (372.38,146.09) -- cycle ;
+%Shape: Circle [id:dp1986761835680324] 
+\draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (348,73.21) .. controls (348,72.18) and (348.84,71.34) .. (349.88,71.34) .. controls (350.91,71.34) and (351.75,72.18) .. (351.75,73.21) .. controls (351.75,74.25) and (350.91,75.09) .. (349.88,75.09) .. controls (348.84,75.09) and (348,74.25) .. (348,73.21) -- cycle ;
+
+% Text Node
+\draw (373.83,157.67) node    {$P$};
+% Text Node
+\draw (340.67,58.17) node    {$Q$};
+
+
+\end{tikzpicture}
+\caption{What does it mean for us to have a vector between points $P$ and $Q$? It can't pierce the sphere, but then how is it a straight line? How do we move the vector around?}
+\end{centering}
+\end{figure}
+
+
+
+
+We want to think of vectors as living at tangent spaces to a point in spacetime. Take a point in a general (can be curved) spacetime, $P$, and construct a curve through that point. We can find the tangent vector to the curve at $P$ by taking derivatives. This vector will live in a surface which is tangent to our spacetime at point $P$. We call this surface $T_{P}$. We can also think about this surface as the span of all possible vectors tangent (at $P$) to all possible curves (through $P$). We give without proof the following fact:
+
+\begin{proposition}
+For an n-dimensional space, the set of all tangent vectors at $P$ forms a n-dimensional vector space, the tangent space $T_{P}$.
+\end{proposition}
+
+\begin{figure}[h!]
+\begin{centering}
+
+\begin{tikzpicture}[x=0.55pt,y=0.55pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,304.1079559326172); %set diagram left start at 0, and has height of 304.1079559326172
+
+%Shape: Arc [id:dp515712647044624] 
+\draw  [draw opacity=0] (53.77,236.25) .. controls (75.3,172.59) and (178.13,124.1) .. (302.01,123.68) .. controls (431.55,123.24) and (538.66,175.52) .. (554.04,243.37) -- (302.78,260.65) -- cycle ; \draw   (53.77,236.25) .. controls (75.3,172.59) and (178.13,124.1) .. (302.01,123.68) .. controls (431.55,123.24) and (538.66,175.52) .. (554.04,243.37) ;
+%Shape: Circle [id:dp7607951671123065] 
+\draw  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (185,156.13) .. controls (185,154.68) and (186.18,153.5) .. (187.63,153.5) .. controls (189.07,153.5) and (190.25,154.68) .. (190.25,156.13) .. controls (190.25,157.57) and (189.07,158.75) .. (187.63,158.75) .. controls (186.18,158.75) and (185,157.57) .. (185,156.13) -- cycle ;
+%Curve Lines [id:da245499437190823] 
+\draw    (147.5,233.57) .. controls (154.5,189.57) and (183.5,144.57) .. (235.5,128.57) ;
+
+
+\draw   (151.71,204.41) -- (156.6,200.8) -- (158.01,206.72) ;
+%Shape: Parallelogram [id:dp9966738975907927] 
+\draw   (146.08,112.72) -- (311.72,98.32) -- (229.17,199.53) -- (63.53,213.93) -- cycle ;
+%Straight Lines [id:da44457866811010316] 
+\draw [color={rgb, 255:red, 33; green, 62; blue, 232 }  ,draw opacity=1 ]   (187.63,156.13) -- (228.34,115.46) ;
+\draw [shift={(229.75,114.04)}, rotate = 495.03] [color={rgb, 255:red, 33; green, 62; blue, 232 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+
+% Text Node
+\draw (203,167) node    {$P$};
+% Text Node
+\draw (170,218) node    {$\lambda ( t)$};
+% Text Node
+\draw (158.5,120) node    {$T_{P}$};
+% Text Node
+\draw (239,113) node  [color={rgb, 255:red, 43; green, 54; blue, 226 }  ,opacity=1 ]  {$V$};
+\end{tikzpicture}
+\caption{Spacetime with a point $P$, curve through $P$ and a tangent space to that point}
+\end{centering}
+\end{figure}
+
+
+Before we formalise these ideas into a concrete definition (won't be in this lecture), let us try to understand what we have constructed. 
+
+A vector in this setting is a geometric object which should be the same in any reference frame. The tangent space $T_{P}$ is in general an n-dimensional vector space and so it has a basis finite basis which we’ll denote by $\{\bar{e}_{(\mu)} \}_{\mu=1} ^{n}$. Therefore, for 4-dimensional spaces a vector will be:
+
+\begin{equation}
+\bar{V} = \bar{V^{\mu}} \bar{e}_{(\mu)}.
+\end{equation}
+Now, the basis vectors transform under Lorentz transformations as:
+
+\begin{equation}
+\bar{e}_{(\mu)} = \tensor{\Lambda}{^{\mu'}_\mu} \bar{e}_{(\mu')}
+\end{equation}
+while the components (just as for the four velocity) transform according to ($\ref{eq0}$):
+
+Therefore, 
+
+\begin{equation}
+\bar{V'} = V^{\mu'} \bar{e}_{(\mu')} = \tensor{\Lambda}{^{\mu'}_\nu} V^{\nu}  \tensor{\Lambda}{^\alpha_{\mu'}} \bar{e}_{(\alpha)} =  \tensor{\delta}{^\alpha_\nu} V^{\nu}  \bar{e}_{(\alpha)}  =  V^{\nu}  \bar{e}_{(\nu)} = \bar{V} 
+\end{equation}
+where in the second equality we have used $\tensor{\Lambda}{^{\mu'}_\nu} \tensor{\Lambda}{^\alpha_{\mu'}} = \tensor{\delta}{^\alpha_\nu}$.
+This means that a vector is invariant as promised.
+
+\begin{figure}[h!]
+\begin{centering}
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,304.1079559326172); %set diagram left start at 0, and has height of 304.1079559326172
+
+%Shape: Axis 2D [id:dp2610095377421835] 
+\draw  (199,224.2) -- (460.5,224.2)(225.15,52) -- (225.15,243.33) (453.5,219.2) -- (460.5,224.2) -- (453.5,229.2) (220.15,59) -- (225.15,52) -- (230.15,59)  ;
+%Straight Lines [id:da646452069675788] 
+\draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ]   (225.15,224.2) -- (225.33,131.24) ;
+\draw [shift={(225.33,129.24)}, rotate = 450.11] [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+%Straight Lines [id:da04757667323926107] 
+\draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ]   (225.15,224.2) -- (322.67,223.91) ;
+\draw [shift={(324.67,223.91)}, rotate = 539.8299999999999] [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+%Straight Lines [id:da4344813115704982] 
+\draw [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ]   (225.15,224.2) -- (324.8,186.61) ;
+\draw [shift={(326.67,185.91)}, rotate = 519.3299999999999] [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+%Straight Lines [id:da633873491282595] 
+\draw [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ]   (225.15,224.2) -- (259.96,131.78) ;
+\draw [shift={(260.67,129.91)}, rotate = 470.64] [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+
+% Text Node
+\draw (246,51) node    {$t$};
+% Text Node
+\draw (476,224) node    {$x$};
+% Text Node
+\draw (208.17,169.83) node  [font=\small,color={rgb, 255:red, 74; green, 144; blue, 226 }  ,opacity=1 ]  {$\overline{e}_{( 0)}$};
+% Text Node
+\draw (279,235.67) node  [font=\small,color={rgb, 255:red, 74; green, 144; blue, 226 }  ,opacity=1 ]  {$\overline{e}_{( 1)}$};
+% Text Node
+\draw (266.17,163.83) node  [font=\small,color={rgb, 255:red, 208; green, 2; blue, 27 }  ,opacity=1 ]  {$\overline{e}_{( 0')}$};
+% Text Node
+\draw (309,206.33) node  [font=\small,color={rgb, 255:red, 208; green, 2; blue, 27 }  ,opacity=1 ]  {$\overline{e}_{( 1')}$};
+
+\end{tikzpicture}
+\caption{2-dimensional spacetime with two sets of basis vectors, red and blue, are related by a Lorentz transformation.}
+\end{centering}
+\end{figure}
+
+
+
+
+\newpage
+
+\section{Dual vectors}
+
+Now that we have some notion of vectors it is somewhat natural to ask about the dual space to the vector spaces we just constructed. Just as a reminder the dual vector space is the space of all linear functions from the vector space to a field (in our case the reals). In other words, we define a dual vector $\utilde{\omega}$ (or covector, or \textbf{one-form}) as:
+
+\begin{align*}
+  \utilde{\omega} \colon T_{P} &\to \mathbb{R}\\
+  \bar{V} &\mapsto \utilde{\omega}(\bar{V}).
+\end{align*}
+
+The dual vectors at $P$ form a vector space, denoted $T^{*}_{P}$ when equipped with addition and scalar multiplication, which means that we can do basic operations like add them or multiply them by scalars:
+
+\begin{equation}
+(a \utilde{\alpha} + b \utilde{\beta})(\bar{V}) = a \utilde{\alpha}(\bar{V}) + b \utilde{\beta}(\bar{V}) \, , \hspace{3em} \text{for}\hspace{1.5em} a,\, b \in \mathbb{R}, \; \utilde{\alpha}, \, \utilde{\beta} \in T^{*}_{P}, \; \bar{V} \in T_{P}
+\end{equation}
+Furthermore, they also act linearly on vectors, i.e.:
+
+\begin{equation}
+\utilde{\omega} (a \bar{V}) + b \bar{U} ) =a \utilde{\omega} (\bar{V}) + b \utilde{\omega} (\bar{U} )  \, , \hspace{3em} \text{for}\hspace{1.5em} a,\, b \in \mathbb{R}, \; \utilde{\omega}\in T^{*}_{P}, \; \bar{V}, \, \bar{U} \in T_{P}
+\end{equation}
+
+As a vector space $T^{*}_{P}$ has the same dimension as $T_{P}$ (which in particular is finite) and hence we can find a finite basis: $\{\utilde{\theta}^{(\mu)} \}_{\mu=1} ^{n}$. In any basis our one forms are:
+
+\begin{equation}
+\utilde{\omega} = \omega_{\mu} \utilde{\theta}^{(\mu)}
+\end{equation}
+We emphasise that in this notation we use lower indices to denote components of a one-form while upper indices denote components of a vector. It turns out that there is an isomorphism (induced by the metric) between the tangent space and the cotangent space. There is a very special basis (called the dual basis) for which: 
+
+\begin{equation}
+\utilde{\theta}^{(\mu)} (\bar{e}_{(\nu)}) = \tensor{\delta}{^\mu_\nu}
+\end{equation}
+
+
+Therefore, using this basis our index notation simplifies how one-forms act on vectors
+
+\begin{equation}
+\utilde{\omega} (\bar{V}) =\omega_{\mu} \utilde{\theta}^{(\mu)} (  V^{\nu} \bar{e}_{(\nu)} ) = \omega_{\mu} V^{\nu} \utilde{\theta}^{(\mu)} (\bar{e}_{(\nu)} ) = \omega_{\mu} V^{\nu} \tensor{\delta}{^\nu_\mu} =  \omega_{\mu} V^{\mu}
+\end{equation}
+
+These dual vectors satisfy the following transformation rules
+
+\begin{align}
+\utilde{\theta}^{(\mu)} \rightarrow &  \utilde{\theta}^{(\mu')} = \tensor{\Lambda}{^{\mu '}_{\nu}} \utilde{\theta}^{(\nu)}   \\
+\omega_{\mu } \rightarrow &  \omega_{\mu '} = \tensor{\Lambda}{^\nu_{\mu '}} \omega_{\nu }
+\end{align}
+
+
+so that $\omega$ is invariant under Lorentz transformations in a similar fashion to 
+
+\begin{example}
+Consider a smooth function from our spacetime to the reals. We define the gradient of $f$ at $P$ by
+\begin{equation}
+\utilde{d f} = \frac{\partial f}{\partial x^{\mu}} \utilde{\theta^{(\mu)}} =  \partial_{\mu} f  \utilde{\theta^{(\mu)}} 
+\end{equation}
+Observe that we have used the notation where  $\frac{\partial}{\partial x^{\mu}} \equiv \partial_{\mu}$. We will study the “d” operator we have used above, also known as an exterior derivative, in more detail later. This is a concrete example of a one form.
+\end{example}
+
+This example gives us some intuition on what the one-forms are or how to visualise them. Given a function $f$, we can represent the information by drawing isocontours (for example for a function over the plane). The gradient will be a vector perpendicular to these isocontours. In fact, we think about the isocontours themselves as a gradient. In this way the gradient (or a one-form) is a stack of sheets where $f$ is constant and a vector is an arrow. The action of a one-form on a vector is then given by the number of sheets penetrated by the vector.
+
+\begin{figure}[h!]
+\begin{centering}
+
+\begin{tikzpicture}[x=0.70pt,y=0.70pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,304.1079559326172); %set diagram left start at 0, and has height of 304.1079559326172
+
+%Shape: Rectangle [id:dp7984221331271688] 
+\draw  [fill={rgb, 255:red, 255; green, 255; blue, 255 }  ,fill opacity=1 ] (101.5,41) -- (219.01,41) -- (219.01,171.33) -- (101.5,171.33) -- cycle ;
+%Shape: Rectangle [id:dp9131146311865885] 
+\draw  [fill={rgb, 255:red, 255; green, 255; blue, 255 }  ,fill opacity=1 ] (83.5,57) -- (202.81,57) -- (202.81,189.33) -- (83.5,189.33) -- cycle ;
+%Shape: Rectangle [id:dp5316589056512595] 
+\draw  [fill={rgb, 255:red, 255; green, 255; blue, 255 }  ,fill opacity=1 ] (65.5,74) -- (184.81,74) -- (184.81,206.33) -- (65.5,206.33) -- cycle ;
+%Shape: Rectangle [id:dp46436570936672106] 
+\draw  [fill={rgb, 255:red, 255; green, 255; blue, 255 }  ,fill opacity=1 ] (44.5,92) -- (163.81,92) -- (163.81,224.33) -- (44.5,224.33) -- cycle ;
+%Shape: Rectangle [id:dp7726944496408961] 
+\draw  [fill={rgb, 255:red, 255; green, 255; blue, 255 }  ,fill opacity=1 ] (26.5,112) -- (145.81,112) -- (145.81,244.33) -- (26.5,244.33) -- cycle ;
+%Shape: Rectangle [id:dp4885583559184532] 
+\draw  [fill={rgb, 255:red, 255; green, 255; blue, 255 }  ,fill opacity=1 ] (461.5,34) -- (579.01,34) -- (579.01,164.33) -- (461.5,164.33) -- cycle ;
+%Shape: Rectangle [id:dp8738404898546548] 
+\draw  [fill={rgb, 255:red, 255; green, 255; blue, 255 }  ,fill opacity=1 ] (443.5,50) -- (562.81,50) -- (562.81,182.33) -- (443.5,182.33) -- cycle ;
+%Shape: Rectangle [id:dp8342724401529311] 
+\draw  [fill={rgb, 255:red, 255; green, 255; blue, 255 }  ,fill opacity=1 ] (425.5,67) -- (544.81,67) -- (544.81,199.33) -- (425.5,199.33) -- cycle ;
+%Shape: Rectangle [id:dp8431691965070685] 
+\draw  [fill={rgb, 255:red, 255; green, 255; blue, 255 }  ,fill opacity=1 ] (404.5,85) -- (523.81,85) -- (523.81,217.33) -- (404.5,217.33) -- cycle ;
+%Shape: Rectangle [id:dp07509518482128197] 
+\draw  [fill={rgb, 255:red, 255; green, 255; blue, 255 }  ,fill opacity=1 ] (386.5,105) -- (505.81,105) -- (505.81,237.33) -- (386.5,237.33) -- cycle ;
+%Shape: Brace [id:dp11568618380056628] 
+\draw   (29,253) .. controls (29.03,257.67) and (31.37,259.99) .. (36.04,259.96) -- (76.79,259.72) .. controls (83.46,259.69) and (86.8,262) .. (86.83,266.67) .. controls (86.8,262) and (90.12,259.65) .. (96.79,259.61)(93.79,259.63) -- (137.54,259.37) .. controls (142.21,259.34) and (144.53,257) .. (144.5,252.33) ;
+%Shape: Brace [id:dp8516349935546961] 
+\draw   (383.67,252.33) .. controls (383.7,257) and (386.04,259.32) .. (390.71,259.29) -- (431.46,259.06) .. controls (438.13,259.02) and (441.47,261.33) .. (441.5,266) .. controls (441.47,261.33) and (444.79,258.98) .. (451.46,258.94)(448.46,258.96) -- (492.21,258.71) .. controls (496.88,258.68) and (499.2,256.34) .. (499.17,251.67) ;
+%Straight Lines [id:da24948170133379488] 
+\draw    (219.67,49.87) -- (247.59,21.95) ;
+\draw [shift={(249,20.53)}, rotate = 495] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+%Straight Lines [id:da033346015032755805] 
+\draw  [dash pattern={on 4.5pt off 4.5pt}]  (95,174.53) -- (219.95,49.58) ;
+
+
+%Straight Lines [id:da2005386947727279] 
+\draw    (95,174.53) -- (55.67,213.87) ;
+
+
+%Straight Lines [id:da37288169047002717] 
+\draw    (446.16,171.17) -- (446.16,7.71) ;
+\draw [shift={(446.16,5.71)}, rotate = 450] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+%Shape: Brace [id:dp0768790353067752] 
+\draw   (156,253) .. controls (159.55,256.03) and (162.84,255.78) .. (165.87,252.24) -- (193.06,220.51) .. controls (197.4,215.44) and (201.34,214.43) .. (204.88,217.47) .. controls (201.34,214.43) and (201.74,210.38) .. (206.07,205.32)(204.12,207.6) -- (233.26,173.58) .. controls (236.3,170.04) and (236.05,166.75) .. (232.5,163.71) ;
+%Shape: Brace [id:dp7669478781425847] 
+\draw   (515,249) .. controls (518.37,252.23) and (521.67,252.15) .. (524.9,248.78) -- (554.4,217.93) .. controls (559.01,213.11) and (563,212.31) .. (566.37,215.54) .. controls (563,212.31) and (563.61,208.29) .. (568.22,203.47)(566.15,205.64) -- (597.73,172.62) .. controls (600.96,169.25) and (600.88,165.95) .. (597.51,162.72) ;
+
+% Text Node
+\draw (85.33,274.67) node    {$\omega $};
+% Text Node
+\draw (440,274) node    {$\omega $};
+% Text Node
+\draw (229,14.71) node    {$V$};
+% Text Node
+\draw (232,224.71) node    {$\omega ( V)$};
+% Text Node
+\draw (428,25.71) node    {$V$};
+% Text Node
+\draw (597,220.71) node    {$\omega ( V) =0$};
+
+
+\end{tikzpicture}
+
+\caption{Graphical representation of a one-form. On the left the vector pierces through the stack of sheets giving a non zero action $\omega(V)$ but on the right the vector is perpendicular to the stack,  thus $\omega(V) = 0$}
+
+\end{centering}
+\end{figure}
+
+
+\end{document}
