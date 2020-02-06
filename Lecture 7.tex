@@ -1,0 +1,469 @@
+\documentclass[11pt]{article}
+% DEFINE COMMANDS
+
+\usepackage{NotesTeX}
+
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{enumerate}
+\usepackage{amsmath,amssymb,amscd,amsfonts}
+\usepackage{xcolor}
+\usepackage{color}
+\usepackage{mathtools}
+\usepackage{pst-node, auto-pst-pdf}
+
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\tikzcdset{every label/.append style = {font = \small}}
+\tikzcdset{row sep/normal=3.5em}
+\tikzcdset{column sep/normal=3.5em}
+
+\usetikzlibrary{matrix}
+\usetikzlibrary{decorations.markings,calc,shapes}
+\usetikzlibrary{positioning}
+\usepackage{graphicx}
+\usepackage{empheq}
+\usepackage{physics}
+\usepackage{siunitx}
+\usepackage{tensor}
+\usepackage{undertilde}
+\usepackage{multicol}
+
+\usepackage{youngtab}
+\usepackage{cancel}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{hyperref}
+
+\newcommand\tikzmark[1]{\tikz[remember picture,overlay]\coordinate (#1);}
+\usepackage{float}
+\makeatletter
+\RenewDocumentCommand\sidenotetext{ o o +m }{%      
+    \IfNoValueOrEmptyTF{#1}{%
+        \@sidenotes@placemarginal{#2}{\textsuperscript{\thesidenote}{}~\footnotesize#3}%
+        \refstepcounter{sidenote}%
+    }{%
+        \@sidenotes@placemarginal{#2}{\textsuperscript{#1}~#3}%
+    }%
+}
+\makeatother
+
+\newcommand{\widest}{\ensuremath{-1}}
+\newcommand{\newWidth}[1]{\makebox[\widthof{\widest}]{\ensuremath{#1}}}
+
+% % % % % % % % % % % % % % % % % % % % % % %
+
+\title{{\Huge General Relativity}\\{\Large{Class 7 --- February 5, 2020}}} %replace with class number
+\author{Maaz Ul Haq}
+
+\emailAdd{maazul@utexas.edu} %replace with your email
+\begin{document}
+\maketitle
+\flushbottom
+\newpage
+\pagestyle{fancynotes}
+
+\part{Tensors}
+\section{Definition (Recap)}
+
+In the previous lecture, we discussed tensors as an extension of the idea of vectors and dual vectors. A tensor of rank $(k,l)$ is a function that takes $k$ one-forms and $l$ vectors and maps into $\mathbb{R}$. That is, 
+
+\begin{equation}
+\textbf{T}:  \underbrace{T_p^*\times \textellipsis\times T_p^*}_{k\text{ copies}} \times \underbrace{T_p\times \textellipsis\times T_p}_{l\text{ copies}}\rightarrow \mathbb{R}\
+\end{equation}
+
+Also, a general tensor of rank $(k,l)$ can be written as tensor components with $k$ upper indices and $l$ lower indices summed into the tensor product of $k$ vector and $l$ dual vector bases as follows\sn{Even though we will persistently refer to $\tensor{T}{^{\mu_1}^\textellipsis ^{\mu_k}_{\nu_1}_\textellipsis_{\nu_l}}$ as a tensor, remember that these are actually components of the geometric object we define as tensor $\textbf{T}$ of rank $(k,l)$. Under a Lorentz transformation the components $\tensor{T}{^{\mu_1}^\textellipsis ^{\mu_k}_{\nu_1}_\textellipsis_{\nu_l}}$ change but the geometric object (tensor $\textbf{T}$) does not.}
+
+\begin{equation}
+\textbf{T} =  \tensor{T}{^{\mu_1}^\textellipsis ^{\mu_k}_{\nu_1}_\textellipsis_{\nu_l}} \vec{e}_{\left(\mu_1\right)}\otimes\textellipsis\otimes\vec{e}_{\left(\mu_k\right)}\otimes \utilde{\theta}^{\left(\nu_1\right)}\otimes\textellipsis\otimes\utilde{\theta}^{\left(\nu_l\right)}
+\end{equation}
+
+\section{Contraction}
+
+We saw in the last lecture that we can form new tensors from given ones using the tensor product. Another way we can take tensors and form new ones is \textbf{contraction}. 
+
+Suppose we have a rank $(0,2)$ tensor $\textbf{T}$. That is, it eats two vectors to give a number. Now, if one of its slots is already filled by a vector then it becomes an object that can eat another vector to give a number. Therefore, in a sense this object is a one-form:
+
+$$\text{Rank }(0,2) \text{ tensor with one slot filled}: \textbf{ T}(\underline{\vec{V}}, \textunderscore) \rightarrow \text{one-form}$$
+
+So the simplest kind of contraction would be to fill up tensor slots with vectors and one-forms. However, we can do something more complicated. We can take, for example, a (1,1) tensor $\textbf{S}$ and a (2,1) tensor $\textbf{T}$:
+
+$$\text{Rank }(1,1) \text{ tensor}: \textbf{S}({\utilde{W}},\vec{V})\xrightarrow{\text{components}} \tensor{S}{^\mu_\nu}$$
+$$\text{Rank }(2,1) \text{ tensor}: \textbf{T}({\utilde{W}},\utilde{U},\vec{V})\xrightarrow{\text{components}} \tensor{T}{^\alpha^\beta_\gamma}$$
+
+Now, we can fill one of the slots in $\textbf{S}({\utilde{W}},\vec{V})$, say the dual-vector one. Then, in effect, it becomes a one-form because it wants to eat a vector to give a number. We can feed this one-form $\textbf{S}({\utilde{W}},\underscore)$ into one of the dual-vector slots in $\textbf{T}({\utilde{W}},\utilde{U},\vec{V})$. Abusing notation, we get the following object:
+
+$$\text{Rank }(2,1) \text{ tensor}: \textbf{T}({\textbf{S}({\utilde{W}},\textunderscore)},\utilde{U},\vec{V})\xrightarrow{\text{components}} \tensor{S}{^\mu_\nu}\tensor{T}{^\nu^\beta_\gamma}$$
+
+This object is a (2,1) tensor because it eats up two one-forms and one vector to give a number. We can see that it is easier to keep track of contraction when written in component form: The indices that are summed over get contracted and the unsummed free indices determine the rank of the tensor. For example in the example above, $\nu$ gets contracted because it is summed over and the rank of the tensor is $(2,1)$ because we have two upper free indices $\mu$ and $\beta$ and one lower free index $\gamma$.\\
+
+Moreover, when we contract two indices on a tensor and write something like $\tensor{T}{^\mu^\nu_\mu}$, we should think of it as being the components of the object we get after contraction. For example, if we have the following contraction,
+
+\begin{equation}
+\textbf{T}({\tikzmark{z1}\vec{U},\vec{W},\tikzmark{z2}\utilde{X}}) = \vec{V} 
+\end{equation}
+
+\begin{tikzpicture}[remember picture,overlay]
+  \draw[latex-latex]
+  ([shift={(4pt,-2pt)}]z1)
+  -- ([shift={(4pt,-12pt)}]z1)
+  -- node[midway, below] {$\scriptstyle \text{contract}$} ([shift={(4pt,-12pt)}]z2)
+  -- ([shift={(4pt,-2pt)}]z2);
+\end{tikzpicture}
+
+\noindent we must think of the contracted $\textbf{T}$ components as the components of $\vec{V}$. That is,
+
+\begin{equation}\tensor{V}{^\mu}=\tensor{T}{^\alpha^\mu_\alpha}=\tensor{T}{^0^\mu_0}+\tensor{T}{^1^\mu_1}+\textellipsis
+\end{equation}
+
+
+\noindent Examples of contraction: 
+
+\noindent \\A $(2,1)$ tensor can be contracted to give a vector: $\tensor{T}{^\alpha^\beta_\alpha}\rightarrow\text{vector}$.
+\noindent \\A $(1,1)$ tensor can be contracted to give a scalar: $\tensor{S}{^\alpha_\alpha}\rightarrow\text{scalar}$.
+
+\section{The Metric}
+
+The metric tensor $\bm{\eta}$ is a rank $(0,2)$ tensor defined as
+
+\begin{equation}
+\bm{\eta}=\tensor{\eta}{_\mu_\nu}\, \utilde{\theta}^{\left(\mu\right)}\otimes \utilde{\theta}^{\left(\nu\right)}
+\end{equation}
+
+It eats two vectors to form a number. In other words, it can be contracted with two vectors to give a scalar:
+
+\begin{equation}
+\bm{\eta}\left(\vec{V},\vec{W}\right)=\tensor{\eta}{_\mu_\nu}\, V^\mu W^\nu
+\end{equation}
+
+The metric tensor has the property that it is symmetric under the interchange of its indices. So, 
+
+\begin{equation}
+\tensor{\eta}{_\mu_\nu}=\tensor{\eta}{_\nu_\mu}
+\end{equation}
+
+We also note using the same argument as in the contraction section that the metric tensor forms a map from vectors to one-forms. If one of its slots is filled with a vector, it becomes a one-form, an object that takes up a vector to give a number.
+
+$$\bm{\eta}(\underline{\vec{V}}, \textunderscore) \rightarrow \text{one-form}\implies\bm{\eta}: T_p \rightarrow T_p^*$$
+
+It follows that an inverse metric should do the opposite: take us from one-form to vectors. That is we should define the inverse metric as a map from one-form to vectors.
+
+$$\bm{\eta}^{-1}: T_p^* \rightarrow T_p$$
+
+This establishes an isomorphism between the vector and the dual vector spaces and we can think of them as being the same. We construct the inverse metric as follows:
+
+\begin{equation}
+\bm{\eta}^{-1}=\tensor{\eta}{^\mu^\nu}\, \vec{e}_{\left(\mu\right)}\otimes\vec{e}_{\left(\nu\right)}
+\end{equation}
+
+We will refer to the metric and its inverse in component form from now on. The placement of indices on the metric tells us the mapping. The metric has two lower indices while its inverse has two upper indices.
+
+Reiterating equation $(2.1)$ from Lecture 2, we have
+
+\begin{equation}
+\tensor{\eta}{_\mu_\nu}=
+\begin{pmatrix}
+-1 & \phantom{-}0 & \phantom{-}0 & \phantom{-}0 \\
+\phantom{-}0 & \phantom{-}1 & \phantom{-}0 & \phantom{-}0 \\
+\phantom{-}0 & \phantom{-}0 & \phantom{-}1 & \phantom{-}0 \\
+\phantom{-}0 & \phantom{-}0 & \phantom{-}0 & \phantom{-}1
+\end{pmatrix}
+\end{equation}
+
+It is clear that we should get the identity matrix if we multiply $\eta_{\mu\nu}$ by itself.\sn{We will see later that this is not true in curved spacetime. In curved spacetime, the metric is not as simple as $diag(-1,1,1,1)$ and it is not its own inverse.} Therefore, the inverse is
+
+\begin{equation}
+\tensor{\eta}{^\mu^\nu}=
+\begin{pmatrix}
+-1 & \phantom{-}0 & \phantom{-}0 & \phantom{-}0 \\
+\phantom{-}0 & \phantom{-}1 & \phantom{-}0 & \phantom{-}0 \\
+\phantom{-}0 & \phantom{-}0 & \phantom{-}1 & \phantom{-}0 \\
+\phantom{-}0 & \phantom{-}0 & \phantom{-}0 & \phantom{-}1
+\end{pmatrix}
+\end{equation}
+
+In component form, this can be expressed as
+
+\begin{equation}
+\tensor{\eta}{^\mu^\alpha}\tensor{\eta}{_\alpha_\nu}=\tensor{\delta}{^\mu_\nu}\label{inverse1}
+\end{equation}
+
+or equivalently
+
+\begin{equation}
+\tensor{\eta}{_\mu_\alpha}\tensor{\eta}{^\alpha^\nu}=\tensor{\delta}{^\nu_\mu}\label{inverse2}
+\end{equation}
+
+\section{Raising and Lowering Indices}
+
+Equipped with the metric and its inverse, we can now discuss the notion of raising and lowering indices.\\
+
+\noindent \textbf{Raising an index:} If we are given a tensor, say $\tensor{T}{_\mu_\nu}$, we can raise one of its index by contracting $\tensor{T}{_\mu_\nu}$ with the inverse metric. That is,
+\begin{equation}
+\text{Given }\tensor{T} {_\mu_\nu} \rightarrow \tensor{T} {^\mu_\nu}=\tensor{\eta}{^\mu^\alpha}\tensor{T}{_\alpha_\nu}
+\end{equation}
+
+\noindent \textbf{Lowering an index:} To lower an index of a given tensor, say $\tensor{S}{^\mu^\nu}$, we should contract it with the metric as follows.\sn{The order of contraction with the metric does not make a difference. Also, changing the order of the metric indices does not change the result because the metric is symmetric. All in all, we have \begin{align*}
+\tensor{S} {^\mu_\nu}&=\tensor{S}{^\mu^\alpha} \tensor{\eta}{_\alpha_\nu}=\tensor{\eta}{_\alpha_\nu}\tensor{S}{^\mu^\alpha} \\ &=\tensor{\eta}{_\nu_\alpha}\tensor{S}{^\mu^\alpha} =\tensor{S}{^\mu^\alpha}\tensor{\eta}{_\nu_\alpha}.
+\end{align*}
+However, note that $\tensor{S}{^\mu_\nu}\neq\tensor{S}{_\mu^\nu}$.}
+
+\begin{equation}
+\text{Given }\tensor{S} {^\mu^\nu} \rightarrow \tensor{S} {^\mu_\nu}=\tensor{S}{^\mu^\alpha}\tensor{\eta}{_\alpha_\nu}
+\end{equation}
+
+Note that raising the metric or lowering its inverse is exactly equivalent to equations $(\ref{inverse1})$, $(\ref{inverse2})$.
+
+We can raise or lower the indices of a tensor of any rank the same way:
+$$\text{Rank }(n,m)\xrightarrow[\tensor{\eta}{_\mu_\nu}]{}\text{Rank }(n-1,m+1)$$
+$$\text{Rank }(n,m)\xrightarrow[\tensor{\eta}{^\mu^\nu}]{}\text{Rank }(n+1,m-1)$$
+
+\noindent Let's now consider what happens to the components $\tensor{V}{^\mu}$ of a vector $\vec{V}$ once we lower its index:
+\begin{equation}
+    \tensor{V}{^\mu}=(V^0,V^1,V^2,V^3)
+\end{equation}
+
+\noindent Contraction with the metric yields
+
+\begin{equation}
+\tensor{V}{_\mu}=\tensor{\eta}{_\mu_\alpha}\tensor{V}{^\alpha}=(-V^0,V^1,V^2,V^3)
+\end{equation}
+
+\noindent Indeed, we get
+\begin{equation}
+\tensor{V}{_0}=\tensor{\eta}{_0_\alpha}\tensor{V}{^\alpha}=\tensor{\eta}{_0_0}\tensor{V}{^0}+\tensor{\eta}{_0_1}\tensor{V}{^1}+\tensor{\eta}{_0_2}\tensor{V}{^2}+\tensor{\eta}{_0_3}\tensor{V}{^3}=-V^0+0+0+0=-V^0
+\end{equation}
+
+\noindent and, similarly,
+
+\begin{equation}
+\tensor{V}{_i}=\tensor{\eta}{_i_\alpha}\tensor{V}{^\alpha}=\tensor{V}{^i}.
+\end{equation}
+
+\section{The Dot Product}
+
+We recall that a dot product takes two vectors and outputs a scalar. It is now natural to define the dot product as the action of the metric on two vectors to produce a scalar. If we let the metric $\bm{\eta}$ act of vectors $\vec{V}$ and $\vec{W}$, we get
+
+\begin{equation}
+\vec{V}\cdot\vec{W}=\bm{\eta}(\vec{V},\vec{W})=\tensor{V}{^\mu}\tensor{W}{_\mu}=\tensor{\eta}{_\mu_\nu}\tensor{V}{^\mu}\tensor{W}{^\nu}
+\end{equation}
+
+\noindent Example:
+\begin{equation}
+\vec{U}\cdot\vec{U}=\tensor{\eta}{_\mu_\nu}\tensor{U}{^\mu}\tensor{V}{^\nu}=\tensor{\eta}{_\mu_\nu}\dfrac{d\tensor{x}{^\mu}}{d\tau}\dfrac{d\tensor{x}{^\nu}}{d\tau}=-1
+\end{equation}\\
+\noindent where the last equality is from HW #2 Problem 2(a).\\
+
+In general, now, we have a way of classifying vectors. In analogy with the way we classified spacetime intervals, we have for the following classification for any vector $\vec{V}$.
+\begin{align}
+\vec{V}\cdot\vec{V}>0&\rightarrow 
+  \text{spacelike} \\
+\vec{V}\cdot\vec{V}<0&\rightarrow 
+  \text{timelike} \\
+\vec{V}\cdot\vec{V}=0&\rightarrow 
+  \text{null}
+\end{align}
+
+
+\part{Levi-Civita Symbol}
+\section{Definition}
+
+The Levi-Civita symbol is an object with $n$ indices in $n$ dimensions. \textbf{It is generally not a tensor}\sn{It is in fact something known as the tensor density because it differs from the Levi-Civita tensor by a volume factor.}. Let us define the Levi-Civita symbol in 4 dimensions:
+\begin{equation}
+  \tensor{\tilde{\epsilon}}{_\mu_\nu_\rho_\sigma} =
+  \begin{cases}
+                                   +1 & \text{if index order can be obtained by even \# of interchanges on 0123} \\
+                                   -1 & \text{if index order can be obtained by odd \# of interchanges on 0123} \\
+ 0 & \text{if any index repeats}
+  \end{cases}
+\end{equation}
+\noindent The interchanges for all Levi-Civita symbols are defined between neighboring indices. Examples:
+\begin{align*}
+    \tensor{\tilde{\epsilon}}{_0_1_2_3}&    =+1 \\
+    \tensor{\tilde{\epsilon}}{_0_1_3_2}&    =-1 \\
+    \tensor{\tilde{\epsilon}}{_0_3_1_2}&    =+1 \\
+    \tensor{\tilde{\epsilon}}{_0_1_0_3}&    =0
+\end{align*}
+
+\noindent In 3 dimensions, the Levi-Civita symbol is similarly defined as:
+\begin{equation}
+  \tensor{\tilde{\epsilon}}{_i_j_k} =
+  \begin{cases}
+                                   +1 & \text{if index order can be obtained by even \# of interchanges on 123} \\
+                                   -1 & \text{if index order can be obtained by odd \# of interchanges on 123} \\
+ 0 & \text{if any index repeats}
+  \end{cases}
+\end{equation}
+
+\noindent The 3 dimensional Levi-Civita symbol defines the cross product between two vectors in 3 dimensions.
+\begin{equation}
+  V_i=\tensor{\tilde{\epsilon}}{_i_j_k}W^j U^k\implies \vec{V}=\vec{W}\times\vec{U}
+\end{equation}
+
+\noindent In 4 dimensions the application of the Levi-Civita symbol on two vectors results in a two index object $\tilde{S}_{\mu\nu}$.
+\begin{equation}
+  \tensor{\tilde{S}}{_\mu_\nu}=\tensor{\tilde{\epsilon}}{_\mu_\nu_\rho_\sigma}\tensor{V}{^\rho}\tensor{U}{^\sigma}
+\end{equation}
+
+\section{Determinants}
+
+We can make determinants using the Levi-Civita Symbol. It can be shown that:\\
+
+\noindent \textbf{2-d:}
+\begin{equation}
+  \text{Given } \tensor{M}{^A_B}\rightarrow \tensor{\tilde{\epsilon}}{_A_B}\tensor{M}{^A_C}\tensor{M}{^B_D}=\det(M)\tensor{\tilde{\epsilon}}{_C_D}
+\end{equation}
+
+\noindent \textbf{3-d:}
+\begin{equation}
+  \text{Given } \tensor{M}{^i_j}\rightarrow \tensor{\tilde{\epsilon}}{_i_j_k}\tensor{M}{^i_a}\tensor{M}{^j_b}\tensor{M}{^k_c}=\det(M)\tensor{\tilde{\epsilon}}{_a_b_c}
+\end{equation}
+
+\noindent \textbf{4-d:}
+\begin{equation}
+  \text{Given } \tensor{M}{^\mu_\nu}\rightarrow \tensor{\tilde{\epsilon}}{_\mu_\nu_\rho_\sigma}\tensor{M}{^\mu_\alpha}\tensor{M}{^\nu_\beta}\tensor{M}{^\rho_\gamma}\tensor{M}{^\sigma_\delta}=\det(M)\tensor{\tilde{\epsilon}}{_\alpha_\beta_\gamma_\delta}
+\end{equation}\\
+\noindent Let's now consider Lorentz transformations by setting $\tensor{M}{^\mu_\nu}= \tensor{\Lambda}{^\mu_\nu}$.
+
+\begin{equation}
+  \tensor{\tilde{\epsilon}}{_{\mu'}_{\nu'}_{\rho'}_{\sigma'}}=\tensor{\Lambda}{^\mu_{\mu'}}\tensor{\Lambda}{^\nu_{\nu'}}\tensor{\Lambda}{^\rho_{\rho'}}\tensor{\Lambda}{^\sigma_{\sigma'}}\tensor{\tilde{\epsilon}}{_{\mu}_{\nu}_{\rho}_{\sigma}}=\det(\Lambda)\tensor{\tilde{\epsilon}}{_{\mu'}_{\nu'}_{\rho'}_{\sigma'}}
+\end{equation}
+\noindent So, for the Levi-Civita symbol to be a tensor we must have $\det(\Lambda)=+1$ which corresponds to proper Lorentz Transformations. The Levi-Civita symbol is not a generally a tensor because this condition is not generally valid in curved spacetime.
+
+\part{More Tensor Notation}
+
+The \textbf{symmetric part} of a rank (0,2) tensor $\tensor{T}{_\mu_\nu}$ is defined as 
+\begin{equation}
+  \tensor{T}{_{(\mu\nu)}}=\frac{1}{2}\left(\tensor{T}{_\mu_\nu}+{T}{_\nu_\mu}\right)
+\end{equation}
+\noindent For a symmetric tensor, we have   $\tensor{T}{_{(\mu\nu)}}=\tensor{T}{_\mu_\nu}$. For example, the metric tensor $\tensor{\eta}{_\mu_\nu}$ is symmetric. Therefore, $\tensor{\eta}{_{(\mu\nu)}}=\tensor{\eta}{_\mu_\nu}$.\\
+
+\noindent Similarly, the \textbf{antisymmetric part} of a rank (0,2) tensor $\tensor{T}{_\mu_\nu}$ is defined as
+\begin{equation}
+  \tensor{T}{_{[\mu\nu]}}=\frac{1}{2}\left(\tensor{T}{_\mu_\nu}-{T}{_\nu_\mu}\right)
+\end{equation}
+\noindent For an antisymmetric tensor, we have   $\tensor{T}{_{[\mu\nu]}}=\tensor{T}{_\mu_\nu}$. For example, for the electromagnetic field tensor $\tensor{F}{_\mu_\nu}$, we have $\tensor{F}{_\mu_\nu}=-\tensor{F}{_\nu_\mu}$. Therefore, $\tensor{F}{_{[\mu\nu]}}=\tensor{F}{_\mu_\nu}$.\\
+
+\noindent Let's write the symmetric and antisymmetric parts for a rank (0,3) tensor.
+\begin{equation}
+  \tensor{T}{_{(\mu\nu\rho)}}=\frac{1}{6}\left(\tensor{T}{_\mu_\nu_\rho}+\tensor{T}{_\rho_\mu_\nu}+\tensor{T}{_\nu_\rho_\mu}+\tensor{T}{_\rho_\nu_\mu}+\tensor{T}{_\mu_\rho_\nu}+\tensor{T}{_\nu_\mu_\rho}\right)
+\end{equation}
+\begin{equation}
+  \tensor{T}{_{[\mu\nu\rho]}}=\frac{1}{6}\left(\tensor{T}{_\mu_\nu_\rho}+\tensor{T}{_\rho_\mu_\nu}+\tensor{T}{_\nu_\rho_\mu}-\tensor{T}{_\rho_\nu_\mu}-\tensor{T}{_\mu_\rho_\nu}-\tensor{T}{_\nu_\mu_\rho}\right)
+\end{equation}\\
+\noindent The number of terms in the formula grows factorially with indices. However, the general formula is apparent. For the symmetric part of the tensor, we should add all index permutations and divide by the number of permutations. For the antisymmetric part of the tensor, we should add all even permutations, subtract all odd permutations and divide the result by the number of permutations.\\
+
+\noindent There is a way to isolate indices on which the symmetrizing or antisymmetrizing operations are performed. We wrap vertical bars around indices on which the operation is not desired.
+
+\begin{equation}
+  \tensor{T}{_{(\mu|\nu\rho|\sigma)}}=\frac{1}{2}\left(\tensor{T}{_\mu_\nu_\rho_\sigma}+\tensor{T}{_\sigma_\nu_\rho_\mu}\right)
+\end{equation}\\
+\noindent In this example, note that the symmetrization only occurs on $\mu$ and $\sigma$.
+
+
+\part{Back to Physics}
+\section{Special Relativity}
+
+Now let's review special relativity with the tensor technology we have developed over the last few lectures.\\
+
+\noindent Define the \textbf{4-velocity} $\tensor{U}{^\mu}$ of a particle as
+
+\begin{equation}
+  \tensor{U}{^\mu}=\dfrac{d\tensor{x}{^\mu}}{d\tau}
+\end{equation}
+
+\noindent along the particle's trajectory. Then, define the \textbf{4-momentum} $\tensor{p}{^\mu}$ of a particle of mass $m$ as
+\begin{equation}
+  \tensor{p}{^\mu}=m\tensor{U}{^\mu}
+\end{equation}
+
+\noindent For massless particles, the 4-momentum is defined as
+\begin{equation}
+  m=0: \quad\tensor{p}{^\mu}=\tensor{k}{^\mu}
+\end{equation}
+where $\tensor{k}{^\mu}$ is the 4-wave vector of the massless particle. We will talk more about massless particles later in the course. For now let's go back to massive particles and look at the dot product formed by the 4-momentum of the particle.
+
+\begin{align}
+  \vec{p}\cdot\vec{p}&=\tensor{p}{_\mu}\tensor{p}{^\mu}=-\left(p^0\right)^2+\left(p^1\right)^2+\left(p^2\right)^2+\left(p^3\right)^2 \label{Pdot1}
+\end{align}
+
+\noindent But this dot product is also
+
+\begin{equation}
+    \vec{p}\cdot\vec{p}=m^2\vec{U}\cdot\vec{U}=-m^2\label{Pdot2}
+\end{equation}
+
+\noindent where again we have used HW #2 Problem 2(a) for the last equality. Equating (\ref{Pdot1}) and (\ref{Pdot2}), we get
+
+\begin{equation}
+  \left(p^0\right)^2-\tensor{\delta}{_i_j}p^ip^j=m^2
+\end{equation}
+
+\noindent or equivalently
+
+\begin{equation}
+  p^0=\sqrt{m^2+\tensor{\delta}{_i_j}p^ip^j}\label{eins}
+\end{equation}
+
+\noindent Using HW #2 equation (3), we see that
+
+\begin{equation}
+  \tensor{p}{^\mu}=m\tensor{U}{^\mu}=
+    \begin{pmatrix}
+        m\gamma\\
+        m\gamma v^i
+    \end{pmatrix}
+\end{equation}
+
+\noindent For a particle at rest, we have $v=0$: $p^0=m$.
+
+\noindent Also, When $v$ is small, we have 
+\begin{equation}
+p^0=m\times\frac{1}{\sqrt{1-v^2}}\approx m\left(1+\frac{v^2}{2}\right)
+\end{equation}
+
+\noindent where we have used the binomial approximation:
+
+\begin{equation}
+\left(1-v^2\right)^{-1/2}\approx 1-\left(-\frac{1}{2}\right)v^2
+\end{equation}
+
+\noindent We see that we recover the right energy limits from $p^0$ for small $v$. This compels us to write
+\begin{equation}
+p^0 &= \text{total energy}
+\end{equation}
+
+\noindent Combining this with (\ref{eins}), we get
+
+\begin{equation}
+E &= \sqrt{m^2+\tensor{\delta}{_i_j}p^ip^j}\\
+\end{equation}
+
+\noindent or more famously 
+\begin{equation}
+E^2 &= \left(mc^2\right)^2 + p^2 c^2
+\end{equation}
+
+
+\section{Newton's equation for 4-momentum}
+
+In terms of 4-momentum, we can write a relativistic form of Newton's equation.
+
+\begin{equation}
+\dfrac{d\tensor{p}{^\mu}}{d\tau}=\tensor{f}{^\mu}
+\end{equation}
+
+\noindent where $\tensor{f}{^\mu}=(f^0,f^1,f^2,f^3)$ is the 4-force and $f^0$ is, in some sense, work done on the system and $f^i$ are the components of the relativistically corrected force.\\
+
+\noindent This equation is not of much use because, in reality, figuring out the rule for the 4-force is not straightforward. One case, however, where the rule for the 4-force is known is electromagnetism. In particular, if one starts with the following 4-force for electromagnetism
+
+\begin{equation}
+\tensor{f}{^\mu} = -q\tensor{U}{^\alpha}\tensor{F}{_\alpha^\mu}
+\end{equation}
+
+\noindent then it can be shown that it reproduces the Lorentz force equation:
+\begin{equation}
+\textbf{F} = q(\textbf{E} + \textbf{v}\times\textbf{B})
+\end{equation}
+
+\end{document}
