@@ -1,0 +1,157 @@
+\documentclass[10pt]{article}
+\usepackage{NotesTeX}
+\usepackage{lipsum}
+\usepackage{tensor}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{hyperref}
+\usepackage{indentfirst}
+
+\newcommand{\bs}{\textbackslash}
+
+
+\title{{\Huge General Relativity}\\{\Large{Class 8 --- Feb. 7, 2020}}} %replace with class number
+\author{Chris Layden}
+
+\emailAdd{cplayden777@utexas.edu} %replace with your email
+\begin{document}
+    \maketitle
+    \flushbottom
+    \newpage
+    \pagestyle{fancynotes}
+    \part{Classical Field Theory}
+	General relativity is a classical field theory, where the metric $\tensor{g}{_\mu_\nu}$ is a tensor field defined at points in spacetime. So here, we will begin to build up the theory of classical fields, deriving the Euler-Lagrange Equations for fields.
+	
+              	\section{Review of Classical Mechanics}\label{sec:class_style}
+              	In classical mechanics, we define the \textbf{Lagrangian} as $L=T-V$, where T is the kinetic energy and V the potential energy of a particle or a system of particles. This Lagrangian is a function of only the position $q$ and velocity $\dot{q}$ of the particle(s), for if $L$ is a function of higher-order derivatives, nonphysical, acausal behavior often arises. Thus, $L = L(q,\dot{q})$. To determine the equations of motion for the particle(s), we search for critical points of the \textbf{action} $S$, where 
+              	
+              	\begin{align}\label{eq:action}
+              	S=\int dt\, L(q,\dot{q})\;.
+              	\end{align}
+              	
+              	That is, we search for trajectories $q(t)$ for which any infinitesimal perturbation in $q(t)$ causes no change in S --- trajectories for which $\delta S=0$. Using the calculus of variations, it can be shown that the equations of motion that satisfy this criterion are those for which
+              	\begin{align}\label{eq:ELE}
+              	\frac{dL}{dq}-\frac{d}{dt}\frac{dL}{d\dot{q}}=0\;.
+              	\end{align}
+              	
+              	These are called the \textbf{Euler-Lagrange Equations}.
+    		 
+               	\section{An Introduction to Classical Field Theory}\label{sec:useful_pkg}
+               		We seek to extend this discussion so that we may  determine how a set of fields $\Phi^a(x^\mu)$ evolves. The fields are defined across spacetime --- on an infinite number of points --- so we cannot simply define a Lagrangian for the fields as we would for a system of particles. Instead, we now define a \textbf{Lagrangian density} $\mathcal{L}$ at each point in space, which is a function of the field and the first derivatives of the field at that point: $\mathcal{L} = \mathcal{L}(\Phi^a,\partial_\mu \Phi^a)$. The Lagrangian is now the integral of this density over space:
+               		
+               		\begin{align}\label{eq:density}
+               		    L = \int d^3x \, \mathcal{L} \; .
+               		\end{align}
+               		
+               		As before, the action $S$ is defined as the Lagrangian integrated over time, so
+               	
+               	    \begin{align}\label{fieldAction}
+               	        S = \int dt \, L = \int d^4x \, \mathcal{L}(\Phi^a,\partial_\mu \Phi^a) \; .
+               	    \end{align}
+               	    
+               	    In analogy to classical mechanics, we are now looking for evolutions of the field(s) $\Phi^a(x^\mu)$ for which any infinitesimal change to the evolution has no effect on the action, such that $\delta S = 0$.
+               		
+               		So we would like to show how $\delta S$ varies due to some infinitesimal perturbation in the field $\delta \Phi^a$. To do so, we will need to determine how $\mathcal{L}$ varies due $\delta \Phi^a$. Therefore, we must first observe how the variables of $\mathcal{L}$, $\Phi^a$ and $\partial_\mu \Phi^a$, change due to such a perturbation. The change in $\Phi^a$ is trivial: 
+               		
+               		\begin{align}\label{phivar}
+               		\Phi^a \rightarrow{} \Phi^a + \delta \Phi^a \; .
+               		\end{align}
+               		
+               		While the change in  $\partial_\mu \Phi^a$ is just the derivative of the change in $\Phi^a$:
+               		
+               		\begin{align}\label{dphivar}
+               		\partial_\mu \Phi^a \rightarrow{} \partial_\mu \Phi^a + \delta (\partial_\mu \Phi^a)  =  \partial_\mu \Phi^a + \partial_\mu \delta \Phi^a \; .
+               		\end{align}
+               		
+               		Note that we are only going to consider perturbations in $\Phi^a$ and $\delta \Phi^a$ that vanish at infinity; that is, we are only considering variations over some contained volume. This criterion will be important later in the derivation.
+               		
+               		Now we may find how $\mathcal{L}$ changes due to the infinitesimal change $\delta \Phi^a$ by Taylor expanding $\mathcal{L}$:
+               		
+               		\begin{align}\label{taylorL}
+               		    \mathcal{L}(\Phi^a + \delta \Phi^a, \partial_\mu \Phi^a + \partial_\mu \delta \Phi^a) = \mathcal{L}(\Phi^a,\partial_\mu \Phi^a) + \frac{\partial \mathcal{L}}{\partial \Phi^a} \delta \Phi^a + \frac{\partial \mathcal{L}}{\partial (\partial_\mu \Phi^a)} \partial_\mu \delta \Phi^a \; .
+               		\end{align}
+               		
+               		We can therefore determine the change in the action, $S \rightarrow{} S + \delta S$ by plugging this Taylor expansion into Eq. \ref{fieldAction} and subtracting the original $S$:
+               		
+               		\begin{align}\label{delSTaylor}
+               		\delta S = \int d^4x \frac{\partial \mathcal{L}}{\partial \Phi^a} \delta \Phi^a + \int d^4x \frac{\partial \mathcal{L}}{\partial (\partial_\mu \Phi^a)} \partial_\mu \delta \Phi^a \; .
+               		\end{align}
+               		
+               		Our strategy now is to put the right side of Eq. \ref{delSTaylor} all in terms of $\delta \Phi^a$. The first term already fits this mold, but the second term has a derivative of $\delta \Phi^a$. We can integrate the second term by parts to put it in a friendlier form:
+               		
+               		\begin{align}\label{intbyparts}
+               		    \delta S = \int d^4x \frac{\partial \mathcal{L}}{\partial \Phi^a} \delta \Phi^a - \int d^4x \:  \partial_\mu \bigg( \frac{\partial \mathcal{L}}{\partial (\partial_\mu \Phi^a)} \bigg) \delta \Phi^a + \int d^4x \:  \partial_\mu \bigg(\frac{\partial \mathcal{L}}{\partial (\partial_\mu \Phi^a)} \delta \Phi^a \bigg) \; .
+               		\end{align}
+               		
+               		We are still left with one pesky term that does not have a simple factor $\delta \Phi^a$. But this term is now the integral of a total derivative, taken over an arbitrarily large volume $V$. By the Divergence Theorem, we can convert integrals of this form (i.e. an integral of a total derivative of some arbitrary vector $\vec{W}$) into integrals of flux over the boundary of the volume, $\delta V$:
+               		
+               		\begin{align}\label{divtheorem}
+               		    \int\limits_{V} d^4x \: \partial_\mu W^\mu = \int\limits_{\delta V} d\Sigma \: n_\mu W^\mu \; .
+               		\end{align}
+               		
+               		Where $d\Sigma$ is an infinitesimal piece of the boundary and $n_\mu W^\mu$ denotes taking the flux of $\vec{W}$ through the boundary. In our case, $\vec{W}$ contains a factor $\delta \Phi^a$, which we have demanded must vanish at infinity. Thus, by simply making the volume of integration arbitrarily large, the third term in Eq. \ref{intbyparts} can be set to zero. We can now pull out our factor $\delta \Phi^a$ from Eq. \ref{intbyparts}, and we are left with
+               		
+               	    \begin{align}\label{final_action}
+               	        \delta S = \int d^4x \bigg( \frac{\partial \mathcal{L}}{\partial \Phi^a} - \partial_\mu \bigg( \frac{\partial \mathcal{L}}{\partial (\partial_\mu \Phi^a)} \bigg) \bigg) \delta \Phi^a \; .
+               	    \end{align}
+               		
+               		We now seek solutions for $\Phi^a$ for which $\delta S$ is zero (i.e. where the action reaches a critical point). In this case, the right side of Eq. \ref{final_action} must be zero for any choice of perturbation $\delta \Phi^a$. The only way to ensure this is true is for the expression in the parentheses to be zero:
+               		
+               		\begin{align}\label{ELE_field}
+               		\frac{\partial \mathcal{L}}{\partial \Phi^a} - \partial_\mu \bigg( \frac{\partial \mathcal{L}}{\partial (\partial_\mu \Phi^a)} \bigg) = 0 \; .
+               		\end{align}
+               		
+               		These are our field equations, the equivalents of the Euler-Lagrange Equations for field theory.
+               		
+               	\section{Example}\label{sec:best_prac}
+               	We now consider a specific Lagrangian density $\mathcal{L}$ and find the solutions of Eq. \ref{ELE_field} for a single scalar field scalar field $\Phi(x^\mu)$. As we will see shortly, the following Lagrangian density is analogous to the classical Lagrangian $L = T - V$:
+               	
+               	\begin{align}\label{field_Ldensity}
+               	\mathcal{L} = -\frac{1}{2}\tensor{\eta}{^\alpha^\beta} \: \partial_\alpha \Phi \: \partial_\beta \Phi - V(\Phi) \; .
+               	\end{align}
+               	 
+               	 The first term can be expanded in the following way: 
+               	 
+               	 \begin{align}\label{field_kinetic}
+               	     -\frac{1}{2}\tensor{\eta}{^\alpha^\beta} \: \partial_\alpha \Phi \: \partial_\beta \Phi = -\frac{1}{2} \Big( -(\partial_t \Phi)^2 + (\partial_x \Phi)^2 + (\partial_y \Phi)^2 + (\partial_z \Phi)^2 \Big) \; .
+               	 \end{align}
+               	 
+               	 Thus the term $\frac{1}{2} (\partial_t \Phi)^2$ in Eq. \ref{field_kinetic} can be thought of as analogous to the classical kinetic energy $T = \frac{1}{2} mv^2$, and the spatial terms represent some gradient energy in the field.
+               	 
+               	 We must now find the necessary derivatives of $\mathcal{L}$ to plug into the Eq. \ref{ELE_field}. Firstly, 
+               	 \begin{align}\label{dLdPhi}
+               	 \frac{\partial \mathcal{L}}{\partial \Phi} = -\frac{\partial V}{\partial \Phi} \; .
+               	 \end{align}
+               	 
+               	 And applying Eq. \ref{field_kinetic}, we see that
+               	 
+               	 \begin{align}\label{dLddPhi}
+               	     \frac{\partial \mathcal{L}}{\partial (\partial_\mu \Phi)} = (\partial_t \Phi,-\partial_x \Phi,-\partial_y \Phi,-\partial_z \Phi) = -\tensor{\eta}{^\mu^\alpha} \: \partial_\alpha \Phi = -\partial^\mu \Phi \; .
+               	 \end{align}
+               	 
+               	 Pluggin Eq. \ref{dLdPhi} and \ref{dLddPhi}  into Eq. \ref{ELE_field}, we find
+               	 
+               	 \begin{align}\label{ELE_solve}
+               	 \frac{\partial V}{\partial \Phi} = -\partial_\mu \partial^\mu \Phi = \Box \: \Phi \; .
+               	 \end{align}
+               	 
+               	 Where $\Box$, called the \textbf{d'Alembertian} operator, acts on $\Phi$ like so:
+               	 
+               	 \begin{align}\label{dAlembert}
+               	     \Box \: \Phi = (\partial_t^2 - \nabla^2)\Phi \; .
+               	 \end{align}
+               	 
+               	 Often the potential $V$ may be written
+               	 
+               	 \begin{align}\label{potential}
+               	     V = \frac{1}{2} m^2 \Phi^2 \; .
+               	 \end{align}
+               	 
+               	 In which case Eq. \ref{ELE_solve} may be rewritten
+               	 
+               	 \begin{align}\label{KG}
+               	     \Box \Phi = m^2 \Phi \; ,
+               	 \end{align}
+               	 
+               	 the famous Klein-Gordon equation.
+    
+\end{document}
