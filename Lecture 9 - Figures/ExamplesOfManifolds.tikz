@@ -1,0 +1,130 @@
+
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Shape: Rectangle [id:dp5055672709450891] 
+\draw   (10,23.25) -- (347.5,23.25) -- (347.5,269.81) -- (10,269.81) -- cycle ;
+%Straight Lines [id:da0541799082187675] 
+\draw    (89,24.25) -- (89,271.04) ;
+%Straight Lines [id:da23352752150023814] 
+\draw    (240,24.25) -- (240,271.04) ;
+%Straight Lines [id:da06548087685456694] 
+\draw    (9.5,56.81) -- (347.5,56.81) ;
+%Straight Lines [id:da18517670886629478] 
+\draw    (10.5,126.81) -- (347.5,126.81) ;
+%Shape: Ellipse [id:dp7952388603476075] 
+\draw  [line width=1.5]  (262,89.88) .. controls (262,77.97) and (271.65,68.31) .. (283.56,68.31) .. controls (295.47,68.31) and (305.13,77.97) .. (305.13,89.88) .. controls (305.13,101.79) and (295.47,111.44) .. (283.56,111.44) .. controls (271.65,111.44) and (262,101.79) .. (262,89.88) -- cycle ;
+%Curve Lines [id:da05410223871968256] 
+\draw    (283.56,68.31) .. controls (265.51,78.05) and (269.35,101.69) .. (276.59,109.95) ;
+%Curve Lines [id:da3455245039536605] 
+\draw    (283.56,68.31) .. controls (292.56,67.46) and (304.28,90.61) .. (291.29,110.21) ;
+%Curve Lines [id:da9189647133107459] 
+\draw    (283.56,68.31) .. controls (287.24,73.36) and (292.56,90.4) .. (285.54,111.7) ;
+%Curve Lines [id:da4481132931593548] 
+\draw    (283.56,68.31) .. controls (277.65,74.6) and (277.44,103.56) .. (281.7,111.66) ;
+%Curve Lines [id:da38300192168922753] 
+\draw    (262,89.88) .. controls (268.5,94.09) and (295.12,94.3) .. (305.13,89.88) ;
+%Curve Lines [id:da38137977621584307] 
+\draw    (264.24,80.45) .. controls (273.39,82.58) and (293.2,83.86) .. (302.15,79.39) ;
+%Curve Lines [id:da04890609493928899] 
+\draw    (264.88,99.05) .. controls (274.03,101.18) and (287.45,103.74) .. (302.79,99.05) ;
+%Curve Lines [id:da04149727882873311] 
+\draw    (269.14,74.28) .. controls (278.29,76.41) and (290.22,77.05) .. (298.31,74.07) ;
+%Straight Lines [id:da29473496999817406] 
+\draw    (10.5,196.81) -- (347.5,196.81) ;
+%Curve Lines [id:da5439437877543751] 
+\draw [line width=1.5]    (255.3,182.01) .. controls (255.3,160.01) and (276.3,166.01) .. (275.3,141.01) ;
+%Curve Lines [id:da255440401061676] 
+\draw [line width=1.5]    (295.3,182.01) .. controls (295.3,160.01) and (316.3,166.01) .. (315.3,141.01) ;
+%Curve Lines [id:da6650410265474336] 
+\draw    (285.3,182.01) .. controls (285.3,160.01) and (306.3,166.01) .. (305.3,141.01) ;
+%Curve Lines [id:da060471114907779455] 
+\draw    (275.3,182.01) .. controls (275.3,160.01) and (296.3,166.01) .. (295.3,141.01) ;
+%Curve Lines [id:da3258458726920288] 
+\draw    (265.3,182.01) .. controls (265.3,160.01) and (286.3,166.01) .. (285.3,141.01) ;
+%Straight Lines [id:da13841234614977682] 
+\draw [line width=1.5]    (275.3,141.01) -- (315.3,141.01) ;
+%Straight Lines [id:da18882901638612415] 
+\draw    (274.3,151.01) -- (314.3,151.01) ;
+%Straight Lines [id:da89050699232276] 
+\draw    (267.3,161.01) -- (307.3,161.01) ;
+%Straight Lines [id:da051472078505148344] 
+\draw    (257.3,171.01) -- (297.3,171.01) ;
+%Straight Lines [id:da31470130901111015] 
+\draw [line width=1.5]    (255.3,182.01) -- (295.3,182.01) ;
+%Shape: Grid [id:dp21296831699294327] 
+\draw  [draw opacity=0] (262,213) -- (306,213) -- (306,257) -- (262,257) -- cycle ; \draw   (273,213) -- (273,257)(284,213) -- (284,257)(295,213) -- (295,257) ; \draw   (262,224) -- (306,224)(262,235) -- (306,235)(262,246) -- (306,246) ; \draw   (262,213) -- (306,213) -- (306,257) -- (262,257) -- cycle ;
+%Straight Lines [id:da14482847924712283] 
+\draw [line width=1.5]    (262,213) -- (262,257) ;
+%Straight Lines [id:da9197709924047432] 
+\draw [line width=1.5]    (306,213) -- (306,257) ;
+%Straight Lines [id:da6116277026306363] 
+\draw [line width=1.5]    (262,213) -- (306,213) ;
+%Straight Lines [id:da9799718870426737] 
+\draw [line width=1.5]    (262,257) -- (306,257) ;
+%Straight Lines [id:da6129412013470565] 
+\draw    (324.5,169.12) -- (324.5,139.12) ;
+\draw [shift={(324.5,137.12)}, rotate = 450] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Shape: Rectangle [id:dp5618197350421079] 
+\draw   (380,23.25) -- (610,23.25) -- (610,269.81) -- (380,269.81) -- cycle ;
+%Straight Lines [id:da5603031935610843] 
+\draw    (464,56.25) -- (464,271.04) ;
+%Straight Lines [id:da3425453114657584] 
+\draw    (610,24.25) -- (610,271.04) ;
+%Straight Lines [id:da40207323347409885] 
+\draw    (379.5,56.81) -- (609.5,56.81) ;
+%Straight Lines [id:da22956656581506496] 
+\draw    (380.5,153.81) -- (609.5,153.81) ;
+%Straight Lines [id:da4705069650634177] 
+%\draw [line width=1.5]    (676,213) -- (676,257) ;
+%Straight Lines [id:da8219513759179924] 
+%\draw    (694.5,169.12) -- (694.5,139.12) ;
+%\draw [shift={(694.5,137.12)}, rotate = 450] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Shape: Grid [id:dp9150048565967743] 
+\draw  [draw opacity=0] (526.27,201.1) -- (569.47,209.45) -- (533.03,236.02) -- (489.83,227.67) -- cycle ; \draw   (537.07,203.19) -- (500.63,229.76)(547.87,205.28) -- (511.43,231.85)(558.67,207.36) -- (522.23,233.93) ; \draw   (514.12,209.96) -- (557.32,218.31)(501.97,218.81) -- (545.18,227.17) ; \draw   (526.27,201.1) -- (569.47,209.45) -- (533.03,236.02) -- (489.83,227.67) -- cycle ;
+%Straight Lines [id:da1662153638321211] 
+\draw [line width=1.5]    (526.27,201.1) -- (488.76,228.45) ;
+%Straight Lines [id:da013861031847801186] 
+\draw [line width=1.5]    (569.47,209.45) -- (531.96,236.8) ;
+%Straight Lines [id:da7960824830468722] 
+\draw [line width=1.5]    (526.27,201.1) -- (569.47,209.45) ;
+%Straight Lines [id:da7285367784814745] 
+\draw [line width=1.5]    (488.76,228.45) -- (531.96,236.8) ;
+%Straight Lines [id:da6055829475842325] 
+\draw    (530,218.96) -- (530,168.96) -- (530,167.96) ;
+
+% Text Node
+\draw (47,40.41) node   [align=left] {Manifold};
+% Text Node
+\draw (140,40.81) node   [align=left] {Description};
+% Text Node
+\draw (158,90.81) node   [align=left] {The Surface of a \\sphere};
+% Text Node
+\draw (45,86.62) node  [font=\large]  {$S^{2}$};
+% Text Node
+\draw (51,162) node    {$M^{4}_{Spacetime}$};
+% Text Node
+\draw (164,161) node   [align=left] {The collection of all \\events on spacetime};
+% Text Node
+\draw (46,234.46) node    {$\mathbb{R}^{n}$};
+% Text Node
+\draw (164,233.46) node   [align=left] {The collection of all \\n-tuples of real\\numbers};
+% Text Node
+\draw (195,253.46) node  [font=\footnotesize]  {$( x_{1} ,x_{2} ,..,x_{n})$};
+% Text Node
+\draw (282,41.46) node   [align=left] {Diagram};
+% Text Node
+\draw (325,177.12) node   [align=left] {time};
+% Text Node
+\draw (422,104.81) node   [align=left] {Description};
+% Text Node
+\draw (534,106.81) node   [align=left] {A plane with a \\line coming out\\of it.};
+% Text Node
+\draw (490,40.41) node   [align=left] {\textbf{Not} a Manifold};
+% Text Node
+\draw (423,213.81) node   [align=left] {Diagram};
+
+\end{tikzpicture}

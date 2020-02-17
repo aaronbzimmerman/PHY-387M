@@ -1,0 +1,82 @@
+
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,138.64999389648438); %set diagram left start at 0, and has height of 138.64999389648438
+
+%Shape: Ellipse [id:dp1420442812577336] 
+\draw   (30.75,10) .. controls (38.9,10) and (45.5,32.25) .. (45.5,59.71) .. controls (45.5,87.16) and (38.9,109.41) .. (30.75,109.41) .. controls (22.6,109.41) and (16,87.16) .. (16,59.71) .. controls (16,32.25) and (22.6,10) .. (30.75,10) -- cycle ;
+%Flowchart: Connector [id:dp8953212953940233] 
+\draw   (25,28.91) .. controls (25,25.87) and (27.46,23.41) .. (30.5,23.41) .. controls (33.54,23.41) and (36,25.87) .. (36,28.91) .. controls (36,31.95) and (33.54,34.41) .. (30.5,34.41) .. controls (27.46,34.41) and (25,31.95) .. (25,28.91) -- cycle ;
+%Flowchart: Connector [id:dp2848939032822819] 
+\draw   (25,48.91) .. controls (25,45.87) and (27.46,43.41) .. (30.5,43.41) .. controls (33.54,43.41) and (36,45.87) .. (36,48.91) .. controls (36,51.95) and (33.54,54.41) .. (30.5,54.41) .. controls (27.46,54.41) and (25,51.95) .. (25,48.91) -- cycle ;
+%Flowchart: Connector [id:dp5739620978835185] 
+\draw   (25,68.91) .. controls (25,65.87) and (27.46,63.41) .. (30.5,63.41) .. controls (33.54,63.41) and (36,65.87) .. (36,68.91) .. controls (36,71.95) and (33.54,74.41) .. (30.5,74.41) .. controls (27.46,74.41) and (25,71.95) .. (25,68.91) -- cycle ;
+%Flowchart: Connector [id:dp7333462920620866] 
+\draw   (25,88.91) .. controls (25,85.87) and (27.46,83.41) .. (30.5,83.41) .. controls (33.54,83.41) and (36,85.87) .. (36,88.91) .. controls (36,91.95) and (33.54,94.41) .. (30.5,94.41) .. controls (27.46,94.41) and (25,91.95) .. (25,88.91) -- cycle ;
+%Shape: Ellipse [id:dp08269242679614708] 
+\draw   (110.75,10) .. controls (118.9,10) and (125.5,32.25) .. (125.5,59.71) .. controls (125.5,87.16) and (118.9,109.41) .. (110.75,109.41) .. controls (102.6,109.41) and (96,87.16) .. (96,59.71) .. controls (96,32.25) and (102.6,10) .. (110.75,10) -- cycle ;
+%Flowchart: Connector [id:dp4549117443373931] 
+\draw   (105,28.91) .. controls (105,25.87) and (107.46,23.41) .. (110.5,23.41) .. controls (113.54,23.41) and (116,25.87) .. (116,28.91) .. controls (116,31.95) and (113.54,34.41) .. (110.5,34.41) .. controls (107.46,34.41) and (105,31.95) .. (105,28.91) -- cycle ;
+%Flowchart: Connector [id:dp8456860450689725] 
+\draw   (105,48.91) .. controls (105,45.87) and (107.46,43.41) .. (110.5,43.41) .. controls (113.54,43.41) and (116,45.87) .. (116,48.91) .. controls (116,51.95) and (113.54,54.41) .. (110.5,54.41) .. controls (107.46,54.41) and (105,51.95) .. (105,48.91) -- cycle ;
+%Flowchart: Connector [id:dp4548331314660914] 
+\draw   (105,68.91) .. controls (105,65.87) and (107.46,63.41) .. (110.5,63.41) .. controls (113.54,63.41) and (116,65.87) .. (116,68.91) .. controls (116,71.95) and (113.54,74.41) .. (110.5,74.41) .. controls (107.46,74.41) and (105,71.95) .. (105,68.91) -- cycle ;
+%Flowchart: Connector [id:dp9704140818144571] 
+\draw   (105,88.91) .. controls (105,85.87) and (107.46,83.41) .. (110.5,83.41) .. controls (113.54,83.41) and (116,85.87) .. (116,88.91) .. controls (116,91.95) and (113.54,94.41) .. (110.5,94.41) .. controls (107.46,94.41) and (105,91.95) .. (105,88.91) -- cycle ;
+%Shape: Ellipse [id:dp9581267181233748] 
+\draw   (216.75,10) .. controls (224.9,10) and (231.5,32.25) .. (231.5,59.71) .. controls (231.5,87.16) and (224.9,109.41) .. (216.75,109.41) .. controls (208.6,109.41) and (202,87.16) .. (202,59.71) .. controls (202,32.25) and (208.6,10) .. (216.75,10) -- cycle ;
+%Flowchart: Connector [id:dp6497865039955351] 
+\draw   (211,28.91) .. controls (211,25.87) and (213.46,23.41) .. (216.5,23.41) .. controls (219.54,23.41) and (222,25.87) .. (222,28.91) .. controls (222,31.95) and (219.54,34.41) .. (216.5,34.41) .. controls (213.46,34.41) and (211,31.95) .. (211,28.91) -- cycle ;
+%Flowchart: Connector [id:dp5223014418669796] 
+\draw   (211,48.91) .. controls (211,45.87) and (213.46,43.41) .. (216.5,43.41) .. controls (219.54,43.41) and (222,45.87) .. (222,48.91) .. controls (222,51.95) and (219.54,54.41) .. (216.5,54.41) .. controls (213.46,54.41) and (211,51.95) .. (211,48.91) -- cycle ;
+%Flowchart: Connector [id:dp9644782269162713] 
+\draw   (211,68.91) .. controls (211,65.87) and (213.46,63.41) .. (216.5,63.41) .. controls (219.54,63.41) and (222,65.87) .. (222,68.91) .. controls (222,71.95) and (219.54,74.41) .. (216.5,74.41) .. controls (213.46,74.41) and (211,71.95) .. (211,68.91) -- cycle ;
+%Flowchart: Connector [id:dp10343306192800705] 
+\draw   (211,88.91) .. controls (211,85.87) and (213.46,83.41) .. (216.5,83.41) .. controls (219.54,83.41) and (222,85.87) .. (222,88.91) .. controls (222,91.95) and (219.54,94.41) .. (216.5,94.41) .. controls (213.46,94.41) and (211,91.95) .. (211,88.91) -- cycle ;
+%Shape: Ellipse [id:dp5503163786841285] 
+\draw   (296.75,10) .. controls (304.9,10) and (311.5,32.25) .. (311.5,59.71) .. controls (311.5,87.16) and (304.9,109.41) .. (296.75,109.41) .. controls (288.6,109.41) and (282,87.16) .. (282,59.71) .. controls (282,32.25) and (288.6,10) .. (296.75,10) -- cycle ;
+%Flowchart: Connector [id:dp626120592849738] 
+\draw   (291,28.91) .. controls (291,25.87) and (293.46,23.41) .. (296.5,23.41) .. controls (299.54,23.41) and (302,25.87) .. (302,28.91) .. controls (302,31.95) and (299.54,34.41) .. (296.5,34.41) .. controls (293.46,34.41) and (291,31.95) .. (291,28.91) -- cycle ;
+%Flowchart: Connector [id:dp02098383473614618] 
+\draw   (291,48.91) .. controls (291,45.87) and (293.46,43.41) .. (296.5,43.41) .. controls (299.54,43.41) and (302,45.87) .. (302,48.91) .. controls (302,51.95) and (299.54,54.41) .. (296.5,54.41) .. controls (293.46,54.41) and (291,51.95) .. (291,48.91) -- cycle ;
+%Flowchart: Connector [id:dp5664884094502642] 
+\draw   (291,68.91) .. controls (291,65.87) and (293.46,63.41) .. (296.5,63.41) .. controls (299.54,63.41) and (302,65.87) .. (302,68.91) .. controls (302,71.95) and (299.54,74.41) .. (296.5,74.41) .. controls (293.46,74.41) and (291,71.95) .. (291,68.91) -- cycle ;
+%Flowchart: Connector [id:dp8291638196061419] 
+\draw   (291,88.91) .. controls (291,85.87) and (293.46,83.41) .. (296.5,83.41) .. controls (299.54,83.41) and (302,85.87) .. (302,88.91) .. controls (302,91.95) and (299.54,94.41) .. (296.5,94.41) .. controls (293.46,94.41) and (291,91.95) .. (291,88.91) -- cycle ;
+%Straight Lines [id:da06713382649662214] 
+\draw    (30.5,28.91) -- (108.56,48.43) ;
+\draw [shift={(110.5,48.91)}, rotate = 194.04] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da8769750066355422] 
+\draw    (30.5,48.91) -- (108.56,68.43) ;
+\draw [shift={(110.5,68.91)}, rotate = 194.04] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da5282651581840918] 
+\draw    (30.5,88.91) -- (108.56,69.4) ;
+\draw [shift={(110.5,68.91)}, rotate = 525.96] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da8266039326319738] 
+\draw    (30.5,68.91) -- (108.56,88.43) ;
+\draw [shift={(110.5,88.91)}, rotate = 194.04] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da34095628197655903] 
+\draw [color={rgb, 255:red, 42; green, 120; blue, 19 }  ,draw opacity=1 ]   (138.75,52.71) .. controls (149.5,69.89) and (140.5,60.89) .. (168.5,42.89) ;
+%Straight Lines [id:da7300337948761282] 
+\draw    (216.5,88.91) -- (294.56,69.4) ;
+\draw [shift={(296.5,68.91)}, rotate = 525.96] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da6361761087179325] 
+\draw    (216.75,29) -- (295.06,48.43) ;
+\draw [shift={(297,48.91)}, rotate = 193.94] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da33886142564455746] 
+\draw    (216.5,48.91) -- (294.56,29.4) ;
+\draw [shift={(296.5,28.91)}, rotate = 525.96] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da1386410769491182] 
+\draw    (216.5,88.91) -- (294.5,88.91) ;
+\draw [shift={(296.5,88.91)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da05086165121388353] 
+\draw [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ]   (331.89,42.89) -- (350.11,64.61) ;
+%Straight Lines [id:da06284211814794882] 
+\draw [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ]   (350.5,42.89) -- (331.5,64.61) ;
+
+
+
+
+\end{tikzpicture}

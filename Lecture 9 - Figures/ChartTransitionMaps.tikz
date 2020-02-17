@@ -1,0 +1,95 @@
+
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,475.69602966308594); %set diagram left start at 0, and has height of 475.69602966308594
+
+%Curve Lines [id:da2896214219679667] 
+\draw    (3.05,111.85) .. controls (54.14,51.78) and (108.24,38.22) .. (137.79,49.13) ;
+%Straight Lines [id:da4179541205606838] 
+\draw    (137.79,49.13) -- (236.5,115.28) ;
+%Curve Lines [id:da9597228567215441] 
+\draw    (101.76,178) .. controls (140.89,127.71) and (194.53,110.29) .. (236.5,115.28) ;
+%Straight Lines [id:da04510421527961883] 
+\draw    (3.05,111.85) -- (101.76,178) ;
+%Shape: Polygon Curved [id:ds4775541445616551] 
+\draw  [fill={rgb, 255:red, 255; green, 71; blue, 71 }  ,fill opacity=0.5 ] (85.5,70) .. controls (105.5,60) and (120.49,64.6) .. (143.5,66) .. controls (166.51,67.4) and (189.13,90.45) .. (181.88,97.7) .. controls (174.63,104.95) and (136.5,101) .. (136.5,118) .. controls (136.5,135) and (91.88,143.7) .. (71.88,113.7) .. controls (51.88,83.7) and (65.5,80) .. (85.5,70) -- cycle ;
+%Shape: Grid [id:dp015367084248610885] 
+\draw  [draw opacity=0] (321.88,140.55) -- (453,140.55) -- (453,14.55) -- (321.88,14.55) -- cycle ; \draw   (321.88,140.55) -- (321.88,14.55)(341.88,140.55) -- (341.88,14.55)(361.88,140.55) -- (361.88,14.55)(381.88,140.55) -- (381.88,14.55)(401.88,140.55) -- (401.88,14.55)(421.88,140.55) -- (421.88,14.55)(441.88,140.55) -- (441.88,14.55) ; \draw   (321.88,140.55) -- (453,140.55)(321.88,120.55) -- (453,120.55)(321.88,100.55) -- (453,100.55)(321.88,80.55) -- (453,80.55)(321.88,60.55) -- (453,60.55)(321.88,40.55) -- (453,40.55)(321.88,20.55) -- (453,20.55) ; \draw    ;
+%Shape: Polygon Curved [id:ds9179792815682231] 
+\draw  [fill={rgb, 255:red, 92; green, 179; blue, 255 }  ,fill opacity=0.5 ] (34.5,93) .. controls (54.5,83) and (89.87,63.3) .. (112.88,64.7) .. controls (135.89,66.1) and (138.12,91.3) .. (136.5,118) .. controls (134.88,144.7) and (101.88,125.7) .. (87.88,136.7) .. controls (73.88,147.7) and (88.88,155.88) .. (61.88,141.88) .. controls (34.88,127.88) and (14.5,103) .. (34.5,93) -- cycle ;
+%Shape: Grid [id:dp44353478104543576] 
+\draw  [draw opacity=0] (31.88,400.55) -- (163,400.55) -- (163,274.55) -- (31.88,274.55) -- cycle ; \draw   (31.88,400.55) -- (31.88,274.55)(51.88,400.55) -- (51.88,274.55)(71.88,400.55) -- (71.88,274.55)(91.88,400.55) -- (91.88,274.55)(111.88,400.55) -- (111.88,274.55)(131.88,400.55) -- (131.88,274.55)(151.88,400.55) -- (151.88,274.55) ; \draw   (31.88,400.55) -- (163,400.55)(31.88,380.55) -- (163,380.55)(31.88,360.55) -- (163,360.55)(31.88,340.55) -- (163,340.55)(31.88,320.55) -- (163,320.55)(31.88,300.55) -- (163,300.55)(31.88,280.55) -- (163,280.55) ; \draw    ;
+%Shape: Polygon Curved [id:ds4406919657093047] 
+\draw  [fill={rgb, 255:red, 255; green, 71; blue, 71 }  ,fill opacity=0.5 ] (365.5,48.2) .. controls (385.5,38.2) and (384.49,51.8) .. (407.5,53.2) .. controls (430.51,54.6) and (451.5,97.2) .. (430.5,101.2) .. controls (409.5,105.2) and (394.5,106.2) .. (390.5,127.2) .. controls (386.5,148.2) and (361.88,130.55) .. (341.88,100.55) .. controls (321.88,70.55) and (345.5,58.2) .. (365.5,48.2) -- cycle ;
+%Shape: Polygon Curved [id:ds7424182116849432] 
+\draw  [fill={rgb, 255:red, 92; green, 179; blue, 255 }  ,fill opacity=0.5 ] (44.5,331.67) .. controls (64.5,321.67) and (99.87,301.97) .. (122.88,303.37) .. controls (145.89,304.77) and (148.12,329.97) .. (146.5,356.67) .. controls (144.88,383.37) and (111.88,364.37) .. (97.88,375.37) .. controls (83.88,386.37) and (98.88,394.55) .. (71.88,380.55) .. controls (44.88,366.55) and (24.5,341.67) .. (44.5,331.67) -- cycle ;
+%Curve Lines [id:da5281320057885546] 
+\draw  [dash pattern={on 0.84pt off 2.51pt}]  (79.88,411.7) .. controls (88.66,394.15) and (113.23,409.1) .. (106.11,378.12) ;
+\draw [shift={(105.5,375.65)}, rotate = 435.27] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+%Curve Lines [id:da1691116666732393] 
+\draw    (32.88,111.79) .. controls (-3.93,150.84) and (7.76,263.42) .. (70.93,339.41) ;
+\draw [shift={(71.88,340.55)}, rotate = 229.9] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da17388917049077435] 
+\draw    (96.88,327.79) .. controls (123.61,274.33) and (130.74,163.05) .. (80.43,140.45) ;
+\draw [shift={(78.88,139.79)}, rotate = 381.99] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da35405636722682066] 
+\draw    (137.88,73.55) .. controls (156.79,21.81) and (303.41,1.75) .. (367.92,76.42) ;
+\draw [shift={(368.88,77.55)}, rotate = 229.9] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da9415974477100371] 
+\draw  [dash pattern={on 0.84pt off 2.51pt}]  (482.88,52.51) .. controls (469.09,44.63) and (466.57,14.57) .. (427.32,53.8) ;
+\draw [shift={(425.5,55.65)}, rotate = 314.31] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+%Curve Lines [id:da8468782246975544] 
+\draw    (134.12,104.46) .. controls (183.94,125.36) and (284.02,152.88) .. (358.88,111.55) ;
+\draw [shift={(131.88,103.51)}, rotate = 23.2] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Shape: Polygon Curved [id:ds7843896932131351] 
+\draw  [fill={rgb, 255:red, 172; green, 0; blue, 0 }  ,fill opacity=0.3 ] (87.5,311) .. controls (107.5,301) and (141.5,294.76) .. (145.5,325.76) .. controls (149.5,356.76) and (147.5,370.76) .. (133.5,370.76) .. controls (119.5,370.76) and (103.5,379.76) .. (83.5,349.76) .. controls (63.5,319.76) and (67.5,321) .. (87.5,311) -- cycle ;
+%Shape: Polygon Curved [id:ds19585008898624823] 
+\draw  [fill={rgb, 255:red, 0; green, 88; blue, 172 }  ,fill opacity=0.3 ] (351.5,56.31) .. controls (371.5,46.31) and (385.5,32.31) .. (389.5,63.31) .. controls (393.5,94.31) and (396.5,90.31) .. (393.5,117.31) .. controls (390.5,144.31) and (375.5,141.31) .. (351.5,113.31) .. controls (327.5,85.31) and (331.5,66.31) .. (351.5,56.31) -- cycle ;
+%Curve Lines [id:da6766796381178022] 
+\draw  [dash pattern={on 4.5pt off 4.5pt}]  (380.5,128.65) .. controls (403.27,336.55) and (197.68,359.21) .. (145.05,361.58) ;
+\draw [shift={(143.5,361.65)}, rotate = 357.71000000000004] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da36354948965215694] 
+\draw  [dash pattern={on 4.5pt off 4.5pt}]  (131.88,320.55) .. controls (235.36,303.64) and (356.28,196.72) .. (361.81,121.68) ;
+\draw [shift={(361.88,120.55)}, rotate = 453.34] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+\draw (152,88.55) node    {$U_{1}$};
+% Text Node
+\draw (125,177.55) node    {$\mathcal{M}$};
+% Text Node
+\draw (332,152.55) node    {$\mathbb{R}^{n}$};
+% Text Node
+\draw (241,10) node    {$\phi _{1}$};
+% Text Node
+\draw (501,67) node    {$\phi _{1}( U_{1}) \ $};
+% Text Node
+\draw (517,101) node   [align=left] {is an open\\subset of};
+% Text Node
+\draw (560,111.55) node    {$\mathbb{R}^{n}$};
+% Text Node
+\draw (248,156) node    {$\phi ^{-1}_{1}$};
+% Text Node
+\draw (55,117.55) node    {$U_{2}$};
+% Text Node
+\draw (102,99.55) node    {$U_{1} \cap U_{2}$};
+% Text Node
+\draw (41,416.55) node    {$\mathbb{R}^{n}$};
+% Text Node
+\draw (80,424) node    {$\phi _{2}( U_{2}) \ $};
+% Text Node
+\draw (143,435) node   [align=left] {is an open\\subset of};
+% Text Node
+\draw (186,443.55) node    {$\mathbb{R}^{n}$};
+% Text Node
+\draw (32,199) node    {$\phi _{2}$};
+% Text Node
+\draw (135,221) node    {$\phi ^{-1}_{2}$};
+% Text Node
+\draw (356,325) node    {$\phi _{2} \circ \phi ^{-1}_{1}$};
+% Text Node
+\draw (250,224) node    {$\phi _{1} \circ \phi ^{-1}_{2}$};
+
+
+\end{tikzpicture}

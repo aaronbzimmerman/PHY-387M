@@ -1,0 +1,50 @@
+
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Curve Lines [id:da6045031736518898] 
+\draw    (3.05,141.85) .. controls (54.14,81.78) and (108.24,68.22) .. (137.79,79.13) ;
+%Straight Lines [id:da6673159815260592] 
+\draw    (137.79,79.13) -- (236.5,145.28) ;
+%Curve Lines [id:da7593498166846173] 
+\draw    (101.76,208) .. controls (140.89,157.71) and (194.53,140.29) .. (236.5,145.28) ;
+%Straight Lines [id:da5737020943480511] 
+\draw    (3.05,141.85) -- (101.76,208) ;
+%Shape: Polygon Curved [id:ds5933054421773951] 
+\draw  [fill={rgb, 255:red, 2; green, 111; blue, 208 }  ,fill opacity=0.35 ] (79.5,100) .. controls (99.5,90) and (114.49,94.6) .. (137.5,96) .. controls (160.51,97.4) and (172.75,113.75) .. (165.5,121) .. controls (158.25,128.25) and (130.5,131) .. (130.5,148) .. controls (130.5,165) and (102.5,175) .. (82.5,145) .. controls (62.5,115) and (59.5,110) .. (79.5,100) -- cycle ;
+%Shape: Grid [id:dp3824681513170989] 
+\draw  [draw opacity=0] (321.88,170.55) -- (453,170.55) -- (453,44.55) -- (321.88,44.55) -- cycle ; \draw   (321.88,170.55) -- (321.88,44.55)(341.88,170.55) -- (341.88,44.55)(361.88,170.55) -- (361.88,44.55)(381.88,170.55) -- (381.88,44.55)(401.88,170.55) -- (401.88,44.55)(421.88,170.55) -- (421.88,44.55)(441.88,170.55) -- (441.88,44.55) ; \draw   (321.88,170.55) -- (453,170.55)(321.88,150.55) -- (453,150.55)(321.88,130.55) -- (453,130.55)(321.88,110.55) -- (453,110.55)(321.88,90.55) -- (453,90.55)(321.88,70.55) -- (453,70.55)(321.88,50.55) -- (453,50.55) ; \draw    ;
+%Shape: Polygon Curved [id:ds5662007811356529] 
+\draw  [fill={rgb, 255:red, 2; green, 111; blue, 208 }  ,fill opacity=0.35 ] (366.88,79.55) .. controls (386.15,69.92) and (385.93,78.85) .. (400.2,93.82) .. controls (400.74,94.39) and (401.3,94.97) .. (401.88,95.55) .. controls (417.88,111.55) and (421.13,135.31) .. (413.88,142.55) .. controls (406.63,149.8) and (397.88,126.55) .. (381.88,130.55) .. controls (365.88,134.55) and (363.88,167.55) .. (343.88,137.55) .. controls (323.88,107.55) and (346.88,89.55) .. (366.88,79.55) -- cycle ;
+%Curve Lines [id:da8193544302387814] 
+\draw    (122.88,106.55) .. controls (141.79,54.81) and (302.27,31.78) .. (366.92,106.42) ;
+\draw [shift={(367.88,107.55)}, rotate = 229.9] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da8020119262418375] 
+\draw  [dash pattern={on 0.84pt off 2.51pt}]  (482.88,82.51) .. controls (469.09,74.63) and (448.51,58.02) .. (408.72,97.66) ;
+\draw [shift={(406.88,99.51)}, rotate = 314.31] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+%Curve Lines [id:da08576289583921382] 
+\draw    (121.13,157.44) .. controls (171.32,177.68) and (284.02,182.88) .. (358.88,141.55) ;
+\draw [shift={(118.88,156.51)}, rotate = 23.2] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+\draw (110,120.55) node    {$U$};
+% Text Node
+\draw (125,207.55) node    {$\mathcal{M}$};
+% Text Node
+\draw (331,186.55) node    {$\mathbb{R}^{n}$};
+% Text Node
+\draw (241,40) node    {$\phi $};
+% Text Node
+\draw (501,97) node    {$\phi ( U) \ $};
+% Text Node
+\draw (517,131) node   [align=left] {is an open\\subset of};
+% Text Node
+\draw (560,141.55) node    {$\mathbb{R}^{n}$};
+% Text Node
+\draw (248,186) node    {$\phi ^{-1}$};
+
+
+\end{tikzpicture}
