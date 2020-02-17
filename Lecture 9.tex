@@ -1,0 +1,350 @@
+\documentclass[10pt]{article}
+\usepackage{NotesTeX} %/Path/to/package should be replaced with package location
+\usepackage{lipsum}
+\usepackage{tensor}
+\usepackage{graphicx,wrapfig,float,slashed,subcaption,bbold,bm}
+\usepackage{amsmath,mathtools,amssymb,epsfig,graphicx,xcolor}
+\usepackage{epstopdf}
+\epstopdfsetup{update}
+\usepackage{ragged2e}
+\usepackage{mciteplus}
+\usepackage[many]{tcolorbox}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.5.1}
+\usepackage{tikz}
+\usetikzlibrary{babel}
+\tikzset{>=latex}
+\usepackage{hyperref}
+
+\newcommand{\bs}{\textbackslash}
+\newcommand{\nc}{\newcommand}
+\newcommand{\non}{\nonumber}	
+\newcommand{\noi}{\noindent}
+\newcommand{\barx}{\bar{x}}
+%
+
+\newcommand{\hsp}{\hspace{0.5cm}}
+\newcommand{\lsp}{\hspace{1cm}}
+\newcommand{\Lsp}{\hspace{2cm}}
+%\nnewcommand{\LLsp}{\lsp\lsp}
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\p}{\prime}
+\newcommand{\sgn}{\text{sgn}}
+\newcommand{\ph}{\varphi}
+
+
+\newcommand{\beq}{\begin{equation}}  \newcommand{\eeq}{\end{equation}}
+\newcommand{\bea}{\begin{eqnarray}}  \newcommand{\eea}{\end{eqnarray}}
+\newcommand{\baa}{\begin{array}}     \newcommand{\eaa}{\end{array}}
+\newcommand{\bit}{\begin{itemize}}   \newcommand{\eit}{\end{itemize}}
+\newcommand{\ben}{\begin{enumerate}} \newcommand{\een}{\end{enumerate}}
+\newcommand{\bce}{\begin{center}}    \newcommand{\ece}{\end{center}}
+\newcommand{\bpm}{\begin{pmatrix}}   \newcommand{\epm}{\end{pmatrix}}
+\newcommand{\bvt}{\begin{verbatim}}  
+\newcommand{\evt}{\end{verbatim}}
+
+
+\title{{\Huge General Relativity}\\{\Large{Class 9}}} %replace with class number
+\author{Asad Hussain}
+
+\emailAdd{asadh@utexas.edu} %replace with your email
+
+
+\begin{document}
+\maketitle
+\flushbottom
+\newpage
+\pagestyle{fancynotes}
+    
+
+\part{The Equivalence Principle}
+
+%\section{Recap}
+Last time we considered field theory, and how to construct and extract dynamics of the theory of fields: inherently local objects. Our objective is flesh out more of the mathematical machinery necessary to be able to say exact things about generic "local" objects. Before we dive into the math we will introduce some postulates that allow us to connect most of the physics as we have learnt so far to the local ideas we are developing.
+
+\section{The Weak Equivalence Principle}
+We know from considering $F = ma$ and $F_g = -mg$, that all objects fall at the same rate, regardless of their mass. There's actually no \textit{apriori} reason as to why these masses should be the same. The $m$ in $F = ma$ (lets call it $m_I$), is the inertial mass, and contains information about the reaction of an object to a force. The $m$ in $F_g = -mg$ (let's call it $m_g$) is sort of the "gravitational charge", and explains how gravitational forces act on it. The fact that $m_I = m_g$ \sn{or at least $m_I \propto m_g$, with the proportionality constant being absorbed into the gravitational constant $G$.}, seems to be an added assumption in the physics of simple Newtonian gravity, and we are going to take it as such. It is a \textbf{postulate}. This leads us to what is known as the weak equivalence principle. \\ 
+
+
+\begin{tcolorbox}
+\textbf{The Weak Equivalence Principle} states that the "inertial mass" $m_I$ is equal to the "gravitational mass" $m_g$
+\end{tcolorbox}
+
+
+
+We can coax out a new way to formulate this postulate: Let's consider the case when we have two observers, as shown in \textbf{Figure 1}. One in an accelerating reference frame going along in a rocket, and another staying stationary in a gravitational field \sn{Notice how one needs the floor to provide a reaction force of $-\vec{g}$ to an object to prevent it from going into free fall.}.
+
+
+
+\begin{figure}[h!]
+\centering
+\input{Lecture 9 - Figures/StrongEquivalencePrinciple.tikz}
+\caption{The Weak Equivalence principle implies that these observers cannot use local gravitational experiments to determine whether they are accelerating in free space or they are stationary in a gravitational field.}
+\label{fig:my_label}
+\end{figure}
+   
+\pagebreak
+
+The one that's accelerating finds that the ball in her hand falls at an acceleration of $a$, owing to a fictitious force due to her accelerating reference frame. The observer that is stationary in a gravitational field will find that the ball in her hand falls at an acceleration given by $\frac{m_g a}{m_I}$. If the weak equivalence principle were untrue: they would have a direct test to tell if they were in an accelerating frame or a gravitational field. Since the Weak Equivalence Principle is correct, it implies that no local gravitational experiment can tell the difference between an accelerating reference frame and one that is stationary in a gravitational field. 
+
+\section{The Strong Equivalence Principle}
+Well one may not be able to distinguish between these two observers using gravitational experiments, but maybe light or some weird exotic effect of the other fundamental forces might be able to distinguish those two scenarios. Well one of the most important postulates needed to derive General Relativity is the \textbf{Strong Equivalence Principle}, which generalises the weak equivalence principle to work for \textbf{all} possible laws of physics. It states that: 
+\\
+
+\begin{tcolorbox}
+\textbf{The Strong Equivalence Principle} states that all Laws of Physics reduce to Special Relativity without gravity in freely falling space
+\end{tcolorbox}
+
+This essentially states that the two observers in \textbf{Figure 2 a} cannot do \textbf{any} \textbf{local} experiment that can help them distinguish their situations from each other. The implication of \textbf{local} here is important. Because if one does experiments that extend over a large region, one can detect gravitational tidal forces between particles, since they'll fall and accelerate closer together, as can be seen in \textbf{Figure 2 b}. In local experiments, as in Figure 2 a we can see that no such relative tidal forces can be detected.
+\begin{figure}[h!]
+\centering
+\input{Lecture 9 - Figures/LocalGlobalFreeFall.tikz}
+\caption{The Strong Equivalence Principle states that \textbf{all physics} must be the same locally for two free falling observers. However, observers in a "large" non-local reference frame such as this will be able to detect a gravitational field by noticing the tidal forces between objects.}
+\label{fig:my_label}
+\end{figure}
+
+\pagebreak
+
+
+\section{Doppler Effects under acceleration \& Gravity}
+
+Normally, in the case of Special Relativity we understand the concept of Doppler shifting. If the receiver has a different velocity when compared to the source, they will detect a different wavelength.
+
+\begin{figure}[h!]
+\centering
+\input{Lecture 9 - Figures/LightReflection.tikz}
+\caption{The Strong Equivalence Principle states that \textbf{all physics} must be the same locally for these two observers}
+\label{fig:my_label}
+\end{figure}
+
+Consider an accelerating frame given in Figure 3. With a light source producing light of wavelength $\lambda$ and a receiver a distance $\Delta z$ apart. By the time the light covers that distance, the velocity of the receiver will have increased by $\Delta v = a \Delta t$. A higher velocity would imply that they will detect the light at a lower wavelength $\lambda^{\prime}$. We can calculate the shift:
+
+\begin{equation}
+\label{Frequency Change Discrete}
+    \frac{\Delta{\lambda}}{\lambda_0} = \frac{\lambda^{\prime}-\lambda}{\lambda} = \frac{\Delta v}{c} = \frac{a \Delta z}{c^3}
+\end{equation}
+
+Now we can invoke the Strong Equivalence Principle, and assert that a stationary observer in a gravitational field should see exactly the same effect: a light ray going against gravity will be detected at a lower frequency at a larger height. In fact we may get a more mathematically exact form. If we break $\Delta z$ into infinitesimal chunks and add the frequency red-shift over small local frames along a path, we find:
+
+\begin{equation}
+\label{Frequency Change continuous}
+    \frac{d\lambda}{\lambda} = -\frac{\vec{g}\cdot \vec{dr}}{c^3} 
+\end{equation}
+
+ Now we will integrate this equation. We will find, to first order \sn{One actually integrates and gets $\frac{\lambda^{\prime}}{\lambda_0} = \exp{\frac{\Delta \Phi}{c^3}} \approx 1 + \frac{\Delta \Phi}{c^3}$}:
+
+\begin{equation}
+\label{Frequency Change continuous}
+    \frac{\Delta{\lambda}}{\lambda_0} = -\frac{1}{c^3} \int_{z_0}^{z_0 + \Delta z} (-\vec{\nabla}\Phi) \cdot \vec{dS}  =  \frac{\Delta\Phi}{c^3}
+\end{equation}
+
+This is the amount of gravitational redshift. Observers in higher potentials (i.e. further away from gravitational sources), see light produced from lower potentials as "red-er" \sn{lower frequency / higher wavelength} than normal. Hence, we have seen a straightforward prediction of the Strong Equivalence Principle.   
+\\
+\pagebreak
+
+
+\part{Manifolds}
+Now we have a postulate that allows us to do physics in local, free falling frames, can we piece it together some how to get some sort of picture of physics in large global frames? The answer is yes!  It turns out that this framework of piecing together local reference frames into a greater whole, is basically the study of manifolds. This begins our mathematical excursion into differential geometry. 
+
+\section{What is a Manifold?}
+
+An $n$-dimensional Manifold is simply a space that locally looks like $\mathbb{R}^n$. Informally speaking, if you zoom in really close to the Manifold, on a fine-grained level, it \textit{looks like} a flat patch of an $n$-dimensional flat space, $\mathbb{R}^n$. What exactly we mean by \textit{"looks like"} will be formalised later on.
+
+For now, consider an example of a $2$-dimensional manifold: the surface of a sphere, also called $\mathbb{S}^2$. Looking at it's round shape, one would conclude it looks nothing like $\mathbb{R}^n$, but if you take a point and zoom in enough (like in Figure 4), the space around it looks pretty much flat --- so much so that it looks like $\mathbb{R}^2$
+
+%\begin{comment}
+\begin{figure}[h!]
+\centering
+\input{Lecture 9 - Figures/S2.tikz}
+\caption{$\mathbb{S}^2$ looks locally like $\mathbb{R}^2$}
+\label{fig:my_label}
+\end{figure}
+%\end{comment}
+
+
+
+
+Some other examples of Manifolds are given in Figure 4. 
+
+
+
+\section{Building up the Mathematical toolbox}
+
+We first begin with the definition of a map from a set $M$ to a set $N$. These sets could be the set of all points in some space, or could even be some other abstract sets.\\
+
+
+%\begin{sidebox}[Def: Map]
+%Given two sets $M = \{m_1,m_2,m_3 ...\}$ and $N = \{n_1,n_2,n_3 ...\}$ we can define a \textbf{map} $\phi$ denoted $\phi: M \rightarrow N$, such that every element in $M$ is assigned to only one element in $N$. 
+%\end{sidebox}
+
+\begin{tcolorbox}
+\textbf{Definition: Map} \\ \\ Given two sets $M = \{m_1,m_2,m_3 ...\}$ and $N = \{n_1,n_2,n_3 ...\}$ we can define a \textbf{map} $\phi$ denoted $\phi: M \rightarrow N$, such that every element in $M$ is assigned to only one element in $N$. 
+\end{tcolorbox}
+
+%\begin{comment}
+\begin{figure}[h!]
+\centering
+\input{Lecture 9 - Figures/ExamplesOfManifolds.tikz}
+\caption{Examples of manifolds, and one non-example}
+\label{fig:my_label 2}
+\end{figure}
+%\end{comment}
+
+It is fruitful to point out that each element in $M$ should be mapped to only one element in $N$ but it need not be a distinct element. This means that multiple elements in $M$ can map to the same element in $N$. 
+
+\begin{figure}[h!]
+\centering
+\input{Lecture 9 - Figures/MapsCorrect.tikz}
+\caption{Maps: an example and a non-example}
+\label{fig:my_label 2}
+\end{figure}
+
+We now consider the composition of two maps. Lets say we have a map $\phi$ from set $M$ to set $N$, and a map $\psi$ from set $N$ to $L$. From $\phi$ and $\psi$ we can always construct a new map denoted $\psi \circ \phi$ from $M$ to $L$. This new map is quite intuitive: We take the elements of $M$, act on them with $\phi$ and get elements of $N$. We subsequently act with $\psi$, which takes these elements of $N$ and maps them to some elements of $L$. This way we can assign every single element of $M$ with some element of $L$. This leads us to the definition of a composition:
+\\
+
+\begin{tcolorbox}
+\textbf{Definition: Composition} \\ \\ Given two maps $\phi : M \rightarrow N$ and $\psi : N \rightarrow L$ such that $\phi(m) \in N$ and $\psi(n) \in L$, we can define a new map $\psi\circ\phi : M \rightarrow L$ such that:
+
+\begin{equation*}
+    \psi\circ\phi (m) = \psi(\phi(m)) \in L \,\, \forall \, m \in M 
+\end{equation*}
+
+\end{tcolorbox}
+
+\pagebreak
+
+\section{What does it mean to look like $\mathbb{R}^n$?}
+\subsection{Charts}
+Now we can talk about what it means to look like $\mathbb{R}^n$. We start with the manifold $\mathcal{M}$, and pick out an arbitrary subset of the manifold $
+\mathcal{M}$ called $U$. We want to define something called a chart, which is a map from this subset $U$ into an open \sn{an open set $A$ is a set such that the neighborhood of every point in $A$ is contained in $A$ } subset of $\mathbb{R}^n$. 
+
+\begin{figure}[h!]
+\centering
+\input{Lecture 9 - Figures/ChartDefinition.tikz}
+\caption{The definition of a Chart}
+\label{fig:my_label 2}
+\end{figure}
+
+
+\begin{tcolorbox}
+\textbf{Definition: Chart} \\ \\ 
+Given a manifold $\mathcal{M}$ and a subset in it called $U$, we define a \textit{one-to-one} map $\phi$, called a \textit{chart}:
+
+\begin{equation*}
+    \phi: U \rightarrow \mathbb{R}^n
+\end{equation*}
+
+\textbf{Discussion:} \\
+\begin{itemize}
+    \item In general, since elements of $\mathbb{R}^n$ are just tuples of real numbers $(x^1,x^2,...,x^n)$, then $\phi(p)$ should just be tuples of real numbers $(\phi^1,\phi^2,...,\phi^n)$.
+    \item  We can then write $\phi$ as a set of n functions, $\phi^{\mu}$ for $\mu \in \{1,...n\}$, which take points in $p$ and give real numbers. 
+    \item This chart $\phi$ can be intuitively understood as \textit{a local coordinate system}. It assigns to each point $p$ within a subset $U$ of $\mathcal{M}$, a set of $n$ numbers.
+    \item This assignment is unique within $U$, since $\phi$ is one-to-one. This makes sense since we want the set of numbers $\phi^{\mu}(p)$ to be representative of \textit{only} the point $p$.
+    \item Sometimes we will say something like: \textit{consider a point $x^\mu$}. What we really mean, is that we have a chart called $x$, and in that chart the point $p$ we are considering gets mapped uniquely under $x$ to the point in $\mathbb{R}^n$ given by $x^{\mu}(p)$.
+\end{itemize}
+
+\end{tcolorbox}
+
+A good example of a chart is how we use latitude and longitude to define positions on the surface of the earth, which is to a good approximation $\mathbb{S}^2$. We can call the chart $\phi$, and we find that it maps the surface to an open subset of $\mathbb{R}^2$ given by $(0,\pi)\cross(0,2\pi)$. We usually call $\phi^{0}(p)$ the latitude and $\phi^{1}(p)$ the longitude of point $p$.
+
+\subsection{Chart transition maps}
+Now that we've introduced charts, lets try and define a way in which two charts are consistent with each other. This will naturally lead us to conditions such that we can introduce a notion of \textit{smoothness} on the manifold. Let's say we've made two different charts, $\phi_1$ and $\phi_2$ on two different subsets $U_1$ and $U_2$ of the same manifold $\mathcal{M}$. Over the piece where the two subsets overlap, there must be a natural way to convert between coordinates given by the two different charts $\phi_1$ and $\phi_2$. 
+
+\begin{figure}[h!]
+\centering
+\input{Lecture 9 - Figures/ChartTransitionMaps.tikz}
+\caption{Chart Transition Maps $\phi_1\circ\phi_2^{-1}$ and $\phi_2\circ\phi_1^{-1}$}
+\label{fig:my_label 3}
+\end{figure}
+
+\begin{tcolorbox}
+\textbf{Definition: Chart Transition Maps} \\ \\ 
+Given a manifold $\mathcal{M}$, two charts $(\phi_1,U_1)$ and $(\phi_2,U_2)$ such that $U_1$ and $U_2$ overlap, we can identify the coordinates assigned to the same point by the two different functions using something called a \textit{chart transition map} between chart 1 and chart 2 defined as:
+
+\begin{align*}
+    \phi_{1\rightarrow 2} &= \phi_2\circ\phi_1^{-1} : \mathbb{R}^n \rightarrow \mathbb{R}^n \\
+    \phi_{2\rightarrow 1} &= \phi_1\circ\phi_2^{-1} : \mathbb{R}^n \rightarrow \mathbb{R}^n
+\end{align*}
+
+\end{tcolorbox}
+
+The natural way to construct a map from the chart functions $\phi_1^{\mu}$ to $\phi_2^{\nu}$ must be by inverting $\phi_1$, so that it takes a coordinate in $\mathbb{R}^n$ and gives a point on the manifold, $p$. Once we have that point, we can use the $\phi_2$ map to get the coordinates $\phi_2^{\mu}(p)$. So given a point $\phi^{\mu}(p) = (\phi^{1}_1(p),\phi^{2}_1(p),...,\phi^{n}_1(p))$ in a subset of $\mathbb{R}^n$ related to a chart $\phi_1$, we can get the coordinates of the point in the manifold $p$ using the inverse map $\phi_{1\rightarrow 2} = \phi_2\circ\phi_1^{-1}$. These chart transition functions are also known as \textit{coordinate transformations}.
+
+An obvious fact here is, that to be able to completely describe a manifold, we need to have every point in the manifold covered by at least one chart. So to characterise a manifold, a really important object one needs is a collection of charts $(\phi_{\alpha},U_{\alpha})$ such that $\bigcup_{\alpha} U_{\alpha} = \mathcal{M}$. Such a collection is appropriately referred to as an \textit{atlas} \\
+
+\begin{tcolorbox}
+\textbf{Definition: Atlas} \\ \\ 
+Given a manifold $\mathcal{M}$, an atlas $\mathcal{A}$ is defined as a collection of charts and all possible chart transition maps between those charts
+
+\begin{align*}
+    \mathcal{A} = (\{(\phi_{\alpha}, U_{\alpha}) ;\, \forall\, \alpha\} , \{(\phi_{\beta}\circ\phi_{\alpha}^{-1}, U_{\alpha}\cup U_{\beta}) ;\, \forall\, \alpha\ , \beta\} )
+\end{align*}
+
+such that the subsets $U_{\alpha}$ completely cover $\mathcal{M}$. I.e.:
+
+\begin{align*}
+    \bigcup_{\alpha} U_{\alpha} \cong \mathcal{M}
+\end{align*}
+
+There is also the \textbf{Maximal Atlas}, which is defined to be the largest consistent union of all atlases. 
+
+\end{tcolorbox}
+
+\subsection{Smooth Atlases}
+Now what we want to do is get a definition of differentiability on a manifold. We know how to do that in $\mathbb{R}^n$ using all the epsilon-delta machinery from real analysis, but it's not too straightforward in the case of a manifold. 
+
+A naive first attempt at this would be the following case: 
+Define a manifold $\mathcal{M}$ and a coordinate chart $(\phi,U)$. We can assign sets of numbers to points in $U$. If we represent $U$ as a region in $\mathbb{R}^n$, and pick a differentiable function within $U$ on $\mathbb{R}^n$ \sn{we can say whats differentiable there since we have a notion of differentiability in $\mathbb{R}^n$} (we know what differentiability means in $\mathbb{R}^n$), we can \textit{assert} that this function is differentiable. 
+
+However it isn't that simple, because let's say we asserted the differentiability of the function on a chart $(\phi_1,U_1)$, and when we transformed to a different chart $(\phi_2,U_2)$ using the chart transition function $\phi_2\circ\phi_1^{-1}$ we find that the new function on a subset of $\mathbb{R}^n$ is not differentiable anymore. We had a differentiable function on a piece of $\mathbb{R}^n$ that got mapped to a non-differentiable function on some other piece of $\mathbb{R}^n$ using the map  $\phi_2\circ\phi_1^{-1}$. This could only mean that the function $\phi_2\circ\phi_1^{-1}$ was \textbf{not} a differentiable function. 
+
+So the simple way to be able to say anything about the differentiability of things on manifolds is to define them in a way that differentiability is preserved between charts. Hence, this could  only be if we took our atlas $\mathcal{A}$ and threw away all the non-differentiable chart transition functions such that in the new atlas $\mathcal{A}_{differentiable}$,  all the remaining chart transition functions are \textit{differentiable}.
+
+We could go even further, and say that we only keep those chart transition functions that are \textit{smooth}, or infinitely differentiable . This means if we write an infinitely differentiable function in some patch on a given chart, when we transform our chart, it remains infinitely differentiable. If we have a twice-differentiable function $f \in \mathcal{C}^2$ in some chart, then it shall be twice differentiable in all charts. This gives us a \textit{coordinate invariant} notion of continuity/differentiability/smoothness of a function. \sn{If we would like a more restrictive setup we could make all of our transition maps only continuous ($\mathcal{C}^{0}$) as opposed to smooth $\mathcal{C}^{\infty}$, which would be a different type of manifold that has a defined notion of continuity but a version of differentiability that is not coordinate invariant.} Which brings us to the definition of a smooth atlas:\\
+
+\begin{tcolorbox}
+\textbf{Definition: Smooth Atlas} \\ \\ 
+Given a manifold $\mathcal{M}$, a smooth atlas $\mathcal{A}$ is defined as an atlas such that all chart transition maps between its charts are \textbf{smooth}, or infinitely differentiable.
+\end{tcolorbox}
+
+We can now state the definition of a smooth manifold. A smooth $n$-dimensional manifold is a space of points $\mathcal{M}$ equipped with a smooth atlas $\mathcal{A}$ such that the charts in it map to $\mathbb{R}^n$. A more fleshed out version of the definition of a manifold is given below:
+\\
+\begin{tcolorbox}
+\textbf{Definition: A Smooth $n$-dimensional Manifold} \\
+
+A Smooth $n$-dimensional Manifold $\mathcal{M}$ is 
+\begin{enumerate}
+    \item A space of points : $\mathcal{M}$ (with a topology)
+    \item a collection of open subsets $U_{\alpha}$ of $\mathcal{M}$ that cover $\mathcal{M}$. i.e. $\bigcup_{\alpha} U_{\alpha} \cong \mathcal{M}$
+    \item charts: ($\phi_{\alpha}:U_{\alpha} \rightarrow \mathbb{R}^n$)
+    \item \textit{smooth} chart transition maps: $\phi_{\alpha\rightarrow \beta} = \phi_{\beta}\circ\phi_{\alpha}^{-1} \in \mathcal{C}^{\infty}$
+    \item The largest possible consistent collection of items 2-4, called a smooth maximal atlas $\mathcal{A}$
+\end{enumerate}
+
+\end{tcolorbox}
+%\vspace{\fill}
+%\pagebreak
+
+\section{Examples of Atlases on $\mathbb{S}^2$}
+We can now look at some examples of constructing atlases on $\mathbb{S}$. Here are some visual representations, shown in \textbf{Figure 9} and \textbf{Figure 10} on how we construct the atlas. In both cases we choose two open sets $U_{north}$ and $U_{south}$, and construct maps from these to some subsets of $\mathbb{R}^n$. The chart transition maps should then
+
+\begin{figure}[h!]
+\centering
+\input{Lecture 9 - Figures/StereographicProjection.tikz}
+\caption{Stereographic Projections: The first is $\phi_{north}$ which maps all points \textbf{but} the north pole to a point in $\mathbb{R}^2$. The second is $\phi_{south}$ which maps all points \textbf{but} the south pole to a point in $\mathbb{R}^2$.}
+
+\end{figure}
+\begin{figure}[h!]
+\centering
+\input{Lecture 9 - Figures/SphereCharts.tikz}
+\caption{\textit{Charts on a sphere}: an example of two charts needed to accurately represent $\mathbb{S}^2$. Here we can see a large portion around the north pole mapped to the unit disk $D_{r<1}$, whereas a large portion around the south pole is mapped to another unit disk. Chart transition maps along the overlap give smooth functions from a subset of the unit disk to another subset of the unit disk.  }
+\label{fig:my_label 2}
+\end{figure}
+
+
+The above figure shows another way of making an $\mathbb{S}^2$ atlas by mapping subsets around the north and south poles to the unit disk in $\mathbb{R}^2$. This concludes our discussion on constructing manifolds.
+
+
+
+
+\end{document}

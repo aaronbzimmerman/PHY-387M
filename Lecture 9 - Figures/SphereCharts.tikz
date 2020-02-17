@@ -1,0 +1,222 @@
+
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,491.9375); %set diagram left start at 0, and has height of 491.9375
+
+%Shape: Polygon Curved [id:ds023966166008199785] 
+\draw  [draw opacity=0][fill={rgb, 255:red, 102; green, 36; blue, 114 }  ,fill opacity=0.2 ] (422.61,350.46) .. controls (422.92,345.72) and (429.83,358.23) .. (480.83,356.23) .. controls (531.83,354.23) and (522.96,343.89) .. (526.2,347.55) .. controls (529.43,351.2) and (537.83,389.23) .. (531.5,394.45) .. controls (525.17,399.66) and (503.56,401.45) .. (478.83,402.23) .. controls (454.11,403.01) and (428.64,400.14) .. (422.36,397) .. controls (416.07,393.86) and (415.62,382.13) .. (416.83,370.23) .. controls (418.05,358.33) and (422.3,355.2) .. (422.61,350.46) -- cycle ;
+%Shape: Ellipse [id:dp2648686510145266] 
+\draw  [fill={rgb, 255:red, 255; green, 255; blue, 255 }  ,fill opacity=1 ][line width=1.5]  (110.94,192.74) .. controls (110.94,160.14) and (137.37,133.7) .. (169.98,133.7) .. controls (202.58,133.7) and (229.02,160.14) .. (229.02,192.74) .. controls (229.02,225.35) and (202.58,251.79) .. (169.98,251.79) .. controls (137.37,251.79) and (110.94,225.35) .. (110.94,192.74) -- cycle ;
+%Curve Lines [id:da9237854012998243] 
+\draw [line width=1.5]    (110.94,192.74) .. controls (128.72,204.26) and (201.61,204.84) .. (229.02,192.74) ;
+%Curve Lines [id:da04122612033365991] 
+\draw    (117.06,166.94) .. controls (142.13,172.77) and (196.36,176.27) .. (220.85,164.03) ;
+%Curve Lines [id:da869429699713544] 
+\draw    (130.47,150.03) .. controls (155.54,155.86) and (188.2,157.61) .. (210.36,149.45) ;
+%Straight Lines [id:da5498697318616299] 
+\draw    (343.79,23.72) -- (343.79,110.83) ;
+%Shape: Rectangle [id:dp545596124429909] 
+\draw   (18,23) -- (656.79,23) -- (656.79,267.27) -- (18,267.27) -- cycle ;
+%Curve Lines [id:da039387430220944264] 
+\draw    (164.98,133.7) .. controls (140.5,145.16) and (129.5,173.16) .. (132.5,199.16) ;
+%Curve Lines [id:da7934563134568218] 
+\draw    (169.98,133.7) .. controls (158.5,145.16) and (158.5,173.16) .. (156.5,201.16) ;
+%Curve Lines [id:da36889608769204973] 
+\draw    (169.98,133.7) .. controls (172.5,137.16) and (184.5,153.16) .. (184.5,201.16) ;
+%Curve Lines [id:da14192555636374338] 
+\draw    (169.98,133.7) .. controls (188.5,131.16) and (205.5,163.16) .. (207.5,199.16) ;
+%Shape: Ellipse [id:dp5496551580252034] 
+\draw  [color={rgb, 255:red, 212; green, 70; blue, 70 }  ,draw opacity=1 ][line width=1.5]  (78,87.08) .. controls (78,80.41) and (120.2,75) .. (172.25,75) .. controls (224.3,75) and (266.5,80.41) .. (266.5,87.08) .. controls (266.5,93.75) and (224.3,99.16) .. (172.25,99.16) .. controls (120.2,99.16) and (78,93.75) .. (78,87.08) -- cycle ;
+%Straight Lines [id:da21699852228966332] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=0.61 ]   (172.25,75) -- (172.25,99.16) ;
+%Straight Lines [id:da08406154506533658] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=0.61 ]   (78,87.08) -- (266.5,87.08) ;
+%Straight Lines [id:da631237869645296] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=0.61 ]   (109.5,78.16) -- (232.5,96.16) ;
+%Straight Lines [id:da5250691491513118] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=0.61 ]   (113.5,97.16) -- (225.5,78.16) ;
+%Straight Lines [id:da6277830455795899] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=0.61 ]   (154.5,76.16) -- (189.5,98.16) ;
+%Straight Lines [id:da8705282404302643] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=0.61 ]   (189.5,75.16) -- (155.5,99.16) ;
+%Curve Lines [id:da7333449321108627] 
+\draw    (83.98,108.25) .. controls (77.17,135.32) and (71.2,158.01) .. (98.5,191.16) ;
+\draw [shift={(84.5,106.16)}, rotate = 104.04] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da4247508111938394] 
+\draw    (270.8,104.3) .. controls (277.11,150.64) and (264.14,166.55) .. (240.5,192.16) ;
+\draw [shift={(270.5,102.16)}, rotate = 81.7] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Shape: Ellipse [id:dp19240101297900614] 
+\draw  [fill={rgb, 255:red, 255; green, 255; blue, 255 }  ,fill opacity=1 ][line width=1.5]  (552.24,90.58) .. controls (552.48,123.19) and (526.23,149.81) .. (493.63,150.04) .. controls (461.02,150.28) and (434.4,124.03) .. (434.16,91.43) .. controls (433.93,58.82) and (460.17,32.2) .. (492.78,31.96) .. controls (525.39,31.73) and (552.01,57.98) .. (552.24,90.58) -- cycle ;
+%Curve Lines [id:da5700973056112739] 
+\draw [line width=1.5]    (552.24,90.58) .. controls (534.37,79.19) and (461.48,79.13) .. (434.16,91.43) ;
+%Curve Lines [id:da2879534852833481] 
+\draw    (546.3,116.43) .. controls (521.19,110.78) and (466.94,107.67) .. (442.53,120.09) ;
+%Curve Lines [id:da04856262549630164] 
+\draw    (533.01,133.43) .. controls (507.9,127.78) and (475.23,126.27) .. (453.13,134.59) ;
+%Curve Lines [id:da48510792568028815] 
+\draw    (498.63,150.01) .. controls (523.02,138.38) and (533.82,110.3) .. (530.63,84.32) ;
+%Curve Lines [id:da9959669777474072] 
+\draw    (493.63,150.04) .. controls (505.02,138.5) and (504.82,110.51) .. (506.62,82.49) ;
+%Curve Lines [id:da851672690712352] 
+\draw    (493.63,150.04) .. controls (491.08,146.6) and (478.96,130.69) .. (478.62,82.69) ;
+%Curve Lines [id:da15604567667838776] 
+\draw    (493.63,150.04) .. controls (475.12,152.72) and (457.89,120.84) .. (455.63,84.86) ;
+%Shape: Ellipse [id:dp24590870878823345] 
+\draw  [color={rgb, 255:red, 29; green, 90; blue, 164 }  ,draw opacity=1 ][line width=1.5]  (585.93,196.01) .. controls (585.98,202.68) and (543.82,208.39) .. (491.77,208.76) .. controls (439.72,209.13) and (397.48,204.03) .. (397.44,197.36) .. controls (397.39,190.68) and (439.55,184.97) .. (491.6,184.6) .. controls (543.65,184.23) and (585.88,189.34) .. (585.93,196.01) -- cycle ;
+%Straight Lines [id:da5928872296467067] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=0.49 ]   (491.77,208.76) -- (491.6,184.6) ;
+%Straight Lines [id:da5126785235663109] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=0.49 ]   (585.93,196.01) -- (397.44,197.36) ;
+%Straight Lines [id:da4740201745316581] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=0.49 ]   (554.5,205.15) -- (431.37,188.03) ;
+%Straight Lines [id:da5240115505919742] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=0.49 ]   (550.36,186.18) -- (438.5,205.98) ;
+%Straight Lines [id:da01981377342235846] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=0.49 ]   (509.51,207.47) -- (474.36,185.73) ;
+%Straight Lines [id:da6570137939512701] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=0.49 ]   (474.52,208.72) -- (508.35,184.48) ;
+%Curve Lines [id:da5892685931077424] 
+\draw    (579.81,174.88) .. controls (586.42,147.77) and (592.22,125.03) .. (564.69,92.08) ;
+\draw [shift={(579.3,176.97)}, rotate = 283.63] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da7287262102573953] 
+\draw    (393.01,180.17) .. controls (386.38,133.87) and (399.23,117.87) .. (422.68,92.09) ;
+\draw [shift={(393.33,182.3)}, rotate = 261.29] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Shape: Ellipse [id:dp6643625817052099] 
+\draw  [line width=1.5]  (416.5,376.21) .. controls (416.5,343.67) and (442.88,317.29) .. (475.42,317.29) .. controls (507.97,317.29) and (534.35,343.67) .. (534.35,376.21) .. controls (534.35,408.75) and (507.97,435.13) .. (475.42,435.13) .. controls (442.88,435.13) and (416.5,408.75) .. (416.5,376.21) -- cycle ;
+%Curve Lines [id:da1928131954546919] 
+\draw    (470.42,317.29) .. controls (421.1,343.88) and (436.58,408.48) .. (456.36,431.06) ;
+%Curve Lines [id:da14300033442209048] 
+\draw    (475.42,317.29) .. controls (500.01,314.96) and (532.02,378.22) .. (496.52,431.76) ;
+%Curve Lines [id:da8736972559364249] 
+\draw    (475.42,317.29) .. controls (485.46,331.08) and (500.01,377.63) .. (480.81,435.83) ;
+%Curve Lines [id:da03791772691636641] 
+\draw    (475.42,317.29) .. controls (459.27,334.45) and (458.69,413.6) .. (470.33,435.71) ;
+%Curve Lines [id:da3799204488104384] 
+\draw    (416.5,376.21) .. controls (434.25,387.7) and (506.99,388.28) .. (534.35,376.21) ;
+%Curve Lines [id:da14098004106562056] 
+\draw [color={rgb, 255:red, 212; green, 70; blue, 70 }  ,draw opacity=1 ][line width=1.5]    (422.61,350.46) .. controls (447.63,356.28) and (501.76,359.77) .. (526.2,347.55) ;
+%Curve Lines [id:da03814176311193607] 
+\draw [color={rgb, 255:red, 29; green, 90; blue, 164 }  ,draw opacity=1 ][line width=1.5]    (422.36,397) .. controls (447.38,402.82) and (489.6,407.25) .. (531.5,394.45) ;
+%Curve Lines [id:da07041850677712036] 
+\draw    (436,333.58) .. controls (461.02,339.4) and (493.61,341.15) .. (515.72,333) ;
+%Curve Lines [id:da047787888726199323] 
+\draw [color={rgb, 255:red, 212; green, 70; blue, 70 }  ,draw opacity=1 ][line width=1.5]    (475.42,435.13) .. controls (443.5,437.45) and (402.5,402.45) .. (422.61,350.46) ;
+%Curve Lines [id:da7759276806481399] 
+\draw [color={rgb, 255:red, 212; green, 70; blue, 70 }  ,draw opacity=1 ][line width=1.5]    (475.42,435.13) .. controls (524.5,436.45) and (545.5,384.45) .. (526.2,347.55) ;
+%Curve Lines [id:da3823094555411988] 
+\draw [color={rgb, 255:red, 29; green, 90; blue, 164 }  ,draw opacity=1 ][line width=1.5]    (422.36,397) .. controls (402.3,370.22) and (435.3,312.22) .. (475.42,317.29) ;
+%Curve Lines [id:da3512922847224538] 
+\draw [color={rgb, 255:red, 29; green, 90; blue, 164 }  ,draw opacity=1 ][line width=1.5]    (531.5,394.45) .. controls (543.3,343.22) and (503.3,315.22) .. (475.42,317.29) ;
+%Curve Lines [id:da38016857631359735] 
+\draw    (552.3,298.83) .. controls (536.46,298.83) and (507.88,266.48) .. (506.34,319.2) ;
+\draw [shift={(506.3,320.83)}, rotate = 271.04] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da8206609349222878] 
+\draw    (570.3,417.83) .. controls (559.85,435.88) and (536.76,429.56) .. (528.48,420.31) ;
+\draw [shift={(527.3,418.83)}, rotate = 415.01] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da19803066570768246] 
+\draw    (343.79,138.83) -- (343.5,267.27) ;
+%Curve Lines [id:da018692997750662244] 
+\draw  [dash pattern={on 4.5pt off 4.5pt}]  (325.3,108.83) .. controls (317.5,92.25) and (300.19,79.48) .. (275.23,81.63) ;
+\draw [shift={(273.3,81.83)}, rotate = 353.41999999999996] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da8979361639129959] 
+\draw  [dash pattern={on 4.5pt off 4.5pt}]  (361.3,139.83) .. controls (363.23,168.78) and (372.61,183.2) .. (386.74,194.6) ;
+\draw [shift={(388.3,195.83)}, rotate = 217.72] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Shape: Brace [id:dp02449651059463598] 
+\draw   (413.3,352.82) .. controls (408.63,352.73) and (406.25,355.01) .. (406.15,359.67) -- (406.01,366.18) .. controls (405.87,372.85) and (403.47,376.13) .. (398.8,376.03) .. controls (403.47,376.13) and (405.73,379.51) .. (405.59,386.17)(405.65,383.17) -- (405.45,392.68) .. controls (405.35,397.35) and (407.63,399.73) .. (412.3,399.82) ;
+%Curve Lines [id:da7870201776391916] 
+\draw    (397.3,375.82) .. controls (373.78,359.16) and (369.47,343.47) .. (380.6,317.43) ;
+\draw [shift={(381.3,315.82)}, rotate = 473.96] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Shape: Ellipse [id:dp5717007576738526] 
+\draw  [color={rgb, 255:red, 212; green, 70; blue, 70 }  ,draw opacity=1 ][fill={rgb, 255:red, 181; green, 123; blue, 205 }  ,fill opacity=0.25 ][line width=1.5]  (45,368.53) .. controls (45,333.44) and (72.38,305) .. (106.15,305) .. controls (139.92,305) and (167.3,333.44) .. (167.3,368.53) .. controls (167.3,403.61) and (139.92,432.05) .. (106.15,432.05) .. controls (72.38,432.05) and (45,403.61) .. (45,368.53) -- cycle ;
+%Straight Lines [id:da027287302487709608] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=0.32 ]   (106.15,305) -- (106.15,432.05) ;
+%Shape: Ellipse [id:dp8330779409305697] 
+\draw  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=0.55 ][line width=0.75]  (121,86.49) .. controls (121,82.91) and (143.68,80) .. (171.65,80) .. controls (199.62,80) and (222.3,82.91) .. (222.3,86.49) .. controls (222.3,90.08) and (199.62,92.98) .. (171.65,92.98) .. controls (143.68,92.98) and (121,90.08) .. (121,86.49) -- cycle ;
+%Shape: Ellipse [id:dp18836852820133698] 
+\draw  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=0.51 ][line width=0.75]  (541.31,196.08) .. controls (541.33,199.68) and (518.54,202.77) .. (490.4,202.97) .. controls (462.26,203.17) and (439.42,200.41) .. (439.4,196.81) .. controls (439.37,193.2) and (462.16,190.11) .. (490.31,189.91) .. controls (518.45,189.71) and (541.28,192.47) .. (541.31,196.08) -- cycle ;
+%Shape: Ellipse [id:dp005983084593211618] 
+\draw  [color={rgb, 255:red, 29; green, 90; blue, 164 }  ,draw opacity=1 ][fill={rgb, 255:red, 255; green, 255; blue, 255 }  ,fill opacity=1 ][line width=1.5]  (63.32,369.81) .. controls (63.32,345.14) and (82.56,325.15) .. (106.31,325.15) .. controls (130.05,325.15) and (149.3,345.14) .. (149.3,369.81) .. controls (149.3,394.48) and (130.05,414.47) .. (106.31,414.47) .. controls (82.56,414.47) and (63.32,394.48) .. (63.32,369.81) -- cycle ;
+%Straight Lines [id:da44626593366657064] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=0.32 ]   (167.3,368.53) -- (44.3,368.53) ;
+%Straight Lines [id:da981444991292578] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=0.32 ]   (140.3,423.42) -- (73.3,316.42) ;
+%Straight Lines [id:da11832899939880526] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=0.32 ]   (163.3,394.42) -- (50.3,344.42) ;
+%Straight Lines [id:da05198751773112664] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=0.32 ]   (142.3,318.42) -- (69.3,421.42) ;
+%Straight Lines [id:da5379403357869583] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=0.32 ]   (160.3,340.42) -- (51.3,398.42) ;
+%Shape: Ellipse [id:dp7382458709263686] 
+\draw  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=0.28 ][line width=0.75]  (63.66,369.92) .. controls (63.66,345.75) and (82.53,326.15) .. (105.8,326.15) .. controls (129.07,326.15) and (147.94,345.75) .. (147.94,369.92) .. controls (147.94,394.1) and (129.07,413.7) .. (105.8,413.7) .. controls (82.53,413.7) and (63.66,394.1) .. (63.66,369.92) -- cycle ;
+%Shape: Ellipse [id:dp5127628697367514] 
+\draw  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=0.28 ][line width=0.75]  (89.27,368.53) .. controls (89.27,358.84) and (96.83,350.99) .. (106.15,350.99) .. controls (115.47,350.99) and (123.03,358.84) .. (123.03,368.53) .. controls (123.03,378.21) and (115.47,386.06) .. (106.15,386.06) .. controls (96.83,386.06) and (89.27,378.21) .. (89.27,368.53) -- cycle ;
+
+%Shape: Ellipse [id:dp003885290572726241] 
+\draw  [color={rgb, 255:red, 29; green, 90; blue, 164 }  ,draw opacity=1 ][fill={rgb, 255:red, 181; green, 123; blue, 205 }  ,fill opacity=0.25 ][line width=1.5]  (193,368.53) .. controls (193,333.44) and (220.38,305) .. (254.15,305) .. controls (287.92,305) and (315.3,333.44) .. (315.3,368.53) .. controls (315.3,403.61) and (287.92,432.05) .. (254.15,432.05) .. controls (220.38,432.05) and (193,403.61) .. (193,368.53) -- cycle ;
+%Straight Lines [id:da2573989656828686] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=0.32 ]   (254.15,305) -- (254.15,432.05) ;
+%Shape: Ellipse [id:dp9357397177205198] 
+\draw  [color={rgb, 255:red, 212; green, 70; blue, 70 }  ,draw opacity=1 ][fill={rgb, 255:red, 255; green, 255; blue, 255 }  ,fill opacity=1 ][line width=1.5]  (211.32,369.81) .. controls (211.32,345.14) and (230.56,325.15) .. (254.31,325.15) .. controls (278.05,325.15) and (297.3,345.14) .. (297.3,369.81) .. controls (297.3,394.48) and (278.05,414.47) .. (254.31,414.47) .. controls (230.56,414.47) and (211.32,394.48) .. (211.32,369.81) -- cycle ;
+%Straight Lines [id:da2062271314817079] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=0.32 ]   (315.3,367.53) -- (192.3,367.53) ;
+%Straight Lines [id:da17945996805130315] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=0.32 ]   (288.3,422.42) -- (221.3,315.42) ;
+%Straight Lines [id:da5545602537713294] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=0.32 ]   (311.3,393.42) -- (198.3,343.42) ;
+%Straight Lines [id:da5860455287656503] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=0.32 ]   (290.3,317.42) -- (217.3,420.42) ;
+%Straight Lines [id:da8932906386289785] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=0.32 ]   (308.3,339.42) -- (199.3,397.42) ;
+%Shape: Ellipse [id:dp6669931227399053] 
+\draw  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=0.28 ][line width=0.75]  (211.66,368.92) .. controls (211.66,344.75) and (230.53,325.15) .. (253.8,325.15) .. controls (277.07,325.15) and (295.94,344.75) .. (295.94,368.92) .. controls (295.94,393.1) and (277.07,412.7) .. (253.8,412.7) .. controls (230.53,412.7) and (211.66,393.1) .. (211.66,368.92) -- cycle ;
+%Shape: Ellipse [id:dp47805585901238046] 
+\draw  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=0.28 ][line width=0.75]  (237.27,367.53) .. controls (237.27,357.84) and (244.83,349.99) .. (254.15,349.99) .. controls (263.47,349.99) and (271.03,357.84) .. (271.03,367.53) .. controls (271.03,377.21) and (263.47,385.06) .. (254.15,385.06) .. controls (244.83,385.06) and (237.27,377.21) .. (237.27,367.53) -- cycle ;
+
+%Shape: Rectangle [id:dp6855166990046826] 
+\draw   (18,267.27) -- (656.79,267.27) -- (656.79,472.99) -- (18,472.99) -- cycle ;
+%Curve Lines [id:da08009454325584131] 
+\draw    (235.5,422.27) .. controls (201.2,435.99) and (166.9,428.58) .. (143.89,411.34) ;
+\draw [shift={(142.5,410.27)}, rotate = 398.05] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da022150013405676017] 
+\draw    (125.5,319.6) .. controls (151.24,304.75) and (188.74,296.76) .. (229.27,318.92) ;
+\draw [shift={(230.5,319.6)}, rotate = 209.29] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+\draw (163,42) node    {$\phi _{north} \ :\ S^{2} \ \supset U_{north} \ \rightarrow D_{r< 1} \ \subset \mathbb{R}^{2}$};
+% Text Node
+\draw (492,240) node    {$\phi _{south} \ :\ S^{2} \ \supset U_{south} \ \rightarrow D_{r< 1} \ \subset \mathbb{R}^{2}$};
+% Text Node
+\draw (171,122) node  [font=\footnotesize] [align=left] {North Pole};
+% Text Node
+\draw (494,162) node  [font=\footnotesize] [align=left] {South Pole};
+% Text Node
+\draw (577,293.83) node   [align=left] {Blue:};
+% Text Node
+\draw (589,411.83) node   [align=left] {Red:};
+% Text Node
+\draw (619,293.83) node    {$U_{north}$};
+% Text Node
+\draw (631,410.83) node    {$U_{south}$};
+% Text Node
+\draw (347,123.83) node   [align=left] {Unit Disks};
+% Text Node
+\draw (448,295.83) node    {$U_{south}$};
+% Text Node
+\draw (385,295.83) node    {$U_{north}$};
+% Text Node
+\draw (416,299) node    {$\cap $};
+% Text Node
+\draw  [draw opacity=0][fill={rgb, 255:red, 255; green, 255; blue, 255 }  ,fill opacity=0.8 ]  (81.8,356.53) -- (129.8,356.53) -- (129.8,380.53) -- (81.8,380.53) -- cycle  ;
+\draw (105.8,368.53) node    {$South$};
+% Text Node
+\draw  [draw opacity=0][fill={rgb, 255:red, 255; green, 255; blue, 255 }  ,fill opacity=0.8 ]  (229.3,356.53) -- (278.3,356.53) -- (278.3,380.53) -- (229.3,380.53) -- cycle  ;
+\draw (253.8,368.53) node    {$North$};
+% Text Node
+\draw (196,446.83) node    {$\phi _{south} \circ \phi ^{-1}_{north}$};
+% Text Node
+\draw (179,286.83) node    {$\phi _{north} \circ \phi ^{-1}_{south}$};
+
+
+\end{tikzpicture}
