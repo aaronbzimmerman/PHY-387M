@@ -1,0 +1,500 @@
+\documentclass[11pt]{article}
+% DEFINE COMMANDS
+
+\usepackage{NotesTeX}
+
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{enumerate}
+\usepackage{amsmath,amssymb,amscd,amsfonts}
+\usepackage{xcolor}
+\usepackage{color}
+\input{undertilde}
+
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\tikzcdset{every label/.append style = {font = \small}}
+\tikzcdset{row sep/normal=3.5em}
+\tikzcdset{column sep/normal=3.5em}
+
+\usetikzlibrary{matrix}
+\usetikzlibrary{decorations.markings,calc,shapes}
+\usetikzlibrary{positioning}
+\usepackage{graphicx}
+\usepackage{empheq}
+\usepackage{physics}
+\usepackage{siunitx}
+\usepackage{tensor}
+
+\usepackage{multicol}
+
+\usepackage{youngtab}
+\usepackage{cancel}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{hyperref}
+\usepackage{float}
+
+% added by Jingtian Shi
+\usepackage{indentfirst}
+\usepackage{cases}
+\usepackage{bbm}
+
+% % % % % % % % % % % % % % % % % % % % % % %
+
+\title{{\Huge General Relativity}\\{\Large{Class 11 --- February 14, 2020}}} %replace with class number
+\author{Rabia Husain}
+
+\emailAdd{r.husain@utexas.edu} %replace with your email
+\begin{document}
+\maketitle
+\flushbottom
+\newpage
+\pagestyle{fancynotes}
+
+\part{More on One Forms}
+
+    \section{One Forms and the Gradient}
+    In 3D, vectors can be decomposed via the Helmholtz decomposition into:
+        \begin{equation}
+            \begin{aligned}
+            \bar{V} &= \bar{\nabla} \Phi + \bar{\nabla} \cross \bar{A}
+            \end{aligned}
+        \end{equation}
+        \sn{(1.1) Where $\Phi$ is some scalar function and $\bar{A}$ is some vector field.}
+    So, one forms are not uniquely represented by the gradient of some function since there is a component that is the curl of a field. However, we do not yet have a definition for the cross product in higher dimensions. \\
+    An example of a one form is the gradient:
+        \begin{equation}
+            \begin{aligned}
+            \undertilde{\omega} &= \undertilde{d}f
+            \end{aligned}
+        \end{equation}
+    This can be used to build a more general definition for a one form:
+        \begin{equation}
+            \begin{aligned}
+            \undertilde{\omega} &= &= \omega_\mu dx^\mu 
+            \end{aligned}
+        \end{equation}
+    in which dx$^\mu$ is the coordinate basis.
+    Now, consider if $\omega_\mu = \partial_\mu f$. Then,
+        \begin{equation}
+            \begin{aligned}
+            \partial_\mu \omega_\nu - \partial_\nu \omega_\mu &= \partial_\mu \partial_\nu f - \partial_\nu \partial_\mu f &= 0
+            \end{aligned}
+        \end{equation}
+    This shows that not all one forms can be written as the gradient of a function.
+    
+    \section{Kinds of One Forms}
+    \begin{itemize}
+    \item
+    A "rotation-free" one form is defined as:
+        \begin{equation}
+            \begin{aligned}
+            \undertilde{\omega} &= h \undertilde{d}f
+            \end{aligned}
+        \end{equation}
+    for h and f as some other functions on the manifold. This type of one form can no longer be written as a gradient of a function. It is possible to show that $\omega_{[\mu} \partial_\nu \omega_{\rho]} = 0$, meaning that all indices are fully antisymmetrized
+    \sn{Recall the definition of antisymmetrization:\\*
+            $A_{[\mu \nu]} = \frac{1}{2}(A_{\mu\nu} - A_{\nu\mu})$\\*
+            $A_{[\mu \nu \rho]} = \frac{1}{6}(A_{\mu\nu\rho} + A_{\rho\mu\nu} + A_{\nu\rho\mu} - A_{\rho\nu\mu} - A_{\mu\rho\nu} - A_{\nu\mu\rho})$\\*
+        and so on.
+        }
+    , where $\omega^\mu$ is perpendicular to some hypersurface.\\
+    \begin{figure} [H]
+        \begin{center}
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,290); %set diagram left start at 0, and has height of 290
+
+%Straight Lines [id:da49102712773303336] 
+\draw    (73.32,76.1) -- (27.71,16.16) ;
+\draw [shift={(26.5,14.57)}, rotate = 412.73] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da14219197988999288] 
+\draw    (95.91,76.1) -- (115.57,12.51) ;
+\draw [shift={(116.16,10.6)}, rotate = 467.19] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da7460748238245491] 
+\draw    (117.82,109.84) -- (182.83,174.59) ;
+\draw [shift={(184.24,176)}, rotate = 224.89] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da08032749909424197] 
+\draw    (127.79,98.59) -- (202.51,107.62) ;
+\draw [shift={(204.5,107.86)}, rotate = 186.88] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da200107508264308] 
+\draw    (105.87,87.35) -- (145.63,26.17) ;
+\draw [shift={(146.72,24.49)}, rotate = 483.02] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da9454722590314142] 
+\draw    (82.62,73.45) -- (92.63,3.98) ;
+\draw [shift={(92.92,2)}, rotate = 458.2] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Shape: Free Drawing [id:dp7820127954742717] 
+\draw  [color={rgb, 255:red, 200; green, 0; blue, 0 }  ][line width=1.00] [line join = round][line cap = round] (72.33,78.54) .. controls (72.33,69.94) and (92.91,75.57) .. (98.23,76.6) .. controls (100.78,77.1) and (98.72,84.94) .. (100.89,85.64) .. controls (104.58,86.84) and (107.51,87.24) .. (110.85,88.87) .. controls (113.24,90.03) and (113.43,94.41) .. (116.16,94.68) .. controls (118.51,94.91) and (127.59,95.32) .. (128.12,97.91) .. controls (128.86,101.5) and (124.19,102.37) .. (122.14,104.36) .. controls (119.56,106.87) and (118.54,110.44) .. (116.16,112.76) .. controls (113.59,115.26) and (109.55,114.63) .. (105.54,115.34) .. controls (103.56,115.69) and (100.18,117.94) .. (98.9,118.57) .. controls (98.13,118.94) and (98.86,120.51) .. (97.57,120.51) ;
+
+\end{tikzpicture}
+        \caption{A vector field (in black) normal to some weirdly shaped surface (in red). It is possible to check if a vector field is normal to a hypersurface using $\omega_{[\mu} \partial_\nu \omega_{\rho]}$}
+            \end{center}
+    \end{figure}
+    
+    \item
+    A "curl-free" one form is a special type of one form defined as:
+        \begin{equation}
+            \begin{aligned}
+            \undertilde{\omega} &= \undertilde{d}f
+            \end{aligned}
+        \end{equation}
+    If a one form is "curl-free", then it obeys equation (1.4). So, does every one form which obeys equation (1.4) have the form $\omega_\mu = \partial_\mu f$? 
+    The answer is no, not always. This depends on the space that you are in. If you are looking locally, meaning in the neighborhood of the point, then yes, $\omega_\mu = \partial_\mu f$ holds. We call this a closed form, which implies that the form is exact. If you are looking globally, however, $\omega_\mu = \partial_\mu f$ does not hold, meaning that in some spaces, not all closed forms are exact.
+    \end{itemize}
+
+\newpage
+
+\part{The Metric Tensor}
+
+    The metric tensor in curved spacetime is:
+        \begin{equation}
+            \begin{aligned}
+            \textsl{g} &= g_{\mu\nu} \undertilde{d}x^\mu \otimes \undertilde{d}x^\nu
+            \end{aligned}
+        \end{equation}
+    where $g_{\mu\nu}$ represents the components of \textsl{g}. This should not be confused with $\eta_{\mu\nu}$, which was used previously to represent the metric for flat space. While it is appropriate to use $g_{\mu\nu}$ as the metric for flat space as well as for curved space, $\eta_{\mu\nu}$ is reserved solely for flat space. 
+    \sn{Some properties of $g_{\mu\nu}$:\\*
+            $g_{(\mu\nu)} = g_{\mu\nu}$ (symmetric)\\*
+            $g_{\mu\nu}$ has 10 degrees of freedom.\\*}
+\
+\begin{figure} [h!]
+                \begin{centering}
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Shape: Rectangle [id:dp057203150669281166] 
+\draw   (245.24,55.94) -- (466.39,68.27) -- (386.26,230.06) -- (165.11,217.73) -- cycle ;
+%Shape: Ellipse [id:dp7426483505989552] 
+\draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (352,121) .. controls (352,119.34) and (353.46,118) .. (355.25,118) .. controls (357.04,118) and (358.5,119.34) .. (358.5,121) .. controls (358.5,122.66) and (357.04,124) .. (355.25,124) .. controls (353.46,124) and (352,122.66) .. (352,121) -- cycle ;
+%Curve Lines [id:da40220588321168127] 
+\draw    (358.5,121) .. controls (400,127) and (493.5,188) .. (491.5,183) ;
+
+% Text Node
+\draw (490,61) node   [align=left] {{\fontfamily{pcr}\selectfont \textit{{\Large $\mathcal{M}$}}}};
+% Text Node
+\draw (530,185) node   [align=left] {{\Large $g_{\mu\nu}(x^\mu)$}};
+
+\end{tikzpicture}
+    \caption{The manifold $\mathcal{M}$ on which we have a point $x^\mu$. The metric $g_{\mu\nu}$ at that point is defined by $g_{\mu\nu}(x^\mu)$.}
+                \end{centering}
+\end{figure}
+\\
+    We can define the determinant of the metric tensor as the following.
+        \begin{equation}
+            \begin{aligned}
+            det(g_{\mu\nu}) = g
+            \end{aligned}
+        \end{equation}
+    If $g \neq 0$, then the inverse matrix of $g_{\mu\nu}$, called $g^{\mu\nu}$, exists. $g^{\mu\nu}$ has the property that $g^{\mu\alpha} g_{\alpha\nu} = \tensor{\delta}{^\mu_\nu}$. 
+
+\newpage
+
+    \section{Raising and Lowering Indices}
+    Since the metric tensor forms an invertible map between one forms and vectors, we can now define a way to raise and lower the indices of one forms and vectors, 
+        \begin{equation}
+            \begin{aligned}
+            \omega^\mu &= g^{\mu\alpha} \omega_\alpha
+            \end{aligned}
+        \end{equation}
+         \begin{equation}
+            \begin{aligned}
+            V_\mu &= g_{\mu\alpha} V^\alpha
+            \end{aligned}
+        \end{equation}
+    Equation (3.1) defines a way to raise indices, going from one forms to vectors. Equation (3.2) defines a way to lower indices, going from vectors to one forms.
+    
+    \section{The Dot Product}
+    We can also use the metric tensor to define the dot product. 
+        \begin{equation}
+            \begin{aligned}
+            \bar{U} \cdot \bar{V} &= \textsl{g}(\bar{U}, \bar{V}) = g_{\mu\nu} U^\mu V^\nu
+            \end{aligned}
+        \end{equation}
+    Using this definition of the dot product, we can define the magnitude of vectors. 
+        \begin{equation}
+            \begin{aligned}
+            V_\mu V^\mu &= \begin{cases} 
+                            < 0 & "timelike" \\
+                            > 0 & "spacelike" \\
+                            = 0 & "null"/"lightlike" 
+                            \end{cases}
+            \end{aligned}
+        \end{equation}
+    \sn{This is similar to our previous definitions of "timelike separated", "spacelike separated", and "lightlike separated" when we were discussing the spacetime interval $\Delta s^2$ in special relativity.  }
+    for some $\bar{V}(f) = \frac{df}{d\lambda}$ where $\bar{V} = \frac{\bar{d}}{d\lambda}$. $\bar{V}$ is a directional derivative that can act on a function. It is fine to think about $\bar{V} = V^\mu \bar{e}_{(\mu)}$, but $\bar{e}_{(\mu)}$ is just a directional derivative now. For the one form $\undertilde{w}$: $T_{p} \to \mathbb{R}$ acting on $\bar{V}$, $\undertilde{w}(\bar{V}) = w_\mu V^\mu$. This one form is acting via contraction to map a derivative to the real numbers. 
+    
+    \section{Distance}
+    We can also write down a definition for distance using the metric. For a spacelike curve, we define distance as proper distance s.
+        \begin{equation}
+            \begin{aligned}
+            s &= \int_{\lambda_a}^{\lambda_b} \sqrt{g_{\mu\nu}\frac{dx^\mu}{d\lambda}\frac{dx^\nu}{d\lambda}} d\lambda
+            \end{aligned}
+        \end{equation}
+        
+        \begin{figure} [H]
+                \begin{centering}
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Shape: Rectangle [id:dp23892371044725258] 
+\draw   (245.24,55.94) -- (466.39,68.27) -- (386.26,230.06) -- (165.11,217.73) -- cycle ;
+%Shape: Ellipse [id:dp9092469368360838] 
+\draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (390,122) .. controls (390,120.34) and (391.46,119) .. (393.25,119) .. controls (395.04,119) and (396.5,120.34) .. (396.5,122) .. controls (396.5,123.66) and (395.04,125) .. (393.25,125) .. controls (391.46,125) and (390,123.66) .. (390,122) -- cycle ;
+%Curve Lines [id:da9538166255148022] 
+\draw [line width=1.5]    (241.5,150) .. controls (302.5,71) and (351.5,206) .. (393.25,122) ;
+%Shape: Ellipse [id:dp16113315915972826] 
+\draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (238.25,150) .. controls (238.25,148.34) and (239.71,147) .. (241.5,147) .. controls (243.29,147) and (244.75,148.34) .. (244.75,150) .. controls (244.75,151.66) and (243.29,153) .. (241.5,153) .. controls (239.71,153) and (238.25,151.66) .. (238.25,150) -- cycle ;
+%Curve Lines [id:da6008935998750689] 
+\draw [color={rgb, 255:red, 206; green, 31; blue, 31 }  ,draw opacity=1 ][line width=1.5]    (260.5,158) .. controls (299.9,128.45) and (340.27,203.68) .. (381.61,155.3) ;
+\draw [shift={(383.5,153)}, rotate = 488.4] [color={rgb, 255:red, 206; green, 31; blue, 31 }  ,draw opacity=1 ][line width=1.5]    (14.21,-4.28) .. controls (9.04,-1.82) and (4.3,-0.39) .. (0,0) .. controls (4.3,0.39) and (9.04,1.82) .. (14.21,4.28)   ;
+
+% Text Node
+\draw (490,61) node   [align=left] {{\fontfamily{pcr}\selectfont \textit{{\Large $\mathcal{M}$}}}};
+% Text Node
+\draw (231,136) node   [align=left] {a};
+% Text Node
+\draw (406,107) node   [align=left] {b};
+% Text Node
+\draw (325,180) node  [color={rgb, 255:red, 206; green, 31; blue, 31 }  ,opacity=1 ] [align=left] {$\lambda$};
+
+
+\end{tikzpicture}
+\caption{The manifold $\mathcal{M}$ on which we have a spacelike curve from points a to b. The curve is parameterized by $\lambda$.}
+\end{centering}
+\end{figure}
+    
+    For a timelike curve, we define distance as proper time $\tau$.
+        \begin{equation}
+            \begin{aligned}
+            \tau &= \int_{\lambda_a}^{\lambda_b} \sqrt {-g_{\mu\nu}\frac{dx^\mu}{d\lambda}\frac{dx^\nu}{d\lambda}} d\lambda
+            \end{aligned}
+        \end{equation}
+        
+    \begin{figure} [H]
+        \begin{centering}
+    
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Shape: Rectangle [id:dp7772720349895936] 
+\draw   (245.24,55.94) -- (466.39,68.27) -- (386.26,230.06) -- (165.11,217.73) -- cycle ;
+%Shape: Ellipse [id:dp9229137638825369] 
+\draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (383.25,88) .. controls (383.25,86.34) and (384.71,85) .. (386.5,85) .. controls (388.29,85) and (389.75,86.34) .. (389.75,88) .. controls (389.75,89.66) and (388.29,91) .. (386.5,91) .. controls (384.71,91) and (383.25,89.66) .. (383.25,88) -- cycle ;
+%Curve Lines [id:da9987216988000933] 
+\draw [line width=1.5]    (242.5,195) .. controls (281.5,50) and (331.5,99) .. (386.5,88) ;
+%Shape: Ellipse [id:dp673923819992343] 
+\draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (239.25,195) .. controls (239.25,193.34) and (240.71,192) .. (242.5,192) .. controls (244.29,192) and (245.75,193.34) .. (245.75,195) .. controls (245.75,196.66) and (244.29,198) .. (242.5,198) .. controls (240.71,198) and (239.25,196.66) .. (239.25,195) -- cycle ;
+%Curve Lines [id:da4312717007952007] 
+\draw [color={rgb, 255:red, 206; green, 31; blue, 31 }  ,draw opacity=1 ][line width=1.5]    (259.5,197) .. controls (271.08,138.13) and (305.01,112.79) .. (329.84,103) ;
+\draw [shift={(332.5,102)}, rotate = 520.2] [color={rgb, 255:red, 206; green, 31; blue, 31 }  ,draw opacity=1 ][line width=1.5]    (14.21,-4.28) .. controls (9.04,-1.82) and (4.3,-0.39) .. (0,0) .. controls (4.3,0.39) and (9.04,1.82) .. (14.21,4.28)   ;
+
+% Text Node
+\draw (490,61) node   [align=left] {{\fontfamily{pcr}\selectfont \textit{{$\mathcal{M}$}}}};
+% Text Node
+\draw (223,190) node   [align=left] {a};
+% Text Node
+\draw (407,83) node   [align=left] {b};
+% Text Node
+\draw (317,153) node  [color={rgb, 255:red, 219; green, 41; blue, 41 }  ,opacity=1 ] [align=left] {$\lambda$};
+
+
+\end{tikzpicture}
+    \caption{The manifold $\mathcal{M}$ on which we have a timelike curve from points a to b. The curve is parameterized by $\lambda$.}
+        \end{centering}
+    \end{figure}
+    
+    
+    In both cases, we have assumed nothing about the parameterization $\lambda$. It is important to note that the proper time and proper distance along a specified curve between two points is invariant under coordinate changes.
+     \begin{equation}
+            \begin{aligned}
+            V^\mu V_\mu = V^{\mu'} V_{\mu'}
+            \end{aligned}
+        \end{equation}
+    A convenient shorthand for distance, ds, can be written as follows:
+        \begin{equation}
+            \begin{aligned}
+            ds^2 &= g_{\mu\nu} \undertilde{d}x^\mu \otimes \undertilde{d}x^\nu\\*
+            &= g_{\mu\nu} dx^\mu dx^\nu
+            \end{aligned}
+        \end{equation}
+    While the second line of equation (5.4) is an abuse of notation, this is safe to use if one acts as though $dx^\mu$ and $dx^\nu$ are just differential objects.
+    
+    \begin{example}
+	Let us consider cartesian coordinates in 3D flat space. In this space, 
+	    \begin{equation}
+            \begin{aligned}
+            g_{ij} &= \begin{pmatrix}
+                        1  &  0  &  0\\
+                        0  &  1  &  0\\
+                        0  &  0  &  1\\
+                        \end{pmatrix}
+            \end{aligned}
+        \end{equation}
+    We can write the distance as:
+        \begin{equation}
+            \begin{aligned}
+            ds^2 &= \undertilde{d}x \otimes \undertilde{d}x + \undertilde{d}y \otimes \undertilde{d}y + \undertilde{d}z \otimes \undertilde{d}z \\
+            &= dx^2 + dy^2 + dz^2
+            \end{aligned}
+        \end{equation}
+
+    This is just the Pythagorean theorem! 
+    
+   \begin{figure} [H]
+        \begin{centering}
+        
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,310); %set diagram left start at 0, and has height of 310
+
+%Shape: Axis 2D [id:dp3047269498828842] 
+\draw  (269,181.6) -- (496.5,181.6)(291.75,16) -- (291.75,200) (489.5,176.6) -- (496.5,181.6) -- (489.5,186.6) (286.75,23) -- (291.75,16) -- (296.75,23)  ;
+%Straight Lines [id:da9031157297069901] 
+\draw    (304.5,165) -- (203.7,299.4) ;
+\draw [shift={(202.5,301)}, rotate = 306.87] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Shape: Ellipse [id:dp9075810371677688] 
+\draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (340.25,132) .. controls (340.25,130.34) and (341.71,129) .. (343.5,129) .. controls (345.29,129) and (346.75,130.34) .. (346.75,132) .. controls (346.75,133.66) and (345.29,135) .. (343.5,135) .. controls (341.71,135) and (340.25,133.66) .. (340.25,132) -- cycle ;
+%Shape: Ellipse [id:dp9057939691084516] 
+\draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (428.25,96) .. controls (428.25,94.34) and (429.71,93) .. (431.5,93) .. controls (433.29,93) and (434.75,94.34) .. (434.75,96) .. controls (434.75,97.66) and (433.29,99) .. (431.5,99) .. controls (429.71,99) and (428.25,97.66) .. (428.25,96) -- cycle ;
+%Straight Lines [id:da812753551580975] 
+\draw    (343.5,132) -- (431.5,96) ;
+
+% Text Node
+\draw (382,95) node   [align=left] {$ds^2$};
+% Text Node
+\draw (294,5) node   [align=left] {z};
+% Text Node
+\draw (510,180) node   [align=left] {x};
+% Text Node
+\draw (194,306) node   [align=left] {y};
+% Text Node
+\draw (331,136) node   [align=left] {a};
+% Text Node
+\draw (447,93) node   [align=left] {b};
+
+
+\end{tikzpicture}
+        \caption{Two points a and b separated by a distance $ds^2$ in 3D flat space.}
+        \end{centering}
+    \end{figure}
+    
+    Now, we will transform coordinates from (x, y, z) $\to$ (r, $\theta$, $\phi$). Let us denote (x, y, z) with $x^i$ and (r, $\theta$, $\phi$) with $x^{i'}$. We will perform this transformation using the Jacobian transformation matrices $\frac{\partial x^{i'}}{\partial x^{i}}$. 
+    For i = 1:
+        \begin{equation}
+            \begin{aligned}
+            \frac{\partial x^{1'}}{\partial x^1} &= \frac{\partial r}{\partial x} = \frac{\partial}{\partial x} \sqrt{x^2 + y^2 + z^2} = \frac{x}{r}
+            \end{aligned}
+        \end{equation}
+    This same process can be done for i = 2 and i = 3. The distance in spherical polar coordinates is as follows:
+        \begin{equation}
+            \begin{aligned}
+            ds^2 &= dr^2 + r^2d\theta^2 + r^2 \sin^2{\theta}d\phi^2
+            \end{aligned}
+        \end{equation}
+    Now, we can write the metric and its inverse for this coordinate system.
+        \begin{equation}
+            \begin{aligned}
+            g_{ij} &= \begin{pmatrix}
+                        1  &  0  &  0\\
+                        0  &  r^2  &  0\\
+                        0  &  0  &  r^2\sin^2{\theta}\\
+                        \end{pmatrix}
+            \end{aligned}
+        \end{equation}
+        \begin{equation}
+            \begin{aligned}
+            g^{ij} &= \begin{pmatrix}
+                        1  &  0  &  0\\
+                        0  &  \frac{1}{r^2}  &  0\\
+                        0  &  0  &  \frac{1}{r^2\sin^2{\theta}}\\
+                        \end{pmatrix}
+            \end{aligned}
+        \end{equation}
+    \end{example}
+    
+    \begin{example}
+    
+    Another example that we can consider is the 4D Friedmann–Lemaître–Robertson–Walker (FLRW) metric.
+        \begin{equation}
+            \begin{aligned}
+            ds^2 &= -dt^2 + a^2(t)(dx^2 + dy^2 + dz^2)
+            \end{aligned}
+        \end{equation}
+    This looks like our spacetime interval $\Delta s^2$ for flat 4D spacetime except for the $a^2(t)$ term, which is called the "scale factor".
+    
+    \begin{figure} [H]
+        \begin{centering}
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,381); %set diagram left start at 0, and has height of 381
+
+%Shape: Axis 2D [id:dp8310412399811793] 
+\draw  (274,211.6) -- (451.5,211.6)(291.75,73) -- (291.75,227) (444.5,206.6) -- (451.5,211.6) -- (444.5,216.6) (286.75,80) -- (291.75,73) -- (296.75,80)  ;
+%Shape: Axis 2D [id:dp06756589499718757] 
+\draw  (309.5,211.51) -- (132,212.38)(292.43,350.2) -- (291.67,196.2) (139.03,217.35) -- (132,212.38) -- (138.98,207.35) (297.39,343.17) -- (292.43,350.2) -- (287.39,343.22)  ;
+%Shape: Ellipse [id:dp3232775634506875] 
+\draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (337,212) .. controls (337,210.34) and (338.46,209) .. (340.25,209) .. controls (342.04,209) and (343.5,210.34) .. (343.5,212) .. controls (343.5,213.66) and (342.04,215) .. (340.25,215) .. controls (338.46,215) and (337,213.66) .. (337,212) -- cycle ;
+%Shape: Ellipse [id:dp39951307098776034] 
+\draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (288.5,211.6) .. controls (288.5,209.94) and (289.96,208.6) .. (291.75,208.6) .. controls (293.54,208.6) and (295,209.94) .. (295,211.6) .. controls (295,213.26) and (293.54,214.6) .. (291.75,214.6) .. controls (289.96,214.6) and (288.5,213.26) .. (288.5,211.6) -- cycle ;
+%Straight Lines [id:da31362189603752033] 
+\draw [line width=1.5]    (340.25,212) -- (291.75,211.6) ;
+
+% Text Node
+\draw (293,59) node   [align=left] {ct};
+% Text Node
+\draw (463,209) node   [align=left] {x};
+% Text Node
+\draw (315,226) node   [align=left] {dx};
+% Text Node
+\draw (281,200) node   [align=left] {a};
+% Text Node
+\draw (352,200) node   [align=left] {b};
+
+
+\end{tikzpicture}
+        \caption{Two points in 4D spacetime separated by a distance in space, dx.}
+        \end{centering}
+    \end{figure}
+    For Figure 6 above, $ds^2 = a^2(t)dx^2 = a^2dx^2 \to ds = adx$. This means that observers at fixed coordinates see the distance between themselves grow or shrink in time depending on the value of $a$, the scale factor.
+    
+    \end{example}
+    
+    \section{Transformations}
+    For a tensor T, the transformation of its components is defined as follows:
+        \begin{equation}
+            \begin{aligned}
+           T_{\mu ' \nu '} &= \frac{\partial x^\mu}{\partial x^{\mu '}} \frac{\partial x^\nu}{\partial x^{\nu '}} T^{\mu \nu}
+            \end{aligned}
+        \end{equation}
+    The components of the tensor change under transformation, however the tensor itself is invariant under coordinate transformation.
+    \begin{example}
+    Let us consider an example which is $\boldsymbol{not}$ a tensor: $\Tilde{\epsilon}_{\mu\nu\rho\sigma}$.
+        \begin{equation}
+            \begin{aligned}
+           \Tilde{\epsilon}_{\mu '\nu '\rho '\sigma '} &= \frac{\partial x^\mu}{\partial x^{\mu '}} \frac{\partial x^\nu}{\partial x^{\nu '}} \frac{\partial x^\rho}{\partial x^{\rho '}} \frac{\partial x^\sigma}{\partial x^{\sigma '}} \Tilde{\epsilon}_{\mu\nu\rho\sigma}\\
+           &= det \begin{vmatrix}
+                    \frac{\partial x^\mu}{\partial x^{\mu '}}  \\
+                    \end{vmatrix} \Tilde{\epsilon}_{\mu\nu\rho\sigma}
+            \end{aligned}
+        \end{equation}
+    There is a "scaling factor", $\begin{vmatrix}
+                    \frac{\partial x^\mu}{\partial x^{\mu '}}  \\
+                    \end{vmatrix}$
+    , multiplying $\Tilde{\epsilon}_{\mu\nu\rho\sigma}$ which shows that $\Tilde{\epsilon}_{\mu\nu\rho\sigma}$ is not invariant under coordinate transformation. Thus, $\Tilde{\epsilon}_{\mu\nu\rho\sigma}$ is not a tensor. 
+    \end{example}
+\end{document}
