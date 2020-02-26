@@ -1,0 +1,212 @@
+\documentclass[10pt]{article}
+\usepackage{NotesTeX} %/Path/to/package should be replaced with package location
+\usepackage{lipsum}
+\usepackage{tensor}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{hyperref}
+\usepackage{physics}
+\input{undertilde}
+
+\newcommand{\bs}{\textbackslash}
+
+
+\title{{\Huge General Relativity}\\{\Large{Class 15 - February 24, 2020}}} %replace with class number
+\author{Nicol\'as Morales-Dur\'an}
+
+\emailAdd{na.morales92@utexas.edu} %replace with your email
+\begin{document}
+    \maketitle
+    \flushbottom
+    \newpage
+    \pagestyle{fancynotes}
+    %\part{HELLO \LaTeX\,}
+	%Use the uncompiled version of this document in itself as a \LaTeX\, style guide for the class you'll be responsible for.
+	In the last two lectures we studied some properties of the Schwarzschild black hole spacetime metric. In this lecture we will come back to introduce some concepts in differential geometry that will be useful when we want to take derivatives on curved spacetimes. 
+     \section{Differential forms}
+     \subsection{$p$ --forms}
+     	Although forms will not appear a lot in this class, they play an important role in several areas of theoretical physics, so it is useful to review them. \textbf{A $p$-form is a totally antisymmetric rank $(0,p)$-tensor}, for instance we already learned that   
+	\begin{itemize}
+	\item 0-forms are functions.
+	\item 1-forms are written as $\undertilde{\omega}=\omega_{\mu}\undertilde{dx^{\mu}}$.
+	\end{itemize}
+	%
+	We can go on and define higher order forms. 
+	\subsection{Wedge product}
+	It is beneficial to define a product that acts on the space of forms: The wedge product, also known as exterior product, and denoted as $\wedge$. First let us see an example on how this wedge product acts on two $1$-forms,
+	\begin{align}
+	\undertilde{dx^{\mu}}\wedge \undertilde{dx^{\nu}}=\left(\undertilde{dx^{\mu}}\otimes \undertilde{dx^{\nu}}-\undertilde{dx^{\nu}}\otimes \undertilde{dx^{\mu}} \right).
+	\end{align}
+	It is the totally antisymmetric tensor product. Similarly, for three $1$-forms we will have 6 terms
+	\begin{align}
+	\undertilde{dx^{\mu}}\wedge \undertilde{dx^{\nu}}\wedge \undertilde{dx^{\rho}}&=\undertilde{dx^{\mu}}\otimes \undertilde{dx^{\nu}}\otimes\undertilde{dx^{\rho}}-\undertilde{dx^{\nu}}\otimes \undertilde{dx^{\mu}} \otimes \undertilde{dx^{\rho}}-\undertilde{dx^{\mu}}\otimes \undertilde{dx^{\rho}}\otimes\undertilde{dx^{\nu}} \nonumber\\
+	&+\undertilde{dx^{\rho}}\otimes \undertilde{dx^{\mu}}\otimes\undertilde{dx^{\nu}}-\undertilde{dx^{\rho}}\otimes \undertilde{dx^{\nu}}\otimes\undertilde{dx^{\mu}}+\undertilde{dx^{\nu}}\otimes \undertilde{dx^{\rho}}\otimes\undertilde{dx^{\mu}}.
+	\end{align}	
+	%
+	The general formula for $p$ wedge products of $1$-forms is given by
+	%
+	\begin{align}
+	\undertilde{dx^{\mu_1}}\wedge \cdots \wedge \undertilde{dx^{\mu_p}}=p! \, \undertilde{dx}^{[\mu_1}\otimes\cdots \otimes \undertilde{dx}^{\mu_p]}.
+	\end{align}
+	Hence, an arbitrary p-form can be written in a basis of wedge products with an extra normalization factor
+	\begin{align}
+	\undertilde{\omega}&=\frac{1}{p!}\,\omega_{\mu_1\cdots\mu_p}\undertilde{dx^{\mu_1}}\wedge \cdots \wedge \undertilde{dx^{\mu_p}}=\omega_{[\mu_1\cdots\mu_p]}\undertilde{dx^{\mu_1}}\otimes \cdots \otimes \undertilde{dx^{\mu_p}}.
+	\end{align}
+	%
+	Let us study another example to illustrate the action of the wedge product. Consider an antisymmetric $2$-form, $\alpha$, it can be written as
+	\begin{align}
+	\undertilde{\alpha}&=\frac{1}{2}\alpha_{\mu\nu}\undertilde{dx^{\mu}}\wedge \undertilde{dx^{\nu}}=\frac{1}{2}\alpha_{\mu\nu}\left(\undertilde{dx^{\mu}}\otimes \undertilde{dx^{\nu}} -\undertilde{dx^{\nu}}\otimes \undertilde{dx^{\mu}}\right)\nonumber \\
+	&=\frac{1}{2}(\alpha_{\mu\nu}\undertilde{dx^{\mu}}\otimes \undertilde{dx^{\nu}}+\alpha_{\nu\mu}\undertilde{dx^{\nu}}\otimes \undertilde{dx^{\mu}})=\alpha_{\mu\nu}\undertilde{dx^{\mu}}\otimes \undertilde{dx^{\nu}}.
+	\end{align}
+	%
+	The second line follows from the antisymmetry property $\alpha_{\mu\nu}=-\alpha_{\nu\mu}$. This illustrates that for antisymmetric forms, the definition of the form with the wedge product basis and the definition via the tensor product basis coincide. Now, let $\alpha$ be a $p$-form and $\beta$ be a $q$-form, then
+	%
+	\begin{align}
+	\label{wedgeproduct}
+	\undertilde{\alpha}\wedge\undertilde{\beta}=\frac{1}{p!\, q!}\, \alpha_{\mu_1\cdots\mu_p}\beta_{\nu_1\cdots\nu_q}\undertilde{dx^{\mu_1}}\wedge \cdots \wedge \undertilde{dx^{\nu_q}}.
+	\end{align}
+	Note that by using the property $\undertilde{dx^{\mu_1}}\wedge \undertilde{dx^{\mu_2}}=-\undertilde{dx^{\mu_2}}\wedge \undertilde{dx^{\mu_1}}$, we can rearrange the previous formula to get an expression for 
+	\begin{align}
+	\undertilde{\beta}\wedge\undertilde{\alpha}=(-1)^{pq}\undertilde{\alpha}\wedge\undertilde{\beta}.
+	\end{align}
+	We will denote the space of all $p$-forms over a manifold, $\mathcal{M}$, as $\Lambda^p(\mathcal{M})$. It is much more restricted than the space of rank $(0,p)$-tensors, because we require antisymmetry as well. The wedge product is a map between these form spaces
+	\begin{align}
+	\wedge: \Lambda^p \times \Lambda^q \longrightarrow \Lambda^{p+q},
+	\end{align} 
+	%
+	with the action of $\wedge$ given by eq. \eqref{wedgeproduct}. Note also that if dim$(\mathcal{M})=n$, there are no $p$-forms such that $p>n$. Take the particular example of 4 dimensions where we can write a $4$-form
+	%
+	\begin{align}
+	\label{volumeform}
+	dx^0\wedge dx^1 \wedge dx^2 \wedge dx^3,
+	\end{align}
+	%
+	but $dx^0\wedge dx^1 \wedge dx^2 \wedge dx^3\wedge dx^{\mu}=0$ for $\mu=0,1,2,3$ by means of antisymmetry; so there are not $5$-forms in a 4-dimensional space. In general, the dimension of the corresponding $p$-form spaces will be given by
+	\begin{align}
+	\text{dim}(\Lambda^p)=\frac{n!}{p!(n-p)!}
+	\end{align}
+	For instance, in 4 dimensions (the case of interest in this course) we will have
+	%
+	\begin{itemize}
+	\item $\Lambda^0$: 1 dimensional (functions).
+	\item $\Lambda^1$: 1 dimensional. 
+	\item $\Lambda^2$: 6 dimensional (6 ways to construct $\undertilde{dx^{\mu}}\wedge \undertilde{dx^{\nu}}$ without repeating indices).
+	\item $\Lambda^3$: 4 dimensional (4 ways to construct $\undertilde{dx^{\mu}}\wedge \undertilde{dx^{\nu}}\wedge \undertilde{dx^{\nu}}$ without repeating indices).
+	\item $\Lambda^4$: 1 dimensional.
+	\end{itemize}
+	%
+	The basis for $\Lambda^4$, eq. \eqref{volumeform} will be understood as the volume element.
+    			%\sn{If you are totally new to \LaTeX\, \href{https://www.latex-tutorial.com/tutorials/}{this} looks like a nice guide.} 
+         \section{Exterior derivative}\label{sec:useful_pkg}
+         We will define an operator that allows us to differentiate $p$-forms, but first let us see some examples. 
+         %
+         \begin{itemize}
+         \item The exterior derivative on functions is just a gradient. $\undertilde{df}=\partial_{\mu} f\undertilde{dx^\mu}$.
+         \item Exterior derivative acting on $1$-forms: $\undertilde{\omega}=\omega_{\nu}\,dx^{\nu}$,
+         \begin{align*}
+         \undertilde{d \omega}=\partial_{\mu}\omega_{\nu}dx^{\mu}\wedge dx^{\nu}=(\partial_{\mu}\omega_{\nu}-\partial_{\nu}\omega_{\mu})\,dx^{\mu}\otimes dx^{\nu}.
+         \end{align*}
+         \end{itemize} 
+         %     		
+	We could understand the action of the exterior derivative as first hitting the components with a derivative and then "wedge in" another $d$. In general, if $\alpha$ is a $p$-form,
+	\begin{align}
+	\undertilde{\alpha}=\frac{1}{p!}\, \alpha_{\mu_1 \cdots \mu_p}\undertilde{dx}^{\mu_1}\wedge \cdots \wedge \undertilde{dx}^{\mu_p}\implies \undertilde{d\alpha}=\frac{1}{p!}\,\partial_{\nu}\alpha_{\mu_1 \cdots \mu_p}\undertilde{dx}^{\nu}\wedge\undertilde{dx}^{\mu_1}\wedge \cdots \wedge \undertilde{dx}^{\mu_p}.
+	\end{align}	
+	%
+	It turns out that the exterior derivative is a map between forms and the components of the resulting form transform as tensors. Remember that the partial derivative operator $\partial_{\mu}\omega_{\nu}$ had the problem of being non-covariant. But now calculate explicitly the following
+	\begin{align}
+	\partial_{\mu^{\prime}}\omega_{\nu^{\prime}}&-\partial_{\nu^{\prime}}\omega_{\mu^{\prime}}=\partial_{\mu^{\prime}}\left( \frac{\partial x^{\nu}}{\partial x^{\nu^{\prime}}}\omega_{\nu}\right)-\partial_{\nu^{\prime}}\left( \frac{\partial x^{\mu}}{\partial x^{\mu^{\prime}}}\omega_{\mu}\right) \nonumber \\
+	&=\left( \frac{\partial^2 x^{\nu}}{\partial x^{\mu^{\prime}}\partial x^{\nu^{\prime}}}\right)\omega_{\nu}+\frac{\partial x^{\nu}}{\partial x^{\nu^{\prime}}}\partial_{\mu^{\prime}}\omega_{\nu}-\left( \frac{\partial^2 x^{\mu}}{\partial x^{\nu^{\prime}}\partial x^{\mu^{\prime}}}\right)\omega_{\mu}-\frac{\partial x^{\mu}}{\partial x^{\mu^{\prime}}}\partial_{\nu^{\prime}}\omega_{\mu},
+	\end{align}
+	%
+	the second line follows from application of the product rule for derivatives. Now, since partial derivatives commute, the first and third terms in the above equation will cancel, yielding
+	%
+	\begin{align}
+	\partial_{\mu^{\prime}}\omega_{\nu^{\prime}}-\partial_{\nu^{\prime}}\omega_{\mu^{\prime}}=\frac{\partial x^{\mu}}{\partial x^{\mu^{\prime}}}\frac{\partial x^{\nu}}{\partial x^{\nu^{\prime}}}\left(\partial_{\mu} \omega_{\nu}-\partial_{\nu}\omega_{\mu}\right).
+	\end{align}
+	%
+	From this last calculation we see that antisymmetrization gets rid of the additional terms that appear when transforming the partial derivative. Therefore, the object $(\partial_{\mu}\omega_{\nu}-\partial_{\nu}\omega_{\mu})$ transforms as a tensor. We only proved this fact for $2$-forms but it is true for all $p$ --forms. There are some additional interesting facts about the exterior derivative that we will mention now.\\\\
+	%
+	First, notice that if we can write $\undertilde{\omega}=\undertilde{df}=\partial_{\nu}fdx^{\nu}$, then 
+	%
+	\begin{align}
+	d\undertilde{\omega}=\partial_{\mu}(\partial_{\nu}f) dx^{\mu}\wedge dx^{\nu}=\left( \partial_{\mu}\partial_{\nu}f-\partial_{\nu}\partial_{\mu} f\right)dx^{\mu}\otimes dx^{\nu}=0.
+	\end{align}	
+	%
+	The term in parenthesis in the last equality is zero since the partial derivatives commute. This property can be generalized as $\undertilde{d}(\undertilde{d \alpha})=0$, for any $p$-form, $\alpha$. Following that, we can make a characterization of forms
+	%
+	\begin{itemize}
+	\item A form such that $\undertilde{d \alpha}=0$ is said to be \textit{closed}.
+	\item A form such that $\undertilde{\alpha}=\undertilde{d \omega}$ is called \textit{exact}.
+	\end{itemize} 	
+	%
+	From the previous reasoning we see that an exact form is automatically closed, because operating the exterior derivative twice yields zero. 
+	\begin{center}
+	Exact $\implies$ Closed.
+	\end{center}
+	%
+	Nevertheless, the converse is not true in general, it's only true in topologically trivial spaces.
+	% 
+	As we mentioned earlier, we can see the exterior derivative as a map between form spaces
+	%
+	\begin{align}
+	d: \Lambda^p \longrightarrow \Lambda^{p+1}.
+	\end{align}
+	%
+	If we have $\alpha$, a $p$-form, $d \alpha=0$. Finally, it can be shown that 
+	%
+	\begin{align}
+	d(\undertilde{\alpha}\wedge\undertilde{\beta})=(\undertilde{d\alpha})\wedge \undertilde{\beta}+(-1)^p~\undertilde{\alpha}\wedge(\undertilde{d \beta}).
+	\end{align}
+	%
+	\subsection{Connection to physics: Electromagnetism}
+	We can appreciate the usefulness of forms in physics by noting that the electromagnetic tensor, $F_{\mu\nu}$, is a $2$-form (It is antisymmetric). Also, the four potential $\undertilde{A}=A_{\mu}\undertilde{d x^{\mu}}$ is related to the electromagnetic tensor by
+	%
+	\begin{align}
+	F_{\mu\nu}=\partial_{\mu}A_{\nu}-\partial_{\nu}A_{\nu} \implies \undertilde{F}=\undertilde{d A}.
+	\end{align}
+	%
+	Since $\undertilde{F}$ is exact, it follows that $\undertilde{d F}=0$, written in component notation we obtain two of the Maxwell's equations
+	%
+	\begin{align}
+	\label{Maxwell}
+	\partial_{\,[\mu}F_{\nu\rho]}=0.
+	\end{align} 
+	%
+	This was a lengthy exercise in the homework, that now follows instantaneously from the properties of forms.  
+	%
+	\section{Hodge dual operator}
+	To obtain the two remaining Maxwell's equations we should introduce an additional mathematical object. We want a map that allows us to decrease the rank of a form, we do so by defining the Hodge dual of Hodge star operator,
+	%
+	\begin{align*}
+	\ast: \Lambda^p &\longrightarrow \Lambda^{n-p}\\
+	\ast\,(\undertilde{\omega})=&\frac{1}{p!\, (n-p)!}\,\omega_{\mu_1\cdots \mu_p}\tensor{\epsilon}{^{\mu_1\cdots \mu_p}_{\nu_1\cdots \nu_{n-p}}}\undertilde{d}x^{\nu_1}\wedge\cdots\wedge\undertilde{d}x^{\nu_{n-p}}.
+	\end{align*} 
+	%
+	Note that unlike the exterior derivative, the Hodge product requires the metric in order to raise the index of the Levi-Civita tensor. Let us see some examples of how it acts in four dimensions:
+	\begin{itemize}
+	\item Hodge dual of a $1$-form is a $3$-form
+	%
+	\begin{align}
+	\ast\,(\undertilde{d x^{\mu}})=\frac{1}{(n-p)!}~\tensor{\epsilon}{^{\mu}_{\nu\rho\sigma}}dx^{\nu}\wedge dx^{\rho} \wedge dx^{\sigma}.
+	\end{align}
+	%
+	\item Hodge dual of a $2$-form is another $2$-form
+	\begin{align}
+	\ast\,(\undertilde{d x^{\mu}}\wedge \undertilde{d x^{\nu}})=\frac{1}{(n-p)!}~\tensor{\epsilon}{^{\mu \nu}_{\rho \sigma}} dx^{\rho} \wedge dx^{\sigma}.
+	\end{align}
+	%
+	\item The Hodge dual of 1 is the volume form
+	\begin{align*}
+	\ast(1)=\frac{1}{n!}\epsilon_{\mu \nu \rho \sigma} dx^{\mu} \wedge dx^{\nu} \wedge dx^{\rho} \wedge dx^{\sigma}.
+	\end{align*}
+	\end{itemize}
+	%
+	Finally, with the aid of  the Hodge dual opertor we can write the other two Maxwell's equations together with eq. \eqref{Maxwell} as
+	\begin{align}
+	d(\ast F)=\ast(J).
+	\end{align}
+	%
+	One can check that both sides of last equality are $3$-forms.
+	               	
+
+\end{document}
