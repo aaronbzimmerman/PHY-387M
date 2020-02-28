@@ -22,6 +22,7 @@
 \newcommand{\epupt}{\tilde{\epsilon}_{\mu' \nu' \rho' \sigma'}}
 \newcommand{\gmn}{g_{\mu \nu}}
 \newcommand{\gmnhat}{g_{\hat{\mu} \hat{\nu}}}
+\newcommand{\emnhat}{\eta_{\hat{\mu} \hat{\nu}}}
 \newcommand{\dxm}{\frac {\partial \xm}{\partial \xmp}}
 \newcommand{\dxminverse}{\frac {\partial \xmp}{\partial \xm}}
 \newcommand{\dxn}{\frac {\partial \xn}{\partial \xnp}}
@@ -44,16 +45,16 @@
     \part{Tensors and the Metric}
 
 Today we will give more examples about what are tensors and what are not tensors. Then we will move on to see why partial derivatives don't transforma like vectors (this is where covariant derivatives come in). We will also consider how to use coordinate transformations to normalize a metric. Lastly, we will introduce the Schwarzschild coordinates and the black hole metric in those coordinates.
-Today we will give more examples about what are tensors and what are not tensors. Then we will move on to see why partial derivatives don't transforma like vectors (this is where covariant derivatives come in). We will also consider how to use coordinate transformations to normalize a metric. Lastly, we will introduce the Schwarzschild coordinates and the black hole metric in those coordinates.
+
     
 
 \section{More tensors!}\label{sec:class_style}
 
 
-Let's do some more tensors! Recall our setup, if we have two different coordinate systems $x^\mu$ and $\xmp$, then we have the Jacobian matrix $$M^\mu _{\mu'} = \frac {\partial \xm}{\partial \xmp}.$$ One good example of a tensor is the Levi-Civita tensor $\epu$, which mathematically is the unqiue positively-oriented top form on $\mathbb{R}^4$ with norm $-1$. $\epu$ has the property that $$M^{\mu}_{\mu'} M^{\nu}_{\nu'} M^{\rho}_{\rho'} M^{\sigma}_{\sigma'} \epu = \det (M) \  \epup.$$
+Let's do some more tensors! Recall our setup, if we have two different coordinate systems $x^\mu$ and $\xmp$, then we have the Jacobian matrix $M^\mu _{\mu'} \coloneqq \frac {\partial \xm}{\partial \xmp}$. One good example of a tensor is the Levi-Civita tensor $\epu$. $\epu$ has the property that $$M^{\mu}_{\mu'} M^{\nu}_{\nu'} M^{\rho}_{\rho'} M^{\sigma}_{\sigma'} \epu = \det (M) \  \epup.$$
 
 
-We also have tensor densities are quite similiar to tensors, but they might be different by a sign. The canonical example is the Levi-Civita symbol (density) $\eput$: it has the transformation property 
+We also have tensor densities, which transformations similiar to tensors, but they differ by a sign when the coordinate transformation is not oriented (a transformation is oriented if the determinant of the Jacobian matrix is positive). The canonical example is the Levi-Civita symbol (density) $\eput$: it has the transformation property 
 
 $$M^{\mu}_{\mu'} M^{\nu}_{\nu'} M^{\rho}_{\rho'} M^{\sigma}_{\sigma'} \eput = |\Det (M)| \  \epupt.$$
 
@@ -62,26 +63,25 @@ So it agress with the Levi-Civita up to a sign.
 Here's another example: Let's define $g \coloneqq \det (\gmn)$. For example, $\eta \coloneqq \det(\eta_{\mu \nu}) = -1$. Let's see how $g$ transforms:
 
 $$g(x_{\mu'}) = \det( \frac {\partial \xm}{\partial \xmp} \dxn \gmn) 
-	 = \det (\dxm)^2 \det(\gmn)$$.  
+	 = (\det (\dxm))^2 \det(\gmn)$$.  
 
-From this, we also get the formula that in dimension 4 and signature $(-\ +\ +\ +\ )$, we have that $\epu = \sqrt{-g} \ \eput$.
-
+In fact, one can show that
 \begin{exercise}
-Show that ${\epsilon}^{\mu \nu \rho \sigma} =  \frac{1}{\sqrt{-g}}\  \tilde{\epsilon} ^{\mu \nu \rho \sigma}.$
 
+Check that $\eput = \sqrt{-g}$.
 
 \end{exercise}
 
 \section{Partial Derivatives of Vectors}\label{sec:class_style}
 
-Tensor densities such as the Levi-Civita symbol are not tensors (aka they doesn't transform like how tensors transform under coordinate transformations), but they are pretty close to it. However, when you take the partial derivative of a tensor, it behaves very differently from a tensor object:
+Tensor densities such as the Levi-Civita symbol are not tensors (aka they doesn't transform like how tensors transform under coordinate transformations), but they are pretty close to it. However, when you take the partial derivative of a tensor, it behaves very differently from a tensorial object:
 
 Let $V^{\nu'}$ be a vector and we want to calculate $\partial_{\mu} V^{\nu}$ in different coordinates.  Let's see how it changes under a coordinate transformation:
 
 $$\partial_{\mu'} V^{\nu'} = (\dxm \partial_\mu)(\dxminverse V^{\nu}) = \dxm \dxminverse \partial_{\mu} V^{\nu} + 
 	\dxm V^{\nu} \frac{\partial^2 \xnp}{\partial \xm \partial \xn}.$$
 
-Note for the second equality, we use the chain rule with respect to $\partial_{\mu}$. From this we see that $\partial_{\mu} V^{\nu}$ doesn't transform like a tensor: you get $\dxm \dxminverse \partial_{\mu} V^{\nu}$ which is what you should get if it is a tensor, but because of chain rule you get an additional piece $\dxm V^{\nu} \frac{\partial^2 \xnp}{\partial \xm \partial \xn}$. Note that if the coordinate transformation is linear (for example, the Lorenzt boosts), then partial derivatives do transform like a vector as the second order part vanishes. In order to make a partial derivative object a tensor, we are going to replace partial derivatives $\partial_\mu$ to covariant derivatives $\nabla_\mu$, where $\nabla$ is the Levi-Civita connection (covariant derivative). We will get to this in a few weeks, but right now let's just keep in our minds that partial derivatives of vectors is not well-defined in general curved spacetime because they are not tensorial under general coordinate transformations.
+Note for the second equality, we use the chain rule with respect to $\partial_{\mu}$. From this we see that $\partial_{\mu} V^{\nu}$ doesn't transform like a tensor: you get $\dxm \dxminverse \partial_{\mu} V^{\nu}$ which is what you should get if it is a tensor, but because of chain rule you get an additional piece $\dxm V^{\nu} \frac{\partial^2 \xnp}{\partial \xm \partial \xn}$. Note that if the coordinate transformation is linear (for example, the Lorenzt boosts), then partial derivatives do transform like a vector as the second order part  of the coordinate transformation vanishes. In order to make a partial derivative object a tensor, we are going to replace partial derivatives $\partial_\mu$ to covariant derivatives $\nabla_\mu$, where $\nabla$ is the Levi-Civita connection (covariant derivative). We will get to this in a few weeks, but right now let's just keep in our minds that partial derivatives of vectors is not well-defined in general curved spacetime because they are not tensorial under general coordinate transformations.
 
 \section{Normalizing the metric at a point}\label{sec:class_style}
 
@@ -89,15 +89,17 @@ Let's move away from tensors and re-examine the metric itself. In general coordi
 
 There are different questions we can ask:
 
-1. Does there exist a coordinate transformation such that the transformed metric $\gmnhat = \emn$ at a point $p \in M$, where $M$ is my spacetime?
+\begin{enumerate}
 
-2. How about $\gmnhat = \emn$ in first order around p? Equivalently, can we make $\partial_{\hat{\alpha}} \gmnhat = 0$ How about second order? How about the entire taylor series (formal neighborhood)?
+\item Does there exist a coordinate transformation such that the transformed metric $\gmnhat = \emn$ at a point $p \in M$, where $M$ is my spacetime?
 
-3. Can $\gmnhat= \emn$ for a whole open neighborhood around $p$?
+\item How about $\gmnhat = \emn$ in first order around p? How about up to second order (i.e. can we make $\partial_{\hat{\alpha}} \gmnhat = 0$)? Similiarly, we can ask it to be $\emn$ up to $n$-th order, or even agree on the entire taylor series around $p$.
 
-We will partially answer the first two questions in this class. At the end of the section, we will say a few things about number 3 and come back to it later.
+\item Can $\gmnhat= \emn$ on a open neighborhood around $p$?
 
-In order to answer them, we will count degrees of freedom of a coordinate tranformation and of the partial of a metric. The idea is that given a general metric, it has certain degree of freedom at order $\mathcal{O}(x^n)$. We need to "kill" all those degrees of freedom if we want it to be like $\emn$. What we have in our control is degrees of freedom of coordinate transformations. So we should count how many degrees of freedom we have, and how many degrees of freedom we need to kill.
+\end{enumerate}
+
+We will partially answer the first two questions in this class. At the end of the section, we will say a few things about number 3 and come back to it later. In order to answer question 1 and 2, we will count degrees of freedom of a coordinate tranformation and of the partials of a metric. The idea is that given a general metric, it has certain degree of freedom at order $\mathcal{O}(x^n)$. We need to "kill" all those degrees of freedom if we want it to be like $\emn$ to order $n$. What we have in our control is degrees of freedom of coordinate transformations. So we should count how many degrees of freedom we have, and how many degrees of freedom we need to kill.
 
 Consider the Taylor expansion
 \begin{align*}
@@ -109,17 +111,17 @@ $ (M^{\mu}_{\mu'}$ is the Jacobian of the transformation). At order zero, $\gmnh
 Now let's move to order 1: $\partial_{\hat{\alpha}} \gmnhat$ has $4 \times 10 = 40$ degrees of freedom, while $\partial_{\hat{\alpha}} M^{\mu}_{\mu'} = \frac{\partial^2 \xm}{\partial x^{\hat{\alpha}} \partial x^{\hat{\nu}}}$ also has 40 degrees of freedom, 4 on top, 10 on bottom (we can't use degrees of freedom of $M^{\mu}_{\mu'}$ as we have spent (most of) it on the order 0 calculation). So great! We see that we can use coordinate transformations to change any matrix to be $\emn$ up to order 2.
 
 Now for the second order, we know what we need to look for. On one hand, we need to kill all the $\partial_{\hat{\alpha}} \partial_{\hat{\beta}} \gmnhat$. Because the partial commutes, the number of independent partial derivatives are 10. We still also have ten choices for $\gmnhat$, so there are 100 degrees of freedom that we need to kill. On the other hand, we are looking at 
-$\frac{\partial^3 \xn}{\partial x^{\hat{\alpha}} \partial x^{\hat{\nu}} \partial x^{\hat{\rho}}}$, which has 4 degrees of freedom on top, and because the bottom is totally symmetric, there are 20 ways to do so, thus we get 80 on the bottom. We see that there are 20 degrees of freedom that we haven't killed, it turns out those 20 degrees of freedom are exactly those coming from the Riemann curvature tensor associated to the metric $\gmn$. 
+$\frac{\partial^3 \xn}{\partial x^{\hat{\alpha}} \partial x^{\hat{\nu}} \partial x^{\hat{\rho}}}$, which has 4 degrees of freedom on top, and because the bottom is totally symmetric, there are 20 ways to do so, thus we get 80 in total. We see that there are 20 degrees of freedom that we haven't killed, it turns out those 20 degrees of freedom are exactly those coming from the Riemann curvature tensor associated to the metric $\gmn$. 
 
-So we get our answer: given any metric $\gmn$, locally around a point $p$, we can find coordinate transformations $(x^{\hat{\mu}})$ such that $\gmnhat = \emn + \mathcal{O}(x^2)$. 
+So we get our answer: given any metric $\gmn$, locally around a point $p$, we can find coordinate transformations $(x^{\hat{\mu}})$ such that $\gmnhat = \emn + \mathcal{O}(x^2)$. However, it is not true that general metric can be transformed to look like $\emn$ to order 2, as we will see later, this will require the vanishing of the Riemann curvature tensor at the point $p$.
 
-As to answer our third question, it is also related to the Riemann curvature tensor. The theorem goes that a metric $\gmn$ can locally (an open neighborhood of $p$, not infinitesimally) be transformed into the Minkowski metric (this is called flatness) iff its Riemann curvature vanishes in an open neighborhood of $p$.
+As to answer our third question, it is also related to the Riemann curvature tensor. There is a theorem that state that a metric $\gmn$ can locally (an open neighborhood of $p$, not just infinitesimally) be transformed into the Minkowski metric (this is called flatness) iff its Riemann curvature vanishes in an open neighborhood of $p$.
 
 \section {From flat spacetime to curved spacetime}\label{sec:class_style}
 
 Because all metrics look like the Minkowski metric (up to order 2), any objects which are tensorial can now be made sense in any curved space, and it doesn't matter which coordinates we calculate them in, they will all be the same!
 
-For example, in flat space, let's say we have an observers $O$ and $O'$. We will be in $O$'s frame of reference. Let's say that at time $t = 0$, we have $O$ and $O'$ be at the same location $p = (0,0,0,0)$ We want to know what kind of coordinate independent infomation can we get. In our "nice" coordinate system $(x^{\hat{\mu}})$, we have the four velocity of $O$ at time 0 is $U^{\hat{\mu}} = (1,0,0,0)$, and the four velocity of $O'$ is $V^{\hat{\mu}} = (\gamma, \gamma v^i)$, where $v^i$ is the classical velocity, $\gamma = \frac{1}{\sqrt{(1-v^2)}}$ and $\gmn|_p = \emn$. Simple calculation tells us that, in this coordinate frame $U^{\hat{\mu}} V_{\hat{\nu}} =U^{\hat{\mu}} \gmnhat|_p V_{\hat{\nu}}  = U^{\hat{\mu}} \emn V_{\hat{\nu}} = \gamma$. As $U^{\hat{\mu}} V_{\hat{\nu}}$ is a scalar (it is independent of the coordinate chart), we get that in any coordinate system $\xm$, we have $U^{\mu} V_{\mu} = \gamma$. So now we will take this to be the definition of $\gamma$, and this agrees with our notion of $\gamma$ in special relativity.
+For example, in flat space, let's say we have an observers $O$ and $O'$. We will be in $O$'s frame of reference. Let's say that at time $t = 0$, we have $O$ and $O'$ be at the same location $p = (0,0,0,0)$ We want to know what kind of coordinate independent infomation can we get. In our "nice" coordinate system $(x^{\hat{\mu}})$, we have the four velocity of $O$ at time 0 is $U^{\hat{\mu}} = (1,0,0,0)$, and the four velocity of $O'$ is $V^{\hat{\mu}} = (\gamma, \gamma v^i)$, where $v^i$ is the classical velocity, $\gamma = \frac{1}{\sqrt{(1-v^2)}}$ and $\gmn|_p = \emn$. Simple calculation tells us that, in this coordinate frame $U^{\hat{\mu}} V_{\hat{\mu}} =U^{\hat{\mu}} \gmnhat|_p V^{\hat{\nu}}  = U^{\hat{\mu}} \emnhat V^{\hat{\nu}} = \gamma$. As $U^{\hat{\mu}} V_{\hat{\mu}}$ is a scalar (it is independent of the coordinate chart), we get that in any coordinate system $\xm$, we have $U^{\mu} V_{\mu} = \gamma$. So now we will take this to be the definition of $\gamma$, and this agrees with our notion of $\gamma$ in special relativity.
 
 We can take this one step further: we can define the speed $v \coloneqq \sqrt{1- 1/{\gamma^2}} = \sqrt{1- \frac {1}{U^{\mu}{V_{\mu}}}}$, this is the speed of the $O'$ as observed by $O$.
 
@@ -141,6 +143,6 @@ $$
 
 $M$ is called the mass of the black hole. $x^\mu = ( t,r,\theta, \varphi)$ is called the Schwarzschild coordinates. The coordinates themselves are the standard spherical coordinates $(r, \theta, \varphi)$ times the time coordinate $t$.  More rigorously, the range of the coordinate is $ t \in (-\infty, \infty), \theta \in (-\pi, \pi), \phi \in (0, 2\pi), r \in (2M, \infty)$. $r$ only goes from $2M$ to $\infty$ because the metric blows up at $r = 2M$, which is the event horizon. However, it is important to note that there is nothing singular about the points on the event horizon, the appearant singularity of the metric is just because we chose a really bad coordinate for points near the event horizon.
 
-Lastly, let us quickly consider the symmetry of the metric. It is easy to see that it has $t$ and $\varphi$ independence (one is time translation, and one is rotation), as they don't show up in the metric. But we have more: note that $d\Omega^2 \coloneqq d\theta^2 + \sin^2 d\varphi^2$ is the standard metric on the sphere $S^2$, which is $SO(3)$ invariant. Thus we see that this metric is $\mathbb{R} \times SO(3)$ invariant, and really the only "interesting" direction is the radial direction $r$. Starting next week, we will study the physics in this metric, aka we are going to study the black hole!
+Lastly, let us quickly consider the symmetry of the metric. It is easy to see that it has $t$ and $\varphi$ independence (one is time translation, and one is rotation), as they don't show up in the metric. But we have more: note that $d\Omega^2 \coloneqq d\theta^2 + \sin^2 d\varphi^2$ is the standard metric on the sphere $S^2$, which is $SO(3)$ invariant. Thus we see that this metric is $\mathbb{R} \times SO(3)$ invariant, and the only "interesting" direction is the radial direction $r$. Starting next week, we will study the physics in the Schwarzschild metric, aka we are going to study the black hole!
 
 \end{document}
