@@ -1,0 +1,584 @@
+\documentclass[11pt]{article}
+% DEFINE COMMANDS
+
+\usepackage{NotesTeX}
+
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{enumerate}
+\usepackage{amsmath,amssymb,amscd,amsfonts}
+\usepackage{xcolor}
+\usepackage{color}
+\input{undertilde}
+
+
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\tikzcdset{every label/.append style = {font = \small}}
+\tikzcdset{row sep/normal=3.5em}
+\tikzcdset{column sep/normal=3.5em}
+
+\usetikzlibrary{matrix}
+\usetikzlibrary{decorations.markings,calc,shapes}
+\usetikzlibrary{positioning}
+\usepackage{graphicx}
+\usepackage{empheq}
+\usepackage{physics}
+\usepackage{siunitx}
+\usepackage{tensor}
+
+\usepackage{multicol}
+
+\usepackage{youngtab}
+\usepackage{cancel}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{hyperref}
+
+\usepackage{float}
+% added by Jingtian Shi
+\usepackage{indentfirst}
+\usepackage{cases}
+\usepackage{bbm}
+\makeatletter
+\RenewDocumentCommand\sidenotetext{ o o +m }{%
+    \IfNoValueOrEmptyTF{#1}{%
+        \@sidenotes@placemarginal{#2}{\textsuperscript{\thesidenote}{}~\footnotesize#3}%
+        \refstepcounter{sidenote}%
+    }{%
+        \@sidenotes@placemarginal{#2}{\textsuperscript{#1}~#3}%
+    }%
+}
+\makeatother
+% % % % % % % % % % % % % % % % % % % % % % %
+
+\title{{\Huge General Relativity}\\{\Large{Class 10 --- February 12, 2020}}} %replace with class number
+\author{Irakli Jokhadze}
+
+\emailAdd{ijokhadze@utexas.edu} %replace with your email
+\begin{document}
+\maketitle
+\flushbottom
+\newpage
+\pagestyle{fancynotes}
+
+
+
+\section{Tangent Vectors}
+Last time, we introduced the idea of manifolds. Now we are going to introduce some ideas and concepts of special relativity into the arena of manifolds. The first thing we do is we define what we mean by vectors.
+Our new definition of the vector is similar to, but slightly different how we defined vectors before. \\
+
+\begin{align*}
+f: \mathcal{M} \rightarrow \mathbb{R} \ \\
+\Gamma: \mathbb{R} \rightarrow \mathcal{M} \ 
+\end{align*}
+
+A function $f$ is a map which takes points of the manifold to some real number. $\Gamma$ is a curve on a manifold that takes a parameter (a coordinate along the curve) and to every $\lambda$ it associates a point on the manifold.
+
+
+
+
+
+    \begin{figure} [H]
+        \begin{center}
+
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,423); %set diagram left start at 0, and has height of 423
+
+%Shape: Polygon Curved [id:ds12973851562735628]
+\draw   (217.3,53.6) .. controls (226.8,48.85) and (267.3,46.6) .. (313.3,52.6) .. controls (330.3,55.6) and (342.45,52.33) .. (357.3,54.6) .. controls (400.3,55.6) and (425.85,52.05) .. (417.3,60.6) .. controls (405.81,72.09) and (385.3,178.6) .. (388.3,210.6) .. controls (351.3,224.6) and (338.53,221.59) .. (286,216.93) .. controls (284.78,216.82) and (283.55,216.71) .. (282.3,216.6) .. controls (227.3,204.6) and (194.3,217.6) .. (169.3,205.6) .. controls (160.59,192.54) and (174.3,168.6) .. (194.3,134.6) .. controls (198.28,125.41) and (202.13,111.92) .. (202.3,101.6) .. controls (202.69,78.23) and (210.71,56.9) .. (217.3,53.6) -- cycle ;
+%Straight Lines [id:da18346198744161102]
+\draw    (57.3,4.2) -- (58.3,201.6) ;
+%Curve Lines [id:da15094359392670453]
+\draw    (73.3,112.6) .. controls (112.9,82.9) and (204.74,111.61) .. (255.77,130.04) ;
+\draw [shift={(257.3,130.6)}, rotate = 199.95] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da8698935831330572]
+\draw    (37,127) -- (37.28,92.6) ;
+\draw [shift={(37.3,90.6)}, rotate = 450.47] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da3846025243118685]
+\draw    (269.3,180.6) .. controls (309.3,150.6) and (286.3,107.6) .. (313.3,85.6) ;
+%Curve Lines [id:da4337951657904371]
+\draw    (271.3,156.6) .. controls (292.75,122.47) and (279.03,119.72) .. (292.23,98.29) ;
+\draw [shift={(293.3,96.6)}, rotate = 483.11] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da40243725773904004]
+\draw    (328.3,139.6) .. controls (367.9,109.9) and (454.84,124.89) .. (505.77,143.05) ;
+\draw [shift={(507.3,143.6)}, rotate = 199.95] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da0659037947030634]
+\draw    (526.3,8.2) -- (527.3,204.6) ;
+%Curve Lines [id:da10121755294580526]
+\draw    (326.3,169.6) .. controls (374.81,157.72) and (429.2,234.05) .. (448.72,276.33) ;
+\draw [shift={(449.3,277.6)}, rotate = 245.66] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Shape: Square [id:dp7420044026291146]
+\draw   (401.8,259.1) -- (494.8,259.1) -- (494.8,352.1) -- (401.8,352.1) -- cycle ;
+%Curve Lines [id:da2893881598611836]
+\draw    (448.3,305.6) .. controls (387.6,280.72) and (344.73,276.64) .. (325.59,206.66) ;
+\draw [shift={(325.3,205.6)}, rotate = 435.02] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Shape: Free Drawing [id:dp6628757440443356]
+\draw  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=3] [line join = round][line cap = round] (294.3,139.2) .. controls (294.3,139.2) and (294.3,139.2) .. (294.3,139.2) ;
+%Shape: Free Drawing [id:dp987342065874081]
+\draw  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=3] [line join = round][line cap = round] (454.3,295.2) .. controls (454.3,295.2) and (454.3,295.2) .. (454.3,295.2) ;
+%Shape: Free Drawing [id:dp29635475905797337]
+\draw  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=3] [line join = round][line cap = round] (58.3,117.2) .. controls (58.3,117.2) and (58.3,117.2) .. (58.3,117.2) ;
+%Curve Lines [id:da49406300153526517]
+\draw    (88,225) .. controls (121.96,222.23) and (347.72,342.75) .. (392.01,329.64) ;
+\draw [shift={(393.3,329.2)}, rotate = 518.6800000000001] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da13119688723476175]
+\draw    (512,275) .. controls (551.2,245.6) and (581.08,186.62) .. (556.85,165.45) ;
+\draw [shift={(555.3,164.2)}, rotate = 396.53] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da5404848970007095]
+\draw    (91.3,29.2) -- (491.3,30.2) ;
+\draw [shift={(493.3,30.2)}, rotate = 180.14] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+\draw (21,113) node   [align=left] {$\displaystyle \lambda $};
+% Text Node
+\draw (129,81) node  [font=\large] [align=left] {$\displaystyle \Gamma $};
+% Text Node
+\draw (272,111) node   [align=left] {$\displaystyle \lambda $};
+% Text Node
+\draw (33,183) node  [font=\large,rotate=-359.79,xslant=0.02] [align=left] {$\displaystyle \mathbb{R}$};
+% Text Node
+\draw (553,78) node  [font=\large] [align=left] {$\displaystyle \mathbb{R}$};
+% Text Node
+\draw (526,321) node  [font=\large] [align=left] {$\displaystyle \mathbb{R}^{n}$};
+% Text Node
+\draw (332,266) node  [font=\large] [align=left] {$\displaystyle \phi ^{-1}$};
+% Text Node
+\draw (444,218) node  [font=\large] [align=left] {$\displaystyle \phi $};
+% Text Node
+\draw (176,294) node  [font=\large] [align=left] {$\displaystyle \phi \circ \Gamma $};
+% Text Node
+\draw (592,230) node  [font=\large] [align=left] {$\displaystyle f\circ \phi ^{-1}$};
+% Text Node
+\draw (463,107) node  [font=\large] [align=left] {$\displaystyle f$};
+% Text Node
+\draw (437,55) node  [font=\large] [align=left] {$\displaystyle \mathcal{M}$};
+% Text Node
+\draw (300,14) node  [font=\large] [align=left] {$\displaystyle f\circ \Gamma $};
+
+
+\end{tikzpicture}
+
+        \caption{ Decomposing the tangent vector to a curve $\Gamma :\mathbb{R} \rightarrow \mathcal{M}$ in terms of partial derivatives with respect to coordinates on  $\mathcal{M}$. }
+            \end{center}
+    \end{figure}
+    
+\pagebreak
+    
+A map from the real line to the manifold, then the map from the manifold back to the real line makes it possible to take the derivative of the composition:
+
+\begin{align*}
+\frac{df}{d\lambda}: \mathbb{R} \rightarrow \mathbb{R} \ \\
+\frac{d}{d\lambda}(f \circ \Gamma) \ 
+\end{align*}
+
+Be more practical and get charts involved, since if we are given a function on the manifold we want it to be in terms of some function of coordinates. That means we want to replace the function $f(x^\mu)$ on the manifold with $f$ acting on the chart. What chart does for us is that the chart $\phi$  maps a point on the manifold into $\mathbb{R}^n$, where n is the same dimension as for the manifold. This allows us to associate a set of coordinates to every point of the manifold. To calculate $\frac{d}{d\lambda}$ we stick in the identity $\phi^{-1}\circ\phi$ and since we want to feed the function $f$ with the coordinate, we map from $\mathbb{R}^n$ backwards
+
+
+\begin{equation} 
+\begin{aligned}
+\frac{d}{d\lambda}\Big[(\underbrace{f \circ \phi^{-1}}_{\mathbb{R}^n \rightarrow \mathbb{R}^1})\circ (\underbrace{f \circ \Gamma}_{\mathbb{R}^1 \rightarrow \mathbb{R}^n})\Big] \\
+=\Bigg(\frac{d}{d\lambda}(f \circ \Gamma)^\mu\Bigg)\Bigg(\frac{\partial(f \circ \phi^{-1})}{\partial x^\mu}\Bigg)  \\
+=\frac{dx^\mu}{d\lambda} \partial_\mu f = \frac{df}{d\lambda} .
+\end{aligned}
+\label{directional}
+\end{equation}
+
+$f \circ \phi^{-1}$ starts with a point in $\mathbb{R}^n$ and it carries the point back via $\phi^{-1}$ to the corresponding point on the manifold. Then $f$ takes that point to $\mathbb{R}$. In the second part of the composition $\Gamma$ maps from $\mathbb{R}$ into the manifold and than the chart $\phi$ assigns that point to $\mathbb{R}^n$. Then we take the derivative of this chain of composition. We can directly take the derivative of the first term with respect to $\lambda$ and the second part is taken with respect to $x^\mu$. The first part has the index associated, because it is a point on $\mathbb{R}^n$. What we did here is the extension of the chain rule of mappings. If we want to take the $\frac{d}{d\lambda}$ of the sequence of mappings we operate it with the first part that takes the lambda as an argument and sum that into the partial derivatives with respect to the coordinates. We would get the same result if we had calculated the similar thing in special relativity without using any charts and mappings.
+
+\begin{align*}
+f \circ \Gamma = (\underbrace{f \circ \phi^{-1}}_{f(x^\mu)})\circ (\underbrace{f \circ \Gamma}_{x^\mu(\lambda)}) \ .
+\end{align*}
+
+Charts are like vehicles that carry us from the abstract space of manifold into the space we like. This allows us to take derivatives and other calculus operations that are well defined in $\mathbb{R}^n$, but are not well defined on some manifolds.
+
+\pagebreak
+
+
+Now we can define a vector. 
+
+    \begin{figure} [H]
+        \begin{center}
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Curve Lines [id:da27245837210831025]
+\draw    (189,179) .. controls (217.3,138.8) and (280.3,118.8) .. (329.3,106.8) ;
+%Straight Lines [id:da7487509222445512]
+\draw    (229.3,143.8) -- (323.52,95.71) ;
+\draw [shift={(325.3,94.8)}, rotate = 512.96] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Shape: Free Drawing [id:dp9096663301911603]
+\draw  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=3] [line join = round][line cap = round] (229.3,144) .. controls (229.3,144) and (229.3,144) .. (229.3,144) ;
+
+% Text Node
+\draw (256,98) node   [align=left] {$\displaystyle \vec{V}$};
+
+
+\end{tikzpicture}
+        \caption{ In the special relativity we defined the vector $\vec{V}$ as the tangent to the curve. }
+\end{center}
+ \end{figure}
+
+Before, we wrote the vector in the following form:
+\begin{align}
+\vec{V} = V^\mu \vec{e}_{(\mu)} = \frac{dx^\mu}{d\lambda} \vec{e}_{(\mu)} \ .\label{vector}
+\end{align}
+
+However, we were dodging how to define what should the basis be. Here we are actually defining what the vectors really are. If we compare (\ref{directional}) with (\ref{vector}) we can write (\ref{directional}) as
+\begin{align}
+ \frac{df}{d\lambda}=\Big(\frac{dx^\mu}{d\lambda} \partial_\mu \Big) f
+\end{align}
+This is how we define vectors in curved spacetime - a directional derivative, which is essentially a map:
+\begin{align*}
+\mathcal{F} \rightarrow \mathcal{F} \ 
+\end{align*}
+where $\mathcal{F}$ is the space of functions $f$ and
+\begin{align*}
+\vec{V} : f \rightarrow \frac{df}{d\lambda} \ . \\
+\end{align*}
+That can be written in the following way:
+\begin{align}
+\vec{V} = \vec{\frac{d}{d\lambda}} = \frac{dx^\mu}{d\lambda} (\vec{e}_{(\mu)})  \ .
+\end{align}
+We use $\vec{e}_{(\mu)}$ as the basis vectors. Partial derivative is nothing more but a directional derivative in the direction of only one coordinate (other coordinates are held to be constant). $\frac{d}{d\lambda}$ is associated with the curve. Basis vectors are partial derivatives.
+
+If the curve passes through the several charts we do the same thing piecewise (Figure 3). Suppose we have a manifold and we chose a set of charts that do not cover the whole manifold. We want the tangent vectors along the curve in different patches. We use $\phi_1$ in the above notation secretly where we actually have coordinates $x^\mu(\lambda)$ but in different patch we use $\phi_2$ where we actually have a different coordinate system $x^{\mu'}(\lambda)$ and there must be some way to move invertedly between these two coordinate systems.
+
+
+    \begin{figure} [H]
+        \begin{center}
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Shape: Polygon Curved [id:ds47137354913736185]
+\draw   (248.3,39.8) .. controls (257.39,35.26) and (292.98,39.22) .. (336.3,44.82) .. controls (338.28,45.08) and (340.28,45.34) .. (342.3,45.6) .. controls (359.3,48.6) and (371.45,45.33) .. (386.3,47.6) .. controls (429.3,48.6) and (454.85,45.05) .. (446.3,53.6) .. controls (434.81,65.09) and (414.3,171.6) .. (417.3,203.6) .. controls (380.3,217.6) and (367.53,214.59) .. (315,209.93) .. controls (313.78,209.82) and (312.55,209.71) .. (311.3,209.6) .. controls (256.3,197.6) and (223.3,210.6) .. (198.3,198.6) .. controls (189.59,185.54) and (228.3,137.8) .. (233.3,95.8) .. controls (236.3,76.8) and (245.3,33) .. (248.3,39.8) -- cycle ;
+%Curve Lines [id:da01601595133380851]
+\draw    (294.3,172.6) .. controls (302.27,166.62) and (307.75,160.12) .. (311.61,153.38) .. controls (327.12,126.29) and (316.68,95.21) .. (338.3,77.6) ;
+%Shape: Circle [id:dp9193212425878434]
+\draw   (287,148) .. controls (287,134.19) and (298.19,123) .. (312,123) .. controls (325.81,123) and (337,134.19) .. (337,148) .. controls (337,161.81) and (325.81,173) .. (312,173) .. controls (298.19,173) and (287,161.81) .. (287,148) -- cycle ;
+%Shape: Circle [id:dp7068904103518265]
+\draw   (300,111) .. controls (300,97.19) and (311.19,86) .. (325,86) .. controls (338.81,86) and (350,97.19) .. (350,111) .. controls (350,124.81) and (338.81,136) .. (325,136) .. controls (311.19,136) and (300,124.81) .. (300,111) -- cycle ;
+%Shape: Free Drawing [id:dp7376022322628715]
+\draw  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=3] [line join = round][line cap = round] (310.3,155.2) .. controls (310.3,155.2) and (310.3,155.2) .. (310.3,155.2) ;
+%Shape: Free Drawing [id:dp9323153011172929]
+\draw  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=3] [line join = round][line cap = round] (324.3,105.2) .. controls (324.3,105.2) and (324.3,105.2) .. (324.3,105.2) ;
+%Curve Lines [id:da2924902195384427]
+\draw    (512.3,140.2) .. controls (451.91,115.45) and (408.87,90.7) .. (351.74,110.39) ;
+\draw [shift={(350,111)}, rotate = 340.27] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da36249914056845567]
+\draw    (449.3,249.2) .. controls (406.73,233.36) and (328.88,235.16) .. (315.39,179.7) ;
+\draw [shift={(315,178)}, rotate = 437.86] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da09570281673161651]
+\draw    (474,232.2) .. controls (503.54,208.8) and (516.64,182.55) .. (520.98,159.01) ;
+\draw [shift={(521.3,157.2)}, rotate = 459.46] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da8554538943087167]
+\draw     ;
+%Curve Lines [id:da04451509096653883]
+\draw    (533.3,165.2) .. controls (531.35,179.82) and (511.34,231.52) .. (487.17,237.81) ;
+\draw [shift={(485.3,238.2)}, rotate = 350.90999999999997] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+\draw (532,131) node  [font=\large] [align=left] {$\displaystyle \phi _{2}$};
+% Text Node
+\draw (470,251) node  [font=\large] [align=left] {$\displaystyle \phi _{1}$};
+% Text Node
+\draw (594,132) node  [font=\large] [align=left] {$\displaystyle x^{\mu '}( \lambda )$};
+% Text Node
+\draw (528,253) node  [font=\large] [align=left] {$\displaystyle x^{\mu }( \lambda )$};
+
+
+\end{tikzpicture}
+        \caption{The case where the curve passes through different charts.}
+\end{center}
+ \end{figure}
+
+
+Now the vectors are operators. We have to check if they are good vectors. 
+If we some two vectors together we get a new vector. In this case we want to check whether the sum of two directional derivatives is still a directional derivative. 
+Derivatives have few properties: 
+\\
+
+1) They are linear:
+\begin{align}
+\frac{d}{d\lambda}(af+bg)= a \frac{df}{d\lambda} + b \frac{dg}{d\lambda} \ .
+\end{align}
+
+2) The Leibnitz rule:  $ d(fg) = g d(f) + f d(g)$
+\begin{align}
+\Bigg(a\frac{d}{d\lambda}+b\frac{d}{d\sigma}\Bigg)(fg)= g \Bigg(a\frac{d}{d\lambda}+b\frac{d}{d\sigma}\Bigg)f + f\Bigg(a\frac{d}{d\lambda}+ b\frac{d}{d\sigma}\Bigg)g \ .
+\end{align}
+Therefore, directional derivatives are genuinely vectors. \sn{Notice: when we add two vectors we do not "add" two curves, we add directional derivatives of those curves, that is also a directional derivative of some other curve.}
+
+
+$\vec{\partial }_\mu$ is a "coordinate basis". The problem is that it is attached to one of the charts. If we have a different chart over the different patch of the manifold it has a different basis. How to compare vectors in these two different basis? We know how partial derivatives transform. Suppose we have two charts:
+
+\begin{align*}
+\phi_1 : x^\mu ,\ \\
+\phi_2 : x^{\mu'}  \ .
+\end{align*}
+
+
+We want to write the coordinate transformation:  $x^{\mu'}(x^\nu)$ which is invertible.
+
+\begin{align}
+\partial_{\mu'}= \frac{\partial x^\nu}{\partial x^{\mu'}}\partial_\nu  \ ,
+\end{align}
+
+where we have used the shorthand notation $\frac{\partial}{\partial x^\mu} = \partial_\mu$.
+$\frac{\partial x^\nu}{\partial x^{\mu'}}$ is the Jacobian transformation matrix that relates two basis.
+
+ \begin{example}
+ Two charts on the plane:
+  (x,y), (r,$\phi$) 
+  \begin{align*}
+   x = r\cos\phi ,   \qquad  r = \sqrt{x^2 + y^2}  \ , \\
+   y = r\sin\phi ,  \qquad   \tan\phi = \frac{y}{x} , \
+  \end{align*}
+ 
+  \begin{align}
+  \begin{pmatrix}
+           \partial_r \\
+           \partial_\phi \\
+         \end{pmatrix} =
+  \begin{pmatrix}
+                        \frac{\partial r}{\partial x}  &  \frac{\partial r}{\partial y}  \\
+                        \frac{\partial \phi}{\partial x}  &  \frac{\partial \phi}{\partial y}\\
+                        \end{pmatrix} =
+                          \begin{pmatrix}
+           \partial_x \\
+           \partial_y \\
+         \end{pmatrix} .
+  \end{align}
+\end{example}
+Note that the upper index in the denominator is the same as the lower index and vice versa.
+
+Vector is invariant under the transformation. It is the entity that lives on the manifold independent of charts:
+
+\begin{align}
+\vec{V} = V^\mu \vec{\partial}_\mu = V^{\mu'} \vec{\partial}_{\mu'}    \Rightarrow V^{\mu'} = \frac{\partial x^{\mu'}}{\partial x^\nu}V^\nu    \ .
+\end{align}
+
+Note:  
+\begin{align}
+\frac{\partial x^{\mu'}}{\partial x^\nu} \frac{\partial x^{\nu}}{\partial x^{\nu'}} = \delta^{\mu'}_{\nu'}
+ \end{align}
+Unless we write matrices, at these level order of the objects does not matter. 
+
+
+      
+\section{Fields on a Manifold}
+
+So far at each point of the manifold we have defined a vector space $T_p$ and for every point in a vector space there is the vector at that point and every point in this vector space is a directional derivative. Very abstract, space of derivatives.
+
+
+    \begin{figure} [H]
+        \begin{center}
+
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,411); %set diagram left start at 0, and has height of 411
+
+%Shape: Polygon Curved [id:ds08934578023741602]
+\draw   (237.3,26.8) .. controls (246.39,22.26) and (281.98,26.22) .. (325.3,31.82) .. controls (327.28,32.08) and (329.28,32.34) .. (331.3,32.6) .. controls (348.3,35.6) and (360.45,32.33) .. (375.3,34.6) .. controls (418.3,35.6) and (443.85,32.05) .. (435.3,40.6) .. controls (423.81,52.09) and (403.3,158.6) .. (406.3,190.6) .. controls (369.3,204.6) and (356.53,201.59) .. (304,196.93) .. controls (302.78,196.82) and (301.55,196.71) .. (300.3,196.6) .. controls (245.3,184.6) and (212.3,197.6) .. (187.3,185.6) .. controls (178.59,172.54) and (217.3,124.8) .. (222.3,82.8) .. controls (225.3,63.8) and (234.3,20) .. (237.3,26.8) -- cycle ;
+%Straight Lines [id:da4879178411670906]
+\draw    (317.3,107.8) -- (478.3,130.2) ;
+%Straight Lines [id:da7987611230755156]
+\draw    (317.3,107.8) -- (468.3,179.2) ;
+%Shape: Square [id:dp7231329810134679]
+\draw   (487.2,122.8) -- (555.3,122.8) -- (555.3,190.9) -- (487.2,190.9) -- cycle ;
+%Straight Lines [id:da8917769397275206]
+\draw    (250.3,133.8) -- (211.3,228.2) ;
+%Straight Lines [id:da5271636918862199]
+\draw    (250.3,133.8) -- (266.3,227.2) ;
+%Shape: Square [id:dp06602871152133338]
+\draw   (200.8,233.8) -- (271.2,233.8) -- (271.2,304.2) -- (200.8,304.2) -- cycle ;
+%Shape: Free Drawing [id:dp9637124673557567]
+\draw  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=3] [line join = round][line cap = round] (250.3,135.2) .. controls (250.3,135.2) and (250.3,135.2) .. (250.3,135.2) ;
+%Shape: Free Drawing [id:dp2602510426027629]
+\draw  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=3] [line join = round][line cap = round] (317.3,107.2) .. controls (317.3,107.2) and (317.3,107.2) .. (317.3,107.2) ;
+%Shape: Free Drawing [id:dp17259510413993318]
+\draw  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=3] [line join = round][line cap = round] (239.3,255.2) .. controls (239.3,255.2) and (239.3,255.2) .. (239.3,255.2) ;
+%Shape: Free Drawing [id:dp35045778499458136]
+\draw  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=3] [line join = round][line cap = round] (528.3,147.2) .. controls (528.3,147.2) and (528.3,147.2) .. (528.3,147.2) ;
+
+% Text Node
+\draw (297,247.4) node   [align=left] {$\displaystyle T_{Q}$ };
+% Text Node
+\draw (523,100.4) node   [align=left] {$\displaystyle T_{P}$ };
+% Text Node
+\draw (319,91.4) node   [align=left] {$\displaystyle P$ };
+% Text Node
+\draw (248,112.4) node   [align=left] {$\displaystyle Q$ };
+
+
+\end{tikzpicture}
+        \caption{$T_P$ and $T_Q$ are entirely different vector spaces.}
+\end{center}
+ \end{figure}
+A function $f$ on the manifold takes any point on the manifold to a number, so the function is defined on the whole manifold:
+\begin{align*}
+f: \mathcal{M} \rightarrow \mathbb{R} \ .
+\end{align*}
+
+A vector field $\vec{V}(x^\mu)$ is a rule assigning some vector to each point in $\mathcal{M}$.
+The manifold is represented as a line (n dimensional) at each point there is a space (Figure 5). At point $P$ there is a space $T_P$, at point $Q$ there is a different space $T_Q$. $\mathcal{M}$ is the base space and each of these extra spaces attached on is called the fiber. In our case it is the n dimensional vector space. However, fibers can be many things like a tensor space, a space of one-forms and etc. To select a point in the whole space we need 2n numbers - n numbers to specify the and n numbers to specify all the components of the vector. In this picture a fiber bundle is the whole space, $\mathcal{M}$ with all its threads taken together as a bunch and a vector field is a cut (Figure 5). It is a surface in 2n dimensional space that picks out a vector on every fiber at every point.
+
+    \begin{figure} [H]
+        \begin{center}
+
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Curve Lines [id:da9239164243371165]
+\draw    (168.3,183.6) .. controls (184.35,171.56) and (262.7,168.45) .. (328.39,174.37) .. controls (394.09,180.3) and (377.3,181.4) .. (403.3,179.4) ;
+%Straight Lines [id:da48597688980847464]
+\draw    (184.3,93.4) -- (199,175.4) ;
+%Straight Lines [id:da422479205589545]
+\draw    (222.3,87.4) -- (234,172.4) ;
+%Straight Lines [id:da20848305007501922]
+\draw    (266.3,90.4) -- (270,171.4) ;
+%Straight Lines [id:da8282045504190279]
+\draw    (308.3,94.4) -- (316,174.4) ;
+%Curve Lines [id:da3791210555399609]
+\draw    (155.3,102.6) .. controls (167.43,93.5) and (215.3,83.4) .. (266.3,90.4) .. controls (317.3,97.4) and (381.3,98.4) .. (399.3,102.4) ;
+%Straight Lines [id:da29948068233811576]
+\draw    (358.3,98.4) -- (358,178.4) ;
+%Shape: Free Drawing [id:dp37585873182816254]
+\draw  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=3] [line join = round][line cap = round] (188.3,117) .. controls (188.3,117) and (188.3,117) .. (188.3,117) ;
+%Shape: Free Drawing [id:dp056553648010653434]
+\draw  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=3] [line join = round][line cap = round] (227.3,123) .. controls (227.3,123) and (227.3,123) .. (227.3,123) ;
+%Shape: Free Drawing [id:dp8017727508993873]
+\draw  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=3] [line join = round][line cap = round] (267.3,129) .. controls (267.3,129) and (267.3,129) .. (267.3,129) ;
+%Shape: Free Drawing [id:dp6246604788660344]
+\draw  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=3] [line join = round][line cap = round] (312.3,135) .. controls (312.3,135) and (312.3,135) .. (312.3,135) ;
+%Shape: Free Drawing [id:dp4272290221505788]
+\draw  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=3] [line join = round][line cap = round] (358.3,141) .. controls (358.3,141) and (358.3,141) .. (358.3,141) ;
+%Curve Lines [id:da7258037401146074]
+\draw    (159.3,125.4) .. controls (167.3,110.4) and (232.3,123.4) .. (284.3,132.4) .. controls (293.74,134.03) and (302.97,135.4) .. (311.88,136.57) .. controls (352.07,141.86) and (385.57,143.13) .. (400.3,146.4) ;
+%Straight Lines [id:da6525960522651395]
+\draw    (155.3,102.6) -- (170,184.6) ;
+%Straight Lines [id:da31306269279969556]
+\draw    (399.3,102.4) -- (403.3,179.4) ;
+%Curve Lines [id:da055718050923076134]
+\draw    (105.3,171.4) .. controls (156.82,184.6) and (184.46,129.11) .. (224.46,124.57) ;
+\draw [shift={(226.3,124.4)}, rotate = 535.8199999999999] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Shape: Free Drawing [id:dp6326641314416099]
+\draw  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=3] [line join = round][line cap = round] (310.3,108.2) .. controls (310.3,108.2) and (310.3,108.2) .. (310.3,108.2) ;
+%Curve Lines [id:da713311174632983]
+\draw    (436.3,75.4) .. controls (396.9,67.52) and (349.74,110.09) .. (312.02,109.46) ;
+\draw [shift={(310.3,109.4)}, rotate = 363.01] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+\draw (220,67.4) node   [align=left] {$\displaystyle T_{P}$ };
+% Text Node
+\draw (239,190.4) node   [align=left] {$\displaystyle P$ };
+% Text Node
+\draw (319,189.4) node   [align=left] {$\displaystyle Q$ };
+% Text Node
+\draw (311,74.4) node   [align=left] {$\displaystyle T_{Q}$ };
+% Text Node
+\draw (407,197.4) node   [align=left] {$\displaystyle \mathcal{M}$ };
+% Text Node
+\draw (89,153) node   [align=left] {Fiber};
+% Text Node
+\draw (485,71) node   [align=left] {2n numbers};
+
+
+\end{tikzpicture}
+        \caption{The manifold, fibers and the fiber bundle. }
+\end{center}
+ \end{figure}
+
+
+
+\section{Dual Vectors}
+Now we consider dual vectors (one-forms). One-form is a linear map that takes a vector to a number:
+\begin{align*}
+\undertilde{\omega}: T_p \rightarrow \mathbb{R} \ .
+\end{align*}
+
+where $T_p$ corresponds to the space of the directional derivatives
+
+ \begin{example}
+ The canonical example of a one-form is the gradient of the function $f$. That is  $\undertilde{\omega}(\vec{V}) = \undertilde{d}f $.
+  \begin{align}
+\undertilde{\omega}=\undertilde{d}f\Bigg(\frac{\vec{d}}{d\lambda}\Bigg) = \frac{df}{d\lambda}  \ .
+\end{align} 
+ Its action on a vector $\vec{\frac{d}{d\lambda}}$ is exactly the directional derivative of the function.
+\begin{align}
+\undertilde{\omega}=\undertilde{d}f = \partial_\mu f \undertilde{d} x^\mu = \omega_\mu \undertilde{d}x^\mu \ .
+\end{align} 
+
+ \end{example}
+ 
+Not all one form fields can be written as a gradient of some function over the manifold, as
+locally on a manifold, we can always write a one-form as $\undertilde{d}f$ for some function $f$. This only holds in a small neighborhood. When we try to write a one form consistently as $\undertilde{d}f$ across a whole manifold, we may fail.
+
+For example, on a circle or a cylinder, there is a one form  we can call $\undertilde{d}\phi$. Writing it this way makes it look like it can be written as a gradient, but as we discussed $\phi$ is not well-defined on the whole manifold. We would have to use two different functions to define this one form across the whole circle in the form of gradients. Therefore, we have identified a form that cannot be written as a gradient of a single function.
+
+So in general, the space of one forms is larger than the space of gradients, but we can write a one-form field as a sum of functions times gradients:
+\begin{align}
+\omega = \omega_\mu(x^\nu) d x^\mu
+\end{align}
+where $\omega$ would be a generic one form, the components $\omega_\mu$ may be functions of the location on the manifold, and we use a coordinate basis.
+
+
+
+
+
+
+
+\section{Basis Forms}
+Now let's see how the dual form acts on the basis of vectors. We take a partial derivative vector and act on that 
+
+\begin{align}
+\undertilde{d}x^\mu (\vec{\partial}_\nu) = \frac{\partial x^\mu}{\partial x^\nu} = \delta_\nu^\mu \ .
+\end{align}
+Therefore, it is a directional derivative on the function that changes only one coordinate at the time. Therefore, the gradients of the coordinates form a good basis for one-forms as directional derivatives form a good basis for vectors.
+Now we define how the basis forms transform:
+\begin{align}
+\Theta^\mu (\vec{e}_\nu) = \delta_\nu^\mu \ .
+\end{align}
+Overall one-form is unchanged after this transformation. 
+\begin{align}
+\undertilde{d}x^{\mu'} = \frac{\partial x^{\mu'}}{\partial x^\nu}\undertilde{d}x^{\nu} \ .
+\end{align}
+
+\begin{align}
+\omega_{\mu'} = \frac{\partial x^{\nu}}{\partial x^{\mu'}}\omega_\nu \ .
+\end{align}
+
+
+
+
+
+\section{Tensors}
+
+Just as in a flat space, a (k,l) tensor is a multilinear map that "eats" k forms and l vectors to produce a number. Its components in a coordinate basis can be written:
+
+\begin{align}
+\textbf{T} = \tensor{T}{^{\mu_1...\mu_k}_{\nu_1 ... \nu_l}}\vec{\partial}_{\mu_1}\otimes ... \otimes \vec{\partial}_{\mu_k}\otimes \undertilde{d}x^{\nu_1}\otimes ... \otimes \undertilde{d}x^{\nu_l}
+\end{align}
+
+Now the basis is constructed of the tensor product of the partial derivatives and gradients.
+We require that the object \textbf{T} does not change under chart. The transformation law for general tensors follows the same pattern of replacing the Lorentz transformation matrix that was used in flat space with matrix representing more general coordinate transformations:
+
+\begin{align}
+\tensor{T}{^{\mu'_1...\mu'_k}_{\nu'_1 ... \nu'_l}} = \frac{\partial x^{\mu'_1}}{\partial x^{\mu_1}}...\frac{\partial x^{\mu'_k}}{\partial x^{\mu_k}}\frac{\partial x^{\nu_1}}{\partial x^{\nu'_1}}... \frac{\partial x^{\nu_l}}{\partial x^{\nu'_l}}  \tensor{T}{^{\mu_1...\mu_k}_{\nu_1 ... \nu_l}}
+\end{align}
+Thus, every single index gets hit with the transformation matrix. Whether it is a transformation matrix or the inverse matrix depends on the type of the index we are transforming, an upper - so called contravariant or the lower - covariant.
+
+\end{document} 
