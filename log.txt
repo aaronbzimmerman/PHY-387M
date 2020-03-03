@@ -1,0 +1,39 @@
+PI: Maximilian Fabricius and Eva Noyola
+
+Observer: Maria Jose Bustamante Rosell 
+
+Projects: DM in Low Dispersion Objects
+################################################################################
+#MUST SUBSTRACT (18.2,-19.3) TO FIDUCIALS TO BE CENTERED!!
+################################################################################
+
+file		 UT		target		exptime	focus	FWHM	fiducial	AM		comments
+vw029025-45  21:57	autofocus	auto										Focus at 15.393527
+vw029046-56	 22:09	dome flats	120		-		-		-			- 	
+vw029057-67  22:30	NeHg        120
+vw028968-78	 00:20	twilight	auto  	-		-		-			- 		-
+vw029079-89  00:35	biases		
+vw029090     01:19	NGC1099 sky	600		52002	?		?			1.159	KARL's GALAXY! NOT MEDIDO
+vw029091     01:31	NGC1099 D1 1800		52002	2.2		134.4,113.4	1.166   KARL's GALAXY! NOT MEDIDO
+vw029092     02:02	NGC1099 sky 600		52002	2.2		134.4,113.4 1.181   KARL's GALAXY! NOT MEDIDO
+vw029093     02:14	NGC1099 D2 1800		51919	2.0		134.4,113.4	1.198   KARL's GALAXY! NOT MEDIDO
+vw029094     02:46	NGC1099 sky 600		51919	2.2		134.4,113.4 1.244   KARL's GALAXY! NOT MEDIDO
+vw029095     02:58	NGC1099 D3 1800		51919	2.0		134.4,113.4	1.283   KARL's GALAXY! NOT MEDIDO
+vw029096     03:29	NGC1099 sky 600		51919	2.2		134.4,113.4 1.372   KARL's GALAXY! NOT MEDIDO
+vw029097     03:44	NGC1099 D1 1800		51919	2.2		134.4,113.4	1.443   KARL's GALAXY! NOT MEDIDO
+vw029098     04:15	NGC1099 sky 600		51919	2.2		134.4,113.4 1.599   KARL's GALAXY! NOT MEDIDO
+vw029099     04:27	NGC1099 D2 1800		51919	2.5		134.4,113.4	1.698   KARL's GALAXY! NOT MEDIDO
+vw029100	 05:06	LEOI sky	600		53769	2.7		402.6,70.5	1.627		 
+vw029101	 05:20	LEOI		  -		-		-		-			-		Discard. ncrsplit mistyped in script.
+vw029102	 05:21	LEOI       3600		51755	1.8		402.6,70.5	1.540	
+vw029103	 06:22	LEOI       3600		51755	1.9		402.6,70.5	1.340	
+vw029104	 07:24	LEOI sky	600		51755	1.9		402.6,70.5	1.106		
+vw029105	 07:37	LEOI       3600		51755	1.9		402.6,70.5	1.092	
+vw029106	 08:38	LEOI       3600		51755	1.7		402.6,70.5	1.340	
+vw029107	 09:39	LEOI sky	600		51755	1.9		402.6,70.5	1.106		
+vw029108	 09:51	LEOI       3600		51755	1.9		402.6,70.5	1.100	Aborted. Discard.
+vw029109	 09:57	LEOI       3600		51755	1.9		402.6,70.5	1.140	
+vw029110	 10:58	LEOI       3600		51755	2.5+-1	402.6,70.5	1.253	Clouds. Discard. Fiducial mag drop of 2+-2 (basically not guiding for half the exposure).
+vw029119-29	 12:35  HgNe		120
+vw029130-40	 13:14	dome flats	120
+vw029141-51  13:31	biases		auto		
