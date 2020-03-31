@@ -1,0 +1,254 @@
+\documentclass[10pt]{article}
+\usepackage{NotesTeX} %/Path/to/package should be replaced with package location
+\usepackage{lipsum}
+\usepackage{mathtools,amsthm,amssymb}
+\usepackage{hyperref}
+
+\usepackage{physics}
+\usepackage{tensor}
+\usepackage{enumitem}
+\usepackage{bbold}
+\usepackage{graphicx}
+\usepackage{cancel}
+%\usepackage{gensymb}
+
+\newcommand{\bs}{\textbackslash}
+
+% (re)defined commands:
+\newcommand{\<}{\langle}
+\renewcommand{\>}{\rangle}
+\renewcommand{\(}{\left(}
+\renewcommand{\)}{\right)}
+\renewcommand{\[}{\left[}
+\renewcommand{\]}{\right]}
+\renewcommand{\d}{\partial}
+%\newcommand{\del}{\nabla}
+%\newcommand{\eps}{\epsilon}
+
+
+\title{{\Huge General Relativity}\\{\Large{Class 23 - uploaded March 23, 2020}}} %replace with class number
+\author{Vikas Aragam}
+
+\emailAdd{aragam@utexas.edu} %replace with your email
+\begin{document}
+    \maketitle
+    \flushbottom
+    \newpage
+    \pagestyle{fancynotes}
+    \part{Recap and Loose Ends}
+	It's been a while since we last had class. Let's recap some of the important points of the course thus far before revisiting the Weyl tensor once more.
+		\section{Recap: the course thus far}
+		We began the course learning about the geometric formulation of special relativity. This naturally led us to manifolds and coordinate-invariant objects that live on them, including vectors, forms, and tensors. Of utmost importance is the metric tensor, with components $g_{\mu\nu}$. The metric endows our manifold with several properties:
+		\begin{itemize}
+			\item An inner product on vectors
+			\item A notion of distance along a curve: proper time (distance) for timelike (spacelike) curves
+			\item Connection coefficients for covariant derivatives, and quantities related to curvature
+		\end{itemize}
+		We also examined properties of the Schwarzschild black hole.
+	
+		We next constructed several quantities that encode the curvature of a manifold. These include:
+		\begin{itemize}
+			\item The connection, i.e. covariant derivative, $\nabla_\mu$
+			\item The connection coefficients $\Gamma^\mu_{\nu\rho}$
+			\item The Riemann tensor and its traces, the Ricci tensor and scalar: $\tensor{R}{^\mu_\nu_\rho_\sigma}$, $R_{\mu\nu} = \tensor{R}{^\alpha_\mu_\alpha_\nu}$, $R = \tensor{R}{^\mu_\mu} = g^{\mu\nu} R_{\nu\mu}$
+		\end{itemize}
+		
+		With the essential geometric ingredients covered, we then discussed Einstein's Field Equations (EFEs). Our starting point was to construct a conserved (divergenceless) tensor that encodes curvature, the Einstein tensor:
+		\begin{align}
+			G_{\mu\nu} &= R_{\mu\nu} - \frac{1}{2} R g_{\mu\nu} \\
+			\nabla^\mu G_{\mu\nu} &= 0.
+		\end{align}
+		Note that $\tensor{G}{^\mu_\mu} = -R$. Observing that the stress-energy tensor of any physical theory must also be conserved, i.e. $\nabla^\mu T_{\mu\nu} = 0$, we arrived at the EFEs:
+		\begin{align}
+			G_{\mu\nu} = 8\pi T_{\mu\nu},
+		\end{align}
+		where we have set Newton's constant $G = 1$.
+		
+		\section{Loose ends: Weyl tensor and a constraint on gravity}
+		Recall that the Weyl tensor is the traceless part of the Riemann tensor. In four dimensions, it takes the form:
+		\begin{align}\label{eq:Weyl}
+			C_{\mu\nu\rho\sigma} = R_{\mu\nu\rho\sigma} - \( g_{\mu[\rho} R_{\sigma]\nu} - g_{\nu[\rho} R_{\sigma]\mu} \) + \frac{1}{3} g_{\mu[\rho} g_{\sigma]\nu} R.
+		\end{align}
+		Note that there's a minor typo in Aaron's recorded lecture; the second term does not have a $1/2$ factor, as is evident from Carroll (3.147). Check this to see that upon contracting any two indices, the right hand side indeed vanishes! We now see that in vacuum, i.e. $T_{\mu\nu} = R_{\mu\nu} = 0$, the Riemann tensor reduces to the Weyl tensor. By combining the Bianchi identity,
+		\begin{align}
+			\nabla_{[\lambda} R_{\mu\nu]\rho\sigma},
+		\end{align}
+		with \eqref{eq:Weyl} and the EFEs, we can obtain:
+		\begin{align}
+			\nabla^\alpha C_{\alpha\nu\rho\sigma} = 8\pi G \( \nabla_{[\rho} T_{\sigma]\nu} + \frac{1}{3} g_{\nu[\rho} \nabla_{\sigma]} T \).
+		\end{align}
+		Here, $T = \tensor{T}{^\mu_\mu}$. In particular, the Weyl tensor is conserved in vacuum:
+		\begin{align}
+			\nabla^\alpha C_{\alpha\nu\rho\sigma} = 0 \quad\text{(vacuum)}.
+		\end{align}
+		This tells us that the Bianchi identities do in fact constrain the Weyl tensor's derivatives. Alternatively phrased, the stress-energy tensor is related to only the Ricci tensor from the EFEs, not the full Riemann tensor. This implies that there are parts of the Riemann tensor that are unconstrained by the form of $T_{\mu\nu}$. However, we now see that the Weyl tensor is in fact constrained by the form of $T_{\mu\nu}$ via the Bianchi identities.
+		
+	\newpage
+	\part{The Attractive Nature of Gravity}
+	Now that we have Einstein's equations, we would like to gain an intuitive notion of how gravity fundamentally behaves. To do so, we will consider an example for which we have physical intuition from Newtonian gravity in the context of our newly developed mathematical techniques.
+		\section{The nature of gravity: a toy model}
+		We will examine a dust of test particles, all initially at rest, in an arbitrary spacetime. For this dust, we ask: what would happen upon releasing the particles? Newtonian gravity tells us that the particles will gravitationally attract each other and clump together. We shall verify that this holds even in general relativity. Note that we allow the particles to be embedded in a fluid or in background fields, which may induce spacetime curvature.
+		
+		Upon release, we know that the particles will follow geodesics, as they are not acted on by any external forces. The relative motion of the particles in time is given by the geodesic deviation equation, which we shall re-examine more carefully. Recall that we previously considered a congruence of geodesics with tangent vectors $\va{T}$ and relative separation vectors $\va{S}$. We denote $s$ as the coordinate that runs along the direction perpendicular to the congruence, and $t$ as the coordinate corresponding to an affine parameter along the geodesics. More formally, we define:
+		\begin{align}
+			\va{T} = \va{\d}_t, \quad \va{S} = \va{\d}_s.
+		\end{align}
+		As we are free to reparametrize our affine parameter, we choose it to be proper time:
+		\begin{align}
+			t=\tau \quad\Rightarrow\quad T^\mu T_\mu = -1.
+		\end{align}
+		Hence, we can treat our tangent vectors as four-velocities, i.e. $\va{T}=\va{U}$.
+		
+		Since $\va{T}$ and $\va{S}$ correspond to our coordinate directions, they must commute:
+		\begin{align}
+			\[ \va{T},\va{S} \] = 0 \quad\Rightarrow\quad U^\alpha \nabla_\alpha S^\mu = S^\alpha \nabla_\alpha U^\mu.
+		\end{align}
+		For convenience of notation, we define the following quantity with unusual index placement:
+		\begin{align}
+			\tensor{B}{^\mu_\nu} = \nabla_\nu U^\mu.
+		\end{align}
+		This lets us establish the evolution equation for $\va{S}$:
+		\begin{align}\label{eq:evolutionS}
+			U^\alpha \nabla_\alpha S^\mu \equiv \frac{D}{d\tau}S^\mu = \tensor{B}{^\mu_\alpha}S^\alpha.
+		\end{align}
+		We now recognize the matrix $\vb{B}$ as an instantaneous linear transformation acting on $\va{S}$. To understand physically the effect of this matrix, consider a pencil beam of geodesics with some circular cross-section. As the geodesics' tangent vectors evolve in time, the cross-section could undergo the following transformations:
+		\begin{itemize}
+			\item Shearing (the cross-sectional shape is distorted from a circle)
+			\item Rotation
+			\item Expansion or contraction
+		\end{itemize}
+		We are most interested in the last possibility, which will determine whether or not gravity is attractive in general relativity. For this, we must establish which part of the matrix $\vb{B}$ controls the expansion of a geodesic bundle.
+		
+		\section{Quantifying expansion}
+		Before addressing this, let us consider the simplest possible solution to \eqref{eq:evolutionS}. If $\vb{B}=\text{constant}$, then \eqref{eq:evolutionS} resembles a familiar matrix equation:
+		\begin{align}
+			\dv{t}Y^\mu = \tensor{B}{^\mu_\alpha} Y^\alpha.
+		\end{align}
+		This is solved via a matrix exponential:
+		\begin{align}
+			\vb{Y}(t) = \exp(\vb{B}t)\vdot\vb{Y}(0),
+		\end{align}
+		where the matrix exponential is formally defined as a power series:
+		\begin{align}
+			\exp(\vb{M}) \equiv \mathbb{1} + \vb{M} + \frac{1}{2!}\vb{M}^2 + \frac{1}{3!}\vb{M}^3 + ...
+		\end{align}
+		We can also define the matrix logarithm as the inverse of the matrix exponential:
+		\begin{align}
+			\log(\exp \vb{M}) \equiv \vb{M}.
+		\end{align}
+		Let us define $\vb{A} \equiv \exp(\vb{B} t)$, so that
+		\begin{align}
+			\vb{Y}(t) = \vb{A}\vdot\vb{Y}(0),
+		\end{align}
+		where the matrix $\vb{A}$ enacts a linear transformation on the initial vector to evolve it in time. In this form, we can now see how $\vb{A}$ affects volumes. For three vectors $\{ \va{a},\va{b},\va{c} \}$ mapped into $\{ \va{a}',\va{b}',\va{c}' \}$ under the action of $\vb{A}$, the volume $V$ of the parallelepiped spanned by the three vectors transforms as:
+		\begin{align}
+			V' = \det(\vb{A}) V.
+		\end{align}
+		Hence, it is the determinant of a matrix that encodes how volumes, such as our geodesic bundle's cross-section, transform.
+		
+		In general, we cannot treat $\vb{B}$ as a constant matrix, so we may only view it as inducing an instantaneous change in $\va{S}$. For $\vb{A} \equiv \exp(\tau \vb{B})$, we thus set $\tau = \epsilon \ll 1$ and expand the exponential to linear order in $\epsilon$:
+		\begin{align}
+			\vb{A} \simeq \mathbb{1} + \epsilon\vb{B} + \mathcal{O}(\epsilon^2).
+		\end{align}
+		In this instantaneous limit, $\vb{A}$ is known as a \textit{near-identity transformation}. We now see that understanding how our bundle's cross-section instantaneously expands requires computing $\det(\mathbb{1}+\epsilon\vb{B})$. This is readily accomplished using the formula,
+		\begin{align}
+			\det(\vb{A}) = \exp(\Tr \log \vb{A}).
+		\end{align}
+		For $\vb{A}=\exp(\epsilon \vb{B})$, we have:
+		\begin{align}
+			\det(\exp(\epsilon \vb{B})) = \exp(\epsilon \Tr \vb{B}).
+		\end{align}
+		Expanding both sides to $\mathcal{O}(\epsilon)$, we at last find:
+		\begin{align}\label{eq:detApprox}
+			\det(\mathbb{1} + \epsilon\vb{B}) \simeq \mathbb{1} + \epsilon\Tr(\vb{B}) + \mathcal{O}(\epsilon^2).
+		\end{align}
+		As is frequently encountered in classical and quantum mechanics, we recognize $\vb{B}$ as the generator of a linear transformation. Note that in quantum mechanics, we often define $\vb{A} \equiv \exp(\pm i \epsilon \vb{B})$ and demand $\vb{B}$ be Hermitian so that $\vb{A}$ is unitary.
+		
+		With this approximation in hand, we observe that our cross-section's evolution is controlled by the trace of the generator. In the context of \eqref{eq:evolutionS}, we seek to analyze:
+		\begin{align}
+			\Tr \vb{B} = \tensor{B}{^\mu_\mu} \equiv \theta,
+		\end{align}
+		where $\theta$ is known as the \textit{expansion}. A positive (negative) $\theta$ corresponds to an expansion (contraction), as is evident from the relation
+		\begin{align}\label{eq:evolutionVol}
+			\frac{V'}{V} = \det(\vb{A}) \simeq \mathbb{1} + \epsilon\theta.
+		\end{align}
+		Since our particles are initially at rest, $\theta$ must be zero at $\tau=0$. Hence, upon release, our geodesic bundle's evolution is determined by the sign of the instantaneous rate of change in $\theta$ along the congruence:
+		\begin{align}\label{eq:evolutionTheta}
+			\dv{\theta}{\tau} = U^\beta \nabla_\beta \theta = U^\beta \nabla_\beta \( \nabla_\alpha U^\alpha \).
+		\end{align}
+		
+		\section{Raychaudhuri's equation}
+		Thus far, we have only employed our knowledge of the geometry of curved manifolds without any input from Einstein's equations. We shall do so by employing the commutation relation:
+		\begin{align}
+			\[ \nabla_\alpha, \nabla_\beta \] U^\alpha = \tensor{R}{^\alpha_\gamma_\alpha_\beta} U^\gamma = R_{\gamma\beta} U^\gamma.
+		\end{align}
+		We can therefore express \eqref{eq:evolutionTheta} as:
+		\begin{align}
+			\dv{\theta}{\tau} = U^\beta \nabla_\alpha \( \nabla_\beta U^\alpha \) - U^\beta R_{\gamma\beta} U^\gamma.
+		\end{align}
+		Exploiting the product rule, we have:
+		\begin{align}
+			\dv{\theta}{\tau} = \nabla_\alpha \( U^\beta \nabla_\beta U^\alpha \) - \( \nabla_\alpha U^\beta \)\( \nabla_\beta U^\alpha \) - R_{\alpha\beta} U^\alpha U^\beta.
+		\end{align}
+		The first term vanishes since $U^\alpha$ is the tangent vector to a geodesic. Re-expressing the second term in terms of the components of $\vb{B}$, we arrive at \textit{Raychaudhuri's equation}:
+		\begin{align}\label{eq:Raychaudhuri}
+			\boxed{\dv{\theta}{\tau} = -\tensor{B}{^\beta_\alpha} \tensor{B}{^\alpha_\beta} - R_{\alpha\beta} U^\alpha U^\beta}
+		\end{align}
+		This expression tells how the expansion of geodesic bundles changes along the direction of the congruence. Note that in many texts, the first term is usually broken down further into terms explicitly involving the expansion and shear. Furthermore, the effects of spacetime curvature only explicitly appear in the second term, via the Ricci tensor.
+		
+		\section{Dust of particles: gravity is attractive!}
+		Returning to our original example, let us apply Raychaudhuri's equation to the dust of test particles. As the particles are initially at rest, they have a local Lorentz frame four-velocity:
+		\begin{align}
+			\left.U^{\hat{\mu}}\right|_{\tau=0} = 
+			\begin{pmatrix}
+				1\\
+				0\\
+				0\\
+				0\\
+			\end{pmatrix}
+		\end{align}
+		Since this holds for all vectors in the congruence at $\tau=0$, the four-velocity does not change along directions $\va{S}$ perpendicular to the congruence, i.e.
+		\begin{align}\label{eq:uniform4vel}
+			\left.S^{\hat{\alpha}} \nabla_{\hat{\alpha}} U^{\hat{\mu}}\right|_{\tau=0} = 0.
+		\end{align}
+		Note that from the geodesic equation, we have
+		\begin{align}
+			\tensor{B}{^\mu_\nu} U^\nu = U^\nu \nabla_\nu U^\mu = 0,
+		\end{align}
+		so that $\vb{B}$ is always perpendicular to $\va{U}$. Furthermore, \eqref{eq:uniform4vel} implies $\vb{B}$ is also perpendicular to all directions $\va{S}$ at $\tau=0$. Therefore, the matrix $\vb{B}$ must vanish initially:
+		\begin{align}
+			\left.\tensor{B}{^{\hat{\mu}}_{\hat{\nu}}}\right|_{\tau=0} = 0 \quad\Rightarrow\quad \theta\lvert_{\tau=0} = 0.
+		\end{align}
+		Therefore, the expansion is initially zero. Raychaudhuri's equation thus has the form:
+		\begin{align}
+			\left.\dv{\theta}{\tau}\right|_{\tau=0} = -R_{\hat{\mu}\hat{\nu}} U^{\hat{\mu}} U^{\hat{\nu}} = -R_{\hat{0}\hat{0}}.
+		\end{align}
+		We are now ready to incorporate Einstein's equations into our description of this dust. They have the alternative description:
+		\begin{align}
+			R_{\mu\nu} = 8\pi \( T_{\mu\nu} - \frac{1}{2}T g_{\mu\nu} \),
+		\end{align}
+		where $T=\tensor{T}{^\mu_\mu}$. In a local Lorentz frame, we need only the component
+		\begin{align}
+			R_{\hat{0}\hat{0}} = 8\pi \( T_{\hat{0}\hat{0}} - \frac{1}{2}T \eta_{\hat{0}\hat{0}} \) = 8\pi \( T_{\hat{0}\hat{0}} + \frac{1}{2}T \).
+		\end{align}
+		Recall that $T_{\hat{0}\hat{0}}=\rho$ is the energy density of our perfect fluid dust in a local Lorentz frame. The trace of the stress-energy tensor can be expanded as:
+		\begin{align}
+			T = \eta^{\hat{\mu}\hat{\nu}} T_{\hat{\mu}\hat{\nu}} = -T_{\hat{0}\hat{0}} + T_{\hat{1}\hat{1}} + T_{\hat{2}\hat{2}} + T_{\hat{3}\hat{3}}.
+		\end{align}
+		The spatial components of $T_{\mu\nu}$ correspond to momentum fluxes, which manifest as pressure terms in the stress tensor:
+		\begin{align}
+			T_{\hat{i}\hat{i}} = P_{\hat{i}} \quad\text{(no summation)}.
+		\end{align}
+		The temporal component of the Ricci tensor is then:
+		\begin{align}
+			R_{\hat{0}\hat{0}} = 4\pi \( \rho + P_x + P_y + P_z \).
+		\end{align}
+		A dust of ordinary matter particles has positive energy density and negligible pressure. At long last, we have our desired result:
+		\begin{align}
+			\left.\dv{\theta}{\tau}\right|_{\tau=0} = -R_{\hat{0}\hat{0}} = -\rho < 0.
+		\end{align}
+		From \eqref{eq:evolutionVol}, we see that the instantaneous change in the volume of our geodesic bundle's cross-section is a contraction. This confirms our intuitive notion from Newtonian gravity that gravity is indeed attractive.
+		
+		We end with a note that if the pressure terms are non-negligible and positive, then they too will gravitate via Einstein's equations. Normally, pressure gradients induce outward forces that overwhelm this contribution to the gravitational forces felt by a body of particles. However, if the pressure terms are constant and large, then they gravitate without contributing to outward repulsive forces. This is precisely what occurs in the gravitational collapse of a star: no matter how high the pressure gradients climb, their resulting repulsive forces cannot overcome the pressure contributions to gravity. This leads to a compression of the star until it ultimately undergoes a runaway collapse.
+		
+\end{document}
