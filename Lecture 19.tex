@@ -1,0 +1,146 @@
+
+
+\documentclass[10pt]{article}
+\usepackage{NotesTeX} %/Path/to/package should be replaced with package location
+\usepackage{lipsum}
+\usepackage{tensor}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{hyperref}
+\usepackage{physics}
+
+\newcommand{\bs}{\textbackslash}
+
+
+\title{{\Huge General Relativity}\\{\Large{Class 19}}} %replace with class number
+\author{Mark Riojas}
+
+\emailAdd{marcos.riojas@utexas.edu} %replace with your email
+\begin{document}
+    \maketitle
+    \flushbottom
+    \newpage
+    \pagestyle{fancynotes}
+    \part{Geodesics and Curvature}
+
+    \section{Review of Parallel Transport and Affine Parameters}
+	In the last section, we learned how to carefully evaluate derivatives in a curved spacetime. The goal was to find a derivative which transforms as a tensor (in other words, covariantly). That object was the covariant derivative:
+
+\begin{align}\label{eq:EFE}
+    \nabla_\mu V^\nu = \partial_\mu V^\nu + {\Gamma}{^\nu _{\mu \alpha}}V^\alpha
+\end{align}
+
+Where the $\Gamma$ was the Levi-Civita connection:
+
+\begin{align}\label{eq:EFE}
+    \Gamma^\rho_{\mu \nu} = \frac{1}{2} g^{\rho \alpha}\left( \partial_\mu g_{\alpha \nu} + \partial_\nu g_{\alpha \mu} - \partial_\alpha g_{\mu \nu}\right)
+\end{align}
+
+We could have used a different connection, but the Levi-Civita connection is the unique \textit{torsion free} choice. Mathematically, this means the Levi-Civita connection is symmetric in the bottom two indices:
+
+
+\begin{align}\label{eq:EFE}
+    \Gamma^{\rho}_{[\mu \nu]} = 0 \implies \Gamma^{\rho}_{\mu \nu} = \Gamma^\rho_{\nu \mu}
+\end{align}
+
+Once we discovered the covariant derivative, we gained the ability to parallel transport vectors along one another. Here was the idea, which is a generalization of the directional derivative from Calculus. Suppose you have some path $x(\lambda)$, and you want to move some vector $W$ along that path. First, use the path to define some vector $\frac{dx^\mu}{d\lambda}$. To keep things simple, let's call this the path vector. To transport vectors along the path, just take the covariant derivative of $W$, and then contract it with the path vector. This object is the \textit{Directional Covariant Derivative}:
+
+\begin{align}\label{eq:EFE}
+\frac{D}{d\lambda} = \frac{dx^\mu}{d\lambda} \nabla_\mu
+\end{align}
+
+We can move vectors around, then, by smacking them with (1.4). The transporting is called \textit{parallel} when this equation vanishes. The name comes from the fact that the angle between the curve and the path remains constant throughout the process. Thanks to the chain rule, the first term simplifies, and we get the \textit{Equation of Parallel Transport}:
+
+\begin{align}\label{eq:EFE}
+\frac{d}{d\lambda}V^\mu + \Gamma^\mu_{\sigma \rho} \frac{dx^\sigma}{d\lambda} V^\rho = 0
+\end{align}
+
+This equation has an important special case, where you parallel transport a vector along itself. In other words, the vector $\vec{V}$ equals the path vector
+$\frac{dx^\mu}{d\lambda}$:
+
+\begin{equation}
+    \boxed{\frac{d^2 x^\mu}{d\lambda^2} + \Gamma^{\mu}_{\rho \sigma} \frac{dx^\rho}{d\lambda} \frac{dx^\sigma}{d\lambda} = 0}
+\end{equation}
+
+Which is called the \textit{Geodesic Equation}, where we assumed the parameter $\lambda$ was \textit{affine}. Here is the idea behind an affine parameter. Suppose there's intelligent life somewhere else in the universe, and like us, they have an affinity for wristwatches. But since their star rises at a different time, and their planet goes around their star at a different rate, their time is a little faster and shifted relative to ours. You could write an equation for their time as:
+
+\begin{equation}
+    \lambda = a \tau + b
+\end{equation}
+
+Which is the definition of an affine parameter, where $\tau$ is the time we use. Affine parameters keep the physics simple, but you could choose to use a silly definition for time instead. For example, you could have the watches speed up and slow down occasionally. The same thing would happen to your velocities, so you would also introduce silly forces. Indeed, our geodesic equation would need to be rewritten as:
+
+\begin{align}
+    \frac{d^2 x^\mu}{d\lambda^2} + \Gamma^{\mu}_{\rho \sigma} \frac{dx^\rho}{d\lambda} \frac{dx^\sigma}{d\lambda} = F(\lambda) \frac{dx^\mu}{d\lambda}
+\end{align}
+
+You probably share our affinity for simple definitions of time. Since we are free to use them if we choose, we will continue to do so, but you should be aware that we have made the simplest choice.
+
+\section{Geodesics as Optimal Trajectories}
+
+When you're trying to get somewhere on campus, the optimal path is an intuitive one, but our intuition breaks down in curved space. Sometimes the optimal path will be a curved one, as it is on the surface of a sphere, where the best paths lie on great circles.
+
+Notice that two extremal paths are possible, which means geodesics are not unique. For a particle confined to move on the surface of sphere, the path chosen will depend on the initial conditions. This is also true in spacetime, and it turns out that these ideas are connected to the singularity theorems. In particular, the fact that multiple geodesics are possible helps explain why points of infinite curvature can appear in general relativity.
+
+It is important to remember that, while geodesics minimize the distance in space, they actually maximize the proper distance in spacetime. Suppose we have some points $P$ and $Q$, with an observer traveling between them along some path, as in the figure. The proper distance between those points will be:
+
+\begin{align}
+    \tau = \int_P^Q \sqrt{-g_{\mu \nu} \frac{dx^\mu}{d\lambda} \frac{dx^\nu}{d\lambda}}
+\end{align}
+
+In a future section, we will extremize $\tau$ (that is, require $\delta \tau = 0$) to obtain the geodesic equation, and we will also find that the proper distance is maximized. This is consistent with the twin paradox, where the accelerating twin aged less; indeed, her twin was traveling through spacetime in a straight line.
+
+\section{Intuition for Curvature}
+
+From the metric, we can obtain the equations for geodesic motion, but this is not enough to understand curvature. This is because there exist locally flat coordinates at each point, and we can choose our coordinates with care to make first derivatives of the metric vanish. This has the advantage of killing the Christoffel symbols:
+
+\begin{align}
+    g_{\mu \nu} \rightarrow \eval{g_{\hat{\mu} \hat{\nu}}}_P = \eta_{\hat{\mu}\hat{\nu}}
+\end{align}
+
+\begin{align}
+    \Gamma^{\mu}_{\nu \rho} \rightarrow \Gamma^{\hat{\mu}}_{\hat{\nu}\hat{\rho}} = 0
+\end{align}
+
+However, this procedure breaks down at the second derivative; it's not always possible to set the second derivatives equal to zero. Following our intuition that spacetime is curved, we are motivated to define an object to quantify curvature using the second derivatives of the metric. The object of choice turns out to be a small closed path around a local point.
+
+Suppose we want to drag a vector around a closed curve, perhaps on the surface of the sphere, as in the figure. We could do this using the equation of parallel transport, which holds the angle constant throughout the process. The angle does change, however, when you turn onto a new path. We are able to close the loop with only three right angle turns (instead of the customary four), so this path rotates the vector by ninety degrees. This is a telling sign of a positively curved space; indeed, we will use this idea to quantify curvature at spacetime points.
+
+\section{The Riemann Curvature Tensor}
+
+Suppose we have an arbitrary spacetime, and a vector located at a spacetime point. As a thought experiment, consider an infinitesimally small "ant" located at the spacetime point, armed with the equations of parallel transport. He then draws a small box, using two vectors $A^\mu$ and $B^\mu$, and takes a brief walk around the path, taking care to parallel transport the vector.
+
+Returning to his starting point, he carefully measures how the vector transformed. He knows the transformation should be a function of three vectors: the one he now holds, and the two used to draw his path:
+
+\begin{align}
+    \delta V^\rho = \tensor{R}{^\rho_\sigma_\nu_\mu}V^\sigma A^\mu B^\nu
+\end{align}
+Since the laws of physics are time reversible, he knows the return path should undo this transformation, and figures the vector should be anti-symmetric in $A^\mu$ and $B^\mu$:
+\begin{align}
+    \tensor{R}{^\rho_\sigma_\mu_\nu} = -\tensor{R}{^\rho_\sigma_\nu_\mu}
+\end{align}
+We could use the equations of parallel transport to derive the Riemann tensor from these considerations, but it's simpler to just use the covariant derivative instead. This is because the covariant derivative measures the degree to which we fail to parallel transport a vector. To see why, recall from equation (1.5) that parallel transport causes the directional covariant derivative along the path to vanish.
+
+
+
+This may be analogous to the gradient, which is the degree to which you fail to move along the level curves; in this case, the covariant derivative measures the degree to which you fail to move along geodesics while moving in straight lines. Had the space been flat, the straight lines would have been geodesics, and the covariant derivatives would reduce to partial derivatives. In that case, partial derivatives would commute. Since they commute in flat space, we will quantify curvature by how much covariant derivatives fail to commute:
+
+\begin{align}
+\begin{split}
+    [\nabla_\mu, \nabla_\nu] V^\rho &= \nabla_\mu \nabla_\nu V^\rho - \nabla_\nu \nabla_\mu V^\rho \\
+    &= \partial_\mu(\nabla_\nu V^\rho) - \Gamma^\lambda_{\mu \nu}\nabla_\lambda V^\rho + \Gamma^\rho_{\mu \sigma}\nabla_\nu V^\sigma - (\mu \leftrightarrow \nu) \\
+    &= \partial_\mu \partial_\nu V^\rho + (\partial_\mu \Gamma^\rho_{\nu\sigma})V^\sigma + \Gamma^\rho_{\nu \sigma}\partial_\mu V^\sigma - \Gamma^\lambda_{\mu \nu}\partial_\lambda V^\rho - \Gamma^\lambda_{\mu \nu}\Gamma^{\rho}_{\lambda \sigma}V^\sigma \\
+    &\; \;\;\;\; + \Gamma^{\rho}_{\mu \sigma}\partial_\nu V^\sigma + \Gamma^\rho_{\mu \sigma}\Gamma^\sigma_{\nu \lambda}V^\lambda - (\mu \leftrightarrow \nu)\\
+    &= (\partial_\mu \Gamma^\rho_{\nu \sigma}-\partial_\nu \Gamma^\rho_{\mu \sigma} + \Gamma^\rho_{\mu \lambda}\Gamma^{\lambda}_{\nu \sigma} - \Gamma^{\rho}_{\nu \lambda}\Gamma^{\lambda}_{\mu \sigma})V^{\sigma} - 2\Gamma^\lambda_{[\mu \nu]}\nabla_\lambda V^\rho
+\end{split}
+\end{align}
+
+Where we simplified the equation by cancelling terms. According to (1.3), for the case where the connection is torsion-free we can drop the last term. In fact, it's proportional to something called the torsion tensor (see Sean Carroll). Since the left-hand side is a tensor, the part in the parentheses is also a tensor:
+
+\begin{align}
+    \boxed{\tensor{R}{^\rho_\sigma_\mu_\nu} = \partial_\mu \Gamma^\rho_{\nu \sigma}-\partial_\nu \Gamma^\rho_{\mu \sigma} + \Gamma^\rho_{\mu \lambda}\Gamma^{\lambda}_{\nu \sigma} - \Gamma^{\rho}_{\nu \lambda}\Gamma^{\lambda}_{\mu \sigma}}
+\end{align}
+
+Notice that the tensor has the properties the "ant" imagined: it's anti-symmetric in $\mu$ and $\nu$, and it depends on the second derivatives of the metric. However, we have the freedom to eliminate the last two terms by choosing locally inertial coordinates. This is the first object we've encountered which can't be ignored in locally flat coordinates. It tells us how much a vector rotates when we move around a small loop at a spacetime point.
+
+
+\end{document}
