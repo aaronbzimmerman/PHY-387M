@@ -1,0 +1,330 @@
+\documentclass[10pt]{article}
+\usepackage{NotesTeX} %/Path/to/package should be replaced with package location
+\usepackage{lipsum}
+\usepackage{tensor}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{hyperref}
+
+\usepackage{physics}
+\usepackage{enumitem} %Select what you need and remove/ comment out rest
+\usepackage{bbold}
+\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage{gensymb}
+
+\usepackage{subcaption}
+\usepackage{wrapfig}
+\usepackage{float}
+
+
+\newcommand{\bs}{\textbackslash}
+
+% (re)defined commands:
+%\newcommand{\<}{\langle}
+%\renewcommand{\>}{\rangle}
+%\renewcommand{\(}{\left(}
+%\renewcommand{\)}{\right)}
+%\renewcommand{\[}{\left[}
+%\renewcommand{\]}{\right]}
+%\renewcommand{\d}{\partial}
+
+
+
+
+\title{{\Huge General Relativity}\\{\Large{Class 24 - uploaded March 23, 2020}}} %replace with class number
+\author{Saba Baig}
+
+\emailAdd{sbaig@utexas.edu} %replace with your email
+\begin{document}
+    \maketitle
+    \flushbottom
+    \newpage
+    \pagestyle{fancynotes}
+    \part{Energy Conditions from EFE}
+	    The Einstein Field Equations (EFE) imply a mutual attraction between matter. This is conditional on the sign of the energy density and pressure terms in the stress-energy tensor. To classify these terms, and motivated by physical expectations and Raychaudhuri's Equation, four energy conditions are expressed. 
+	
+            \section{Weak Energy Condition (WEC)}\label{sec:WEC}
+                WEC demands that for all time-like vectors $t^\mu$:
+                \begin{align}\label{eq:WEC}
+                    \boldsymbol{T_{\mu\nu}t^{\mu}t^{\nu} \geq 0} 
+                \end{align} 
+                WEC can give an overall requirement on all time-like vectors and how they interact with the stress-energy tensor. The interpretation depends on particular tensors and cases.
+            \subsection{Case: Time-like Observer}
+        	    Since $t^\mu$ is time-like, it can be tangential to the worldline of some observer. For such an observer, $t^{i}=0$ and the WEC simplifies to:
+        	    \begin{align}
+        	        T_{00}t^{0}t^{0} \geq 0 \qquad \Rightarrow \qquad \boldsymbol{T_{00} \geq 0}
+        	    \end{align}
+        	    \textbf{This observer measures a non-negative energy density.}
+        	\subsection{Case: Perfect Fluid}
+        	    The stress-energy tensor for a perfect fluid is given by: 
+        	    \begin{align}\label{eq:PerfectFluidTensor}
+                    T_{\mu\nu} &= (\rho+P)U_{\mu}U_{\nu} + P\eta_{\mu\nu}
+            	\end{align}
+            	For a perfect fluid, the WEC can be expressed as:
+                \begin{align}\label{eq:PerfectFluidFWEC}
+                    T_{\mu\nu}t^{\mu}t^{\nu} &= (\rho+P)U_{\mu}U_{\nu}t^{\mu}t^{\nu} + P \eta_{\mu\nu}t^{\mu}t^{\nu} \notag \\
+                    &= (\rho+P)(U_{\alpha}t^{\alpha})^2 + Pt_{\alpha}t^{\alpha} \geq 0
+            	\end{align}
+            	$t_{\alpha}t^{\alpha}$ is negative since $t^{\alpha}$ is time-like and $(U_{\alpha}t^{\alpha})^2$ is positive-definite since its squared.\\
+            	Consider the following two limiting cases: 
+            	\begin{itemize}
+                    \item \boldsymbol{$t^{\mu} \to U^{\mu}:$} \eqref{eq:PerfectFluidFWEC} reduces to
+                        \begin{align}
+                	        T_{\mu\nu}t^{\mu}t^{\nu} = (\rho+P)(-1)^2 + P(-1) = \boldsymbol{\rho \geq 0}
+                	    \end{align}
+                    \textbf{For a perfect fluid in its rest frame, the energy density $\rho$ must be non-negative.}
+                    \item \boldsymbol{$t^{\mu} \to k^{\mu}$} for \boldsymbol{$k_{\mu}k^{\mu} \approx 0:$} \eqref{eq:PerfectFluidFWEC} reduces to
+                        \begin{align}
+                	        T_{\mu\nu}t^{\mu}t^{\nu} &= (\rho+P) \times (+ive)\ +\  P \times 0 \ \geq \ 0 \notag \\
+                	        \boldsymbol{\Rightarrow(\rho+P)} &\boldsymbol{\geq \ 0}
+                        \end{align}
+                   	\textbf{For approximately null $t^{\mu}$, if P is negative, then} \boldsymbol{$|P| \leq \rho$}.\\  
+                   	\\
+        	        \textbf{EXAMPLE: Raychaudhuri's equation} \\
+        	        In the last lecture, Raychaudhuri's equation was solved for test dust particles, as an application of a perfect fluid with an approximately null $t^{\mu}$. It gave the following result:
+        	            \begin{align}
+                            R_{\hat{0}\hat{0}}\  \propto \ \rho + P_{x} + P_{y} + P_{z} 
+                        \end{align}
+                    If the pressure is negative, then $|P| \leq \rho$ and gravity is actually repulsive:
+                        \begin{align}
+                            R_{\hat{0}\hat{0}} \propto \rho + 3P \qquad \to \qquad \boldsymbol{R_{\hat{0}\hat{0}} < 0 }
+                        \end{align}
+            	    A negative-pressure fluid's contribution to the EFE can be significant enough to overcome the attractive nature of gravity, dominate and give us repulsive gravity. Another example is the accelerating expansion of our universe due to a component of the stress-energy tensor called dark energy which seems to have $\rho = -P$.
+                \end{itemize}
+            	To summarize, WEC gives a strict condition for energy density to be non-negative but no similarly severe restriction on pressure. Pressure may be negative, up to some limit. 
+            	               	
+            \section{Null energy condition (NEC)}\label{sec:NEC}
+                NEC demands that for all null vectors $k^\mu$:
+                \begin{align}\label{eq:NEC}
+                    \boldsymbol{T_{\mu\nu}k^{\mu}k^{\nu} \geq 0}
+                \end{align} 
+            \subsection{Case: Perfect Fluid}
+                We get the same condition for pressure as with the WEC since \eqref{eq:NEC} reduces to:
+                \begin{align}
+                    (\rho+P) &\geq 0
+                \end{align}
+                There is no condition on the energy density to be positive. $\rho$ may be negative if P is sufficiently positive: $|\rho| \leq P$ 
+                
+        	\section{Strong energy condition (SEC)}\label{sec:SEC}
+        	    SEC demands that for all time-like vectors $t^\mu$:
+                \begin{align}\label{eq:SEC}
+                    \boldsymbol{T_{\mu\nu}t^{\mu}t^{\nu} } &\boldsymbol{\geq \frac{1}{2}Tt^{\alpha}t_{\alpha}} 
+                \end{align} 
+                where $T = T^{\mu}_{\ \mu}$. 
+                Motivated by Raychaudhuri's Equation, the SEC is basically a statement that gravity is attractive and can be equivalently expressed as: 
+                \begin{align}
+                    R_{\mu\nu}t^{\mu}t^{\nu} &\geq 0 
+                \end{align}
+                Note: the SEC does not imply the WEC; this is colloquial where the SEC is a more severe condition to place on matter than the WEC. 
+            \subsection{Case: Perfect Fluid}
+            	Consider the following two limiting cases:
+            	\begin{itemize}
+                    \item \boldsymbol{$t^{\mu} \to U^{\mu}:$} \eqref{eq:SEC} reduces to
+                        \begin{align}
+                	        \Rightarrow \rho + 3P \geq 0 
+                	    \end{align}
+                    \item \boldsymbol{$t^{\mu} \to k^{\mu}$} for \boldsymbol{$k_{\mu}k^{\mu} \approx 0:$} \eqref{eq:SEC} reduces to
+                        \begin{align}
+                	        \Rightarrow \rho + P \geq 0 
+                        \end{align}
+               	\end{itemize}
+               	Together, these conditions state the $\rho$ can be negative if P is sufficiently positive: $|\rho| \leq P$. 
+               	For a positive $\rho$, P can be negative if $|P| \leq \frac{1}{3}\rho$. 
+               	Here, the SEC implies the NEC. 
+                
+        	\section{Dominant energy condition (DEC)}\label{sec:DEC}
+        	    DEC requires that locally, energy flows at a speed less than or equal to the speed of light. The current density $J^{\mu}$ of the stress energy tensor as viewed by time-like observers can be defined as:
+        	    \begin{align}
+        	        -T^{\mu\alpha}t_{\alpha} = J^{\mu}
+        	    \end{align}
+        	    DEC states that this current density must be a time-like vector, for all time-like observers $t^{\mu}$:
+        	    \begin{align}
+        	        J_{\mu}J^{\mu} &\leq 0 \notag \\
+        	        \Rightarrow \boldsymbol{T_{\mu\alpha}T^{\alpha}_{\ \ \nu}t^{\mu}t^{\nu}} &\boldsymbol{\leq 0}
+        	    \end{align}
+        	    The DEC implies the WEC. \\
+        	    Most forms of matter obey the DEC. For perfect fluids, this means the conditions obtained for the WEC also hold for the DEC. 
+        	    \\ & \\ & \\
+            COMMENT: Based on the four energy conditions cumulatively, we can say that Einstein's equations imply that gravity is attractive, provided the matter content of the universe has positive energy density and the pressure is not too negative. 
+        	    
+        	    
+    \newpage
+    \part{Physics in Curved Spaces}
+        Recall:
+        \begin{itemize}
+            \item Gravity is a manifestation of curved spacetime.
+            \item Other physical laws are derived from the Equivalence Principle, which states that locally physics should be indistinguishable from Special Relativity (SR).
+        \end{itemize}
+        We use these two ideas to promote all our laws of physics into laws on curved spacetime. 
+            \section{Procedure}\label{sec:Procedure}
+                \begin{enumerate}
+                    \item Start with the law in SR.
+                    \item Assume it is true in the local Lorentz frame (LLF) and write it in a covariant way. 
+                    This would involve promoting partial derivatives to covariant derivatives and every instance of the spacetime metric to the metric on the curved spacetime.
+                        \begin{align}
+                            \partial_{\hat{\mu}} \to \nabla_{\hat{\mu}}  && \eta_{\hat{\mu}\hat{\nu}} \to g_{\hat{\mu}\hat{\nu}} 
+                        \end{align}
+                    \item The covariant expression holds in all frames/co-ordinate systems.
+                    \item Minimal Coupling: Matter fields do not directly couple to the Reimann tensor or its contractions.
+                \end{enumerate}
+            \subsection{Rule 4: Minimal Coupling}
+                We justify the Minimal Coupling rule on physical grounds, using a dimensional argument. \\ & \\
+                The first three steps in the procedure above are motivated by the Equivalence Principle. However, they do not prevent matter coupling to curvature. We could add new terms to our laws of Physics in curved spacetime that are related to the Reimann Tensor, Ricci Tensor, Ricci Scalar or some combination of those. Such terms are naturally zero in flat space and therefore, would not affect the laws in SR, but would manifest themselves in curved spacetime as a correction. Below, we invent a non-minimally coupled term and argue why it won't be required.\\ & \\
+                \textbf{EXAMPLE:}
+                Lets modify Maxwell's Equations by adding an extra term that couples the Ricci tensor as follows:
+                \begin{align}\label{eq:FakeEq}
+                    \nabla_{\mu}F^{\nu \mu} = J^{\nu} + \alpha R^{\nu \mu} J_{\mu}
+                \end{align}
+                where $\alpha$ is a coupling constant, to ensure the dimensions match for both terms. \\ & \\
+                In Cartesian co-ordinates ([A] denotes the units of A): 
+                \begin{align}
+                    [g_{\mu \nu}] = L^{0} \qquad \to \qquad [R^{\mu \nu}] = [R_{\mu \nu}]
+                \end{align}
+                From \eqref{eq:FakeEq} and the units of the Ricci Tensor, we can show the units of $\alpha$:
+                \begin{align}
+                    [\alpha R_{\mu \nu}] = L^{0} \quad \text{and} \quad [R_{\mu \nu}] = \frac{1}{L^{2}} \qquad \to \qquad [\alpha] = L^{2}
+                \end{align}
+                This gives two options for $\alpha$: 
+                \begin{itemize}
+                    \item Go beyond the Standard Model of Physics and create a new constant with units $L^{2}$.
+                    \item Express the new constant in terms of old constants such that it has units of $L^{2}$. \\
+                    For example, the Planck length $l_p$ can be written in terms of known constants: 
+                        \begin{align}
+                            l_{p}^{2} = \frac{\hbar G}{c^{3}} \qquad \Rightarrow \qquad  l_p = 1.62 \times 10^{-33} cm
+                        \end{align}
+                    Then, $\alpha \propto l_{p}^{2}$. This makes $\alpha$ very small
+                \end{itemize}
+                Considering $\alpha \propto l_{p}^{2}$, and taking $l_{curv}$ as a length scale relevant to the curvature, the coupled term would have an order of: 
+                \begin{align}
+                    \alpha R^{\nu \mu} &= \frac{l_{p}^{2}}{l_{curv}^{2}} \notag \\
+                    &= \frac{(1.62 \times 10^{-33} cm)^2}{(1.5 \times 10^{5} cm)^{2}} \approx 10^{-76}
+                \end{align}
+                
+                where we have taken $l_{curv}$ of a stellar mass black hole the mass of our Sun. \\ 
+                If non-minimally coupled terms exist, even in cases where the curvature is pretty extreme such as near the event horizon of a black hole with the mass of our Sun, this combination of terms produces an absolutely minuscule number. Unless there are sub-microscopic black holes which are so tiny that the curvature scale is as small as the Planck scale, they can be ignored. 
+                \\ 
+                \\
+                Then the Minimal Coupling rule says that either there need to be new constants (new physics) OR for old constants, in any quantum theory of gravity, these non-minimal terms are super suppressed and can be neglected to a very good approximation. Alternatively, from a classical point of view, it demands that there be minimal coupling only. 
+        
+            \section{Examples}\label{sec:Eg}
+                Below, we show examples expressing the laws of Physics in curved spacetime.
+            \subsection{Stress energy tensor is conserved.}
+                \begin{enumerate}
+                    \item In flat space, the stress energy tensor is conserved.
+                        \begin{align}
+                            \partial{\mu}T^{\mu\nu} = 0
+                        \end{align}
+                    \item Assume it holds in an LLF and then promote the partial derivative to the covariant derivative, since they are equivalent in an LLF.
+                        \begin{align}
+                            \partial_{\hat{\mu}}T^{\hat{\mu}\hat{\nu}} &= 0 \notag \\ \partial_{\hat{\mu}}T^{\hat{\mu}\hat{\nu}} &= \nabla_{\hat{\mu}}T^{\hat{\mu}\hat{\nu}}
+                        \end{align}
+                    Now, the goal is achieved since the RHS is fully covariant and transforms as a tensor (holds in all co ordinate frames). 
+                    \item In curved spacetime, the law is:
+                        \begin{align}
+                            \boldsymbol{\nabla_{\mu}T^{\mu\nu} = 0}
+                        \end{align}
+                \end{enumerate}
+            
+            \subsection{Stress-Energy Tensor of a perfect fluid.}
+                \begin{enumerate}
+                    \item In SR, the stress-energy tensor for a perfect fluid is given by \eqref{eq:PerfectFluidTensor}.
+                    \item Assume it holds in an LLF and promote the metric to the curved spacetime metric: $\eta_{\hat{\mu}\hat{\nu}} =      g_{\hat{\mu}\hat{\nu}}$
+                    \item Stress-energy tensor in curved spacetime is:
+                        \begin{align}
+                            \boldsymbol{T_{\mu\nu} = (\rho+P)U_{\mu}U_{\mu} + Pg_{\mu\nu}}
+                        \end{align}
+                \end{enumerate}
+            
+            \subsection{Maxwell's Equation}
+                \begin{enumerate}
+                    \item In flat space, Maxwell's equation is given by:
+                        \begin{align}
+                            \partial_{\mu}F^{\nu\mu} = J^{\nu}
+                        \end{align}
+                    \item Assume it holds in an LLF and then promote the partial derivative to the covariant derivative, since they are equivalent in an LLF.
+                        \begin{align}
+                            \partial_{\hat{\mu}}F^{\hat{\nu}\hat{\mu}} &= J^{\hat{\nu}} \notag \\ 
+                            \partial_{\hat{\mu}}F^{\hat{\nu}\hat{\mu}} &= \nabla_{\hat{\mu}}F^{\hat{\nu}\hat{\mu}} = J^{\hat{\nu}}
+                        \end{align}
+                    \item Maxwell's equation in curved spacetime is:
+                        \begin{align}
+                            \boldsymbol{\nabla_{\mu}F^{\nu\mu} = J^{\nu}}
+                        \end{align}
+                \end{enumerate}
+            
+            \subsection{Newton's First Law (Straight line Equation)}
+                \begin{enumerate}
+                    \item In flat space, in the absence of applied forces, a particle travelling along a curve $x^{\mu}(\lambda)$ obeys the straight line equation:
+                        \begin{align}
+                            \frac{d^{2}x^{\mu}}{d\lambda^{2}} = 0
+                        \end{align}
+                    where for simplicity, we can take $\lambda$ to be an affine parameter.
+                    \item In an LLF, this is written as:
+                        \begin{align}
+                            \frac{d}{d \lambda} \frac{dx^{\hat{\mu}}}{d\lambda} &= 0
+                        \end{align}
+                    Rearranging the expression to obtain a partial derivative and promoting that to a covariant derivative (equivalent in an LLF):
+                        \begin{align}
+                            \frac{d}{d \lambda} \frac{dx^{\hat{\mu}}}{d\lambda} = 
+                            \frac{d x^{\hat{\nu}}}{d \lambda} \partial_{\hat{\nu}}\frac{dx^{\hat{\mu}}}{d\lambda}
+                            = \frac{d x^{\hat{\nu}}}{d \lambda} \nabla_{\hat{\nu}}\frac{dx^{\hat{\mu}}}{d\lambda}
+                        \end{align}
+                    \item Straight line equation in curved spacetime is:
+                        \begin{align}\label{eq:Straightline}
+                            \boldsymbol{\frac{d x^{\nu}}{d \lambda} \nabla_{\nu} \frac{d x^{\mu}}{d \lambda} = 0}
+                        \end{align}
+                    To verify \eqref{eq:Straightline} gives the familiar geodesic equation, apply the covariant derivative:
+                        \begin{align}
+                            &\Rightarrow \frac{d x^{\nu}}{d \lambda} \bigg( \partial_{\nu}\Big( \frac{d x^{\mu}}{d \lambda}\Big) + \Gamma^{\mu}_{\nu \alpha}\frac{d x^{\alpha}}{d \lambda}\bigg) \notag \\
+                            &= \Big( \frac{d x^{\nu}}{d \lambda}\partial_{\nu} \Big)\frac{d x^{\mu}}{d \lambda} + \frac{d x^{\nu}}{d \lambda} \Gamma^{\mu}_{\nu \alpha}\frac{d x^{\alpha}}{d \lambda} \notag \\
+                            &= \frac{d }{d \lambda}\frac{d x^{\mu}}{d \lambda} + \Gamma^{\mu}_{\nu \alpha} \frac{d x^{\nu}}{d \lambda} \frac{d x^{\alpha}}{d \lambda} \notag \\
+                            &\Rightarrow \boldsymbol{\frac{d^{2} x^{\mu}}{d \lambda^{2}} + \Gamma^{\mu}_{\alpha \beta} \frac{d x^{\alpha}}{d \lambda} \frac{d x^{\beta}}{d \lambda} = 0}
+                        \end{align}
+                    The geodesic equation arises out of the Equivalence Principle. Or equivalently, the Equivalence Principle tells us that particles move on geodesics in curved spacetime when they have no forces, other than gravity, applied. 
+                    \\
+                    Note that in curved spacetime, gravity as a force is replaced with the curvature effect that causes particle motion to deflect.
+                \end{enumerate}
+            
+            \subsection{Scalar Field Theory}
+                In flat space time, we can define an action S with a Lagrange density $\mathcal{L}$ as follows:
+                    \begin{align}\label{eq:Action}
+                        S &= \int d^{4}x \ \mathcal{L}
+                    \end{align}
+                For the scalar field theory, $\mathcal{L}$ is given by: 
+                    \begin{align}\label{eq:Lagrangian}
+                        \mathcal{L} &= - \frac{1}{2} \eta^{\mu \nu} (\partial_{\mu}\phi) (\partial_{\nu}\phi) - V(\phi)
+                    \end{align}
+                where V is just some function of $\phi$.
+                \begin{enumerate}
+                    \item First re-express \eqref{eq:Action} with the correct volume element. In flat space, this becomes: 
+                    \begin{align}\label{eq:CorrectAction}
+                        S =  \int \sqrt{-det(\eta_{\mu \nu})} \ d^{4}x \ \mathcal{L}
+                    \end{align}
+                    \item Write this in an LLF and then, promote the partial derivative to the covariant derivative and the flat spacetime metric to the curved spacetime metric (since they are equivalent quantities in an LLF).
+                    \begin{align}
+                        S &=  \int \sqrt{-det(\eta_{\hat{\mu} \hat{\nu}})} \ d^{4}x \  \Big( -\frac{1}{2} \eta^{\hat{\mu} \hat{\nu}} (\partial_{\hat{\mu}}\phi) (\partial_{\hat{\nu}}\phi) - V(\phi) \Big) \\
+                        &= \int \sqrt{-det(g_{\hat{\mu} \hat{\nu}})} \ d^{4}x \ \Big( -\frac{1}{2} g^{\hat{\mu} \hat{\nu}} (\nabla_{\hat{\mu}}\phi) (\nabla_{\hat{\nu}}\phi) - V(\phi) \Big)
+                    \end{align}
+                    \item The action in curved spacetime is given by:
+                        \begin{align}
+                            S &= \int \sqrt{-det(g_{\mu \nu})} \ d^{4}x \ \Big( - \frac{1}{2}g^{\mu \nu}(\nabla_{\mu}\phi) (\nabla_{\nu}\phi) - V(\phi) \Big) \\
+                         \Rightarrow \textbf{S} &\boldsymbol{= \int \sqrt{g} \ d^{4}x \ \Big( - \frac{1}{2} (\nabla_{\mu}\phi) (\nabla^{\mu}\phi) - V(\phi) \Big)}
+                        \end{align}
+                         Since $\phi$ is a scalar field, the covariant derivative is equal to the partial derivative, even in curved spacetime. Promoting it was not necessary, but the covariant form is useful when taking the variation of the action to find the equations of motion (EOM).
+                \end{enumerate}
+                If we vary the curved spacetime action S via $\phi \to \phi + \delta \phi$, and by our usual rules set the variation to zero ($\delta S = 0$), we get the EOM for $\phi$ in curved spacetime. We can get the same result if we promote the EOM directly from flat space to curved spacetime.  
+                \begin{enumerate}
+                    \item In flat space, the EOM is:
+                        \begin{align}
+                            \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}\phi + \frac{dV}{d\phi}\ \equiv \ \Box \phi + \frac{dV}{d\phi} \ = \ 0
+                        \end{align}
+                    \item Skipping the intermediate step, the EOM in curved spacetime is:
+                        \begin{align}
+                            \boldsymbol{g^{\mu \nu} \nabla_{\mu} \nabla_{\nu}\phi + \frac{dV}{d\phi} \ \equiv \ \Box_{g} \phi + \frac{dV}{d\phi} \ = \ 0 }
+                        \end{align}
+                    where $\Box_{g}$ is the curved spacetime wave operator.\\ & \\
+                \end{enumerate}
+            COMMENT: In addition to the usual procedure of promoting physics in Special Relativity to curved spacetime, we also have a condition of Minimal Coupling, to a highly accurate approximation given the Plank scale. 
+
+        
+\end{document}
