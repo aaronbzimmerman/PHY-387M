@@ -1,0 +1,199 @@
+\documentclass[10pt]{article}
+\usepackage{NotesTeX} %/Path/to/package should be replaced with package location
+\usepackage{lipsum}
+\usepackage{tensor}
+\usepackage{enumitem,mathtools,amsmath,amsthm,amssymb,undertilde}
+\usepackage{hyperref}
+\usepackage{physics}
+\input{undertilde}
+
+
+\newcommand{\bs}{\textbackslash}
+
+
+\title{{\Huge General Relativity}\\{\Large{Class  22 - March 11, 2020}}} %replace with class number
+\author{Ramon Salazar}
+
+\emailAdd{ramonmsalazar@gmail.com} %replace with your email
+\begin{document}
+    \maketitle
+    \flushbottom
+    \newpage
+    \pagestyle{fancynotes}
+    %\part{HELLO \LaTeX\,}
+	%Use the uncompiled version of this document in itself as a \LaTeX\, style guide for the class you'll be responsible for.
+	
+	\section{Aside: A Comment on $\tensor{R}{^\rho_\sigma _\nu _\mu}$}
+	
+	Clearly if we are in flat space, we can choose coordinates such that:
+
+	$$g_{\mu\nu} = \eta_{\mu\nu} \text{ and } \partial_{\rho}g_{\mu\nu} = 0 \text{ everywhere in } \mathcal{M}$$
+	In other words, $g_{\mu\nu}$ are all constant everywhere in $\mathcal{M}$
+
+	\begin{itemize}[label=*]
+	\item so $\Gamma^{\rho}_{\mu\nu}$ = 0 $\Rightarrow \tensor{R}{^\mu_\nu _\rho _\sigma}$ = 0 in these coordinates.
+	\end{itemize}	
+	But $\tensor{R}{^\mu_\nu _\rho _\sigma}$ = 0 is a tensor equation, so it must be true in \underline{all coordinates.}
+	\begin{itemize}[label=*]
+	\item Therefore, if $\mathcal{M}$ is flat space $\Rightarrow \tensor{R}{^\mu_\nu _\rho _\sigma}$ = 0
+	\end{itemize}
+	Now, what about the converse? If we find $\tensor{R}{^\mu_\nu _\rho _\sigma}$ = 0, are we in flat space (can we find
+	coordinates where $g_{\mu\nu}$ is constant)?
+	\begin{itemize}[label=*]
+	\item Yes, $\rightarrow \tensor{R}{^\mu_\nu _\rho _\sigma}$ = 0 $\Rightarrow g_{\hat{\mu}\hat{\nu}}$ = const
+	for some $x^{\hat{\mu}}$, everywhere in $\mathcal{M}$ (not just at a point).
+	\item See Carroll Section 3.6 for a quick proof.
+	\end{itemize}
+	So $\tensor{R}{^\mu_\nu _\rho _\sigma}$ can distinguish flat from curved spacetimes, and actually it is the defining
+	feature of spacetime manifolds.
+
+	\section{Integration on Manifolds}
+	You may have noticed that the volume element in curvilinear coordinates looks different from the one in Cartesian
+	coordinates:
+
+	$$dV = dx\,dy\,dz = r^{2}sin\theta \,dr\,d\theta \, d\phi \text{ for example:}$$
+	\begin{itemize}[label=*]
+	\item notice, dV = $\sqrt{|det(g_{ij})|}dr\,d\theta \,d\phi$ since \(g_{ij} = \begin{bmatrix}
+    											1 & 0     & 0 \\
+    											0 & r^{2} & 0 \\
+											0 & 0     & r^{2}sin^{2}\theta
+  											\end{bmatrix}\)
+	\item Indeed, this is the correct rule for curved spacetimes:
+	\end{itemize}
+	The volume element, dV, is equal to $\sqrt{|g|}\,d^{n}x$ in any coordinates. There is a reason for this. 
+	Formally, on curved manifolds, integration is a map from objects into real numbers. In this case, it is 
+	n-forms (for dim = n)  into reals:
+
+	$$\int_{U} \huge{\colon \Lambda^{n} \rightarrow \mathbb{R}},$$
+
+	$$\int_{U} \utilde{\omega} = a, $$
+	where U is a region of $\mathcal{M}$
+
+	\begin{itemize}[label=*]
+	\item recall, n-forms are just of the form
+	\end{itemize}
+	$$\utilde{\omega} = f(x)\, \utilde{\epsilon} \qquad \text{since}$$
+	\begin{align}
+	\utilde{\epsilon} =&& \frac{\sqrt{|g|}}{n!} \tilde{\epsilon}_{\mu_{1} \ldots \mu_{n}} 
+	dx^{\mu_{1}} \wedge \ldots \wedge dx^{\mu^{n}} \qquad \qquad & \leftarrow \text{as a form}\\[6pt]
+	=&& \sqrt{|g|}\,dx^{0} \wedge dx^{1} \wedge \ldots \wedge dx^{n-1} \qquad \qquad & \leftarrow 
+	\text{exploit antisymmetry}\\[6pt] 
+	=&& \sqrt{|g|}\,\tilde{\epsilon}_{\mu_{1} \ldots \mu_{n}} dx^{\mu_{1}} \otimes \ldots \otimes dx^{\mu_{n}} 
+	\qquad \qquad & \leftarrow \text{as a tensor}
+	\end{align}
+	and there is only 1 basis element of n-forms
+	\begin{itemize}[label=*]
+	\item recall, the only basis element for n-forms is
+	\end{itemize}
+	$$\utilde{dx}^0 \wedge \utilde{dx}^1 \wedge \ldots \wedge \utilde{dx}^{n-1}$$
+	so:
+	\begin{align}
+	\utilde{\omega} \propto \utilde{\epsilon} &= \frac{1}{n!} \sqrt{|g|}\, 
+	\tilde{\epsilon}_{\mu_{1} \ldots \mu_{n}} dx^{\mu_{1}} \wedge \ldots \wedge dx^{\mu_{n}}\\
+	&= \sqrt{|g|}\,dx^{0} \wedge dx^{1} \wedge \ldots \wedge dx^{n} \qquad \leftarrow 
+	\text{antisymmetry of} \ \hat{\epsilon}_{\mu_{1}} \ \text{and} \ \wedge \ \text{product}\\
+	&\coloneqq \sqrt{|g|}\,d^{n}x
+	\end{align}
+	\begin{itemize}[label=*]
+	\item With this association between $d^{n}x$ and the ordered wedge product we have a fully covariant
+	expression for integration on $\mathcal{M}$:
+	\end{itemize}
+
+	$$\boxed{\int_{U} \utilde{\omega} = \int_{U} f(x)\, \utilde{\epsilon} = \int_{\text{\O} (U)} f(x)\, \sqrt{|g|}\,d^{n}x}$$
+
+	Now the integrand is manifestly covariant. Note that with a chart $\text{\O}:\mathcal{M} \rightarrow \mathbb{R}$
+	we can evaluate integral using our usual methods.\\
+
+	\par At some point we will want to discuss hypersurfaces in $\mathcal{M}$. For now let's just mention that 
+	we have Stokes Theorem on Manifolds:
+
+	$$\boxed{\int_{U} \nabla_{\mu} V^{\mu} \sqrt{|g|}\,d^{n}x = \int_{\partial U} n_{\mu} V^{\mu} \sqrt{|\gamma|}\,d^{n-1}y}$$
+	with $\gamma_{ij}$ the "induced metric" on the lower dimensional space $\partial U$,\\
+	$y^{k}$ the coordinates we use on this boundary, and\\
+	$n^{\mu}$ the spacetime vectors normal to the surface.\\
+
+	\section{Einstein's equation from an Action Principle}
+
+	Notice $[S] = [energy][time] = (length)^2$\\
+	$[\sqrt{|g|}\,d^{4}x] = L^4$	(think about flat space, Cartesian coordinates)\\
+	So, for $$S = \int \sqrt{-g}\,d^{4}x \ \mathcal{L}$$   we want $[\mathcal{L}] = \frac{1}{L^2}$\\
+	\begin{itemize}[label=*]
+	\item We need a scalar quantity, preferably with no more than second derivatives in $g_{\mu \nu}$,
+	with the right units so we don't have to introduce new constants.\\
+	\item Ricci scalar R fits the bill.\\
+	\end{itemize}
+
+	$$\boxed{S = \int R \ \sqrt{-g}\,d^{4}x}$$
+	is the Einstein-Hilbert action
+	\begin{itemize}[label=*]
+	\item To get field equations for $g_{\mu \nu}$, we can vary S with respect to $g_{\mu \nu}$ and minimize
+	this action.
+	\item Actually it is equivalent, but easier, to vary $g^{\mu \nu}$
+	\end{itemize}
+	$$g^{\mu \nu} \rightarrow g^{\mu \nu} + \delta g^{\mu \nu}$$
+	
+	\hangindent=11em
+	\hangafter=1
+	$S \rightarrow S + \delta S \ \ \longleftarrow$ find $\delta$ S via expanding $S[g^{\mu \nu} + \delta g^{\mu \nu}]$ and set
+	$\delta S = 0$ for arbitrary variations of $g^{\mu \nu}$, vanishing on the boundary of $\mathcal{M}$
+	\begin{itemize}[label=*]
+	\item Note $\delta (g^{\mu \alpha} g_{\alpha \nu}) = (\delta g^{\mu \alpha})g_{\alpha \nu} + 
+	g^{\mu \alpha}\delta g_{\alpha \nu} = \delta(\delta^{\mu}_\nu) = 0$
+	\end{itemize}
+	$\Rightarrow g^{\mu \alpha}\delta g_{\alpha \nu} = -g_{\alpha \nu}\delta g^{\mu \alpha} \Rightarrow
+	g_{\beta \mu}g^{\mu \alpha}\delta g_{\alpha \nu} = \delta_{\beta}^{\alpha}\delta g_{\alpha \nu} =
+	\delta g_{\beta \nu} = -g_{\beta \mu}g_{\alpha \nu}\delta g^{\mu \alpha}$\\ \par
+
+	$$\Rightarrow \boxed{\delta g_{\mu \nu} = -g_{\mu \alpha} g_{\nu \beta}\partial g^{\alpha \beta}}$$
+
+	$$\delta S = \int d^{n}x \delta(\sqrt{-g}\,g^{\mu \nu}R_{\mu \nu})$$ \\
+	$$= \int d^{n}x\sqrt{-g}\,R_{\mu \nu}\,\delta g^{\mu \nu} + \int d^{n}x\sqrt{-g}\,g^{\mu \nu}(\delta R_{\mu \nu})
+	+ \int d^{n}x R \,\delta(\sqrt{-g})$$ \\ \par
+	The first term has the desired form. The second term becomes a boundary term via Stokes' Theorem:\\ \par
+
+	$$\int d^{n}x\sqrt{-g}\,g^{\mu \nu}(\delta R_{\mu \nu}) = d^{n}x\sqrt{-g}\,\nabla_{\alpha}[g_{\mu \nu}\nabla^{\alpha}\,
+	\delta g^{\mu \nu} - \nabla_{\beta}\,\delta g^{\alpha \beta}]$$\\
+	With $V^{\alpha} = g_{\mu \nu}\nabla^{\alpha}\,\delta g^{\mu \nu} - \nabla_{\beta}\,\delta g^{\alpha \beta}$ \par
+
+	$$\int_{\mathcal{M}}d^{n}x\sqrt{-g}\,\nabla_\alpha V^{\alpha} = \int_{\partial\mathcal{M}}d^{n-1}
+	\sqrt{\gamma}\,n_{\mu}V^{\mu}$$
+	\\ \par
+	and we set $\delta g^{\mu \nu} = 0$ on $\partial \mathcal{M}$ as usual for variational problems.\\ \par
+
+	For the last term, note ln(det\,\underline{M}) = Tr(ln\,M), where the first "ln" is a regular log, and the second one is
+	a matrix log defined via infinite series. \\ \par
+	\begin{itemize}[label=*]
+	\item $\delta ln(det\,M) = \frac{1}{det\,M} = Tr(\underline{M}^{-1}\delta\underline{M}) = Tr(\delta\underline{M}\,
+	\underline{M}^{-1})$
+	\end{itemize}
+
+	which applied to g, we get \\ \par
+
+	$\delta g = g(g^{\alpha\beta}\delta g_{\beta\alpha}) = g(-g_{\alpha\beta}\delta g^{\alpha\beta})$ \\ \par
+	\begin{itemize}[label=*]
+	\item $\delta\sqrt{-g} = \frac{1}{2\sqrt{-g}}(-\delta g) = -\frac{(-g)}{2\sqrt{-g}}g_{\mu \nu}\delta g^{\mu \nu} = 
+	-\frac{1}{2}\sqrt{-g}\,g_{\mu\nu}\,\delta g^{\mu\nu}$
+	\end{itemize}
+
+	$$\Rightarrow \delta S = \int d^{n}x \sqrt{-g}[R_{\mu\nu} - \frac{1}{2}g_{\mu\nu}R]\delta g^{\mu\nu} = 0
+	\qquad \forall \delta g^{\mu\nu}$$ \\ \par
+
+	$$\Rightarrow \boxed{R_{\mu\nu} - \frac{1}{2}g_{\mu\nu}R = 0} \qquad \text{(no matter)}$$ \\ \par
+
+	With matter, we add $S_{matter} = S_{M}$, and vary with respect to $\delta g^{\mu\nu}$: \\ \par
+
+	$\frac{1}{\sqrt{-g}}\frac{\delta S_{H}}{\delta g^{\mu\nu}}=G_{\mu\nu}$ and if $S=\frac{1}{16\pi G}S_{H}+S_{M}$, \\ \par
+
+	$\frac{1}{\sqrt{-g}}\frac{\delta S_{H}}{\delta g^{\mu\nu}}=\frac{1}{16\pi G}(R_{\mu\nu} - \frac{1}{2}g_{\mu\nu}R)+
+	\frac{1}{\sqrt{-g}}\frac{\delta S_{H}}{\delta g^{\mu\nu}}=0$ \\ \par
+
+	where $\frac{1}{\sqrt{-g}}\frac{\delta S_{H}}{\delta g^{\mu\nu}}$ defines $T_{\mu\nu}$, and so: \\ \par
+
+	$$\boxed{T_{\mu\nu}=-\frac{1}{2\sqrt{-g}}\frac{\delta S_{H}}{\delta g^{\mu\nu}}}$$ \\ \par
+
+	This gives us a way to construct $T_{\mu\nu}$ given a field Lagrangian.
+
+    
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
