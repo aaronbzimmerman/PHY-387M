@@ -2,7 +2,9 @@
 
 This public repository contains the lectures notes for Prof. Zimmerman's class on General Relativity at UT Austin during the Spring of 2020. It's a collaborative work by all the students in the class and pretty much a work in progress. 
 
-Below is the lecture assignment table. This version might be a couple of days out of date. For the latest version check https://docs.google.com/spreadsheets/d/1jP8hzUgAawhO6-ZRLSa0f-P7JoKW0RtZqx6ijim5164/edit?usp=sharing
+## LECTURE ASSIGNMENT TABLE
+
+This version might be a couple of days out of date. For the latest version check https://docs.google.com/spreadsheets/d/1jP8hzUgAawhO6-ZRLSa0f-P7JoKW0RtZqx6ijim5164/edit?usp=sharing
 
 | Student                   | Class Date | Completed | Lecture Number |
 |---------------------------|------------|-----------|----------------|
@@ -49,3 +51,32 @@ Below is the lecture assignment table. This version might be a couple of days ou
 | Saleh, Bassel             | May 4      |           | 41             |
 | UP FOR GRABS              | May 6      |           | 42             |
 | UP FOR GRABS              | May 8      |           | 43             |
+
+## GIT LECTURE UPLOAD INSTRUCTIONS
+
+- First, let's start with a clean repo.
+```
+$ git clone https://github.com/Majoburo/PHY-387M.git (Links to an external site.)
+```
+- Now cd into that directory and make the branch,
+```
+$ git branch *yourbranchname*
+```
+- Switch to the branch,
+```
+$ git checkout *yourbranchname*
+```
+- Create your files/do you edits....
+- Add and commit them to the git branch you are working in,
+```
+$ git add *your files*
+
+$ git commit -m 'here go your comments on the addition/edits'
+```
+- push your branch to the remote repo
+```
+$ git push --set-upstream origin *yourbranchname*
+```
+- Click on the link that will appear in your terminal to create a pull request on Github
+
+After this, I'll approve your pull request.
