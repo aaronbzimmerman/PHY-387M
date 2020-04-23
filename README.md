@@ -41,7 +41,7 @@ This version might be a couple of days out of date. For the latest version check
 | Wright, Josey             | Apr 10     | DONE      | 31             |
 | Zeng, Yongxin             | Apr 13     | DONE      | 32             |
 | Racz, Sarah               | Apr 15     | PAST DUE  | 33             |
-| Husain, Rabia             | Apr 17     | DUE       | 34             |
+| Husain, Rabia             | Apr 17     | DONE      | 34             |
 | Slavkova, Kalina          | Apr 20     | DUE       | 35             |
 | Layden, Christopher       | Apr 22     | DUE       | 36             |
 | Zhong, Kunhao             | Apr 24     |           | 37             |
