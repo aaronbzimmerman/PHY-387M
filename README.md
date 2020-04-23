@@ -1,6 +1,8 @@
 # PHY-387M RELATIVITY THEORY I (Spring 2020)
 
-This public repository contains the lectures notes for Prof. Zimmerman's class on General Relativity at UT Austin during the Spring of 2020. It's a collaborative work by all the students in the class and pretty much a work in progress.
+This public repository contains the lectures notes for Prof. Zimmerman's class on General Relativity at UT Austin during the Spring of 2020. It's a collaborative work by all the students in the class and pretty much a work in progress. 
+
+Below is the lecture assignment table. This version might be a couple of days out of date. For the latest version check https://docs.google.com/spreadsheets/d/1jP8hzUgAawhO6-ZRLSa0f-P7JoKW0RtZqx6ijim5164/edit?usp=sharing
 
 | Student                   | Class Date | Completed | Lecture Number |
 |---------------------------|------------|-----------|----------------|
