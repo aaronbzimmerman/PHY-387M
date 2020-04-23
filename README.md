@@ -52,7 +52,7 @@ This version might be a couple of days out of date. For the latest version check
 | UP FOR GRABS              | May 6      |           | 42             |
 | UP FOR GRABS              | May 8      |           | 43             |
 
-## GIT LECTURE UPLOAD INSTRUCTIONS
+## LECTURE UPLOAD INSTRUCTIONS
 
 - First, let's start with a clean repo.
 ```
