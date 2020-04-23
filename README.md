@@ -54,6 +54,8 @@ This version might be a couple of days out of date. For the latest version check
 
 ## LECTURE UPLOAD INSTRUCTIONS
 
+*BEFORE WE EVEN START, HAVE YOU BEEN ADDED AS A COLLABORATOR TO THE REPO? IF NOT, SEND ME YOUR GITHUB USERNAME AND APPROVE THE REQUEST I'LL SEND YOU.*
+
 - First, let's start with a clean repo.
 ```
 $ git clone https://github.com/Majoburo/PHY-387M.git (Links to an external site.)
