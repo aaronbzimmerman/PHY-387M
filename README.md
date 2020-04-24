@@ -44,7 +44,7 @@ This version might be a couple of days out of date. For the latest version check
 | Husain, Rabia             | Apr 17     | DONE      | 34             |
 | Slavkova, Kalina          | Apr 20     | DUE       | 35             |
 | Layden, Christopher       | Apr 22     | DUE       | 36             |
-| Zhong, Kunhao             | Apr 24     |           | 37             |
+| Zhong, Kunhao             | Apr 24     | DUE       | 37             |
 | Nay, Jonathan             | Apr 27     |           | 38             |
 | Leviyev, Alex             | Apr 29     |           | 39             |
 | Jokhadze, Irakli          | May 1      |           | 40             |
