@@ -6,6 +6,7 @@
 \usepackage{hyperref}
 \usepackage{tikz}
 \usepackage{tikz-cd}
+\usepackage{pgfplots}
 \tikzcdset{every label/.append style = {font = \small}}
 \tikzcdset{row sep/normal=3.5em}
 \tikzcdset{column sep/normal=3.5em}
@@ -13,7 +14,9 @@
 
 \usetikzlibrary{matrix}
 \usetikzlibrary{decorations.markings,calc,shapes}
+\usetikzlibrary{decorations.pathmorphing}
 \usetikzlibrary{positioning}
+\usepgfplotslibrary{fillbetween}
 \usepackage{graphicx}
 \usepackage{empheq}
 \usepackage{physics}
@@ -217,24 +220,27 @@ WORK IN PROGRESS!!!
                	\end{equation}
 
              \end{enumerate}
-             We can now draw the allowed portions such a spacetime, remembering the constraint $|\widetilde{T}|+\widetilde{R}<\pi$. This cylinder can be 'unrolled' , with only the allowed portions for Minkowski Space, resulting in the conformal diagram from Figure 2. In these conformal diagrams, it is important to remember that the boundaries of the diagram and the points are not included in the space.
+             We can now draw the allowed portions such a spacetime, remembering the constraint $|\widetilde{T}|+\widetilde{R}<\pi$, which confines the diagram to the non shaded region in the diagram. This cylinder can be 'unrolled' , with only the allowed portions for Minkowski Space, resulting in the conformal diagram from Figure 3. In these conformal diagrams, it is important to remember that the boundaries of the diagram and the points are not included in the space.
              \begin{figure}[!h]
                  \centering
            
                  \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+                  \tikzstyle{arrow} = [thick,->,>=stealth]
                  %Draw cylinder
  \filldraw [color=gray!70, fill=gray!20, very thick](-20,20) ellipse (50 and 10);
 \filldraw [color=gray!70, fill=gray!20, very thick](-20,120) ellipse (50 and 10);
-\draw (-70,20)--(-70,120)
-\draw (30,20)--(30,120)
+\draw (-70,20)--(-70,120);
+\draw (30,20)--(30,120);
 
-\draw [dashed] (-25,30)--(-25,130)
-\draw [dashed] (-15,10)--(-15,110)
+\draw [dashed] (-25,30)--(-25,130);
+\draw [dashed] (-15,10)--(-15,110);
 
 %Draw conformal Diagram
+\draw (55,70)--(100,30);
+\draw (55,70)--(100,110);
 \draw[dashed] (100,30)--(100,110);
-\draw (100,30)--(160,70);
-\draw (100,110)--(160,70);
+\draw (100,30)--(145,70);
+\draw (100,110)--(145,70);
 
 % Draw the points
 \filldraw [black] (-70,50)circle (1pt) ;
@@ -246,7 +252,8 @@ WORK IN PROGRESS!!!
 \filldraw [black] (-15,80)circle(1pt);
 \filldraw [black] (30,90)circle(1pt);
 \filldraw [black] (-25,100)circle(1pt);
-
+%Draw arrow to Conformal Diagram
+\draw [arrow](30,50) .. controls (45,35) and (55,35) .. (75,50);
 %Draw diamonds
 \draw  (-70,50)--(-15,40) ;
 \draw (-15,40)--(30,50) ;
@@ -258,6 +265,30 @@ WORK IN PROGRESS!!!
 \draw (30,90)--(-25,100) ;
 \draw  (-25,100)--(-70,90) ;
 
+%make shaded region
+    \draw [gray] (56,70)--(56,72);
+            \draw [gray] (58,68)--(58,74);
+                \draw [gray] (60,66)--(60,74);
+                    \draw [gray] (62,62)--(62,76);
+                    \draw [gray] (64,61)--(64,78);
+                      \draw [gray] (66,61)--(66,80);
+                    \draw [gray] (68,58)--(68,82);
+                    \draw [gray] (70,58)--(70,84);
+                  
+                    \draw [gray] (72,56)--(72,84);
+                    \draw [gray] (74,54)--(74,86);
+                      \draw [gray] (76,52)--(76,88);
+                    \draw [gray] (78,50)--(78,90);
+                    \draw [gray] (80,48)--(80,92);
+                                        \draw [gray] (82,46)--(82,94);
+                    \draw [gray] (84,44)--(84,96);
+                      \draw [gray] (86,42)--(86,98);
+                    \draw [gray] (88,40)--(88,99);
+                     \draw [gray] (90,38)--(90,100);
+                                        \draw [gray] (92,36)--(92,102);
+                    \draw [gray] (94,36)--(94,104);
+                      \draw [gray] (96,34)--(96,106);
+                    \draw [gray] (98,32)--(98,108);
 
 \end{tikzpicture}
                  \caption{Conformal Diagram Creation: from $S^3$ to $S^2$ space}
@@ -357,7 +388,10 @@ WORK IN PROGRESS!!!
   %Draw the legend on the side
  \draw [arrow] (-120,81.5) -- (-120,40);
   \draw [arrow]  (-120,81.5) -- (-80,81.5);
+  %r=0 arrow
+  \draw [arrow] (98,-12) -- (88,15);
   
+  \tikzset{snake it/.style={decorate, decoration=snake}};
  %Draw overly complicated geometric object 
   % Draw the points
 \filldraw [black] (0,60) circle (1pt);
@@ -369,16 +403,31 @@ WORK IN PROGRESS!!!
   %Draw lines
   \draw (0,60) --(50,20);
   \draw (0,60)--(50,100);
-  \draw (50,20)--(121,20);
+  \draw [snake it](50,20)--(121,20);
   \draw (50,20)--(121,100);
   \draw (121,20)--(171,60);
    \draw (121,20)--(50,100);
-   \draw (50,100)--(121,100);
+   \draw [snake it] (50,100)--(121,100);
    \draw (121,100)--(171,60) ;
   %Labelling
    \draw  (-80,81.5)node [anchor=north west][inner sep=0.75pt]  {$\widetilde{R}$};
   \draw (-120,20) node [anchor=north west][inner sep=0.75pt]    {$ \widetilde{T}$};
- 
+  
+   \draw  (-20,60) node [anchor=north west][inner sep=0.75pt] {$i^0$};
+    \draw  (171,60) node [anchor=north west][inner sep=0.75pt] {$i^0$};
+     \draw  (50,0) node [anchor=north west][inner sep=0.75pt] {$i^+$};
+      \draw  (121,0)node [anchor=north west][inner sep=0.75pt] {$i^+$};
+       \draw  (50,100) node [anchor=north west][inner sep=0.75pt] {$i^-$};
+        \draw  (121,100) node [anchor=north west][inner sep=0.75pt] {$i^-$};
+     
+        \draw  (43,35) node [anchor=north west][inner sep=0.75pt] {$H^+$};
+            \draw  (105,35) node [anchor=north west][inner sep=0.75pt] {$H^+$};
+                \draw  (43,70) node [anchor=north west][inner sep=0.75pt] {$H^-$};
+                    \draw  (105,70) node [anchor=north west][inner sep=0.75pt] {$H^-$};
+                    
+                     \draw  (100,-20) node [anchor=north west][inner sep=0.75pt] {$r=0$};
+                     \draw  (160,20) node [anchor=north west][inner sep=0.75pt] {$ \mathscr{F^+}$};
+                     \draw  (160,90) node [anchor=north west][inner sep=0.75pt] {$ \mathscr{F^-}$};
   \end{tikzpicture}
   \caption{Weird geometric diagram... }
   \label{fig:lineup}
@@ -398,40 +447,16 @@ WORK IN PROGRESS!!!
  \draw[dashed] (0,0) -- (0,163);
  \draw (0,0) -- (150,81.5);
   \draw (0,163) -- (150,81.5);
- %Draw Vertical curves
- \draw (0,0) .. controls (20,74) and (20,89) .. (0,163);
- 
+     %make shaded region
+    \draw [gray] (2,8)--(2,158);
+            \draw [gray] (4,14)--(4,152);
+                \draw [gray] (6,22)--(6,142);
+                    \draw [gray] (8,30)--(8,132);
+                    \draw [gray] (10,40)--(10,120);
+                    \draw [gray] (12,50)--(12,110);
+                    \draw [gray] (14,60)--(14,99);
+                   
   
-  % Label the points
-  \draw  (-80,81.5)node [anchor=north west][inner sep=0.75pt]    {$\widetilde{R}$};
-  \draw (-120,20) node [anchor=north west][inner sep=0.75pt]    {$ \widetilde{T}$};
-  
-  \draw (0,-20) node [anchor=north west][inner sep=0.75pt]    {$i^+\,:timelike \,future\, infinity$};
-   \draw (0,183) node [anchor=north west][inner sep=0.75pt]    {$ i^-$};
-    \draw (163,81.5) node [anchor=north west][inner sep=0.75pt]    {$i^0$};
-% Draw the points
-\filldraw [black] (0,0) circle (2pt);
-% Draw the points
-\filldraw [black] (0,163) circle (2pt);
-% Draw the points
-\filldraw [black] (150,81.5) circle (2pt);
-  \end{tikzpicture}
-  \caption{What a conformal digram will look like for our coordinates }
-  \label{fig:lineup}
-              \end{figure}     
-              Looking at X of the digram, it looks like region I of thhe Schwatzchile Black hole. \newline If a star were to collapse to form a black hole,the following conformal diagram could describe the space.
-               \begin{figure}[!h]
-               \centering
-  \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
-  %uncomment if require: \path (0,163); %set diagram left start at 0, and has height of 163
-  \tikzstyle{arrow} = [thick,->,>=stealth]
-  %Draw the legend on the side
- \draw [arrow] (-120,81.5) -- (-120,40);
-  \draw [arrow]  (-120,81.5) -- (-80,81.5);
-%Draw triangles
- \draw[dashed] (0,0) -- (0,163);
- \draw (0,0) -- (150,81.5);
-  \draw (0,163) -- (150,81.5);
  %Draw Vertical curves
  \draw (0,0) .. controls (20,74) and (20,89) .. (0,163);
  
@@ -442,7 +467,10 @@ WORK IN PROGRESS!!!
   
   \draw (0,-20) node [anchor=north west][inner sep=0.75pt]    {$i^+$};
    \draw (0,183) node [anchor=north west][inner sep=0.75pt]    {$ i^-$};
-    \draw (163,81.5) node [anchor=north west][inner sep=0.75pt]    {$i^0$};https://www.overleaf.com/project/5e95f7e972b9110001e213be
+    \draw (163,81.5) node [anchor=north west][inner sep=0.75pt]    {$i^0$};
+    
+        \draw (100,30) node [anchor=north west][inner sep=0.75pt]    {$\mathscr{F^+}$};
+            \draw (100,120) node [anchor=north west][inner sep=0.75pt]    {$\mathscr{F^-}$};
 % Draw the points
 \filldraw [black] (0,0) circle (2pt);
 % Draw the points
@@ -450,7 +478,60 @@ WORK IN PROGRESS!!!
 % Draw the points
 \filldraw [black] (150,81.5) circle (2pt);
   \end{tikzpicture}
-  \caption{What a conformal digram will look like for our coordinates }
+  \caption{What a conformal diagram will look like for our coordinates }
+  \label{fig:lineup}
+              \end{figure}     
+              Looking at X of the digram, it looks like region I of thhe Schwatzchile Black hole. \newline If a star were to collapse to form a black hole,the following conformal diagram could describe the space, with the shaded region being the stellar interior.
+               \begin{figure}[!h]
+               \centering
+  \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+  %uncomment if require: \path (0,163); %set diagram left start at 0, and has height of 163
+  \tikzstyle{arrow} = [thick,->,>=stealth]
+ 
+   \tikzset{snake it/.style={decorate, decoration=snake}};
+  %Draw the legend on the side
+ \draw [arrow] (-120,81.5) -- (-120,40);
+  \draw [arrow]  (-120,81.5) -- (-80,81.5);
+%Draw triangles
+ \draw[dashed,name path=1] (0,40) -- (0,163);
+ \draw (73,40) -- (140,81.5);
+  \draw (0,163) -- (140,81.5);
+    \draw (0,80) -- (73,40);
+   \draw [snake it](0,40) -- (73,40);
+  
+   %make shaded region
+    \draw [gray] (2,38)--(2,158);
+            \draw [gray] (4,37)--(4,152);
+                \draw [gray] (6,38)--(6,142);
+                    \draw [gray] (8,40)--(8,132);
+                    \draw [gray] (10,43)--(10,120);
+                    \draw [gray] (12,43)--(12,110);
+                    \draw [gray] (14,40)--(14,99);
+                    \draw [gray] (16,44)--(16,90);
+ %Draw Vertical curves
+ \draw [name path=2] (15,40) .. controls (20,74) and (20,89) .. (0,163);
+ 
+  
+  % Label the points
+  \draw  (-80,81.5)node [anchor=north west][inner sep=0.75pt]    {$\widetilde{R}$};
+  \draw (-120,20) node [anchor=north west][inner sep=0.75pt]    {$ \widetilde{T}$};
+  
+  \draw (60,20) node [anchor=north west][inner sep=0.75pt]    {$i^+$};
+   \draw (0,183) node [anchor=north west][inner sep=0.75pt]    {$ i^-$};
+    \draw (153,81.5) node [anchor=north west][inner sep=0.75pt]    {$i^0$};
+            \draw (100,30) node [anchor=north west][inner sep=0.75pt]    {$\mathscr{F^+}$};
+            \draw (100,120) node [anchor=north west][inner sep=0.75pt]    {$\mathscr{F^-}$};
+  
+% Draw the points
+\filldraw [black] (73,40) circle (2pt);
+% Draw the points
+\filldraw [black] (0,163) circle (2pt);
+% Draw the points
+\filldraw [black] (140,81.5) circle (2pt);
+
+
+  \end{tikzpicture}
+  \caption{Conformal Diagram of Star Collapsing to Form Black Hole }
   \label{fig:lineup}
               \end{figure}  
 \end{document}
