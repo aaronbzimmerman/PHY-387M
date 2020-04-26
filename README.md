@@ -58,7 +58,7 @@ This version might be a couple of days out of date. For the latest version check
 
 - First, let's start with a clean repo.
 ```
-$ git clone https://github.com/Majoburo/PHY-387M.git (Links to an external site.)
+$ git clone https://github.com/Majoburo/PHY-387M.git
 ```
 - Now cd into that directory and make the branch,
 ```
