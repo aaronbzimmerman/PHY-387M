@@ -42,10 +42,10 @@ This version might be a couple of days out of date. For the latest version check
 | Zeng, Yongxin             | Apr 13     | DONE      | 32             |
 | Racz, Sarah               | Apr 15     | PAST DUE  | 33             |
 | Husain, Rabia             | Apr 17     | DONE      | 34             |
-| Slavkova, Kalina          | Apr 20     | DUE       | 35             |
+| Slavkova, Kalina          | Apr 20     | PAST DUE  | 35             |
 | Layden, Christopher       | Apr 22     | DUE       | 36             |
 | Zhong, Kunhao             | Apr 24     | DUE       | 37             |
-| Nay, Jonathan             | Apr 27     |           | 38             |
+| Nay, Jonathan             | Apr 27     | DUE       | 38             |
 | Leviyev, Alex             | Apr 29     |           | 39             |
 | Jokhadze, Irakli          | May 1      |           | 40             |
 | Saleh, Bassel             | May 4      |           | 41             |
