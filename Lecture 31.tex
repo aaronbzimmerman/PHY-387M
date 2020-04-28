@@ -38,17 +38,17 @@
     \newpage
     \pagestyle{fancynotes}
     \part{Black Holes: Conformal Diagrams and Causality}
-WORK IN PROGRESS!!!
-\newline A black hole is set of events (an event defined as a point in the spacetime manifold) that can never communicate with asymptotic infinity. This means that regions in the manifold cannot communicate with regions that are arbitrarily far away. Communication is done by sending a causal cure, timelike or null, out to infinity. 
-	The event horizon is the boundary of the black hole
+
+\newline  A black hole is set of events (an event defined as a point in the spacetime manifold) that can never communicate with asymptotic infinity. This means that regions in the manifold cannot communicate with regions that are arbitrarily far away. Communication is done by sending a causal curve, timelike or null, out to infinity. 
+	The boundary of a black hole is called the event horizon.
               	\section{Conformal Transformations }\label{sec:class_style}
               		 A metric is conformally related to another metric if
               		 \begin{equation}
               		 \widetilde{g_{uv}}=\omega(x^u)^2g_(uv)
               		 \end{equation}
-              		 Where \(\omega\) is a function of spacectime.  \(\omega\) is essentially re-scaling the proper times and proper distances in the spacetime in a position dependent manner. The resulting 	\(\widetilde{g_{uv}}\) is a conformal transform of guv.
-              	\(\widetilde{g_{uv}}\) is oft4en viewed as unphysical, since guv solves Einstein's field equations for some sources, but 	\(\widetilde{g_{uv}}\) will not solves Einstein's field equations with those sources. 	\(\widetilde{g_{uv}}\) is not a physical metric, simply a tool that can be used to understand spacetime.
-              		 For example, the Weyl tensor can be calculated with guv or 	\(\widetilde{g_{uv}}\), while both options are equal, they are noted by 
+              		 Where \(\omega\) is a function of spacectime. \(\omega\) is essentially re-scaling the proper times and proper distances in the spacetime in a position dependent manner. The resulting \(\widetilde{g_{uv}}\) is a conformal transform of \(g_{uv}\).
+              	\(\widetilde{g_{uv}}\) is oft4en viewed as unphysical, since \(g_{uv}\) solves Einstein's field equations for some sources, but 	\(\widetilde{g_{uv}}\) will not solve Einstein's field equations with those sources. 	\(\widetilde{g_{uv}}\) is not a physical metric, simply a tool that can be used to understand spacetime.
+              		 For example, the Weyl tensor can be calculated with \(g_{uv}\) or 	\(\widetilde{g_{uv}}\), while both options are equal, they are noted by 
               		  \begin{equation}
               		\widetilde{C^u_{v\rho\sigma}}=C^u_{v\rho\sigma}
               		 \end{equation}
@@ -56,18 +56,18 @@ WORK IN PROGRESS!!!
               		   \begin{equation}
               		\widetilde{C_{uv\rho\sigma}}\neq{C_{uv\rho\sigma}}
               		 \end{equation}
-              		 This is because the index is lowered using the 	\(\widetilde{g_{uv}}\) and guv respectively. In other words, 
+              		 This is because the index is lowered using	\(\widetilde{g_{uv}}\) and \(g_{uv}\) respectively. In other words, 
               		  \begin{equation}
               	 \widetilde{g_{u\alpha}}\widetilde{C^\alpha_{v\rho\sigma}}\neq{g_{u\alpha}C^\alpha_{v\rho\sigma}}
               		 \end{equation}
-              		  	Another fact that makes conformal transformations useful in understanding a metric that is physical is, given a null vector \(k^u\) (where \(k^uk^v\widetilde{g_{uv}}=0\)) Then \(k^u\) is null with respect to \(\widetilde{g_{uv}}\):
+              		  	Another fact that makes conformal transformations useful in understanding a metric that is physical is, if given a null vector \(k^u\) (where \(k^uk^v\widetilde{g_{uv}}=0\)) then \(k^u\) is null with respect to \(\widetilde{g_{uv}}\):
               		  		 \begin{equation}
               		 k^uk^v\widetilde{g_{uv}}=\omega(k^uk^vg_{ev})^2=0
               		 \end{equation}
-              		 Conformal transformations preserve the light cone structure. If two events are related by a null trajectory in \({g_{uv}}\), then they are also connected by a null trajectory in 	\(\widetilde{g_{uv}}\). 
+              		 Conformal transformations conveniently preserve the light cone structure. If two events are related by a null trajectory in \({g_{uv}}\), then they are also connected by a null trajectory in 	\(\widetilde{g_{uv}}\). 
               		 
                	\section{Conformal Diagrams}\label{sec:class_style}
-               	INSERT explanation here.
+               A goal of conformal diagrams is to take a spacetime and move to another set of coordinates chosen specifically so that light cones in the $\widetilde{T}$ and $\widetilde{R}$ plane retain the same shape as in flat space, in $45^\circ$, and such that $\widetilde{T}$ and $\widetilde{R}$ range over finite values an $t\xrightarrow{}\pm\infty$ and $r\xrightarrow{}\pm\infty$. In the left hand side of the figure below, every point corresponds to a closed surface such as a sphere, or a point.
                                              \begin{figure}[!h]
                \centering
   \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
@@ -94,8 +94,10 @@ WORK IN PROGRESS!!!
 \draw (30,70)--(10,90)
 %Draw top arrow
 \draw [arrow] (-120,-20) -- (-20,-20);
-
+\draw [arrow] (-50,50)-- (-130,50);
   % Label the points
+   \draw (-125,35)node [anchor=north west][inner sep=0.75pt]    {\small closed surface};
+  
   \draw  (91,40)node [anchor=north west][inner sep=0.75pt]    {$\widetilde{R}$};
   \draw (-15,0) node [anchor=north west][inner sep=0.75pt]    {$ \widetilde{T}$};
 
@@ -104,19 +106,18 @@ WORK IN PROGRESS!!!
 
   \draw  (-200,-30)node [anchor=north west][inner sep=0.75pt]    {$(t,r,\theta,\phi)$};
   \draw  (0,-30)node [anchor=north west][inner sep=0.75pt]    {$(\widetilde{T},\widetilde{R},\theta,\phi)$};
-  
+  \filldraw [black] (-140,50) circle (2pt);
   \end{tikzpicture}
-  \caption{Showing what a conformal diagram will do for our coordinates }
+  \caption{Goal of Conformal Diagram }
   \label{fig:lineup}
               \end{figure}  
                
                
-               	The goal is to draw a spacetime diagram of all the spacetime, plus infinity. This is done by making a spacetime diagram of Equation 1.1
-              Example: Minkowski Spacetime
+               	The goal is to draw a spacetime diagram of all the spacetime, plus infinity. For example, lets look at Minkowski Spacetime. First, the line element is given by
               \begin{equation}
                   ds^2=-dt^2+dr^2+r^2d\Omega^2
               \end{equation}
-              
+              Now the coordinates can be transformed to $\widetilde{T}$ and $\widetilde{R}$, with $0\leq \widetilde{R}<\pi$ and $-\pi<\widetilde{T}<\pi$, and where $|\widetilde{T}|+\widetilde{R}<\pi$. With these coordinates, the Minkowski line element becomes
               \begin{equation}
                   ds^2=\frac{1}{(cos{-\tilde{T}}+cos{\tilde{R})}^2}(d\tilde{T}+d\tilde{R}+sin(\tilde{R})^2d\omega^2)
               \end{equation}
@@ -124,7 +125,8 @@ WORK IN PROGRESS!!!
                             \begin{equation}
                                 d\widetilde{s}^2=\omega^2ds^2=(-d\tilde{T}^2+d\tilde{R}^2+sin(\tilde{R})^2d\omega^2)
                             \end{equation}
-                           The metric $d\widetilde{s}$ is a simpler metric that can now be drawn with a conformal diagram, with the restricted ranges of $|\widetilde{T}|+\widetilde{R}<\pi$. EXPLAIN T AND R CONSTANT SURFACES
+                           The metric $d\widetilde{s}$ is a simpler metric that can now be drawn with a conformal diagram, with the restricted ranges of $|\widetilde{T}|+\widetilde{R}<\pi$. The  $\widetilde{T}=constant$ surfaces cna never be inside the light cone, while  $\widetilde{R}=constant$ surfaces are required to be inside a light cone.
+                           
                               \begin{figure}[!h]
                \centering
   \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
@@ -145,12 +147,20 @@ WORK IN PROGRESS!!!
      \draw (0,81.5) -- (150,81.5);
    \draw (0,40) .. controls (60,40) and (100,60) .. (150,81.5);
  \draw (0,123) .. controls (60,123) and (100,103) .. (150,81.5);
+ 
+%Draw Light Cone
+
+\draw (42,55) ellipse (10 and 2.5);
+\draw (42,75) ellipse (10 and 2.5);
+\draw (32,55)--(52,75);
+\draw (52,55)--(32,75);
+
   % Label the points
   \draw  (-80,81.5)node [anchor=north west][inner sep=0.75pt]    {$\widetilde{R}$};
   \draw (-120,20) node [anchor=north west][inner sep=0.75pt]    {$ \widetilde{T}$};
   
-  \draw (0,-20) node [anchor=north west][inner sep=0.75pt]    {$\widetilde{R}=0, \widetilde{T}=\pi$};
-   \draw (0,183) node [anchor=north west][inner sep=0.75pt]    {$\widetilde{R}=0, \widetilde{T}=-\pi$};
+  \draw (10,-14) node [anchor=north west][inner sep=0.75pt]    {$\widetilde{R}=0, \widetilde{T}=\pi$};
+   \draw (10,170) node [anchor=north west][inner sep=0.75pt]    {$\widetilde{R}=0, \widetilde{T}=-\pi$};
     \draw (163,81.5) node [anchor=north west][inner sep=0.75pt]    {$\widetilde{R}=\pi, \widetilde{T}=0$};
 % Draw the points
 \filldraw [black] (0,0) circle (2pt);
@@ -158,10 +168,12 @@ WORK IN PROGRESS!!!
 \filldraw [black] (0,163) circle (2pt);
 % Draw the points
 \filldraw [black] (150,81.5) circle (2pt);
+
   \end{tikzpicture}
   \caption{Conformal Diagram of Minkowski Space: Restricted by $|\widetilde{T}|+\widetilde{R}<\pi$ }
   \label{fig:lineup}
-              \end{figure}         
+              \end{figure}  
+        
     \newline	Steps to derive conformal diagram for Minkowski
                	(Can be found in Appedix H of Carroll)
                	\begin{enumerate}
@@ -241,6 +253,7 @@ WORK IN PROGRESS!!!
 \draw[dashed] (100,30)--(100,110);
 \draw (100,30)--(145,70);
 \draw (100,110)--(145,70);
+\draw [arrow] (145,50)--(125,65);
 
 % Draw the points
 \filldraw [black] (-70,50)circle (1pt) ;
@@ -251,7 +264,8 @@ WORK IN PROGRESS!!!
 \filldraw [black] (-70,90) circle(1pt);
 \filldraw [black] (-15,80)circle(1pt);
 \filldraw [black] (30,90)circle(1pt);
-\filldraw [black] (-25,100)circle(1pt);
+\filldraw [black] (25,50)circle(1pt);
+\filldraw [black] (120,70)circle(1pt);
 %Draw arrow to Conformal Diagram
 \draw [arrow](30,50) .. controls (45,35) and (55,35) .. (75,50);
 %Draw diamonds
@@ -289,6 +303,8 @@ WORK IN PROGRESS!!!
                     \draw [gray] (94,36)--(94,104);
                       \draw [gray] (96,34)--(96,106);
                     \draw [gray] (98,32)--(98,108);
+  \draw  (145,40)node [anchor=north west][inner sep=0.75pt]    {$S^2}$};
+    \draw  (-90,120)node [anchor=north west][inner sep=0.75pt]    {$S^3}$};
 
 \end{tikzpicture}
                  \caption{Conformal Diagram Creation: from $S^3$ to $S^2$ space}
@@ -296,66 +312,100 @@ WORK IN PROGRESS!!!
              \end{figure}
              
   \section{Conformal Diagrams and Infinities}\label{sec:class_style}
-  Light cones are 45 degrees on thi8s diagram, at the expense of other coordinates being bent in an odd way. This spacetime diagram is drawn on the conformally transformed metric, and the three points on the diagram are not points of the Minkowski Metric, rather they are different aspects of infinity. These points are placed on the diagram so that it becomes a manifold with boundary. This boundary contains five separate components, as labelled in figure X.
+  Light cones are at $45^\circ$ on this diagram, at the expense of other coordinates being bent in an odd way. This spacetime diagram is drawn on the conformally transformed metric, and the three points on the diagram are not points of the Minkowski Metric, rather they are different aspects of infinity. These points are placed on the diagram so that it becomes a manifold with a boundary.\newline This boundary contains five separate components, as labelled in figure 4. These are the infinities you would reach if you stayed at a fixed $\widetilde{R}$ in Minkowski Space. However, a curve at constant time would eventually reach spacelike infinity $i^0$. The last two components are $  \mathscr{I^+}$ and $  \mathscr{I^-}$. These are the solid boundaries that complete the triangle of the conformal diagram, and represent future and past null infinity respectively. All future directed light rays arrive at $  \mathscr{I^+}$, and all past directed light rays at $  \mathscr{I^-}$. In other words, $  \mathscr{I^-}$is where all null rays come from as they enter into the spacetime, and  $  \mathscr{I^+}$ is where they arrive in the future. \newline Illustrated in blue is a representation of the trajectory of an observer on a surface of very large \widetilde{R}. This trajectory only deviates from $  \mathscr{I^+}$ and $  \mathscr{I^-}$ in the middle of the diagram. This makes the boundaries of $  \mathscr{I^+}$ and $  \mathscr{I^-}$ and idealization of a real observer's trajectory that is at a very far distance from the origin.
   
    \begin{figure}[!h]
                \centering
   \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
   %uncomment if require: \path (0,163); %set diagram left start at 0, and has height of 163
-  \tikzstyle{arrow} = [thick,->,>=stealth]
+ \tikzstyle{arrow} = [thick,->,>=stealth]
   %Draw the legend on the side
  \draw [arrow] (-120,81.5) -- (-120,40);
   \draw [arrow]  (-120,81.5) -- (-80,81.5);
 %Draw triangles
  \draw[dashed] (0,0) -- (0,163);
- \draw (0,0) -- (150,81.5);
-  \draw (0,163) -- (150,81.5);
+ \draw (0,0) -- (130,81.5);
+  \draw (0,163) -- (130,81.5);
  %Draw Vertical curves
  \draw (0,0) .. controls (20,74) and (20,89) .. (0,163);
   \draw (0,0) .. controls (60,74) and (60,89) .. (0,163);
    \draw (0,0) .. controls (100,74) and (100,89) .. (0,163);
+   
+     \draw [blue,thick](0,0) .. controls (134,79) and (134,84) .. (0,163);
    %Draw Horizontal curves
-     \draw (0,81.5) -- (150,81.5);
-   \draw (0,40) .. controls (60,40) and (100,60) .. (150,81.5);
- \draw (0,123) .. controls (60,123) and (100,103) .. (150,81.5);
+     \draw (0,81.5) -- (130,81.5);
+   \draw (0,40) .. controls (60,40) and (100,60) .. (130,81.5);
+ \draw (0,123) .. controls (60,123) and (100,103) .. (130,81.5);
+  %Draw light rays
+  \draw [arrow] (0,61.5)--(50,31.5)
+   \draw [arrow] (0,101.5)--(50,131.5)
+   
+%Draw Light Cone
+
+\draw (42,55) ellipse (10 and 2.5);
+\draw (42,75) ellipse (10 and 2.5);
+\draw (32,55)--(52,75);
+\draw (52,55)--(32,75);
   % Label the points
   \draw  (-80,81.5)node [anchor=north west][inner sep=0.75pt]    {$\widetilde{R}$};
   \draw (-120,20) node [anchor=north west][inner sep=0.75pt]    {$ \widetilde{T}$};
   
   \draw (0,-20) node [anchor=north west][inner sep=0.75pt]    {$i^+\,:timelike \,future\, infinity$};
-   \draw (0,183) node [anchor=north west][inner sep=0.75pt]    {$ i^-$};
-    \draw (163,81.5) node [anchor=north west][inner sep=0.75pt]    {$i^0$};
+   \draw (0,173) node [anchor=north west][inner sep=0.75pt]    {$ i^-\,:timelike \,past\, infinity$};
+    \draw (143,71.5) node [anchor=north west][inner sep=0.75pt]    {$i^0\,spacelike \,infinity$};
+     \draw (60,131.5) node [anchor=north west][inner sep=0.75pt]  {$\mathscr{I^-}$}
+      \draw (60,21.5) node [anchor=north west][inner sep=0.75pt]  {$\mathscr{I^+}$}
 % Draw the points
 \filldraw [black] (0,0) circle (2pt);
 % Draw the points
 \filldraw [black] (0,163) circle (2pt);
 % Draw the points
-\filldraw [black] (150,81.5) circle (2pt);
+\filldraw [black] (130,81.5) circle (2pt);
   \end{tikzpicture}
   \caption{Conformal Diagram of Minkowski Space: Restricted by $|\widetilde{T}|+\widetilde{R}<\pi$ }
   \label{fig:lineup}
               \end{figure}     
-  \newline
-  Explain the components more. 
-  \newline
-  Lets look at another conformal diagram, the one for the Schwartschild Black Hole.
-  In a previous class, the cruscal the convieniently had light rays at 45 degrees 
+  
+  
+  Lets look at another conformal diagram, the one for the Schwarzschild Black Hole.
+  In a previous class, the cruscal the conveniently had light rays at $45^\circ$
   
   \begin{figure}[!h]
                \centering
   \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
   %uncomment if require: \path (0,163); %set diagram left start at 0, and has height of 163
- \draw (0,81.5) -- (0,0);
-  \draw (0,81.5) -- (80,81.5);
+   \tikzstyle{arrow} = [thick,->,>=stealth]
+    
+ \draw [arrow](50,100) -- (50,0);
+  \draw [arrow](0,50) -- (100,50);
+  \draw [arrow](50,0)--(50,100);
+  \draw [arrow] (100,50)--(0,50);
+ 
+   \draw (0,100) -- (100,0);%III to I
+    \draw (0,0) -- (100,100);%II to IV 
+    
+      \draw [arrow](80,20) .. controls (90,25) and (100,25) .. (110,15);%EH arrow
+%Draw Light Cone
 
+\draw [fill= gray!25](65,25) ellipse (10 and 2.5);
+\draw [fill =gray!25](65,45) ellipse (10 and 2.5);
+\draw (55,25)--(75,45);
+\draw (75,25)--(55,45);
+%Draw Curves
+ \draw [dashed](0,0) .. controls (40,20) and (60,20) .. (100,0);%top
+  \draw [dashed](0,100) .. controls (40,80) and (60,80) .. (100,100);%bottom
   % Label the points
-  \draw  (-20,-10)node [anchor=north west][inner sep=0.75pt]    {$\widetilde{R}$};
-  \draw (90,81.5) node [anchor=north west][inner sep=0.75pt]    {$ \widetilde{T}$};
-
+  \draw  (105,40)node [anchor=north west][inner sep=0.75pt]    {$R$};
+  \draw (50,-20) node [anchor=north west][inner sep=0.75pt]    {$ T$};
+\draw (0,100) node [anchor=north west][inner sep=0.75pt]    {$r=0$};
+\draw (0,-15) node [anchor=north west][inner sep=0.75pt]    {$r=0$};
+\draw (110,0) node [anchor=north west][inner sep=0.75pt]    {$\small Event\,Horizon\,r=2M$};
   \end{tikzpicture}
   \caption{SBH digram in cruzcal coords}
   \label{fig:lineup}
               \end{figure}  
+              
+              
               However, these cruzcal coordinates still need some changes to create the conformal diagram. These coordinates need to be compactified. 
               U and V are rescalings of u and v coordinates
               \begin{equation}
@@ -371,14 +421,14 @@ WORK IN PROGRESS!!!
                  V=tan\widetilde{V} && U=tan\widetilde{U}
                  \end{align}
               \end{equation}
-              The same steps can be taken to transform the metric, identify a confromal factor, multiplying $d\widetilde{V}d\widetilde{U}$, then finally define new coordinates, 
+              The same steps can be taken to transform the metric, identify a conformal factor, multiplying $d\widetilde{V}d\widetilde{U}$, then finally define new coordinates, 
               \begin{equation}
                   \widetilde{T}=\widetilde{V}+\widetilde{U}\qquad \widetilde{R}=\widetilde{V}-\widetilde{U}
               \end{equation}
               
               then get rid of conformal factor, to look at the conformally related metric. 
               \begin{equation}
-                  d\widetilde{s}^2=-d\widetilde{T}^2+(function of \widetilde{T}, \widetilde{R})d\Omega^2
+                  d\widetilde{s}^2=-d\widetilde{T}^2+d\widetilde{R}^2+(function\, of\, \widetilde{T}, \widetilde{R})d\Omega^2
               \end{equation}
                 \begin{figure}[!h]
                \centering
@@ -426,10 +476,10 @@ WORK IN PROGRESS!!!
                     \draw  (105,70) node [anchor=north west][inner sep=0.75pt] {$H^-$};
                     
                      \draw  (100,-20) node [anchor=north west][inner sep=0.75pt] {$r=0$};
-                     \draw  (160,20) node [anchor=north west][inner sep=0.75pt] {$ \mathscr{F^+}$};
-                     \draw  (160,90) node [anchor=north west][inner sep=0.75pt] {$ \mathscr{F^-}$};
+                     \draw  (160,20) node [anchor=north west][inner sep=0.75pt] {$ \mathscr{I^+}$};
+                     \draw  (160,90) node [anchor=north west][inner sep=0.75pt] {$ \mathscr{I^-}$};
   \end{tikzpicture}
-  \caption{Weird geometric diagram... }
+  \caption{Conformal Diagram for Schwarzschild }
   \label{fig:lineup}
               \end{figure}  
               
@@ -481,7 +531,7 @@ WORK IN PROGRESS!!!
   \caption{What a conformal diagram will look like for our coordinates }
   \label{fig:lineup}
               \end{figure}     
-              Looking at X of the digram, it looks like region I of thhe Schwatzchile Black hole. \newline If a star were to collapse to form a black hole,the following conformal diagram could describe the space, with the shaded region being the stellar interior.
+              Looking at X of the diagram, it looks like region I of the  Schwarzschild Black hole. \newline If a star were to collapse to form a black hole,the following conformal diagram could describe the space, with the shaded region being the stellar interior.
                \begin{figure}[!h]
                \centering
   \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
@@ -519,8 +569,8 @@ WORK IN PROGRESS!!!
   \draw (60,20) node [anchor=north west][inner sep=0.75pt]    {$i^+$};
    \draw (0,183) node [anchor=north west][inner sep=0.75pt]    {$ i^-$};
     \draw (153,81.5) node [anchor=north west][inner sep=0.75pt]    {$i^0$};
-            \draw (100,30) node [anchor=north west][inner sep=0.75pt]    {$\mathscr{F^+}$};
-            \draw (100,120) node [anchor=north west][inner sep=0.75pt]    {$\mathscr{F^-}$};
+            \draw (100,30) node [anchor=north west][inner sep=0.75pt]    {$\mathscr{I^+}$};
+            \draw (100,120) node [anchor=north west][inner sep=0.75pt]    {$\mathscr{I^-}$};
   
 % Draw the points
 \filldraw [black] (73,40) circle (2pt);
