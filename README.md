@@ -40,10 +40,10 @@ This version might be a couple of days out of date. For the latest version check
 | Webb, Aaron               | Apr 8      | DONE      | 30             |
 | Wright, Josey             | Apr 10     | DONE      | 31             |
 | Zeng, Yongxin             | Apr 13     | DONE      | 32             |
-| Racz, Sarah               | Apr 15     | PAST DUE  | 33             |
+| Racz, Sarah               | Apr 15     | DONE      | 33             |
 | Husain, Rabia             | Apr 17     | DONE      | 34             |
 | Slavkova, Kalina          | Apr 20     | PAST DUE  | 35             |
-| Layden, Christopher       | Apr 22     | DUE       | 36             |
+| Layden, Christopher       | Apr 22     | DONE      | 36             |
 | Zhong, Kunhao             | Apr 24     | DUE       | 37             |
 | Nay, Jonathan             | Apr 27     | DUE       | 38             |
 | Leviyev, Alex             | Apr 29     |           | 39             |
