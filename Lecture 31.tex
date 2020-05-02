@@ -312,7 +312,7 @@
              \end{figure}
              
   \section{Conformal Diagrams and Infinities}\label{sec:class_style}
-  Light cones are at $45^\circ$ on this diagram, at the expense of other coordinates being bent in an odd way. This spacetime diagram is drawn on the conformally transformed metric, and the three points on the diagram are not points of the Minkowski Metric, rather they are different aspects of infinity. These points are placed on the diagram so that it becomes a manifold with a boundary.\newline This boundary contains five separate components, as labelled in figure 4. These are the infinities you would reach if you stayed at a fixed $\widetilde{R}$ in Minkowski Space. However, a curve at constant time would eventually reach spacelike infinity $i^0$. The last two components are $  \mathscr{I^+}$ and $  \mathscr{I^-}$. These are the solid boundaries that complete the triangle of the conformal diagram, and represent future and past null infinity respectively. All future directed light rays arrive at $  \mathscr{I^+}$, and all past directed light rays at $  \mathscr{I^-}$. In other words, $  \mathscr{I^-}$is where all null rays come from as they enter into the spacetime, and  $  \mathscr{I^+}$ is where they arrive in the future. \newline Illustrated in blue is a representation of the trajectory of an observer on a surface of very large \widetilde{R}. This trajectory only deviates from $  \mathscr{I^+}$ and $  \mathscr{I^-}$ in the middle of the diagram. This makes the boundaries of $  \mathscr{I^+}$ and $  \mathscr{I^-}$ and idealization of a real observer's trajectory that is at a very far distance from the origin.
+  Light cones are at $45^\circ$ on this diagram, at the expense of other coordinates being bent in an odd way. This spacetime diagram is drawn on the conformally transformed metric, and the three points on the diagram are not points of the Minkowski Metric, rather they are different aspects of infinity. These points are placed on the diagram so that it becomes a manifold with a boundary.\newline This boundary contains five separate components, as labelled in figure 4. These are the infinities you would reach if you stayed at a fixed $\widetilde{R}$ in Minkowski Space. However, a curve at constant time would eventually reach spacelike infinity $i^0$. The last two components are $  \mathscr{I^+}$ and $  \mathscr{I^-}$. These are the solid boundaries that complete the triangle of the conformal diagram, and represent future and past null infinity respectively. All future directed light rays arrive at $  \mathscr{I^+}$, and all past directed light rays at $  \mathscr{I^-}$. In other words, $  \mathscr{I^-}$is where all null rays come from as they enter into the spacetime, and  $  \mathscr{I^+}$ is where they arrive in the future. \newline Illustrated in blue is a representation of the trajectory of an observer on a surface of very large $\widetilde{R}$. This trajectory only deviates from $\mathscr{I^+}$ and $  \mathscr{I^-}$ in the middle of the diagram. This makes the boundaries of $  \mathscr{I^+}$ and $  \mathscr{I^-}$ and idealization of a real observer's trajectory that is at a very far distance from the origin.
   
    \begin{figure}[!h]
                \centering
@@ -368,8 +368,8 @@
   
   
   Lets look at another conformal diagram, the one for the Schwarzschild Black Hole.
-  In a previous class, the cruscal the conveniently had light rays at $45^\circ$
-  
+  In a previous class, the Kruskal the conveniently had light rays at $45^\circ$.
+  \newline
   \begin{figure}[!h]
                \centering
   \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
@@ -401,12 +401,12 @@
 \draw (0,-15) node [anchor=north west][inner sep=0.75pt]    {$r=0$};
 \draw (110,0) node [anchor=north west][inner sep=0.75pt]    {$\small Event\,Horizon\,r=2M$};
   \end{tikzpicture}
-  \caption{SBH digram in cruzcal coords}
+  \caption{SBH digram in Kruskal coordinates}
   \label{fig:lineup}
               \end{figure}  
               
-              
-              However, these cruzcal coordinates still need some changes to create the conformal diagram. These coordinates need to be compactified. 
+              \newpage
+              However, these Kruskal coordinates still need some changes to create the conformal diagram. These coordinates need to be compactified. 
               U and V are rescalings of u and v coordinates
               \begin{equation}
                  \begin{align}
@@ -430,6 +430,7 @@
               \begin{equation}
                   d\widetilde{s}^2=-d\widetilde{T}^2+d\widetilde{R}^2+(function\, of\, \widetilde{T}, \widetilde{R})d\Omega^2
               \end{equation}
+              Now the conformal diagram for Schwarzschild can be draw. Here, $H^+$ and $H^-$ are the future and past horizons respectively, and all lines are still at $45^\circ$.
                 \begin{figure}[!h]
                \centering
   \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
@@ -483,8 +484,8 @@
   \label{fig:lineup}
               \end{figure}  
               
-              
-              The conformal diagram for a spherically symmetric star is \newline
+            
+              Looking at Figure 7, The conformal diagram for a spherically symmetric star, the region representing the interior of the spherically symmetric star, the interior of the triangle, is the same as for the Schwarzschild Black hole. The shaded region represents the stellar interior. \newpage
                \begin{figure}[!h]
                \centering
   \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
@@ -531,7 +532,7 @@
   \caption{What a conformal diagram will look like for our coordinates }
   \label{fig:lineup}
               \end{figure}     
-              Looking at X of the diagram, it looks like region I of the  Schwarzschild Black hole. \newline If a star were to collapse to form a black hole,the following conformal diagram could describe the space, with the shaded region being the stellar interior.
+               If a star were to collapse to form a black hole,the following conformal diagram could describe the space. Unlike Figure 7, this conformal diagram has a diagonal line reaching $i^+$, representing the event horizon acting as a null surface when the star collapses to a black hole. Then the surface of the star (shaded region), enters into the event horizon. Eventually the star hits a singularity, represented by the horizontal wavy line.
                \begin{figure}[!h]
                \centering
   \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
@@ -571,7 +572,7 @@
     \draw (153,81.5) node [anchor=north west][inner sep=0.75pt]    {$i^0$};
             \draw (100,30) node [anchor=north west][inner sep=0.75pt]    {$\mathscr{I^+}$};
             \draw (100,120) node [anchor=north west][inner sep=0.75pt]    {$\mathscr{I^-}$};
-  
+              \draw (40,61.5) node [anchor=north west][inner sep=0.75pt]    {$H^+$};
 % Draw the points
 \filldraw [black] (73,40) circle (2pt);
 % Draw the points
