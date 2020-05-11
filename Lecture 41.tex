@@ -1,0 +1,176 @@
+\documentclass[10pt]{article}
+\usepackage{NotesTeX} %/Path/to/package should be replaced with package location
+\usepackage{lipsum}
+\usepackage{tensor}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+
+\tikzcdset{every label/.append style = {font = \small}}
+\tikzcdset{row sep/normal=3.5em}
+\tikzcdset{column sep/normal=3.5em}
+\usetikzlibrary{shapes.geometric, arrows}
+
+\usetikzlibrary{matrix}
+\usetikzlibrary{decorations.markings,calc,shapes}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{positioning}
+
+\newcommand*{\defeq}{\mathrel{\vcenter{\baselineskip0.5ex \lineskiplimit0pt
+                     \hbox{\scriptsize.}\hbox{\scriptsize.}}}%
+                     =}
+
+\newcommand{\bs}{\textbackslash}
+\newcommand{\reals}{I\!\!R}
+
+
+\title{{\Huge General Relativity}\\{\Large{Class 41}}} %replace with class number
+\author{Bassel Saleh}
+
+\emailAdd{bassel.s.saleh@gmail.com} %replace with your email
+\begin{document}
+    \maketitle
+    \flushbottom
+    \newpage
+    \pagestyle{fancynotes}
+	In this lecture we introduce some motivation for looking at the singularity theorems of GR, and we introduce definitions and ideas that will be useful in stating and solving these theorems next time. Though this subject relies on some pretty formal mathematics, we will not be excessively rigorous in discussing it.
+              	\section{Motivation for Singularity Theorems}\label{sec:class_style}
+              	Recall Einstein's Field Equation (EFE),
+              	\begin{equation}
+              	    \tensor{G}{_\mu_\nu} = 8\pi\tensor{T}{_\mu_\nu}
+              	\end{equation}
+              	We have spent much time studying how to interpret the physical meaning of this equation, as well as how to solve it in certain cases. The equation represents a set of nonlinear partial differential equations, and we can't say many meaningful things generally about the solutions. So far, we have either relied on symmetries or used heavy approximations to obtain workable solutions to these equations.
+              	
+              	\par If we want to take a stab at understanding solutions to the EFE in a more general way, there are two options. We can try to formulate the equations in a way that makes them solvable on a computer, or we can prove some theorems about the structure of the solutions, even if we have no systematic way of producing them. It is this second approach that we will use by studying the singularity theorems. The first was proven by Penrose in 1965.
+              	  
+               	\section{Geodesic focusing}\label{sec:useful_pkg}
+               		We looked before at the notion of geodesic deviation, in which we considered a ``bundle'' (or \textit{congruence}) of timelike geodesics with tangent vectors $U^\mu$ and a separation vector $S^\mu$.  We saw how to relate the evolution of $S^\mu$ along the geodesics to a tensor $\tensor{B}{_\mu_\nu}$ that describes the behavior of the congruence. Specifically,
+               		\begin{align}
+               		    \tensor{B}{_\mu_\nu} &= \nabla_\nu U_\mu\\
+               		    U^\mu\nabla_\mu S^\nu &= \tensor{B}{^\nu_\mu}S^\mu
+               		\end{align}
+               		
+               		\begin{figure}[!h]
+               		\centering
+               		\includegraphics[scale=0.35]{congruence.png}
+               		\caption{A congruence of geodesics, parameterized by tangent vector field $U^\mu$ and separation vector field $S^\mu$. }
+               		\end{figure}
+               		
+               		This result came from the geodesic deviation equation, and it tells us that $\tensor{B}{_\mu_\nu}$ acts as a transformation matrix that describes the evolution of $S^\mu$. The congruence can expand, rotate, and shear, with this information being encoded in $B$. In particular,
+               		\begin{itemize}
+               		    \item $\tensor{B}{^\alpha_\alpha} = \theta$ is the rate of change of the area of the bundle, representing \textit{expansion}
+               		    \item $\tensor{\omega}{_\mu_\nu} = \tensor{B}{_{[\mu}_{\nu]}}$ is the antisymmetric \textit{twist tensor}
+               		    \item $\sigma_{\mu\nu} = B_{(\mu\nu)} - \frac{1}{3}\theta\gamma_{\mu\nu}$ is the \textit{shear tensor}, where $\gamma_{\mu\nu} = g_{\mu\nu} + U_\mu U_\nu$
+               		\end{itemize}
+               		We are going to focus on congruences that are hypersurface-orthogonal, which means setting $\omega_{\mu\nu} = 0$.
+               		
+               		\par The evolution of $\theta$ is given by Raychaudhuri's equation\sn{See Carroll Appendix F},
+               		\begin{align}
+               		    \frac{d\theta}{d\tau} &= U^\mu\nabla_\mu\theta = -\frac{1}{3}\theta^2 - \sigma_{\mu\nu}\sigma^{\mu\nu} + \omega_{\mu\nu}\omega^{\mu\nu} - R_{\mu\nu}U^\mu U^\nu
+               		\end{align}
+               		Looking at the right hand side of Raychaudhuri's equation, the first term is negative definite (minus a squared quantity), the second term is negative definite ($\sigma_{\mu\nu}\sigma^{\mu\nu}$ is sort of a squared some of the eigenvalues of $\sigma_{\mu\nu}$), and the third term is zero by construction (we're choosing congruences such that $\omega_{\mu\nu} = 0$). This means the overall sign of $\frac{d\theta}{d\tau}$ is determined by the sign of the final term, $-R_{\mu\nu}U^\mu U^\nu$. This in turn depends on the stress-energy content of the spacetime. If, for example, we assume the Strong Energy Condition (SEC), then
+               		\begin{align}
+               		    &R_{\mu\nu}t^\mu t^\nu \geq 0\quad \forall\text{ timelike } t^\mu\\
+               		    \implies& \frac{d\theta}{d\tau} < 0\qquad \text{i.e. gravity is attractive}
+               		\end{align}
+               		In particular we find that
+               		\begin{align}
+               		    \frac{d\theta}{d\tau} \leq -\frac{1}{3}\theta^2
+               		\end{align}
+               		We can then saturate this bound and solve the differential equation to obtain a bound on $\theta$ itself. Doing so yields the solution\sn{Again, this is true assuming the SEC holds and that $\omega_{\mu\nu} = 0$.}
+               		\begin{align}
+               		    \theta^{-1} \geq \theta_0^{-1} + \frac{\tau}{3}
+               		\end{align}
+               		If at any point $\theta_0 < 0$, then $\theta$ will approach $-\infty$ in a finite amount of time, meaning the bundle has a negative infinite change in area. We conclude that if $\theta$ ever becomes negative, then the geodesics of the bundle \textit{must} self-intersect in finite time $\tau \leq \frac{3}{|\theta_0|}$.\sn{See Wald 9.3.1}
+               		
+               		\par There is an analogous equation describing the expansion of null geodesics,
+               		\begin{align}
+               		    \frac{d\theta}{d\lambda} = -\frac{1}{2}\theta^2 - \hat{\sigma}_{\mu\nu}\hat{\sigma}^{\mu\nu} + \hat{\omega}_{\mu\nu}\hat{\omega}^{\mu\nu} - R_{\mu\nu} k^\mu k^\nu
+               		\end{align}
+               		where similarly $\hat{\omega}_{\mu\nu} = 0$ corresponds to hypersurface-forming null geodesics, and of course $k^\mu$ is just the tangent vector to these geodesics. This time, the Null Energy Condition (NEC) implies that $R_{\mu\nu} k^\mu k^\nu \geq 0\quad \forall$ null $k^\mu$, which in turn implies that within $\lambda \leq \frac{2}{|\theta_0|}$ the expansion $\theta$ will approach $-\infty$ in finite time, provided that $\theta_0$ was at some point negative.
+               		
+               		\par The ultimate conclusion then of geodesic focusing is this: if nearby geodesics are initially moving toward each other (i.e. $\theta_0 < 0$), then gravity will be attractive and the geodesics will inevitably intersect. This is true for both timelike and null geodesics. A point at which geodesics come together like this is called a \textit{caustic}.
+               		
+               	\begin{figure}[!h]
+               	    \centering
+               	    \includegraphics[scale=0.35]{convergence.png}
+               	    \caption{Convergence of a congruence of geodesics that are initially moving toward each other. They terminate at a caustic.}
+               	    \label{fig:my_label}
+               	\end{figure}
+               		
+               	\section{Conjugate points}\label{sec:best_prac}
+               	Let's introduce some definitions regarding \textbf{conjugate points}.
+               		\begin{itemize}
+               		    \item Two points $P$ and $Q$ on a manifold are called \textit{conjugate points} if two geodesics emanating from $P$ come together at $Q$. In other words, the expansion $\theta$ of a bundle of geodesics originating at $P$ is at first positive (meaning the geodesics expand away from each other) and then becomes negative (so the geodesics come back together at a caustic).
+               		    \item A point $P$ is conjugate to a hypersurface $\Sigma$ if a congruence of geodesics normal to $\Sigma$ comes together at $P$. These geodesics must originate at ``nearby'' points on $\Sigma$.
+               		    \item The closeness of the starting points is crucial. If two geodesics initially far apart come together and intersect, the result does not contain a pair of conjugate points.
+               		\end{itemize}
+               		
+               	\begin{figure}[!h]
+               	    \centering
+               	    \includegraphics[scale=.35]{conjugatepoints.png}
+               	    \includegraphics[scale=.35]{conjugatesurface.png}
+               	    \caption{Picture of two conjugate points $P$ and $Q$. Note that the separation vector $S^\mu$ grows and then shrinks. It is zero at each point but nonzero in between.}
+               	    \label{fig:my_label}
+               	\end{figure}
+               	
+               	\par Conjugate points create a problem with interpreting geodesics as curves of maximal (local) length on a manifold. In particular, consider two points $P$ and $R$ and a geodesic $\gamma$ connecting them. Normally, we can interpret $\gamma$ as a curve that maximizes the proper distance\sn{Proper time for timelike geodesics.} between $P$ and $R$, which can be shown by taking the second variation of $\tau$ along $\gamma$ and demonstrating that no local variations of $\gamma$ can have a larger value of $\tau$. However, if there is a point $Q$ sitting on $\gamma$ that is \textit{conjugate} to $P$, it turns out we \textit{can} construct a different curve from $P$ to $R$ that is longer than $\gamma$.
+               	
+               	\begin{figure}[!h]
+               	    \centering
+               	    \includegraphics[scale=.35]{variation.png}
+               	    \caption{In this picture, $\gamma$ is a geodesic between $P$ and $R$, but the existence of $Q$, which is conjugate to $P$, lets us construct a new curve $\gamma'$ which circumvents $\gamma$ from $P$ to $Q$, then continues along $\gamma$ to $R$. It can be shown that $\gamma'$, which is of course not a geodesic, has a greater proper time than $\gamma$. We also know such a curve exists by virtue of $P$ and $Q$ being conjugate.}
+               	    \label{fig:my_label}
+               	\end{figure}
+               	
+               	\par The resulting formal statement turns out to be the following: A timelike geodesic $\gamma$ maximizes proper time $\tau$ between $P$ and $R$ if and only if $\gamma$ contains \textit{no} point conjugate to $P$ between $P$ and $R$.\sn{See Wald theorem 9.3.3} An analogous theorem exists for hypersurfaces; a geodesic between a point on $\Sigma$ and a point $P$ maximizes $\tau$ between them if and only if there are no conjugate points between them.
+               	\par These theorems allow us to conclude an interesting consequence. If $\gamma$ is a \textit{null} geodesic between $P$ and $R$, and there is a point $Q$ along $\gamma$ that is conjugate to $P$, then there must exist a timelike curve connecting $P$ and $R$.
+               	
+            \section{Causal Relations}
+            \subsection{Chronological future}
+            Consider a set $S$ of points on a spacetime manifold. We can define the \textit{chronological future} of $S$, denoted $I^+(S)$, as the union of the future light cones of all points in $S$. So the chronological future of a single point $P$ is the interior of $P$'s future light cone. This can be thought of as all events reachable from $P$ by timelike observers (equivalently, all points that can be connected to $P$ by a future-pointing timelike geodesic).
+            \par Intuitively, it seems the boundary of $I^+(P)$ must be made up of null curves. We find that, if $S$ is a closed subset of the manifold, then the boundary of the chronological future of a $S$, denoted $\dot{I}^+(S)$, must be \textit{ahcronal}, meaning spacelike or null, and every point in $\dot{I}^+(S)$ lies on a null geodesic fully contained in $\dot{I}^+(S)$.\sn{See Wald theorems 8.1.3 and 8.1.6}
+            \par We now want to explore the idea that if two null curves on $\dot{I}^+(S)$ collide, they must enter \textit{into} $I^+(S)$. This can be seen pictorially for distinct null curves (those on the boundaries of light cones from two distinct points) in Figure 5. It turns out this is more general, as it applies also to nearby null curves that come together at a caustic. This is a consequence of our theorem from earlier, stating that if a null curve connects two points, with a conjugate point in between, then the two points are secretly timelike separated.
+            
+            \begin{figure}[!h]
+                \centering
+                \includegraphics[scale=.35]{geodesicfuture.png}
+                \caption{At any point on one of the light cones leading up to the intersection, there is only one direction for null vectors to point. All other directions will be into the light cone. At the intersection then, the only place for the curves to go is into the interior of one of the light cones, and hence into $I^+(\{P,Q\})$.}
+                \label{fig:my_label}
+            \end{figure}
+            
+            \subsection{Domain of dependence}
+            We define the \textit{future domain of dependence} of a closed set $S$ as the set of points for whom every past-directed causal curve hits $S$. We denote this $D^+(S)$. Every point for whom every future-directed causal curve hits $S$ is the \textit{past domain of dependence} of $S$, denoted $D^-(S)$. The full domain of dependence is simply the union,
+            \begin{align}
+                D(S) \defeq D^+(S) \cup D^-(S)
+            \end{align}
+            
+            \begin{figure}[!h]
+                \centering
+                \includegraphics[scale=.45]{domains.png}
+                \caption{$D^+(S)$ contains every point whose entire past intersects with $S$, and $D^-(S)$ contains every point whose entire future will intersect with $S$. The boundaries of these domains, denoted $H^+(S)$ and $H^-(S)$ respectively, are called \textit{Cauchy horizons}.}
+                \label{fig:my_label}
+            \end{figure}
+            
+            \par A spacetime manifold $\mathcal{M}$ is \textit{globally hyperbolic} if some ahcronal surface $\Sigma$ exists such that $D(\Sigma) = \mathcal{M}$. Such a surface is called a \textit{Cauchy surface}. Minkowski and Schwarzschild spacetimes are both examples of globally hyperbolic manifolds. In fact, these types of spacetimes are of particular interest because they allow for ``physics'' to be defined on them in a sensible way, namely by allowing one to place initial data on a Cauchy surface $\Sigma$ for $g_{\mu\nu}$ and all relevant fields, then evolving them into the future to obtain the full evolution of these quantities in $\mathcal{M}$.
+            \par Globally hyperbolic spacetimes have the following property:
+            \begin{itemize}
+                \item If you have a vector field $t^\mu$ emanating from $\Sigma$, the integral curves of $t^\mu$ pierce surfaces of constant time exactly \textit{once}. This allows the spacetime to be foliated into surfaces of constant time, where data can be evolved from one surface to the next.\sn{See Wald 8.3.12}
+            \end{itemize}
+            
+            \begin{figure}[!h]
+                \centering
+                \includegraphics[scale=0.45]{foliation.png}
+                \caption{Surfaces of constant $t$ are piereced by the integral curves of $t^\mu$ exactly once.}
+                \label{fig:my_label}
+            \end{figure}
+            
+            We can conclude with a few properties of globally hyperbolic spacetime that are the result of this idea.
+            \begin{itemize}
+                \item A globally hyperbolic manifold $\mathcal{M}$ has the topology of $\Sigma\times\reals$
+                \item The curves provide a map for points on these surfaces to each other. In other words, every point on a surface of constant time can be uniquely mapped to a point on any of the other surfaces of constant time.
+                \item Each constant time surface is a Cauchy surface.
+            \end{itemize}
+
+\end{document}
