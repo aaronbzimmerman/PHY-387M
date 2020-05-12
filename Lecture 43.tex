@@ -1,0 +1,231 @@
+\documentclass[10pt]{article}
+\usepackage{NotesTeX} %/Path/to/package should be replaced with package location
+\usepackage{lipsum}
+\usepackage{tensor}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{hyperref}
+
+
+\newcommand{\bs}{\textbackslash}
+
+
+\title{{\Huge General Relativity}\\{\Large{Lecture 43}}} %replace with class number
+\author{Asad Hussain}
+
+\emailAdd{asadh@utexas.edu} %replace with your email
+\begin{document}
+    \maketitle
+    \flushbottom
+    \newpage
+    \pagestyle{fancynotes}
+    \part{Singularity Theorums}
+    
+    So we will quickly go through the key ideas involved in understanding Singularity theorums in General Relativity. 
+    
+\section{Geodesics and Collisions}
+We use Energy Conditions to make gravity attractive. Which leads to the focusing of neighbouring geodesics.In some cases this causes the geodesics to cross. Normally this happens all the time, but we are interested in cases when \textit{nearby} geodesics collide. Usually this happens at such strong curvatures that we have a singularity.When we have geodesics colliding with each other, these give rise to conjugate points. A consequence of conjugate points is that the geodesics are no longer curves of maximal length
+  
+\section{Topology on the Space of Causal Curves}
+Another key idea in the study of singularity is the study of topology over the space of causal curves. Roughly, endowing a set with a topology is basically a way of determining which subsets can be characterised as \textit{open} and which can be characterized as \textit{closed}. This process gives rise to a loose structure that can tell how different parts of a set are connected to another regardless of any other structure on them. One can then find different sets that have similar topologies. Topology will not care about the exact shape of an object but, again, only on how it's connected.  A well known example is how a mug is equivalent to a torus. 
+
+
+\begin{figure}[!h]
+\centering
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,214); %set diagram left start at 0, and has height of 214
+
+%Shape: Ellipse [id:dp857073474900166] 
+\draw   (100,148) .. controls (100,136.95) and (115.67,128) .. (135,128) .. controls (154.33,128) and (170,136.95) .. (170,148) .. controls (170,159.05) and (154.33,168) .. (135,168) .. controls (115.67,168) and (100,159.05) .. (100,148) -- cycle ;
+%Shape: Circle [id:dp34876906099736327] 
+\draw   (291,150.45) .. controls (291,133.63) and (304.63,120) .. (321.45,120) .. controls (338.27,120) and (351.9,133.63) .. (351.9,150.45) .. controls (351.9,167.27) and (338.27,180.9) .. (321.45,180.9) .. controls (304.63,180.9) and (291,167.27) .. (291,150.45) -- cycle ;
+%Left Right Arrow [id:dp3739169628342378] 
+\draw   (195,147.4) -- (212.72,136) -- (212.72,141.7) -- (248.17,141.7) -- (248.17,136) -- (265.9,147.4) -- (248.17,158.8) -- (248.17,153.1) -- (212.72,153.1) -- (212.72,158.8) -- cycle ;
+
+% Text Node
+\draw (183,115) node [anchor=north west][inner sep=0.75pt]   [align=left] {Topologically};
+% Text Node
+\draw (189,157) node [anchor=north west][inner sep=0.75pt]   [align=left] {Equivalent};
+
+
+\end{tikzpicture}
+\end{figure}
+
+
+We then use the idea of topology on a more abstract set: The set of all causal curves between two points. Given a manifold $\mathcal{M}$ and two points $P$ and $Q$ in $\mathcal{M}$, we can define $\mathcal{S}_{\mathcal{M}} (P,Q)$ as \textbf{the set of all causal curves from $P$ to $Q$}. Using ideas from topology, we can then start looking at different features of $\mathcal{S}_{\mathcal{M}} (P,Q)$, like compactness, for example. Since, for some examples, the curves cover some finite domain on $\mathcal{M}$ one can see that the space of causal curves from $P$ to $Q$ is actually compact. Once the compactness of $\mathcal{S}_{\mathcal{M}} (P,Q)$ has been shown, one can then prove additional theorums about the existence of maximal length curves within $\mathcal{S}_{\mathcal{M}} (P,Q)$.
+
+\begin{figure}[!h]
+\centering
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Straight Lines [id:da026232362914804686] 
+\draw    (141.5,145.33) -- (200,205) ;
+%Straight Lines [id:da7145649825303129] 
+\draw    (200.02,93.33) -- (141.5,145.33) ;
+%Straight Lines [id:da7628753769698058] 
+\draw    (256.5,145.78) -- (200,205) ;
+%Straight Lines [id:da7532904883097078] 
+\draw    (200.02,93.33) -- (256.5,145.78) ;
+%Curve Lines [id:da28980488627443535] 
+\draw    (200,205) .. controls (226.5,163) and (220.5,127) .. (200.02,93.33) ;
+%Curve Lines [id:da7100474667441297] 
+\draw    (200,205) .. controls (172.5,163) and (176.5,131) .. (200.02,93.33) ;
+%Curve Lines [id:da8301363520365665] 
+\draw    (200,205) .. controls (204.5,155) and (206.5,133) .. (200.02,93.33) ;
+%Curve Lines [id:da5191871188349408] 
+\draw    (200,205) .. controls (186.5,168) and (193.5,127) .. (200.02,93.33) ;
+
+% Text Node
+\draw (194,59) node [anchor=north west][inner sep=0.75pt]    {$P$};
+% Text Node
+\draw (192,210) node [anchor=north west][inner sep=0.75pt]    {$Q$};
+
+
+\end{tikzpicture}
+\end{figure}
+
+
+
+
+
+\section{Lifting Proofs about $\mathcal{S}_{\mathcal{M}} (P,Q)$ to curves between points and surfaces}
+
+We can then try and generalise what we had before and ask about the structures that one has on the space of all curves from a point $P$ to some \textit{surface} $\Sigma$. This set is denoted by $\mathcal{S}_{\mathcal{M}} (P,\Sigma)$.
+
+One structure we already have is that of conjugate points. If we extrude geodesics normal to the surface of $\Sigma$ and find that they intersect and some point $Q$, then $Q$ is a conjugate point to the surface $\Sigma$. Now if we have a geodesic $\gamma$ from $\Sigma$ to $P$ (i.e. and element of the set $\mathcal{S}_{\mathcal{M}} (P,\Sigma)$), that passes through $Q$, then we know for sure that $\gamma$ cannot be a maximal length curve and that another maximal length curve must exist that takes a more direct route to $P$.
+
+\begin{figure}[!h]
+\centering
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,214); %set diagram left start at 0, and has height of 214
+
+%Curve Lines [id:da7801421896022949] 
+\draw    (100,156) .. controls (163.82,144.15) and (212.03,152.09) .. (256.38,160.75) .. controls (308.55,170.94) and (355.36,182.12) .. (415.9,163.2) ;
+%Curve Lines [id:da637387298702343] 
+\draw    (250.9,158.2) .. controls (260.65,116.28) and (260.89,101.92) .. (255.34,65.08) ;
+\draw [shift={(254.9,62.2)}, rotate = 441.25] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+%Curve Lines [id:da9747314490687113] 
+\draw    (181.9,150.2) .. controls (189.74,116.88) and (211.03,104.69) .. (256.11,102.33) ;
+\draw [shift={(258.9,102.2)}, rotate = 537.56] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+%Curve Lines [id:da5904886608231568] 
+\draw    (181.9,150.2) .. controls (189.74,116.88) and (207.18,66.27) .. (252.11,62.38) ;
+\draw [shift={(254.9,62.2)}, rotate = 537.56] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+
+% Text Node
+\draw (249,38) node [anchor=north west][inner sep=0.75pt]    {$P$};
+% Text Node
+\draw (261,89) node [anchor=north west][inner sep=0.75pt]    {$Q$};
+% Text Node
+\draw (428,148) node [anchor=north west][inner sep=0.75pt]    {$\Sigma $};
+% Text Node
+\draw (98,37) node [anchor=north west][inner sep=0.75pt]    {$C( P,\Sigma )$};
+
+
+\end{tikzpicture}
+\end{figure}
+
+Following this we have a theorum:
+
+\begin{theorem}
+A time-like curve $\gamma$ with maximal length $\tau$ between $\Sigma$ and $P$ is a geodesic orthognoal to $\Sigma$ with no conjugate points between $\Sigma$ and $P$ contained in $\gamma$.
+\end{theorem}
+
+Now let's consider the set $C(\Sigma,P)$ defined to be the set of all causal curves from $\Sigma$ to $P$. Once we endow this set with the topology as before, and prove a lemma(we donot provide a proof):
+
+\begin{lemma}
+$C(\Sigma,P)$ is compact for all Globally Hyperbolic Spacetimes $\mathcal{M}$.
+\end{lemma}
+
+This lemma leads to a new theorum:
+
+\begin{theorem}
+Let $\Sigma$ be a Cauchy Surface (a surface whose domain of dependence is the entire Manifold $\mathcal{M}$), and let $P$ be a point in that manifold. Then because $C(\Sigma,P)$ is compact, we have that $\tau(\gamma)$ is upper semi-continuous and hence there exists some $\gamma$ in $C(\Sigma,P)$ that attains a maximum.
+\end{theorem}
+
+Now that we have proven the existence of maximal length curves from a cauchy surface to a point in globally hyperbolic spacetimes, we can then state the following theorum.
+
+\begin{theorem}
+Under the following assumptions:
+
+\begin{itemize}
+\item $\mathcal{M}$ is globally hyperbolic
+\item The Strong energy condition holds. I.e. $R_{\mu\nu}t^{\mu}t^{\nu} \geq 0$ for all timelike vectors $t^{\mu}$.
+\item Suppose we have a Cauchy surface $\Sigma$ with the expansion $\theta$ of the timelike orthogonal geodesics having $\theta \geq C > 0$ everywhere. In simpler terms: the universe at some moment is expanding everywhere. 
+\end{itemize}
+
+These conditions imply that no past-directed timelike curve can have proper time $\tau > \frac{3}{|C|}$ and \textit{all} timelike geodesics are incomplete. 
+
+\textit{Sketch: } Assume there is a curve $\gamma$ to a point $P$ from $\Sigma$ with $\tau > \frac{3}{|C|}$. Since we reached $P$ from $\Sigma$ then there must be a maximal length curve connecting them.
+
+Hovever this curve must be a geodesic orthogonal to $\Sigma$ with no conjugate points between $\Sigma$ and $P$. 
+
+
+By assuming that $\theta > 0$ in the future direction, then $\theta < 0$ everywhere along past directed timelike geodesics. 
+
+Now since there is a contraction of geodesics and $\gamma$ has $\theta < 0$ along it we know that there must be a conjugate point where multiple geodesics collide within $\tau \leq \frac{3}{|C|}$. Hence there must be a conjugate point before $P$. 
+
+The implication is that $\gamma$ must be incomplete, and all past-directed geodesics have this problem. 
+\end{theorem}
+
+\begin{figure}[!h]
+\centering
+
+
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,214); %set diagram left start at 0, and has height of 214
+
+%Curve Lines [id:da8714719728238227] 
+\draw    (106.9,157.8) .. controls (188.9,122.8) and (311.9,118.8) .. (405.9,154.8) ;
+%Straight Lines [id:da49139659925842016] 
+\draw    (154,142) -- (145.38,106.74) ;
+\draw [shift={(144.9,104.8)}, rotate = 436.25] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da8818448233277949] 
+\draw    (226,131) -- (224.01,94.8) ;
+\draw [shift={(223.9,92.8)}, rotate = 446.85] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da7865876847790159] 
+\draw    (276,129) -- (280.65,91.78) ;
+\draw [shift={(280.9,89.8)}, rotate = 457.12] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da9323844792969327] 
+\draw    (351,138) -- (365.14,103.65) ;
+\draw [shift={(365.9,101.8)}, rotate = 472.37] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da6476405234194227] 
+\draw    (170,137) -- (167.05,98.79) ;
+\draw [shift={(166.9,96.8)}, rotate = 445.59] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Shape: Ellipse [id:dp3809215316001491] 
+\draw   (141.97,106.96) .. controls (141.13,104.26) and (146.83,100.09) .. (154.69,97.63) .. controls (162.56,95.18) and (169.62,95.37) .. (170.46,98.07) .. controls (171.31,100.77) and (165.61,104.94) .. (157.74,107.4) .. controls (149.87,109.85) and (142.81,109.65) .. (141.97,106.96) -- cycle ;
+
+% Text Node
+\draw (428,148) node [anchor=north west][inner sep=0.75pt]    {$\Sigma $};
+% Text Node
+\draw (123.19,78.75) node [anchor=north west][inner sep=0.75pt]  [rotate=-346.45]  {$\theta \  >\ 0$};
+% Text Node
+\draw (108.47,57.77) node [anchor=north west][inner sep=0.75pt]  [rotate=-348.55] [align=left] {Expansion};
+
+
+\end{tikzpicture}
+
+\end{figure}
+
+In more simpler words:
+
+\begin{verse}
+If $M$ is a globally hyperbolic everywhere expanding spacetime, then there must have been an initial big-bang style singularity. 
+\end{verse}
+
+This fits our current model of the universe: the FRW metric, which does begin in a singularity. However even if we find that our current universe doesn't exactly fit the FRW metric then as long as we know that at some spacelike cauchy slice, the universe is expanding everywhere, then there must have been an initial big-bang singularity. 
+
+Recall that on HW6 we should that scalar fields follow the dominant energy condition, which implies they follow the weak energy condition, but not necessarily the strong energy condition. One thing really important to modern physiics is inflation: which are these very high mass scalar fields which drive an accelerated expansion by violating the strong energy condition. There is a theorum by Borde, Guth and Vilenkin which says the violating the strong energy condition doesn't protect one from such singulatity. Hence the singulatity theorums do cover inflationary spacetime. 
+
+
+
+
+\end{document}
