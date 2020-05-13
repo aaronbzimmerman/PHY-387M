@@ -1,0 +1,1459 @@
+documentclass[11pt]{article}
+
+usepackage{NotesTeX} 
+usepackage[font=small,labelfont=bf]{caption}
+usepackage{enumerate}
+usepackage{lipsum}
+usepackage{tensor}
+usepackage{amsmath,amsthm,amssymb,amscd,amsfonts}
+usepackage{hyperref}
+usepackage{xcolor}
+usepackage{color}
+usepackage{undertilde}
+
+usepackage{tikz}
+usepackage{tikz-cd}
+tikzcdset{every label/.append style = {font = small}}
+tikzcdset{row sep/normal=3.5em}
+tikzcdset{column sep/normal=3.5em}
+
+usetikzlibrary{matrix}
+usetikzlibrary{decorations.markings,calc,shapes}
+usetikzlibrary{positioning}
+usepackage{graphicx}
+usepackage{empheq}
+usepackage{physics}
+usepackage{siunitx}
+usepackage{multicol}
+usepackage{youngtab}
+usepackage{cancel}
+usepackage{caption}
+usepackage{graphicx}
+usepackage{subcaption}
+newcommand{bs}{textbackslash}
+
+% added by Jingtian Shi
+usepackage{indentfirst}
+usepackage{cases}
+usepackage{bbm}
+
+%%%
+
+title{{Huge General Relativity}\{Large{Class 42 --- May 6, 2020}}} %replace with class number
+author{Amanda Nicole Flores}
+
+emailAdd{amanda.flores@utexas.edu} %replace with your email
+begin{document}
+    maketitle
+    flushbottom
+    newpage
+    pagestyle{fancynotes}
+    
+    part{Singularity Theorems}
+              	section{Singularity Theorem}label{sec:Singularity Theorem}
+	So far, we have covered the main tools we will use to prove a singularity theorem. We covered how Raychaudhuri's equation combined with some energy conditions on spacetime which tell how neighboring geodesics can collide with each other. We can determine that a congruence of such geodesics begins to converge. This can occur if spacetime has an attractive curvature, the geodesics will collide within a finite amount of time.par
+	
+	From global definitions of causality, we looked at the boundary of the future of the set. The boundary of the future of the set must be made of null geodesics that don't collide with other geodesics. We can use this to provide singularity theorems.par
+	
+	Schwarzschild's solution as well as the Friedmann-Robertson-Walker metric, along with other solutions which have been discovered indicate that singularities exist. Oppenheimer-Snyder collapse (Figure 1) can be visualized at occuring at some initial time on a hypersurface $Sigma$ with a spherically symmetric star which collapses. The resulting spacetime shows a finite event horizon emerging, which the star will fall behind and form a singularity, which is a point of infinite curvature.
+	
+	begin{figure}[H]
+begin{centering}
+
+
+tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+uncomment if require: path (0,355); %set diagram left start at 0, and has height of 355
+
+%Straight Lines [id:da21960177719268414] 
+draw    (143.01,303.33) -- (413.01,304.33) ;
+%Straight Lines [id:da018295862078560043] 
+draw    (143.01,303.33) -- (213.01,239.33) ;
+%Straight Lines [id:da4937259750341563] 
+draw    (484.01,237.33) -- (413.01,304.33) ;
+%Straight Lines [id:da23167433890683453] 
+draw    (213.01,239.33) -- (484.01,237.33) ;
+%Shape: Ellipse [id:dp8824173645195013] 
+draw   (255.01,268) .. controls (255.01,256.95) and (281.86,248) .. (315,248) .. controls (348.14,248) and (375.01,256.95) .. (375.02,268) .. controls (375.03,279.05) and (348.17,288) .. (315.03,288) .. controls (281.89,288) and (255.02,279.05) .. (255.01,268) -- cycle ;
+%Curve Lines [id:da12514856253769147] 
+draw    (255.01,268) .. controls (254.01,231) and (274.01,175.33) .. (318.01,147.33) ;
+%Curve Lines [id:da4222520036308992] 
+draw    (375.02,268) .. controls (377.01,235.33) and (360.01,171.33) .. (318.01,147.33) ;
+%Straight Lines [id:da5607050931535669] 
+draw    (258,274) -- (307.01,247.33) ;
+%Straight Lines [id:da5555255888597217] 
+draw    (268,281) -- (328.01,248.33) ;
+%Straight Lines [id:da2588989415375611] 
+draw    (301.5,288) -- (345.46,264.16) -- (360.5,256) ;
+%Straight Lines [id:da6156566681614062] 
+draw    (285.01,285.33) -- (347.01,251.67) ;
+%Straight Lines [id:da8804103688353606] 
+draw    (324.03,288) -- (372.01,262.33) ;
+%Straight Lines [id:da9674340134632183] 
+draw    (273.01,47.33) -- (274,197) ;
+%Straight Lines [id:da042889226983222284] 
+draw    (359.01,44.82) -- (359.56,131.33) -- (360,198) ;
+%Straight Lines [id:da28077788920272606] 
+draw    (318.01,198.33) -- (318,213) ;
+%Straight Lines [id:da8911509915192127] 
+draw    (318.01,147.33) -- (318,162) ;
+%Straight Lines [id:da3734201315050679] 
+draw    (318.01,174.33) -- (318.01,182.33) -- (318,189) ;
+%Straight Lines [id:da526207305872604] 
+draw    (318.01,224.33) -- (318,239) ;
+%Straight Lines [id:da9777786519287599] 
+draw    (318.01,251.33) -- (318,268) ;
+%Curve Lines [id:da6488563820272591] 
+draw    (318.01,147.33) .. controls (332.01,125.33) and (306.01,138.33) .. (319,119.51) ;
+%Curve Lines [id:da8314298636271896] 
+draw    (319,119.51) .. controls (333,97.51) and (307,110.51) .. (319.99,91.68) ;
+%Curve Lines [id:da26947580296508344] 
+draw    (319.99,91.68) .. controls (333.99,69.68) and (307.99,82.68) .. (320.97,63.86) ;
+%Curve Lines [id:da14919691043544248] 
+draw    (320.97,63.86) .. controls (334.97,41.86) and (308.97,54.86) .. (321.96,36.04) ;
+%Straight Lines [id:da10057971128620946] 
+draw    (274,197) -- (318.01,224.33) ;
+%Straight Lines [id:da7779585348767574] 
+draw    (318.01,224.33) -- (360,198) ;
+%Shape: Ellipse [id:dp5943377129509044] 
+draw   (296.99,189) .. controls (296.99,182.7) and (306.4,177.59) .. (318,177.59) .. controls (329.6,177.59) and (339.01,182.7) .. (339.01,189) .. controls (339.01,195.3) and (329.6,200.41) .. (318,200.41) .. controls (306.4,200.41) and (296.99,195.3) .. (296.99,189) -- cycle ;
+%Straight Lines [id:da21903684659321165] Star
+draw    (429.01,201.82) -- (324,241.6) ;
+draw [shift={(320,243)}, rotate = 342.09000000000003] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da5287749657058967] 
+draw    (440.58,105.15) -- (361.47,130.71) ;
+draw [shift={(359.56,131.33)}, rotate = 342.09000000000003] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da7713970026277454] 
+draw    (241.01,162.82) -- (295.18,188.15) ;
+draw [shift={(296.99,189)}, rotate = 205.06] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da3262410497307574] 
+draw    (242,59.51) -- (318.14,90.92) ;
+draw [shift={(319.99,91.68)}, rotate = 202.42000000000002] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+
+% Text Node
+draw (721,21) node    ;
+% Text Node
+draw (701,71) node    ;
+% Text Node
+draw (166,48.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {Singularity};
+% Text Node
+draw (440,97.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {Event Horizon};
+% Text Node
+draw (224,146.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {$displaystyle mathcal{T}$};
+% Text Node
+draw (430,188.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {Star};
+% Text Node
+draw (451,275) node [anchor=north west][inner sep=0.75pt]   [align=left] {$displaystyle Sigma $}
+
+
+end{tikzpicture}
+caption{Oppenheimer-Snyder collapse of a star. Where $displaystyle mathcal{T}$ is a trapped surface.}
+		label{fig:singularity1}
+end{centering}
+end{figure}
+
+We have shown with the conformal diagram (Figure 2) that the singularity sits in the future of all observers.par
+begin{figure}[H]
+    centering
+tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+uncomment if require: path (0,197); %set diagram left start at 0, and has height of 197
+
+%Straight Lines [id:da4429943197765185] 
+draw    (268.01,24.29) -- (269,165.04) ;
+%Straight Lines [id:da8309327640825709] 
+draw    (339.01,20.29) -- (269,123.04) ;
+%Straight Lines [id:da050967729820754815] 
+draw    (350.01,42.29) -- (269,165.04) ;
+%Curve Lines [id:da9835569782617563] 
+draw    (269,165.04) .. controls (294.01,124.29) and (305.01,55.29) .. (301.01,21.29) ;
+%Curve Lines [id:da557973374699476] 
+draw    (268.01,24.29) .. controls (296.01,6.74) and (275.01,33.29) .. (288.76,25.84) .. controls (302.51,18.39) and (295.39,23.88) .. (301.01,21.29) ;
+%Curve Lines [id:da3881352300484313] 
+draw    (299.51,23.29) .. controls (330.01,5.29) and (306.01,41.29) .. (339.01,20.29) ;
+%Shape: Circle [id:dp8725397857025823] 
+draw   (333.52,20.29) .. controls (333.52,17.26) and (335.98,14.8) .. (339.01,14.8) .. controls (342.05,14.8) and (344.51,17.26) .. (344.51,20.29) .. controls (344.51,23.33) and (342.05,25.79) .. (339.01,25.79) .. controls (335.98,25.79) and (333.52,23.33) .. (333.52,20.29) -- cycle ;
+%Shape: Circle [id:dp7801726587177608] 
+draw   (344.52,42.29) .. controls (344.52,39.26) and (346.98,36.8) .. (350.01,36.8) .. controls (353.05,36.8) and (355.51,39.26) .. (355.51,42.29) .. controls (355.51,45.33) and (353.05,47.79) .. (350.01,47.79) .. controls (346.98,47.79) and (344.52,45.33) .. (344.52,42.29) -- cycle ;
+%Straight Lines [id:da5047514218300195] 
+draw    (339.01,20.29) -- (350.01,42.29) ;
+%Straight Lines [id:da6945667887118385] 
+draw    (222.01,49.29) -- (281.13,71.35) ;
+draw [shift={(283,72.04)}, rotate = 200.46] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+draw (721,21) node    ;
+% Text Node
+draw (701,71) node    ;
+% Text Node
+draw (171,35.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {stellar\material};
+end{tikzpicture}
+    caption{Conformal Diagram of a Singularity}
+    label{fig:singularity2}
+end{figure}
+	Singularities do not occur only in special fine-tuned situations, but are generic. A scenario to prove this would be a trapped surface ($displaystyle mathcal{T}$), which is a 2-D surface which is closed and finite in size (compact).par
+	
+begin{figure}[H]
+begin{centering}
+tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+uncomment if require: path (0,202); %set diagram left start at 0, and has height of 202
+
+%Shape: Parallelogram [id:dp1665490090504409] 
+draw   (257.33,64.43) -- (484.01,64.15) -- (420.85,152.03) -- (194.17,152.31) -- cycle ;
+%Shape: Ellipse [id:dp029927827430600185] 
+draw   (284.08,108.23) .. controls (284.08,94.7) and (308.71,83.73) .. (339.09,83.73) .. controls (369.47,83.73) and (394.1,94.7) .. (394.1,108.23) .. controls (394.1,121.76) and (369.47,132.73) .. (339.09,132.73) .. controls (308.71,132.73) and (284.08,121.76) .. (284.08,108.23) -- cycle ;
+%Straight Lines [id:da7848973340671311] 
+draw    (394.1,108.23) -- (418.58,84.55) ;
+draw [shift={(420.01,83.15)}, rotate = 495.94] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da7358758156364297] 
+draw    (394.1,108.23) -- (368.56,83.77) ;
+draw [shift={(367.11,82.39)}, rotate = 403.76] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da5111696186535931] 
+draw    (284.08,108.23) -- (260.37,82.62) ;
+draw [shift={(259.01,81.15)}, rotate = 407.2] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da6221106123648013] 
+draw    (284.08,108.23) -- (313.56,83.67) ;
+draw [shift={(315.1,82.39)}, rotate = 500.19] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da7065759228737152] 
+draw    (178,109) -- (178.01,29.15) ;
+draw [shift={(178.01,27.15)}, rotate = 450.01] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+draw (721,21) node    ;
+% Text Node
+draw (701,71) node    ;
+% Text Node
+draw (451,130.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {$displaystyle Sigma $}
+draw (186,20.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {t};
+end{tikzpicture}
+caption{Hypersurface ($Sigma$) with two families of normal null vectors. }
+label{fig:surface1}
+end{centering}
+end{figure}
+vspace{-20pt}
+	For each surface (Figures 3 and 4), there are two null normal vectors to the surface, which can be ingoing our outgoing. par
+	
+	begin{figure}[H]
+	    begin{centering}
+
+tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+uncomment if require: path (0,309); %set diagram left start at 0, and has height of 309
+
+%Shape: Circle [id:dp4302482263727143] 
+draw   (248.01,148.95) .. controls (247.95,102.28) and (285.73,64.41) .. (332.41,64.37) .. controls (379.09,64.33) and (416.98,102.13) .. (417.04,148.81) .. controls (417.11,195.48) and (379.32,233.35) .. (332.64,233.39) .. controls (285.97,233.43) and (248.08,195.63) .. (248.01,148.95) -- cycle ;
+%Straight Lines [id:da7774074772167004] 
+draw    (332.41,64.37) -- (332.03,20.29) ;
+draw [shift={(332.01,18.29)}, rotate = 449.51] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Shape: Rectangle [id:dp06989790288073705] 
+draw   (332.41,54.66) -- (340.42,54.66) -- (340.42,64.37) -- (332.41,64.37) -- cycle ;
+%Straight Lines [id:da7479110599357958] 
+draw    (332.41,64.37) -- (332.99,106.29) ;
+draw [shift={(333.01,108.29)}, rotate = 269.21] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da28388734484989997] 
+draw    (380.41,78.37) -- (388.78,61.68) -- (398.12,43.08) ;
+draw [shift={(399.01,41.29)}, rotate = 476.65] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da3503606976949577] 
+draw    (389.41,86.37) -- (420.71,49.81) ;
+draw [shift={(422.01,48.29)}, rotate = 490.57] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da22661093908707364] 
+draw    (397.41,93.37) -- (436.31,69.35) ;
+draw [shift={(438.01,68.29)}, rotate = 508.3] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da5066130585248497] 
+draw    (389.41,86.37) -- (372.37,104.82) ;
+draw [shift={(371.01,106.29)}, rotate = 312.71000000000004] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Shape: Ellipse [id:dp610123181006466] 
+draw   (375.78,53.63) .. controls (374.81,47.92) and (386.68,51.82) .. (402.31,62.34) .. controls (417.93,72.85) and (431.39,86) .. (432.37,91.71) .. controls (433.35,97.42) and (421.47,93.52) .. (405.85,83) .. controls (390.22,72.49) and (376.76,59.33) .. (375.78,53.63) -- cycle ;
+%Straight Lines [id:da2746069466054304] 
+draw    (273.01,89.29) -- (237.43,53.71) ;
+draw [shift={(236.01,52.29)}, rotate = 405] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Shape: Rectangle [id:dp217996142728054] 
+draw   (332.41,64.37) -- (340.42,64.37) -- (340.42,74.08) -- (332.41,74.08) -- cycle ;
+%Straight Lines [id:da913220335852804] 
+draw    (248.01,148.95) -- (208.01,148.33) ;
+draw [shift={(206.01,148.29)}, rotate = 360.9] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da3871125785678733] 
+draw    (417.04,148.81) -- (467.05,149.13) ;
+draw [shift={(469.05,149.15)}, rotate = 180.37] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da8892794358287455] 
+draw    (273.01,210.95) -- (238.46,243.91) ;
+draw [shift={(237.01,245.29)}, rotate = 316.35] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da2927992683769446] 
+draw    (396.01,203.95) -- (435.59,242.89) ;
+draw [shift={(437.01,244.29)}, rotate = 224.53] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da3074491197512845] 
+draw    (332.64,233.39) -- (332.65,281.73) ;
+draw [shift={(332.65,283.73)}, rotate = 270] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da35111184275538554] 
+draw    (273.01,89.29) -- (293.66,111.82) ;
+draw [shift={(295.01,113.29)}, rotate = 227.49] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da9428568536970029] 
+draw    (248.01,148.95) -- (288.01,149.28) ;
+draw [shift={(290.01,149.29)}, rotate = 180.46] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da22986019793777768] 
+draw    (417.04,148.81) -- (379.01,149.27) ;
+draw [shift={(377.01,149.29)}, rotate = 359.3] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da46199723426640926] 
+draw    (273.01,210.95) -- (302.59,181.7) ;
+draw [shift={(304.01,180.29)}, rotate = 495.32] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da2670537286247364] 
+draw    (396.01,203.95) -- (371.44,179.7) ;
+draw [shift={(370.01,178.29)}, rotate = 404.63] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da34824205968984434] 
+draw    (332.64,233.39) -- (332.65,194.73) ;
+draw [shift={(332.65,192.73)}, rotate = 450] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da6756442674075455] 
+draw    (528.01,75.29) .. controls (474.57,35.99) and (482.84,116.65) .. (443.23,79.46) ;
+draw [shift={(442.01,78.29)}, rotate = 404.28999999999996] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+
+% Text Node
+draw (721,21) node    ;
+% Text Node
+draw (701,71) node    ;
+% Text Node
+draw (536,65.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {$displaystyle theta   >0$};
+end{tikzpicture}
+	    
+	    caption{A hyper surface with a congruence of outgoing null normal geodesics of positive expansion.}
+	    label{fig:surface2}
+	    end{centering}
+	end{figure}
+	
+	The outgoing null geodesics will form a congruence which form a positive expansion ($theta >greater 0$) on a typical surface. On a trapped surface $displaystyle mathcal{T}$ (Figure 5), both the inward and outward null normal geodesics have negative expansion ($theta <less 0$). par
+	
+begin{figure}[H]
+    begin{centering}
+    
+
+tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+uncomment if require: path (0,202); %set diagram left start at 0, and has height of 202
+
+%Shape: Parallelogram [id:dp8084413922854641] 
+draw   (257.33,64.43) -- (484.01,64.15) -- (420.85,152.03) -- (194.17,152.31) -- cycle ;
+%Shape: Ellipse [id:dp08655469895787238] 
+draw   (284.08,108.23) .. controls (284.08,94.7) and (308.71,83.73) .. (339.09,83.73) .. controls (369.47,83.73) and (394.1,94.7) .. (394.1,108.23) .. controls (394.1,121.76) and (369.47,132.73) .. (339.09,132.73) .. controls (308.71,132.73) and (284.08,121.76) .. (284.08,108.23) -- cycle ;
+%Straight Lines [id:da34696180372504426] 
+draw    (394.1,108.23) -- (365.95,54.92) ;
+draw [shift={(365.01,53.15)}, rotate = 422.15999999999997] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da8176536575397706] 
+draw    (394.1,108.23) -- (368.56,83.77) ;
+draw [shift={(367.11,82.39)}, rotate = 403.76] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da9797706216625042] 
+draw    (284.08,108.23) -- (316.98,53.87) ;
+draw [shift={(318.01,52.15)}, rotate = 481.18] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da1345780622088154] 
+draw    (284.08,108.23) -- (313.56,83.67) ;
+draw [shift={(315.1,82.39)}, rotate = 500.19] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da4671924966177574] 
+draw    (457.01,27.15) .. controls (437.41,53.61) and (400.53,29.17) .. (379.29,52.66) ;
+draw [shift={(378.01,54.15)}, rotate = 308.93] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+
+% Text Node
+draw (721,21) node    ;
+% Text Node
+draw (701,71) node    ;
+% Text Node
+draw (451,130.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {$displaystyle Sigma $};
+% Text Node
+draw (464,12.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {Outward null normal\geodesic};
+end{tikzpicture}
+    caption{Outward null normal geodesics have $theta <less 0$ on a trapped surface $displaystyle mathcal{T}$}
+    label{fig:surface3}
+    end{centering}
+end{figure}
+	This can occur in any situation where gravity is strong enough at any instance of time on the surface. Penrose proved that if there is a trapped surface, there will inevitably be a singularity in the future of that trapped surface.par
+	Theorem (Penrose 1965):par
+	1. Manifold $mathfrak{M}$ is globally hyperbolic with non-compact Cauchy surface. par
+	2. Matter obeys the Null Energy Condition (NEC) (1.1).par
+	
+              	begin{equation}
+			begin{aligned}
+			T^{munu}k^{mu}k^{nu} &geq 0\
+			R^{munu}k^{mu}k^{nu} &geq 0
+    			end{aligned} 
+			label{eq:Surface1}
+		end{equation}
+			sn{(1.1)Positive definite forall k^{mu}}
+			
+	3. Spacetime contains a trapped surface $mathcal{T}$.par
+	If these three conditions are satistfied, then at least one null geodesic emanating from $mathcal{T}$ has finite length. par
+begin{figure}[H]
+    begin{centering}
+tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+uncomment if require: path (0,161); %set diagram left start at 0, and has height of 161
+
+%Curve Lines [id:da6287461894105864] 
+draw [line width=1.5]    (273.01,137.76) .. controls (278.95,100.14) and (326.06,32.13) .. (392.98,23.02) ;
+draw [shift={(395.01,22.76)}, rotate = 533.29] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=1.5]    (14.21,-4.28) .. controls (9.04,-1.82) and (4.3,-0.39) .. (0,0) .. controls (4.3,0.39) and (9.04,1.82) .. (14.21,4.28)   ;
+%Straight Lines [id:da21897648791182467] 
+draw    (387.01,14.76) -- (403.01,30.76) ;
+%Straight Lines [id:da5011684667023784] 
+draw    (386.52,32.12) -- (403.51,13.4) ;
+
+% Text Node
+draw (721,21) node    ;
+% Text Node
+draw (701,71) node    ;
+% Text Node
+draw (318,68.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {$displaystyle lambda $};
+% Text Node
+draw (263,19.26) node [anchor=north west][inner sep=0.75pt]  [font=Large]  {${displaystyle gamma }$};
+
+
+end{tikzpicture}
+    caption{Geodesic $gamma$ must end in a proper affine distance ($lambda$)}
+    label{fig:geodesic1}
+end{centering}
+end{figure}
+
+			The geodesic must end at some affine distance, although we don't necessarily know what happens to it, but that it must end. This is a proof by contradiction. This theorem applies to any spacetime, which will inevitably terminate one of the geodesics. However, we still would not know what kind of singularity or the properties of the singularity the geodesic terminates in or the full number of terminating geodesics. par 
+			section{Sketch of Singularity Theorem Proof}label{sec:Singularity Theorem Proof}
+
+begin{figure}[H]
+    begin{centering}
+
+
+tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+uncomment if require: path (0,349); %set diagram left start at 0, and has height of 349
+
+%Shape: Arc [id:dp6122446010508475] 
+draw  [draw opacity=0] (395.19,225.12) .. controls (417.09,230.34) and (431.1,238.11) .. (430.93,246.53) .. controls (430.64,260.96) and (388.78,271.83) .. (337.43,270.81) .. controls (286.07,269.79) and (244.68,257.26) .. (244.96,242.83) .. controls (245.13,234.41) and (259.44,227.2) .. (281.53,222.86) -- (337.95,244.68) -- cycle ; draw  [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ] (395.19,225.12) .. controls (417.09,230.34) and (431.1,238.11) .. (430.93,246.53) .. controls (430.64,260.96) and (388.78,271.83) .. (337.43,270.81) .. controls (286.07,269.79) and (244.68,257.26) .. (244.96,242.83) .. controls (245.13,234.41) and (259.44,227.2) .. (281.53,222.86) ;
+%Shape: Ellipse [id:dp33113630944007155] 
+draw   (185,265.65) .. controls (185,239.88) and (250.82,219) .. (332.01,219) .. controls (413.2,219) and (479.01,239.88) .. (479.01,265.65) .. controls (479.01,291.41) and (413.2,312.29) .. (332.01,312.29) .. controls (250.82,312.29) and (185,291.41) .. (185,265.65) -- cycle ;
+%Straight Lines [id:da3672813075855069] 
+draw [line width=0.75]    (342.01,48.29) -- (189,255.65) ;
+%Straight Lines [id:da7283465649940385] 
+draw    (335.01,93.29) -- (226,297.65) ;
+%Straight Lines [id:da7905812776636874] 
+draw    (401.01,85.29) -- (303,311.65) ;
+%Straight Lines [id:da04516044567896349] 
+draw    (395.01,193.29) -- (303,311.65) ;
+%Straight Lines [id:da5514262735165778] 
+draw [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ][line width=1.5]    (286.01,125.29) -- (391.01,112.29) ;
+%Straight Lines [id:da8058598661881937] 
+draw [line width=0.75]    (368.01,73.29) -- (479.01,265.65) ;
+%Straight Lines [id:da7909507928158662] 
+draw    (302.01,92.29) -- (364.01,220.29) ;
+%Straight Lines [id:da11166714420830959] 
+draw [line width=0.75]    (258.01,68.29) -- (332.01,219) ;
+%Straight Lines [id:da6344164327288175] 
+draw    (346.01,189.29) -- (189,255.65) ;
+%Straight Lines [id:da5681489550372433] 
+draw    (337.01,168.29) -- (479.01,265.65) ;
+%Straight Lines [id:da9777385759736958] 
+draw    (192.01,251.29) -- (220.85,210.92) ;
+draw [shift={(222.01,209.29)}, rotate = 485.54] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da7351125656102913] 
+draw    (189,255.65) -- (239.18,234.08) ;
+draw [shift={(241.01,233.29)}, rotate = 516.74] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da5547207329009165] 
+draw    (303,311.65) -- (327.2,257.12) ;
+draw [shift={(328.01,255.29)}, rotate = 473.94] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da9879277296792149] 
+draw    (303,311.65) -- (338.78,265.87) ;
+draw [shift={(340.01,264.29)}, rotate = 488.01] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da15227846916015186] 
+draw    (332.01,219) -- (313.9,182.09) ;
+draw [shift={(313.01,180.29)}, rotate = 423.86] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da6855068227327005] 
+draw    (332.01,219) -- (307.72,234.23) ;
+draw [shift={(306.02,235.29)}, rotate = 327.90999999999997] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da18959867788003582] 
+draw    (479.01,265.65) -- (453.99,221.04) ;
+draw [shift={(453.01,219.29)}, rotate = 420.71000000000004] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da2806226110687715] 
+draw    (479.01,265.65) -- (443.69,242.39) ;
+draw [shift={(442.01,241.29)}, rotate = 393.35] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da45512845584180484] 
+draw [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ][line width=1.5]    (322.51,199.65) -- (390.01,205.3) ;
+%Straight Lines [id:da2710999199328398] 
+draw    (258.01,68.29) -- (391.01,112.29) ;
+%Straight Lines [id:da5041331117919979] 
+draw    (258.01,68.29) -- (342.01,48.29) ;
+%Straight Lines [id:da7600943257242166] 
+draw    (342.01,48.29) -- (401.01,85.29) ;
+%Shape: Circle [id:dp20792734515993871] 
+draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (384,112.29) .. controls (384,110.36) and (385.57,108.79) .. (387.51,108.79) .. controls (389.44,108.79) and (391.01,110.36) .. (391.01,112.29) .. controls (391.01,114.23) and (389.44,115.8) .. (387.51,115.8) .. controls (385.57,115.8) and (384,114.23) .. (384,112.29) -- cycle ;
+%Shape: Circle [id:dp931979364961288] 
+draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (282.51,125.29) .. controls (282.51,123.36) and (284.08,121.79) .. (286.01,121.79) .. controls (287.95,121.79) and (289.52,123.36) .. (289.52,125.29) .. controls (289.52,127.23) and (287.95,128.8) .. (286.01,128.8) .. controls (284.08,128.8) and (282.51,127.23) .. (282.51,125.29) -- cycle ;
+%Shape: Circle [id:dp10587900368234993] 
+draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (322.51,199.65) .. controls (322.51,197.71) and (324.08,196.14) .. (326.02,196.14) .. controls (327.96,196.14) and (329.53,197.71) .. (329.53,199.65) .. controls (329.53,201.58) and (327.96,203.15) .. (326.02,203.15) .. controls (324.08,203.15) and (322.51,201.58) .. (322.51,199.65) -- cycle ;
+%Shape: Circle [id:dp24956708883150291] 
+draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (352.75,202.47) .. controls (352.75,200.54) and (354.32,198.97) .. (356.26,198.97) .. controls (358.2,198.97) and (359.77,200.54) .. (359.77,202.47) .. controls (359.77,204.41) and (358.2,205.98) .. (356.26,205.98) .. controls (354.32,205.98) and (352.75,204.41) .. (352.75,202.47) -- cycle ;
+%Shape: Circle [id:dp39127296211326135] 
+draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (386.5,205.3) .. controls (386.5,203.36) and (388.07,201.79) .. (390.01,201.79) .. controls (391.94,201.79) and (393.51,203.36) .. (393.51,205.3) .. controls (393.51,207.24) and (391.94,208.81) .. (390.01,208.81) .. controls (388.07,208.81) and (386.5,207.24) .. (386.5,205.3) -- cycle ;
+
+% Text Node
+draw (721,21) node    {};
+% Text Node
+draw (701,71) node    {};
+% Text Node
+draw (525,242.26) node [anchor=north west][inner sep=0.75pt]  [font=LARGE]  {$mathcal{T}$};
+
+end{tikzpicture}
+    caption{Negative expansion of null geodesics with length $lambda$ forming $B$}
+    label{fig:null_geodesics}
+    end{centering}
+end{figure}
+			Assume we can continue all in-going and out-going normal geodesics a certain length.par
+			Let $theta_{0}$ be max($theta$) of the expansion of all the geodesic congruences.par
+			$theta_{0} <less $ but close to $0$, because all geodesics have negative expansion.par
+			Extend all geodesics with affine paramter $lambda$ where $lambdain[0, frac{2}{|theta_{0}|}]$par
+			Then every geodesic hits a conjugate point and leaves the boundary of the future of the trapped set ($B$) (2.1).par
+			begin{equation}
+			    begin{align}
+			    dot{I}^{+}(mathcal{T}) = B
+			    end{align}
+			    label{boundary}
+			end{equation}
+			The set $A$ can be defined as:par
+			begin{equation}
+				begin{align}
+				A: mathcal{T}_{-x}[0, frac{2}{|theta_{0}|}] cup mathcal{T}_{+x}[0, frac{2}{|theta_{0}|}]
+				end{align}
+    			label{eq:compact}
+			end{equation}
+			Where $mathcal{T}_{-x}[0, frac{2}{|theta_{0}|}]$ represents the lower sheet created by the in-going geodesics (gray area in Figure 7) and $mathcal{T}_{+x}[0, frac{2}{|theta_{0}|}]$ is the upper sheet created by out-going geodesics.par 
+			$A$ is compact, or a finite set of points that are closed on the manifold.par
+			$B$ is contained in $A$par
+			$B$ starts at the trapped surface $mathcal{T}$ and stops where the geodesics collide (red lines in Figure 7). par
+			$Rightarrow$ $B$ is compact.
+			
+    		
+		begin{figure} [h!]
+				begin{centering}
+tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+uncomment if require: path (0,349); %set diagram left start at 0, and has height of 349
+
+%Shape: Arc [id:dp8613206792384752] 
+draw  [draw opacity=0] (362.89,77.97) .. controls (363.08,77.49) and (363.17,77) .. (363.17,76.5) .. controls (363.09,72.15) and (355.13,68.76) .. (345.39,68.93) .. controls (335.66,69.11) and (327.83,72.78) .. (327.91,77.14) .. controls (327.92,77.67) and (328.04,78.19) .. (328.28,78.69) -- (345.54,76.82) -- cycle ; draw  [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ] (362.89,77.97) .. controls (363.08,77.49) and (363.17,77) .. (363.17,76.5) .. controls (363.09,72.15) and (355.13,68.76) .. (345.39,68.93) .. controls (335.66,69.11) and (327.83,72.78) .. (327.91,77.14) .. controls (327.92,77.67) and (328.04,78.19) .. (328.28,78.69) ;
+%Shape: Arc [id:dp8644053530646906] 
+draw  [draw opacity=0] (379.03,150.51) .. controls (379.8,149.56) and (380.2,148.58) .. (380.18,147.56) .. controls (380.07,141.3) and (363.86,136.51) .. (343.98,136.86) .. controls (324.1,137.22) and (308.08,142.59) .. (308.19,148.86) .. controls (308.21,149.94) and (308.71,150.97) .. (309.62,151.95) -- (344.19,148.21) -- cycle ; draw  [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ] (379.03,150.51) .. controls (379.8,149.56) and (380.2,148.58) .. (380.18,147.56) .. controls (380.07,141.3) and (363.86,136.51) .. (343.98,136.86) .. controls (324.1,137.22) and (308.08,142.59) .. (308.19,148.86) .. controls (308.21,149.94) and (308.71,150.97) .. (309.62,151.95) ;
+%Shape: Parallelogram [id:dp06410263553265538] 
+draw   (244.89,205) -- (492,205) -- (427.73,298.12) -- (180.62,298.12) -- cycle ;
+%Shape: Ellipse [id:dp05246965261264258] 
+draw   (258.01,246.06) .. controls (258.01,229.46) and (295.02,216) .. (340.66,216) .. controls (386.31,216) and (423.31,229.46) .. (423.31,246.06) .. controls (423.31,262.66) and (386.31,276.12) .. (340.66,276.12) .. controls (295.02,276.12) and (258.01,262.66) .. (258.01,246.06) -- cycle ;
+%Shape: Arc [id:dp7833781356222855] 
+draw  [draw opacity=0] (378.42,144.71) .. controls (379.55,145.6) and (380.17,146.56) .. (380.18,147.56) .. controls (380.28,152.78) and (364.24,157.3) .. (344.36,157.66) .. controls (324.48,158.01) and (308.28,154.07) .. (308.19,148.86) .. controls (308.17,147.79) and (308.83,146.74) .. (310.07,145.76) -- (344.19,148.21) -- cycle ; draw   (378.42,144.71) .. controls (379.55,145.6) and (380.17,146.56) .. (380.18,147.56) .. controls (380.28,152.78) and (364.24,157.3) .. (344.36,157.66) .. controls (324.48,158.01) and (308.28,154.07) .. (308.19,148.86) .. controls (308.17,147.79) and (308.83,146.74) .. (310.07,145.76) ;
+%Shape: Ellipse [id:dp8597442848962757] 
+draw   (288,176.56) .. controls (288,164.1) and (313.08,154) .. (344.01,154) .. controls (374.94,154) and (400.01,164.1) .. (400.01,176.56) .. controls (400.01,189.02) and (374.94,199.12) .. (344.01,199.12) .. controls (313.08,199.12) and (288,189.02) .. (288,176.56) -- cycle ;
+%Straight Lines [id:da7509793473904469] 
+draw    (288,176.56) -- (345.01,96.12) ;
+%Straight Lines [id:da6210804157489149] 
+draw    (345.01,96.12) -- (400.01,176.56) ;
+%Straight Lines [id:da04393920856561284] 
+draw    (288,176.56) -- (346.01,30.12) ;
+%Straight Lines [id:da9395471288597927] 
+draw    (346.01,30.12) -- (400.01,176.56) ;
+%Shape: Arc [id:dp4994268403998612] 
+draw  [draw opacity=0] (362.63,75.07) .. controls (362.97,75.53) and (363.16,76.01) .. (363.17,76.5) .. controls (363.22,79.81) and (355.38,82.63) .. (345.64,82.8) .. controls (335.91,82.98) and (327.97,80.44) .. (327.91,77.14) .. controls (327.9,76.61) and (328.09,76.09) .. (328.46,75.59) -- (345.54,76.82) -- cycle ; draw   (362.63,75.07) .. controls (362.97,75.53) and (363.16,76.01) .. (363.17,76.5) .. controls (363.22,79.81) and (355.38,82.63) .. (345.64,82.8) .. controls (335.91,82.98) and (327.97,80.44) .. (327.91,77.14) .. controls (327.9,76.61) and (328.09,76.09) .. (328.46,75.59) ;
+%Shape: Arc [id:dp11985263250187295] 
+draw  [draw opacity=0] (362.49,126.87) .. controls (362.91,126.35) and (363.14,125.82) .. (363.13,125.27) .. controls (363.06,121.87) and (354.23,119.28) .. (343.4,119.47) .. controls (332.57,119.66) and (323.84,122.58) .. (323.9,125.97) .. controls (323.91,126.56) and (324.19,127.12) .. (324.69,127.65) -- (343.51,125.62) -- cycle ; draw  [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ] (362.49,126.87) .. controls (362.91,126.35) and (363.14,125.82) .. (363.13,125.27) .. controls (363.06,121.87) and (354.23,119.28) .. (343.4,119.47) .. controls (332.57,119.66) and (323.84,122.58) .. (323.9,125.97) .. controls (323.91,126.56) and (324.19,127.12) .. (324.69,127.65) ;
+%Shape: Arc [id:dp6785498475549194] 
+draw  [draw opacity=0] (363.84,122.87) .. controls (364.1,123.37) and (364.24,123.9) .. (364.25,124.44) .. controls (364.33,128.85) and (355.8,132.58) .. (345.2,132.77) .. controls (334.61,132.96) and (325.95,129.54) .. (325.87,125.13) .. controls (325.86,124.55) and (326,123.99) .. (326.27,123.44) -- (345.06,124.79) -- cycle ; draw  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ] (363.84,122.87) .. controls (364.1,123.37) and (364.24,123.9) .. (364.25,124.44) .. controls (364.33,128.85) and (355.8,132.58) .. (345.2,132.77) .. controls (334.61,132.96) and (325.95,129.54) .. (325.87,125.13) .. controls (325.86,124.55) and (326,123.99) .. (326.27,123.44) ;
+%Curve Lines [id:da018234117358881585] 
+draw    (467.01,57.12) .. controls (431.37,105.63) and (407.5,41.43) .. (373.06,83.8) ;
+draw [shift={(372.01,85.12)}, rotate = 307.87] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da37455840618459746] 
+draw    (228.01,331.12) -- (226.04,186.12) ;
+draw [shift={(226.01,184.12)}, rotate = 449.22] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da6707321286889175] 
+draw    (257.01,308.12) -- (253.07,172.12) ;
+draw [shift={(253.01,170.12)}, rotate = 448.34] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da570847896674494] 
+draw    (438.01,298.12) -- (434.08,174.12) ;
+draw [shift={(434.01,172.12)}, rotate = 448.18] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da600545055629228] 
+draw    (458.01,263.12) -- (457.03,135.12) ;
+draw [shift={(457.01,133.12)}, rotate = 449.56] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Shape: Circle [id:dp548756349664266] 
+draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (224.01,260.62) .. controls (224.01,258.68) and (225.58,257.12) .. (227.51,257.12) .. controls (229.45,257.12) and (231.01,258.68) .. (231.01,260.62) .. controls (231.01,262.55) and (229.45,264.12) .. (227.51,264.12) .. controls (225.58,264.12) and (224.01,262.55) .. (224.01,260.62) -- cycle ;
+%Shape: Circle [id:dp4231214277191431] 
+draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (258.51,235.62) .. controls (258.51,233.68) and (256.95,232.12) .. (255.01,232.12) .. controls (253.08,232.12) and (251.51,233.68) .. (251.51,235.62) .. controls (251.51,237.55) and (253.08,239.12) .. (255.01,239.12) .. controls (256.95,239.12) and (258.51,237.55) .. (258.51,235.62) -- cycle ;
+%Shape: Circle [id:dp23196050194451] 
+draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (431,242.51) .. controls (431,240.57) and (432.57,239) .. (434.51,239) .. controls (436.44,239) and (438.01,240.57) .. (438.01,242.51) .. controls (438.01,244.44) and (436.44,246.01) .. (434.51,246.01) .. controls (432.57,246.01) and (431,244.44) .. (431,242.51) -- cycle ;
+%Shape: Circle [id:dp9210784222597797] 
+draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (454,215.51) .. controls (454,213.57) and (455.57,212) .. (457.51,212) .. controls (459.44,212) and (461.01,213.57) .. (461.01,215.51) .. controls (461.01,217.44) and (459.44,219.01) .. (457.51,219.01) .. controls (455.57,219.01) and (454,217.44) .. (454,215.51) -- cycle ;
+%Straight Lines [id:da1309074644124808] 
+draw    (309.62,151.95) -- (308.66,235.07) ;
+draw [shift={(308.63,237.07)}, rotate = 270.65999999999997] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da8726479859643524] 
+draw    (379.03,150.51) -- (378.07,233.63) ;
+draw [shift={(378.04,235.63)}, rotate = 270.65999999999997] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da7644496330670985] 
+draw    (320.01,94.12) .. controls (284.19,120.98) and (228.57,192.4) .. (287.12,252.22) ;
+draw [shift={(288.01,253.12)}, rotate = 225] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da8205011768014053] 
+draw    (371.01,96.12) .. controls (399.87,129.95) and (458.43,187.54) .. (402.86,252.14) ;
+draw [shift={(402.01,253.12)}, rotate = 311.25] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Shape: Circle [id:dp003426000988457245] 
+draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (305.13,240.57) .. controls (305.13,238.64) and (306.7,237.07) .. (308.63,237.07) .. controls (310.57,237.07) and (312.14,238.64) .. (312.14,240.57) .. controls (312.14,242.51) and (310.57,244.08) .. (308.63,244.08) .. controls (306.7,244.08) and (305.13,242.51) .. (305.13,240.57) -- cycle ;
+%Shape: Circle [id:dp6759624041964335] 
+draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (374.54,239.14) .. controls (374.54,237.2) and (376.11,235.63) .. (378.04,235.63) .. controls (379.98,235.63) and (381.55,237.2) .. (381.55,239.14) .. controls (381.55,241.07) and (379.98,242.65) .. (378.04,242.65) .. controls (376.11,242.65) and (374.54,241.07) .. (374.54,239.14) -- cycle ;
+%Shape: Circle [id:dp7721733625818024] 
+draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (288.01,253.12) .. controls (288.01,251.18) and (289.59,249.61) .. (291.52,249.61) .. controls (293.46,249.61) and (295.03,251.18) .. (295.03,253.12) .. controls (295.03,255.05) and (293.46,256.63) .. (291.52,256.63) .. controls (289.59,256.63) and (288.01,255.05) .. (288.01,253.12) -- cycle ;
+%Shape: Circle [id:dp3453972492799824] 
+draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (395,253.12) .. controls (395,251.18) and (396.57,249.61) .. (398.51,249.61) .. controls (400.44,249.61) and (402.01,251.18) .. (402.01,253.12) .. controls (402.01,255.05) and (400.44,256.63) .. (398.51,256.63) .. controls (396.57,256.63) and (395,255.05) .. (395,253.12) -- cycle ;
+%Curve Lines [id:da04729554145712367] 
+draw    (392.01,310.12) .. controls (409.98,267.86) and (341.83,306.51) .. (340.65,277.95) ;
+draw [shift={(340.66,276.12)}, rotate = 452.95] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Shape: Circle [id:dp9214605385064162] 
+draw   (359.74,96.12) .. controls (359.74,89.89) and (364.79,84.84) .. (371.01,84.84) .. controls (377.24,84.84) and (382.29,89.89) .. (382.29,96.12) .. controls (382.29,102.35) and (377.24,107.4) .. (371.01,107.4) .. controls (364.79,107.4) and (359.74,102.35) .. (359.74,96.12) -- cycle ;
+%Shape: Circle [id:dp8846488851718763] 
+draw   (386.07,253.13) .. controls (386.07,245.95) and (391.89,240.13) .. (399.07,240.13) .. controls (406.24,240.13) and (412.06,245.95) .. (412.06,253.13) .. controls (412.06,260.3) and (406.24,266.12) .. (399.07,266.12) .. controls (391.89,266.12) and (386.07,260.3) .. (386.07,253.13) -- cycle ;
+
+% Text Node
+draw (721,21) node    {};
+% Text Node
+draw (701,71) node    {};
+% Text Node
+draw (402.01,179.06) node [anchor=north west][inner sep=0.75pt]  [font=large] [align=left] {$displaystyle mathcal{T}$};
+% Text Node
+draw (469,44.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {$displaystyle B = dot{I}^{+}$($displaystyle mathcal{T}$)};
+% Text Node
+draw (474,229.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {$displaystyle Sigma $};
+% Text Node
+draw (470,251.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {$displaystyle t$ = const};
+% Text Node
+draw (384,308.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {$displaystyle S$};
+
+
+end{tikzpicture}
+		caption{Representation of $B$, where $S$ is a set of points in the Cauchy surface $Sigma$. Integral curves give a map $Psi$ from $B$ to $S subset Sigma$.}
+		label{fig:S_cauchy1}
+		end{centering}
+	end{figure}	
+	This is a huge problem for $B$ to be compact. Because the spacetime is globally hyperbolic, the Cauchy surface is like a moment in constant time. And in globally hyperbolic spacetime, there is a set of integral curves of timelike vector fields which pierce the Cauchy surface.
+begin{figure}[H]
+    centering
+tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+uncomment if require: path (0,180); %set diagram left start at 0, and has height of 180
+
+%Straight Lines [id:da8378777927333473] 
+draw    (197.01,28.25) -- (250,106) ;
+%Straight Lines [id:da722065706859793] 
+draw    (454.01,28.25) -- (398,107) ;
+%Straight Lines [id:da39504264564552594] 
+draw    (250,106) -- (398,107) ;
+%Straight Lines [id:da27826216169550955] 
+draw    (170,152) -- (485.01,154.25) ;
+%Straight Lines [id:da3755628253120771] 
+draw    (234.01,53.25) -- (234.01,152.25) ;
+%Straight Lines [id:da6833123495493997] 
+draw    (209.01,28.25) -- (210.01,152.25) ;
+%Straight Lines [id:da904271577441708] 
+draw    (421.01,42.25) -- (421.01,153.25) ;
+%Shape: Circle [id:dp657778050501342] 
+draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (205.01,47.22) .. controls (205.01,45.29) and (206.59,43.72) .. (208.52,43.72) .. controls (210.46,43.72) and (212.03,45.29) .. (212.03,47.22) .. controls (212.03,49.16) and (210.46,50.73) .. (208.52,50.73) .. controls (206.59,50.73) and (205.01,49.16) .. (205.01,47.22) -- cycle ;
+%Shape: Circle [id:dp8457193167424172] 
+draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (230.01,82.22) .. controls (230.01,80.29) and (231.59,78.72) .. (233.52,78.72) .. controls (235.46,78.72) and (237.03,80.29) .. (237.03,82.22) .. controls (237.03,84.16) and (235.46,85.73) .. (233.52,85.73) .. controls (231.59,85.73) and (230.01,84.16) .. (230.01,82.22) -- cycle ;
+%Straight Lines [id:da15399651298133832] 
+draw    (444.01,30.25) -- (443.01,154.25) ;
+%Straight Lines [id:da6238634655213243] 
+draw    (209.02,59.88) -- (209.97,118.63) ;
+draw [shift={(210.01,120.63)}, rotate = 269.07] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da675589558427671] 
+draw    (233.52,82.22) -- (234.47,140.97) ;
+draw [shift={(234.51,142.97)}, rotate = 269.07] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Shape: Circle [id:dp38817015298022683] 
+draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (417.01,74.22) .. controls (417.01,72.29) and (418.59,70.72) .. (420.52,70.72) .. controls (422.46,70.72) and (424.03,72.29) .. (424.03,74.22) .. controls (424.03,76.16) and (422.46,77.73) .. (420.52,77.73) .. controls (418.59,77.73) and (417.01,76.16) .. (417.01,74.22) -- cycle ;
+%Shape: Circle [id:dp6364572776071167] 
+draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (440.01,43.22) .. controls (440.01,41.29) and (441.59,39.72) .. (443.52,39.72) .. controls (445.46,39.72) and (447.03,41.29) .. (447.03,43.22) .. controls (447.03,45.16) and (445.46,46.73) .. (443.52,46.73) .. controls (441.59,46.73) and (440.01,45.16) .. (440.01,43.22) -- cycle ;
+%Straight Lines [id:da5178038012094991] 
+draw    (420.52,77.73) -- (421.47,136.48) ;
+draw [shift={(421.51,138.48)}, rotate = 269.07] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da5440331620955164] 
+draw    (443.52,46.73) -- (444,106.25) ;
+draw [shift={(444.01,108.25)}, rotate = 269.54] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+draw (721,21) node    {};
+% Text Node
+draw (701,71) node    {};
+% Text Node
+draw (496,144.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {$displaystyle Sigma $};
+% Text Node
+draw (368,107) node [anchor=north west][inner sep=0.75pt]   [align=left] {$displaystyle S$};
+% Text Node
+draw (453.01,38.75) node [anchor=north west][inner sep=0.75pt]   [align=left] {$displaystyle dot{I}^{+}$($displaystyle S$)};
+end{tikzpicture}
+    caption{Set of integral curves piercing $S$ from Cauchy surface $Sigma$.}
+    label{fig:S_cauchy2}
+end{figure}
+It must be true that the set of integral curves flowing from $Sigma$ pierces each point of S once and only once. Integral curves of $t^{mu}$ associated with $t$ on $mathfrak{M}$ give a map:par
+begin{equation}
+begin{align}
+Psi:B Rightarrow SsubsetSigma
+end{align}
+end{equation}
+However, it is impossible to take a compact surface formed by $B$ and flatten it in a consistent way onto a $SsubsetSigma$. $B$ is compact and $Psi$ is a homeomorphism (topology-conserving), $S$ must be compact or closed. Every point in $B$ has an open neighborhood where $S$ must be open.par
+Therefore, $S$ must be closed and open only if $S = Sigma$par
+However $S$ is compact (finite) and $Sigma$ is non-compact (infinite), which means that $S$ cannot be closed and open, which is a contradiction!par
+  
+ Another picture to guide your intuition can be described by stereographic projection of a sphere.par
+ begin{figure}[H]
+     centering
+     
+
+tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+uncomment if require: path (0,367); %set diagram left start at 0, and has height of 367
+
+%Straight Lines [id:da11014020453746842] 
+draw [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ]   (361.51,41.31) -- (323,126) ;
+%Shape: Parallelogram [id:dp47571090298906404] 
+draw   (195.74,201.29) -- (579.01,201.29) -- (504.77,292.29) -- (121.5,292.29) -- cycle ;
+%Shape: Circle [id:dp5924703605685586] 
+draw   (303.01,99.8) .. controls (303.01,67.5) and (329.2,41.31) .. (361.51,41.31) .. controls (393.81,41.31) and (420,67.5) .. (420,99.8) .. controls (420,132.11) and (393.81,158.29) .. (361.51,158.29) .. controls (329.2,158.29) and (303.01,132.11) .. (303.01,99.8) -- cycle ;
+%Straight Lines [id:da42875437218735524] 
+draw    (361.51,41.31) -- (486.04,61.97) ;
+draw [shift={(488.01,62.29)}, rotate = 189.42] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da036213465470601336] 
+draw    (361.51,41.31) -- (591.1,108.73) ;
+draw [shift={(593.01,109.29)}, rotate = 196.37] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Shape: Circle [id:dp9459113580266608] 
+draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (358,41.31) .. controls (358,39.37) and (359.57,37.8) .. (361.51,37.8) .. controls (363.44,37.8) and (365.01,39.37) .. (365.01,41.31) .. controls (365.01,43.25) and (363.44,44.82) .. (361.51,44.82) .. controls (359.57,44.82) and (358,43.25) .. (358,41.31) -- cycle ;
+%Straight Lines [id:da7045279225940896] 
+draw    (361.51,41.31) -- (247,53.09) ;
+draw [shift={(245.01,53.29)}, rotate = 354.13] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da2649119844464828] 
+draw    (361.51,41.31) -- (115.94,108.76) ;
+draw [shift={(114.01,109.29)}, rotate = 344.64] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da7143543480117147] 
+draw    (393,123) -- (453.01,241.29) ;
+%Straight Lines [id:da4385323115642382] 
+draw    (323,126) -- (271.01,240.29) ;
+%Straight Lines [id:da6368893987134375] 
+draw    (361.51,158.29) -- (363.52,238.15) ;
+%Shape: Circle [id:dp2800531193123805] 
+draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (319.49,126) .. controls (319.49,124.06) and (321.06,122.49) .. (323,122.49) .. controls (324.94,122.49) and (326.51,124.06) .. (326.51,126) .. controls (326.51,127.94) and (324.94,129.51) .. (323,129.51) .. controls (321.06,129.51) and (319.49,127.94) .. (319.49,126) -- cycle ;
+%Shape: Circle [id:dp4359123106995523] 
+draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (360.01,238.15) .. controls (360.01,236.21) and (361.59,234.64) .. (363.52,234.64) .. controls (365.46,234.64) and (367.03,236.21) .. (367.03,238.15) .. controls (367.03,240.08) and (365.46,241.65) .. (363.52,241.65) .. controls (361.59,241.65) and (360.01,240.08) .. (360.01,238.15) -- cycle ;
+%Shape: Circle [id:dp0789353916936405] 
+draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (358,158.29) .. controls (358,156.36) and (359.57,154.79) .. (361.51,154.79) .. controls (363.44,154.79) and (365.01,156.36) .. (365.01,158.29) .. controls (365.01,160.23) and (363.44,161.8) .. (361.51,161.8) .. controls (359.57,161.8) and (358,160.23) .. (358,158.29) -- cycle ;
+%Shape: Circle [id:dp4524582954916745] 
+draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (389.49,123) .. controls (389.49,121.06) and (391.06,119.49) .. (393,119.49) .. controls (394.94,119.49) and (396.51,121.06) .. (396.51,123) .. controls (396.51,124.94) and (394.94,126.51) .. (393,126.51) .. controls (391.06,126.51) and (389.49,124.94) .. (389.49,123) -- cycle ;
+%Shape: Circle [id:dp9278000442246971] 
+draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (449.51,241.29) .. controls (449.51,239.36) and (451.08,237.79) .. (453.01,237.79) .. controls (454.95,237.79) and (456.52,239.36) .. (456.52,241.29) .. controls (456.52,243.23) and (454.95,244.8) .. (453.01,244.8) .. controls (451.08,244.8) and (449.51,243.23) .. (449.51,241.29) -- cycle ;
+%Shape: Circle [id:dp5512641277526081] 
+draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (267.51,240.29) .. controls (267.51,238.36) and (269.08,236.79) .. (271.01,236.79) .. controls (272.95,236.79) and (274.52,238.36) .. (274.52,240.29) .. controls (274.52,242.23) and (272.95,243.8) .. (271.01,243.8) .. controls (269.08,243.8) and (267.51,242.23) .. (267.51,240.29) -- cycle ;
+%Shape: Circle [id:dp9010521772753769] 
+draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (371.01,83.12) .. controls (371.01,81.18) and (372.59,79.61) .. (374.52,79.61) .. controls (376.46,79.61) and (378.03,81.18) .. (378.03,83.12) .. controls (378.03,85.05) and (376.46,86.63) .. (374.52,86.63) .. controls (372.59,86.63) and (371.01,85.05) .. (371.01,83.12) -- cycle ;
+%Shape: Ellipse [id:dp6808249450767432] 
+draw   (230.01,238.15) .. controls (230.01,224.26) and (288.22,213) .. (360.01,213) .. controls (431.81,213) and (490.01,224.26) .. (490.01,238.15) .. controls (490.01,252.04) and (431.81,263.29) .. (360.01,263.29) .. controls (288.22,263.29) and (230.01,252.04) .. (230.01,238.15) -- cycle ;
+%Shape: Circle [id:dp003531120099526941] 
+draw   (312.35,126) .. controls (312.35,120.12) and (317.12,115.35) .. (323,115.35) .. controls (328.88,115.35) and (333.65,120.12) .. (333.65,126) .. controls (333.65,131.88) and (328.88,136.65) .. (323,136.65) .. controls (317.12,136.65) and (312.35,131.88) .. (312.35,126) -- cycle ;
+%Shape: Circle [id:dp04310281535307947] 
+draw   (350.86,158.29) .. controls (350.86,152.41) and (355.63,147.65) .. (361.51,147.65) .. controls (367.39,147.65) and (372.15,152.41) .. (372.15,158.29) .. controls (372.15,164.17) and (367.39,168.94) .. (361.51,168.94) .. controls (355.63,168.94) and (350.86,164.17) .. (350.86,158.29) -- cycle ;
+%Shape: Circle [id:dp742800670517081] 
+draw   (382.35,123) .. controls (382.35,117.12) and (387.12,112.35) .. (393,112.35) .. controls (398.88,112.35) and (403.65,117.12) .. (403.65,123) .. controls (403.65,128.88) and (398.88,133.65) .. (393,133.65) .. controls (387.12,133.65) and (382.35,128.88) .. (382.35,123) -- cycle ;
+%Shape: Circle [id:dp5929781650912911] 
+draw   (350.86,41.31) .. controls (350.86,35.43) and (355.63,30.66) .. (361.51,30.66) .. controls (367.39,30.66) and (372.15,35.43) .. (372.15,41.31) .. controls (372.15,47.19) and (367.39,51.96) .. (361.51,51.96) .. controls (355.63,51.96) and (350.86,47.19) .. (350.86,41.31) -- cycle ;
+%Shape: Circle [id:dp9686237939310715] 
+draw   (95.35,242) .. controls (95.35,236.12) and (100.12,231.35) .. (106,231.35) .. controls (111.88,231.35) and (116.65,236.12) .. (116.65,242) .. controls (116.65,247.88) and (111.88,252.65) .. (106,252.65) .. controls (100.12,252.65) and (95.35,247.88) .. (95.35,242) -- cycle ;
+%Shape: Circle [id:dp6307956574382036] 
+draw   (442.37,241.29) .. controls (442.37,235.41) and (447.13,230.65) .. (453.01,230.65) .. controls (458.89,230.65) and (463.66,235.41) .. (463.66,241.29) .. controls (463.66,247.17) and (458.89,251.94) .. (453.01,251.94) .. controls (447.13,251.94) and (442.37,247.17) .. (442.37,241.29) -- cycle ;
+%Shape: Circle [id:dp10570855967011283] 
+draw   (260.37,240.29) .. controls (260.37,234.41) and (265.13,229.65) .. (271.01,229.65) .. controls (276.89,229.65) and (281.66,234.41) .. (281.66,240.29) .. controls (281.66,246.17) and (276.89,250.94) .. (271.01,250.94) .. controls (265.13,250.94) and (260.37,246.17) .. (260.37,240.29) -- cycle ;
+%Shape: Circle [id:dp6385490217371897] 
+draw   (363.88,83.12) .. controls (363.88,77.24) and (368.64,72.47) .. (374.52,72.47) .. controls (380.4,72.47) and (385.17,77.24) .. (385.17,83.12) .. controls (385.17,89) and (380.4,93.76) .. (374.52,93.76) .. controls (368.64,93.76) and (363.88,89) .. (363.88,83.12) -- cycle ;
+%Shape: Circle [id:dp3626081122101019] 
+draw   (352.88,238.15) .. controls (352.88,232.27) and (357.64,227.5) .. (363.52,227.5) .. controls (369.4,227.5) and (374.17,232.27) .. (374.17,238.15) .. controls (374.17,244.03) and (369.4,248.79) .. (363.52,248.79) .. controls (357.64,248.79) and (352.88,244.03) .. (352.88,238.15) -- cycle ;
+%Shape: Circle [id:dp2716635377471741] 
+draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (320.49,77) .. controls (320.49,75.06) and (322.06,73.49) .. (324,73.49) .. controls (325.94,73.49) and (327.51,75.06) .. (327.51,77) .. controls (327.51,78.94) and (325.94,80.51) .. (324,80.51) .. controls (322.06,80.51) and (320.49,78.94) .. (320.49,77) -- cycle ;
+%Shape: Circle [id:dp32127189697892355] 
+draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (477.01,229.12) .. controls (477.01,227.18) and (478.59,225.61) .. (480.52,225.61) .. controls (482.46,225.61) and (484.03,227.18) .. (484.03,229.12) .. controls (484.03,231.05) and (482.46,232.63) .. (480.52,232.63) .. controls (478.59,232.63) and (477.01,231.05) .. (477.01,229.12) -- cycle ;
+%Straight Lines [id:da4394960394773162] 
+draw    (554,251) -- (632.02,249.34) ;
+draw [shift={(634.01,249.29)}, rotate = 538.78] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da5301427350244136] 
+draw    (387.01,255.29) .. controls (353.01,266.29) and (364.01,321.29) .. (342.01,328.29) ;
+%Straight Lines [id:da6629203179072083] 
+draw    (254.01,301.29) -- (230.01,342.27) ;
+draw [shift={(229,344)}, rotate = 300.36] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Shape: Arc [id:dp5817580718443695] 
+draw  [draw opacity=0] (488.77,235.8) .. controls (488.52,236.04) and (488.27,236.26) .. (488,236.48) .. controls (483.02,240.61) and (476.08,240.46) .. (472.51,236.15) .. controls (470,233.11) and (469.82,228.82) .. (471.68,225.11) -- (481.54,228.68) -- cycle ; draw   (488.77,235.8) .. controls (488.52,236.04) and (488.27,236.26) .. (488,236.48) .. controls (483.02,240.61) and (476.08,240.46) .. (472.51,236.15) .. controls (470,233.11) and (469.82,228.82) .. (471.68,225.11) ;
+%Straight Lines [id:da03927685732819186] 
+draw    (114.01,234.29) -- (324,77) ;
+
+% Text Node
+draw (721,21) node    {};
+% Text Node
+draw (701,71) node    {};
+% Text Node
+draw (380,18.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {$displaystyle S^{2}$};
+% Text Node
+draw (522,173.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {$displaystyle mathbb{R}^{2}$};
+% Text Node
+draw (322,321.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {$displaystyle A$};
+end{tikzpicture}
+     caption{Stereographic projection of a sphere, where $A$ is a compact subet of $mathbb{R}^{2}$}
+     label{fig:stereo_sphere}
+ end{figure}
+ Recall this example (Figure 10), which is to map every point on a sphere onto a point on a plane. We cannot cover the sphere with a single chart of a flat space. The mappings we must generate need to take an entire neighborhood and map it to a neighborhood of $mathbb{R}^{2}$. This is possible, except at the north pole, which is mapped to infinity. $S$ is a compact surface with every point having an open neighborhood. $A$ is a compact subset of $mathbb{R}^{2}$ that cannot have an open neighborhood for every point in $A$.
+ begin{figure}[H]
+     centering
+tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+uncomment if require: path (0,314); %set diagram left start at 0, and has height of 314
+
+%Shape: Ellipse [id:dp6236810128515059] 
+draw   (28,198) .. controls (28,186.95) and (49.72,178) .. (76.51,178) .. controls (103.3,178) and (125.01,186.95) .. (125.01,198) .. controls (125.01,209.05) and (103.3,218) .. (76.51,218) .. controls (49.72,218) and (28,209.05) .. (28,198) -- cycle ;
+%Curve Lines [id:da436411705071282] 
+draw    (138.01,153.32) .. controls (144.94,106.79) and (207.74,157.29) .. (226.46,112.7) ;
+draw [shift={(227.01,111.32)}, rotate = 470.96] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Shape: Circle [id:dp44562155236668743] 
+draw   (250.01,93.51) .. controls (250.01,73.91) and (265.91,58.01) .. (285.51,58.01) .. controls (305.12,58.01) and (321.01,73.91) .. (321.01,93.51) .. controls (321.01,113.12) and (305.12,129.01) .. (285.51,129.01) .. controls (265.91,129.01) and (250.01,113.12) .. (250.01,93.51) -- cycle ;
+%Curve Lines [id:da044489718171356385] 
+draw    (345.01,86.32) .. controls (384.61,56.62) and (410.49,132.77) .. (449.82,105.18) ;
+draw [shift={(451.01,104.32)}, rotate = 503.13] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Shape: Parallelogram [id:dp4206716850743504] 
+draw   (442.75,186) -- (587.42,186) -- (539.42,249.32) -- (394.76,249.32) -- cycle ;
+%Shape: Ellipse [id:dp8020355687029627] 
+draw   (444.09,217.66) .. controls (444.09,206.61) and (465.13,197.66) .. (491.09,197.66) .. controls (517.04,197.66) and (538.09,206.61) .. (538.09,217.66) .. controls (538.09,228.7) and (517.04,237.66) .. (491.09,237.66) .. controls (465.13,237.66) and (444.09,228.7) .. (444.09,217.66) -- cycle ;
+%Shape: Circle [id:dp5872179272652985] 
+draw   (461.01,117.32) .. controls (461.01,101.3) and (473.99,88.31) .. (490.01,88.31) .. controls (506.04,88.31) and (519.02,101.3) .. (519.02,117.32) .. controls (519.02,133.34) and (506.04,146.32) .. (490.01,146.32) .. controls (473.99,146.32) and (461.01,133.34) .. (461.01,117.32) -- cycle ;
+%Curve Lines [id:da0297580427745906] 
+draw    (28,198) .. controls (25.09,168.08) and (29.77,159.73) .. (44.84,142.65) ;
+draw [shift={(46.01,141.32)}, rotate = 491.63] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da47990668797167035] 
+draw    (125.01,198) .. controls (127.94,179.78) and (126.11,158.41) .. (111.19,140.67) ;
+draw [shift={(110.01,139.32)}, rotate = 408.37] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da9954535245076556] 
+draw    (64,217) .. controls (57.15,197.71) and (57.98,169.47) .. (72.13,142.94) ;
+draw [shift={(73.01,141.32)}, rotate = 479.05] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Shape: Circle [id:dp5708465610216997] 
+draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (282.01,58.01) .. controls (282.01,56.08) and (283.58,54.51) .. (285.51,54.51) .. controls (287.45,54.51) and (289.02,56.08) .. (289.02,58.01) .. controls (289.02,59.95) and (287.45,61.52) .. (285.51,61.52) .. controls (283.58,61.52) and (282.01,59.95) .. (282.01,58.01) -- cycle ;
+%Straight Lines [id:da39528704770444123] 
+draw    (490.01,117.32) -- (491.09,217.66) ;
+%Shape: Circle [id:dp15591879970393863] 
+draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (486.51,120.82) .. controls (486.51,118.89) and (488.08,117.32) .. (490.01,117.32) .. controls (491.95,117.32) and (493.52,118.89) .. (493.52,120.82) .. controls (493.52,122.76) and (491.95,124.33) .. (490.01,124.33) .. controls (488.08,124.33) and (486.51,122.76) .. (486.51,120.82) -- cycle ;
+%Shape: Circle [id:dp5110047412853912] 
+draw   (479.37,120.82) .. controls (479.37,114.94) and (484.13,110.18) .. (490.01,110.18) .. controls (495.89,110.18) and (500.66,114.94) .. (500.66,120.82) .. controls (500.66,126.7) and (495.89,131.47) .. (490.01,131.47) .. controls (484.13,131.47) and (479.37,126.7) .. (479.37,120.82) -- cycle ;
+%Shape: Circle [id:dp24088950649256446] 
+draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (487.58,217.66) .. controls (487.58,215.72) and (489.15,214.15) .. (491.09,214.15) .. controls (493.02,214.15) and (494.59,215.72) .. (494.59,217.66) .. controls (494.59,219.6) and (493.02,221.17) .. (491.09,221.17) .. controls (489.15,221.17) and (487.58,219.6) .. (487.58,217.66) -- cycle ;
+%Shape: Circle [id:dp7944561014393003] 
+draw   (480.44,217.66) .. controls (480.44,211.78) and (485.21,207.01) .. (491.09,207.01) .. controls (496.97,207.01) and (501.73,211.78) .. (501.73,217.66) .. controls (501.73,223.54) and (496.97,228.31) .. (491.09,228.31) .. controls (485.21,228.31) and (480.44,223.54) .. (480.44,217.66) -- cycle ;
+%Curve Lines [id:da46032742790702097] 
+draw    (505.15,92.42) .. controls (547.37,69.89) and (512.11,165.38) .. (514.86,198.83) ;
+draw [shift={(515.01,200.32)}, rotate = 262.87] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da009754176776059942] 
+draw    (476.16,91.66) .. controls (436.04,68.15) and (468.31,171.91) .. (467.17,197.51) ;
+draw [shift={(467.01,199.32)}, rotate = 277.77] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Shape: Arc [id:dp5300081773071194] 
+draw  [draw opacity=0] (505.15,92.42) .. controls (508.7,93.87) and (510.87,95.79) .. (510.82,97.85) .. controls (510.71,102.01) and (501.53,105.14) .. (490.32,104.85) .. controls (479.1,104.55) and (470.1,100.94) .. (470.21,96.78) .. controls (470.27,94.73) and (472.53,92.93) .. (476.16,91.66) -- (490.51,97.32) -- cycle ; draw   (505.15,92.42) .. controls (508.7,93.87) and (510.87,95.79) .. (510.82,97.85) .. controls (510.71,102.01) and (501.53,105.14) .. (490.32,104.85) .. controls (479.1,104.55) and (470.1,100.94) .. (470.21,96.78) .. controls (470.27,94.73) and (472.53,92.93) .. (476.16,91.66) ;
+%Curve Lines [id:da8246093451142187] 
+draw    (508,101) .. controls (548,71) and (518.01,112.32) .. (558.01,82.32) ;
+%Curve Lines [id:da8156155345066547] 
+draw    (46.01,141.32) .. controls (80.01,116.32) and (82.01,121.32) .. (110.01,139.32) ;
+%Curve Lines [id:da07629553692338575] 
+draw    (73.01,141.32) .. controls (78.01,129.32) and (79.01,131.32) .. (83.01,125.32) ;
+%Straight Lines [id:da39432628465823993] 
+draw    (490.01,124.33) -- (490,162.01) ;
+draw [shift={(490,164.01)}, rotate = 270.02] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Shape: Circle [id:dp9700380597691705] 
+draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (49.01,136.32) .. controls (49.01,134.38) and (50.59,132.81) .. (52.52,132.81) .. controls (54.46,132.81) and (56.03,134.38) .. (56.03,136.32) .. controls (56.03,138.25) and (54.46,139.82) .. (52.52,139.82) .. controls (50.59,139.82) and (49.01,138.25) .. (49.01,136.32) -- cycle ;
+%Curve Lines [id:da2706086916943258] 
+draw    (71.01,67.55) .. controls (54.2,56.22) and (15.79,84.97) .. (46.08,128.24) ;
+draw [shift={(47.01,129.55)}, rotate = 233.97] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+draw (721,21) node    {};
+% Text Node
+draw (701,71) node    {};
+% Text Node
+draw (562,73.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {open region};
+% Text Node
+draw (75,60.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {point where geodesic\terminates};
+end{tikzpicture}
+     caption{Mapping of }
+     label{fig:geodesic_terminating}
+ end{figure}
+ A single geodesic that hits a singularity can save us from the contradiction. In Figure 11, it is shown that one of the geodesics hits a singularity and terminates. This is the same as a sphere with a single point removed. This point can be widened out so that the sphere has an open region and can be flattened and mapped onto the plane. The points on the caps can be mapped onto the boundary of the disk, while the usual points can still be mapped to the an open neighborhood on the Cauchy surface plane.par
+ 
+ What about trapped surfaces? Can we form them? Imagine a trapped surface such as a distribution of matter (Figure 12).par
+ begin{figure}[H]
+     centering
+tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+uncomment if require: path (0,173); %set diagram left start at 0, and has height of 173
+
+%Shape: Arc [id:dp4102045031860656] 
+draw  [draw opacity=0] (354.52,92.63) .. controls (354.79,92.09) and (354.93,91.54) .. (354.93,90.99) .. controls (354.98,83.42) and (329.86,77.14) .. (298.83,76.95) .. controls (267.8,76.76) and (242.61,82.74) .. (242.56,90.3) .. controls (242.56,90.65) and (242.61,91) .. (242.72,91.34) -- (298.75,90.64) -- cycle ; draw  [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ] (354.52,92.63) .. controls (354.79,92.09) and (354.93,91.54) .. (354.93,90.99) .. controls (354.98,83.42) and (329.86,77.14) .. (298.83,76.95) .. controls (267.8,76.76) and (242.61,82.74) .. (242.56,90.3) .. controls (242.56,90.65) and (242.61,91) .. (242.72,91.34) ;
+%Shape: Circle [id:dp24816975530842833] 
+draw   (241.4,89.81) .. controls (241.4,58.21) and (267.01,32.6) .. (298.61,32.6) .. controls (330.21,32.6) and (355.82,58.21) .. (355.82,89.81) .. controls (355.82,121.41) and (330.21,147.02) .. (298.61,147.02) .. controls (267.01,147.02) and (241.4,121.41) .. (241.4,89.81) -- cycle ;
+%Shape: Arc [id:dp5104298261826015] 
+draw  [draw opacity=0] (353.91,89.78) .. controls (354.16,90.32) and (354.28,90.86) .. (354.29,91.41) .. controls (354.33,99.26) and (329.44,105.77) .. (298.69,105.95) .. controls (267.94,106.14) and (242.98,99.94) .. (242.93,92.09) .. controls (242.93,91.75) and (242.97,91.41) .. (243.07,91.07) -- (298.61,91.75) -- cycle ; draw   (353.91,89.78) .. controls (354.16,90.32) and (354.28,90.86) .. (354.29,91.41) .. controls (354.33,99.26) and (329.44,105.77) .. (298.69,105.95) .. controls (267.94,106.14) and (242.98,99.94) .. (242.93,92.09) .. controls (242.93,91.75) and (242.97,91.41) .. (243.07,91.07) ;
+%Straight Lines [id:da45561081755087185] 
+draw    (272.01,139.29) -- (298.61,91.75) ;
+%Curve Lines [id:da5296050241314655] 
+draw    (336,65) .. controls (376,35) and (363.01,76.29) .. (403.01,46.29) ;
+
+% Text Node
+draw (721,21) node    {};
+% Text Node
+draw (701,71) node    {};
+% Text Node
+draw (287.31,118.02) node [anchor=north west][inner sep=0.75pt]   [align=left] {$displaystyle R$};
+% Text Node
+draw (406,36.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {$displaystyle rho  =$const};
+
+
+end{tikzpicture}
+     caption{Sphere of constant density $rho$}
+     label{fig:sphere1}
+ end{figure}
+ sn{(2.4) $rho = 1 g/cm^{3}$, the density of water}
+ How large do we need to make a ball of water before it becomes a trapped surface?
+ begin{example}  
+ begin{equation}
+     begin{aligned}
+     R &<less frac{2GM}{c^{2}} = frac{2G}{c^{2}}frac{4pi}{3}rho R^{3}\
+     rho &>greater frac{c^{2}}{G}frac{3}{8pi}R^{-2}\
+     R &>greater sqrt{frac{c^{2}}{2G}frac{3}{8pi}frac{1}{rho}}\
+    &= 3times10^{10} cm/s sqrt{frac{1}{1 g/cm^{3}}frac{g/cm^{3} s}{6.67times10^{-8}}}\
+    &approx 10^{14} cm
+     end{aligned}
+ end{equation}
+ end{example}
+  $10^{14} cm Rightarrow$ Orbit of Neptune.par
+  Making R large enough will naturally generate a trapped surface, even with a small density. Inevitably, this will collapse and form a singularity. It is known that stellar collapse will form a trapped surface, so the trapped surface hypothesis is not problematic.par
+ Are the assumptions that global hyperbolicity and the Null Energy Condition realistic? The NEC is believed to be realistic, and has been extended into the Average Null Energy Condition (ANEC).par
+ begin{figure}[H]
+     centering
+tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+uncomment if require: path (0,144); %set diagram left start at 0, and has height of 144
+
+%Straight Lines [id:da6901661113199282] 
+draw    (272.01,112.87) -- (334.59,51.27) ;
+draw [shift={(336.01,49.87)}, rotate = 495.45] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da13653789600021216] 
+draw    (316.01,68.87) -- (378.01,8.87) ;
+%Straight Lines [id:da7948590651430769] 
+draw    (280.01,125.87) -- (384.59,23.27) ;
+draw [shift={(386.01,21.87)}, rotate = 495.55] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da6974048704775926] 
+draw    (295.01,73.87) -- (307.01,87.87) ;
+%Straight Lines [id:da6549573924414869] 
+draw    (311.01,60.87) -- (323.01,74.87) ;
+
+% Text Node
+draw (721,21) node    {};
+% Text Node
+draw (701,71) node    {};
+end{tikzpicture}
+     caption{$langle T_{munu}k^{mu}k^{nu}rangle geq 0$}
+     label{fig:ANEC}
+ end{figure}
+Focus on the higher ray and average the energy content all along the ray, and you want the average number to be greater than $0$.
+In Wald section 9.5, Hawking and others attempt to relax the globally hyperbolic requirement.
+ 
+   
+    section{Cosmological Singularity Theorems}label{sec:cosm_sing_thms}
+Consider a point $P$ and a point $Q$ where $Q$ exists in the causal future of $P$.
+begin{equation}
+    Q in J^{+}(P)
+end{equation}
+Where $J^{+}$ is like $I$, but can have either null or timelike curves. We can define a new kind of space that includes all the possible causal curves that join $P$ and $Q$. The space of all curves is called $C(P,Q)$ (Figure 14).
+begin{figure}[H]
+    centering
+tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+uncomment if require: path (0,205); %set diagram left start at 0, and has height of 205
+
+%Shape: Arc [id:dp6216522468799763] 
+draw  [draw opacity=0] (410.4,94.76) .. controls (405.14,82.45) and (371.88,73.09) .. (331.69,73.27) .. controls (290.51,73.45) and (256.7,83.59) .. (252.84,96.38) -- (331.8,98.51) -- cycle ; draw  [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ] (410.4,94.76) .. controls (405.14,82.45) and (371.88,73.09) .. (331.69,73.27) .. controls (290.51,73.45) and (256.7,83.59) .. (252.84,96.38) ;
+%Shape: Square [id:dp7792809563096963] 
+draw   (334.56,15.82) -- (414.47,97.53) -- (332.75,177.44) -- (252.84,95.73) -- cycle ;
+%Shape: Arc [id:dp390461675055659] 
+draw  [draw opacity=0] (414.47,97.53) .. controls (409.13,110.15) and (375.24,119.75) .. (334.27,119.56) .. controls (292.3,119.37) and (257.85,108.99) .. (253.94,95.88) -- (334.39,93.71) -- cycle ; draw   (414.47,97.53) .. controls (409.13,110.15) and (375.24,119.75) .. (334.27,119.56) .. controls (292.3,119.37) and (257.85,108.99) .. (253.94,95.88) ;
+%Shape: Arc [id:dp9504246540651448] 
+draw  [draw opacity=0] (334.91,176.93) .. controls (322.02,172.38) and (312.01,138.16) .. (312.01,96.63) .. controls (312.01,57.09) and (321.09,24.18) .. (333.07,17.19) -- (337.84,96.63) -- cycle ; draw   (334.91,176.93) .. controls (322.02,172.38) and (312.01,138.16) .. (312.01,96.63) .. controls (312.01,57.09) and (321.09,24.18) .. (333.07,17.19) ;
+%Shape: Arc [id:dp7338361699709768] 
+draw  [draw opacity=0] (332.75,177.44) .. controls (345.63,172.89) and (355.64,138.68) .. (355.64,97.15) .. controls (355.64,57.6) and (346.57,24.7) .. (334.59,17.7) -- (329.82,97.15) -- cycle ; draw   (332.75,177.44) .. controls (345.63,172.89) and (355.64,138.68) .. (355.64,97.15) .. controls (355.64,57.6) and (346.57,24.7) .. (334.59,17.7) ;
+%Shape: Arc [id:dp8923016558561154] 
+draw  [draw opacity=0] (326.47,168.61) .. controls (312.19,165.26) and (301.01,134.66) .. (301.01,97.41) .. controls (301.01,61.59) and (311.35,31.92) .. (324.83,26.72) -- (329.07,97.41) -- cycle ; draw   (326.47,168.61) .. controls (312.19,165.26) and (301.01,134.66) .. (301.01,97.41) .. controls (301.01,61.59) and (311.35,31.92) .. (324.83,26.72) ;
+%Shape: Arc [id:dp9811265539899694] 
+draw  [draw opacity=0] (340.43,167.83) .. controls (354.71,164.49) and (365.89,133.89) .. (365.89,96.63) .. controls (365.89,60.81) and (355.56,31.15) .. (342.07,25.94) -- (337.84,96.63) -- cycle ; draw   (340.43,167.83) .. controls (354.71,164.49) and (365.89,133.89) .. (365.89,96.63) .. controls (365.89,60.81) and (355.56,31.15) .. (342.07,25.94) ;
+%Shape: Circle [id:dp06649157716976739] 
+draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (331.05,19.32) .. controls (331.05,17.39) and (332.62,15.82) .. (334.56,15.82) .. controls (336.5,15.82) and (338.07,17.39) .. (338.07,19.32) .. controls (338.07,21.26) and (336.5,22.83) .. (334.56,22.83) .. controls (332.62,22.83) and (331.05,21.26) .. (331.05,19.32) -- cycle ;
+%Shape: Circle [id:dp31742510545708236] 
+draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (329.25,177.44) .. controls (329.25,175.51) and (330.82,173.94) .. (332.75,173.94) .. controls (334.69,173.94) and (336.26,175.51) .. (336.26,177.44) .. controls (336.26,179.38) and (334.69,180.95) .. (332.75,180.95) .. controls (330.82,180.95) and (329.25,179.38) .. (329.25,177.44) -- cycle ;
+
+% Text Node
+draw (721,21) node    {};
+% Text Node
+draw (701,71) node    {};
+% Text Node
+draw (352,9.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {$displaystyle Q$};
+% Text Node
+draw (309,169.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {$displaystyle P$};
+
+end{tikzpicture}
+    caption{Diagram representing $C(P,Q)$ or topology of $P + Q$}
+    label{fig:penrose1}
+end{figure}
+In Wald, theorem 8.3.9: If $mathfrak{M}$ is globally hyperbolic,
+$subset (P,Q)$ is compact for all $P, Q$ and the set should be closed and fill a finite volume of spacetime.par
+Idea: A continuous function on a compact space attain a maximum and a minimum. Imagine a function over $x$ and a compact interval over $x$ (Figure 15). If function is defined over the interval, it may have a max and a minimum (blue curve).
+
+begin{figure}[H]
+    centering
+
+tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+uncomment if require: path (0,262); %set diagram left start at 0, and has height of 262
+
+%Straight Lines [id:da06685400288429266] 
+draw    (194.01,220.29) -- (195,33.29) ;
+draw [shift={(195.01,31.29)}, rotate = 450.3] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da5853082628161845] 
+draw    (180,205) -- (478.01,204.3) ;
+draw [shift={(480.01,204.29)}, rotate = 539.87] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da9164551531681341] 
+draw    (260.01,195.29) -- (260,213) ;
+%Straight Lines [id:da44132534282747526] 
+draw    (260.01,172.29) -- (260,186) ;
+%Straight Lines [id:da211193483688509] 
+draw    (260.01,150.29) -- (260,164) ;
+%Straight Lines [id:da768530455477237] 
+draw    (260.01,129.29) -- (260,143) ;
+%Straight Lines [id:da8942325842640816] 
+draw    (260.01,108.29) -- (260,122) ;
+%Straight Lines [id:da22831758571036942] 
+draw    (260.01,87.29) -- (260,101) ;
+%Straight Lines [id:da9674638164155327] 
+draw    (260.01,66.29) -- (260,80) ;
+%Straight Lines [id:da2932229009655771] 
+draw    (369.01,196.29) -- (369,214) ;
+%Straight Lines [id:da6396385410777456] 
+draw    (369.01,173.29) -- (369,187) ;
+%Straight Lines [id:da389244713708773] 
+draw    (369.01,151.29) -- (369,165) ;
+%Straight Lines [id:da29889832866726185] 
+draw    (369.01,130.29) -- (369,144) ;
+%Straight Lines [id:da7943051904559515] 
+draw    (369.01,109.29) -- (369,123) ;
+%Straight Lines [id:da9110217678638137] 
+draw    (369.01,88.29) -- (369,102) ;
+%Straight Lines [id:da24265549667978326] 
+draw    (369.01,67.29) -- (369,81) ;
+%Curve Lines [id:da4959942284839175] 
+draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ]   (260.01,108.29) .. controls (327.01,51.29) and (314.01,154.29) .. (369,144) ;
+%Shape: Circle [id:dp15430779646002313] 
+draw  [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ][fill={rgb, 255:red, 74; green, 144; blue, 226 }  ,fill opacity=1 ] (291.25,91.44) .. controls (291.25,89.51) and (292.82,87.94) .. (294.75,87.94) .. controls (296.69,87.94) and (298.26,89.51) .. (298.26,91.44) .. controls (298.26,93.38) and (296.69,94.95) .. (294.75,94.95) .. controls (292.82,94.95) and (291.25,93.38) .. (291.25,91.44) -- cycle ;
+%Shape: Circle [id:dp22889702293069258] 
+draw  [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ][fill={rgb, 255:red, 74; green, 144; blue, 226 }  ,fill opacity=1 ] (365.49,144) .. controls (365.49,142.06) and (367.06,140.49) .. (369,140.49) .. controls (370.94,140.49) and (372.51,142.06) .. (372.51,144) .. controls (372.51,145.94) and (370.94,147.51) .. (369,147.51) .. controls (367.06,147.51) and (365.49,145.94) .. (365.49,144) -- cycle ;
+%Shape: Circle [id:dp9292494724811076] 
+draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (365.51,112.8) .. controls (365.51,110.86) and (367.08,109.29) .. (369.01,109.29) .. controls (370.95,109.29) and (372.52,110.86) .. (372.52,112.8) .. controls (372.52,114.74) and (370.95,116.31) .. (369.01,116.31) .. controls (367.08,116.31) and (365.51,114.74) .. (365.51,112.8) -- cycle ;
+%Shape: Circle [id:dp8989730367653217] 
+draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (256.49,139.49) .. controls (256.49,137.56) and (258.06,135.99) .. (260,135.99) .. controls (261.94,135.99) and (263.51,137.56) .. (263.51,139.49) .. controls (263.51,141.43) and (261.94,143) .. (260,143) .. controls (258.06,143) and (256.49,141.43) .. (256.49,139.49) -- cycle ;
+%Shape: Circle [id:dp21676858572296376] 
+draw  [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ][fill={rgb, 255:red, 74; green, 144; blue, 226 }  ,fill opacity=1 ] (256.51,108.29) .. controls (256.51,106.36) and (258.08,104.79) .. (260.01,104.79) .. controls (261.95,104.79) and (263.52,106.36) .. (263.52,108.29) .. controls (263.52,110.23) and (261.95,111.8) .. (260.01,111.8) .. controls (258.08,111.8) and (256.51,110.23) .. (256.51,108.29) -- cycle ;
+%Curve Lines [id:da21153949303315212] 
+draw    (260,139.49) .. controls (301.01,144.29) and (344.03,134.1) .. (369.01,112.8) ;
+%Curve Lines [id:da8532305703425189] 
+draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ]   (349.01,50.29) .. controls (335.22,88.71) and (296.21,44.66) .. (294.79,85.99) ;
+draw [shift={(294.75,87.94)}, rotate = 270.33] [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da9181139448367541] 
+draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ]   (440.01,122.29) .. controls (411.3,155.95) and (403.92,106.37) .. (373.44,142.87) ;
+draw [shift={(372.51,144)}, rotate = 308.97] [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+draw (721,21) node    {};
+% Text Node
+draw (701,71) node    {};
+% Text Node
+draw (488,195.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {$displaystyle x$};
+% Text Node
+draw (174,24.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {$displaystyle t$};
+% Text Node
+draw (342,31.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {textcolor[rgb]{0.29,0.56,0.89}{max}};
+% Text Node
+draw (434,99.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {textcolor[rgb]{0.29,0.56,0.89}{min}};
+% Text Node
+draw (300,219.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {$displaystyle [ 2,3]$};
+
+end{tikzpicture}
+    caption{Continuous function on a compact space}
+    label{fig:function}
+end{figure}
+$tau$ is a function over a curve or set of curves (Figure 16).
+begin{figure}[H]
+    centering
+
+tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+uncomment if require: path (0,237); %set diagram left start at 0, and has height of 237
+
+%Shape: Square [id:dp07872291024522382] 
+draw   (323.56,24.82) -- (403.47,106.53) -- (321.75,186.44) -- (241.84,104.73) -- cycle ;
+%Shape: Arc [id:dp8809347717535898] 
+draw  [draw opacity=0] (323.62,186.61) .. controls (311.45,181.93) and (302.01,148.15) .. (302.01,107.17) .. controls (302.01,68.24) and (310.53,35.81) .. (321.81,28.64) -- (326.51,107.17) -- cycle ; draw   (323.62,186.61) .. controls (311.45,181.93) and (302.01,148.15) .. (302.01,107.17) .. controls (302.01,68.24) and (310.53,35.81) .. (321.81,28.64) ;
+%Shape: Circle [id:dp4163662046641844] 
+draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (320.05,28.32) .. controls (320.05,26.39) and (321.62,24.82) .. (323.56,24.82) .. controls (325.5,24.82) and (327.07,26.39) .. (327.07,28.32) .. controls (327.07,30.26) and (325.5,31.83) .. (323.56,31.83) .. controls (321.62,31.83) and (320.05,30.26) .. (320.05,28.32) -- cycle ;
+%Shape: Circle [id:dp017902187501171785] 
+draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (318.25,186.44) .. controls (318.25,184.51) and (319.82,182.94) .. (321.75,182.94) .. controls (323.69,182.94) and (325.26,184.51) .. (325.26,186.44) .. controls (325.26,188.38) and (323.69,189.95) .. (321.75,189.95) .. controls (319.82,189.95) and (318.25,188.38) .. (318.25,186.44) -- cycle ;
+%Shape: Arc [id:dp7303317101763186] 
+draw  [draw opacity=0] (321.75,186.3) .. controls (333.92,181.61) and (343.35,147.83) .. (343.35,106.85) .. controls (343.35,67.92) and (334.84,35.49) .. (323.56,28.32) -- (318.85,106.85) -- cycle ; draw   (321.75,186.3) .. controls (333.92,181.61) and (343.35,147.83) .. (343.35,106.85) .. controls (343.35,67.92) and (334.84,35.49) .. (323.56,28.32) ;
+
+% Text Node
+draw (721,21) node    {};
+% Text Node
+draw (701,71) node    {};
+% Text Node
+draw (341,18.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {$displaystyle Q$};
+% Text Node
+draw (298,178.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {$displaystyle P$};
+% Text Node
+draw (385,43.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {$displaystyle tau : gamma  in  C( P,Q)$};
+end{tikzpicture}
+    caption{$tau$ is not continuous on $C(P,Q)$}
+    label{fig:tau}
+end{figure}
+$tau$ is a function over all the curves of the set on $C(P,Q)$.
+$tau$ is not continuous on $C(P,Q)$.par
+
+begin{figure}[H]
+    centering
+
+
+tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+uncomment if require: path (0,237); %set diagram left start at 0, and has height of 237
+
+%Curve Lines [id:da43576148932207126] 
+draw    (182.01,196.17) .. controls (166.03,162.34) and (153.01,78.17) .. (188.01,32.17) ;
+%Curve Lines [id:da4057869785902709] 
+draw    (425.01,197.17) .. controls (409.03,163.34) and (396.01,79.17) .. (431.01,33.17) ;
+%Shape: Circle [id:dp8175460062438206] 
+draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (184.51,32.17) .. controls (184.51,30.23) and (186.08,28.66) .. (188.01,28.66) .. controls (189.95,28.66) and (191.52,30.23) .. (191.52,32.17) .. controls (191.52,34.11) and (189.95,35.68) .. (188.01,35.68) .. controls (186.08,35.68) and (184.51,34.11) .. (184.51,32.17) -- cycle ;
+%Shape: Circle [id:dp799982799237259] 
+draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (178.51,196.17) .. controls (178.51,194.23) and (180.08,192.66) .. (182.01,192.66) .. controls (183.95,192.66) and (185.52,194.23) .. (185.52,196.17) .. controls (185.52,198.11) and (183.95,199.68) .. (182.01,199.68) .. controls (180.08,199.68) and (178.51,198.11) .. (178.51,196.17) -- cycle ;
+%Shape: Circle [id:dp09222960041702266] 
+draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (427.51,33.17) .. controls (427.51,31.23) and (429.08,29.66) .. (431.01,29.66) .. controls (432.95,29.66) and (434.52,31.23) .. (434.52,33.17) .. controls (434.52,35.11) and (432.95,36.68) .. (431.01,36.68) .. controls (429.08,36.68) and (427.51,35.11) .. (427.51,33.17) -- cycle ;
+%Shape: Circle [id:dp5693516208665081] 
+draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (421.51,197.17) .. controls (421.51,195.23) and (423.08,193.66) .. (425.01,193.66) .. controls (426.95,193.66) and (428.52,195.23) .. (428.52,197.17) .. controls (428.52,199.11) and (426.95,200.68) .. (425.01,200.68) .. controls (423.08,200.68) and (421.51,199.11) .. (421.51,197.17) -- cycle ;
+%Curve Lines [id:da5954960388810773] 
+draw    (182.01,199.68) .. controls (138.01,167.56) and (149.01,47.56) .. (184.51,32.17) ;
+%Curve Lines [id:da9097227934205072] 
+draw    (185.52,196.17) .. controls (182.01,142.56) and (167.01,100.56) .. (191.52,32.17) ;
+%Curve Lines [id:da8486117950196493] 
+draw    (413.01,156.56) .. controls (451.01,201.38) and (386.01,150.38) .. (425.01,197.17) ;
+%Curve Lines [id:da1331619827867091] 
+draw    (413.01,156.56) .. controls (393.01,178.38) and (428.01,81.38) .. (403.01,94.56) ;
+%Curve Lines [id:da4026025466026901] 
+draw    (415.01,66.56) .. controls (435.01,52.38) and (405.01,84.56) .. (403.01,94.56) ;
+%Curve Lines [id:da805325006279522] 
+draw    (427.51,33.17) .. controls (464.01,18.38) and (398.01,64.38) .. (415.01,66.56) ;
+%Curve Lines [id:da0007278444718067378] 
+draw    (240.01,55.56) .. controls (224.25,75.26) and (210.44,48.39) .. (178.49,62.87) ;
+draw [shift={(177.01,63.56)}, rotate = 334.13] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da6012805933189472] 
+draw    (495.01,106.09) .. controls (461.35,119.95) and (462.98,68.14) .. (415.47,109.8) ;
+draw [shift={(414.01,111.09)}, rotate = 318.08000000000004] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da5186664337231465] 
+draw    (506.01,60.09) .. controls (472.35,73.95) and (464.18,41.05) .. (416.47,83.09) ;
+draw [shift={(415.01,84.38)}, rotate = 318.08000000000004] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+draw (721,21) node    {};
+% Text Node
+draw (701,71) node    {};
+% Text Node
+draw (201,14.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {$displaystyle Q$};
+% Text Node
+draw (445,14.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {$displaystyle Q$};
+% Text Node
+draw (196,187.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {$displaystyle P$};
+% Text Node
+draw (438,183.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {$displaystyle P$};
+% Text Node
+draw (243,38.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {neighborhood of $displaystyle gamma $\in $displaystyle C( P,Q)$};
+% Text Node
+draw (509,48.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {$displaystyle gamma $};
+% Text Node
+draw (495,94.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {$displaystyle gamma '$};
+% Text Node
+draw (184,93.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {$displaystyle gamma $};
+
+
+end{tikzpicture}
+    caption{Neighborhood of $gamma$ where $tau(gamma)'$ can be arbitrarily small}
+    label{fig:neighborhood1}
+end{figure}
+
+Close to $gamma$ in the topology $C(P,Q)$ are a subset of curves contained around in the spacetime region around $gamma$, or a neighborhood of $gamma$. For that $gamma$, there is a $gamma'$ with a length that is arbitrarily small. The function on these curves is not a continuous function. One must show $tau$ is upper semi-continuous on $C(P,Q)$. We make make the neighborhood small enough so that there are no curves in the neighborhood longer than $gamma$.par
+This proof is in Wald 9.4.1.par
+
+begin{figure}[H]
+    centering
+
+
+tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+uncomment if require: path (0,281); %set diagram left start at 0, and has height of 281
+
+%Curve Lines [id:da5912601715352626] 
+draw    (326.01,216.17) .. controls (310.03,182.34) and (297.01,98.17) .. (332.01,52.17) ;
+%Shape: Circle [id:dp5708797535499478] 
+draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (328.51,52.17) .. controls (328.51,50.23) and (330.08,48.66) .. (332.01,48.66) .. controls (333.95,48.66) and (335.52,50.23) .. (335.52,52.17) .. controls (335.52,54.11) and (333.95,55.68) .. (332.01,55.68) .. controls (330.08,55.68) and (328.51,54.11) .. (328.51,52.17) -- cycle ;
+%Shape: Circle [id:dp8209650959554388] 
+draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (322.51,219.68) .. controls (322.51,217.74) and (324.08,216.17) .. (326.01,216.17) .. controls (327.95,216.17) and (329.52,217.74) .. (329.52,219.68) .. controls (329.52,221.61) and (327.95,223.18) .. (326.01,223.18) .. controls (324.08,223.18) and (322.51,221.61) .. (322.51,219.68) -- cycle ;
+%Curve Lines [id:da35122500589955985] 
+draw    (287.01,226.18) .. controls (277.38,201.66) and (270.06,104.47) .. (286.5,57.04) .. controls (288.84,50.29) and (291.66,44.56) .. (295.01,40.18) ;
+%Curve Lines [id:da07149740011560635] 
+draw    (366.96,229.19) .. controls (355.96,201.19) and (339.03,94.35) .. (366.01,59.18) ;
+%Shape: Ellipse [id:dp12760397038174132] 
+draw   (293.28,47.59) .. controls (291.78,38.29) and (307.91,31.23) .. (329.3,31.82) .. controls (350.69,32.41) and (369.25,40.43) .. (370.75,49.73) .. controls (372.25,59.03) and (356.12,66.09) .. (334.73,65.5) .. controls (313.34,64.91) and (294.78,56.89) .. (293.28,47.59) -- cycle ;
+%Shape: Arc [id:dp830168288743462] 
+draw  [draw opacity=0] (366.96,229.23) .. controls (365.99,238.73) and (347.98,245.63) .. (326.25,244.7) .. controls (304.79,243.78) and (287.6,235.58) .. (287.01,226.18) -- (327,227.05) -- cycle ; draw   (366.96,229.23) .. controls (365.99,238.73) and (347.98,245.63) .. (326.25,244.7) .. controls (304.79,243.78) and (287.6,235.58) .. (287.01,226.18) ;
+%Shape: Circle [id:dp4139806630031726] 
+draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (328.51,52.17) .. controls (328.51,50.23) and (330.08,48.66) .. (332.01,48.66) .. controls (333.95,48.66) and (335.52,50.23) .. (335.52,52.17) .. controls (335.52,54.11) and (333.95,55.68) .. (332.01,55.68) .. controls (330.08,55.68) and (328.51,54.11) .. (328.51,52.17) -- cycle ;
+%Straight Lines [id:da7554408635663] 
+draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ]   (315.01,48.18) -- (332.01,69.18) ;
+%Straight Lines [id:da039934049324635956] 
+draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ]   (314,84) -- (326.01,100.18) ;
+%Straight Lines [id:da5328421811028133] 
+draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ]   (306.01,109.18) -- (319.01,126.18) ;
+%Straight Lines [id:da5783107196010452] 
+draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ]   (301.01,133.18) -- (318.01,154.18) ;
+%Straight Lines [id:da7768599061325746] 
+draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ]   (305.01,165.18) -- (322.01,186.18) ;
+%Straight Lines [id:da5924465289228942] 
+draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ]   (311.01,189.18) -- (328.01,210.18) ;
+%Straight Lines [id:da1515641049288876] 
+draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ]   (332.01,69.18) -- (314,84) ;
+%Straight Lines [id:da2542969529814224] 
+draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ]   (326.01,100.18) -- (306.01,109.18) ;
+%Straight Lines [id:da932111033862011] 
+draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ]   (319.01,126.18) -- (301.01,133.18) ;
+%Straight Lines [id:da921461675469612] 
+draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ]   (318.01,154.18) -- (305.01,165.18) ;
+%Straight Lines [id:da8284475485507696] 
+draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ]   (322.01,186.18) -- (311.01,189.18) ;
+%Straight Lines [id:da018279760551426327] 
+draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ]   (301.01,44.18) -- (318.01,65.18) ;
+%Straight Lines [id:da8294661093488721] 
+draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ]   (300,80) -- (312.01,96.18) ;
+%Straight Lines [id:da5586066868281777] 
+draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ]   (292.01,105.18) -- (305.01,122.18) ;
+%Straight Lines [id:da7695980437528259] 
+draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ]   (287.01,129.18) -- (304.01,150.18) ;
+%Straight Lines [id:da732769121791686] 
+draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ]   (291.01,161.18) -- (308.01,182.18) ;
+%Straight Lines [id:da1461246594863702] 
+draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ]   (297.01,185.18) -- (314.01,206.18) ;
+%Straight Lines [id:da4603779880422514] 
+draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ]   (318.01,65.18) -- (300,80) ;
+%Straight Lines [id:da8118055801701277] 
+draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ]   (312.01,96.18) -- (292.01,105.18) ;
+%Straight Lines [id:da8773966920342767] 
+draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ]   (305.01,122.18) -- (287.01,129.18) ;
+%Straight Lines [id:da3126244915381373] 
+draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ]   (304.01,150.18) -- (291.01,161.18) ;
+%Straight Lines [id:da8112911596128881] 
+draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ]   (308.01,182.18) -- (297.01,185.18) ;
+%Straight Lines [id:da018152958793993146] 
+draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ]   (327.01,51.18) -- (344.01,72.18) ;
+%Straight Lines [id:da743563406187232] 
+draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ]   (326,87) -- (338.01,103.18) ;
+%Straight Lines [id:da1566020832496623] 
+draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ]   (318.01,112.18) -- (331.01,129.18) ;
+%Straight Lines [id:da4970020852896291] 
+draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ]   (313.01,136.18) -- (330.01,157.18) ;
+%Straight Lines [id:da8261794902667136] 
+draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ]   (317.01,168.18) -- (334.01,189.18) ;
+%Straight Lines [id:da27562870705277265] 
+draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ]   (323.01,192.18) -- (340.01,213.18) ;
+%Straight Lines [id:da5965288090453933] 
+draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ]   (344.01,72.18) -- (326,87) ;
+%Straight Lines [id:da1881314744063779] 
+draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ]   (338.01,103.18) -- (318.01,112.18) ;
+%Straight Lines [id:da426194632112904] 
+draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ]   (331.01,129.18) -- (313.01,136.18) ;
+%Straight Lines [id:da29971013311306616] 
+draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ]   (330.01,157.18) -- (317.01,168.18) ;
+%Straight Lines [id:da1733072807008882] 
+draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ]   (334.01,189.18) -- (323.01,192.18) ;
+
+% Text Node
+draw (721,21) node    {};
+% Text Node
+draw (701,71) node    {};
+% Text Node
+draw (334,36.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {$displaystyle Q$};
+% Text Node
+draw (328.01,222.18) node [anchor=north west][inner sep=0.75pt]   [align=left] {$displaystyle P$};
+% Text Node
+draw (335.01,110.68) node [anchor=north west][inner sep=0.75pt]   [align=left] {$displaystyle gamma $};
+% Text Node
+draw (381,62.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {$displaystyle tau ( gamma ')$};
+
+
+end{tikzpicture}
+    caption{Neighborhood of null segmented curves around $gamma$}
+    label{fig:neighborhood2}
+end{figure}
+In Figure 18, $gamma$ is made of null segments. We can create a special neighborhood (outlined in Wald) which excludes arbitrarily long curves.
+ It must be true that if there exists $tau(gamma)$, then there must also exist: 
+begin{equation}
+begin{align}
+tau(gamma ') &leq tau(gamma ') + epsilon
+end{align}
+end{equation}
+for any $epsilon$.par
+Then $tau$ attains a max in $C (P,Q)$.par
+This leads to Wald theorem 9.4.4: Let $mathfrak{M}$ be globally hyperbolic.par
+begin{equation}
+    begin{align}
+        Q in J^{+}(P)
+    end{align}
+end{equation}
+begin{figure}[H]
+    centering
+    
+
+tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+uncomment if require: path (0,183); %set diagram left start at 0, and has height of 183
+
+%Straight Lines [id:da9820773553211635] 
+draw [line width=1.5]    (198,64) -- (298,164) ;
+%Straight Lines [id:da5779263208728613] 
+draw [line width=1.5]    (386.01,61.29) -- (298,164) ;
+%Curve Lines [id:da6695618327239885] 
+draw    (455.01,132.29) .. controls (456.98,96.2) and (380.37,128.3) .. (350.35,113.36) ;
+draw [shift={(349.01,112.65)}, rotate = 389.85] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da7469919436499319] 
+draw    (298,164) .. controls (285.01,125.29) and (289.01,94.29) .. (298.01,61.29) ;
+%Curve Lines [id:da32528688663272787] 
+draw    (298.01,61.29) .. controls (309.01,86.29) and (311.01,144.29) .. (298,164) ;
+%Curve Lines [id:da04371198367238205] 
+draw    (298,164) .. controls (331.01,127.29) and (349.01,102.29) .. (352.01,69.29) ;
+%Curve Lines [id:da8134003575663377] 
+draw    (298,164) .. controls (318.01,134.29) and (312.01,108.29) .. (352.01,69.29) ;
+%Shape: Circle [id:dp44687595822029635] 
+draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (294.51,61.29) .. controls (294.51,59.36) and (296.08,57.79) .. (298.01,57.79) .. controls (299.95,57.79) and (301.52,59.36) .. (301.52,61.29) .. controls (301.52,63.23) and (299.95,64.8) .. (298.01,64.8) .. controls (296.08,64.8) and (294.51,63.23) .. (294.51,61.29) -- cycle ;
+%Shape: Circle [id:dp10938294026516227] 
+draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (348.51,69.29) .. controls (348.51,67.36) and (350.08,65.79) .. (352.01,65.79) .. controls (353.95,65.79) and (355.52,67.36) .. (355.52,69.29) .. controls (355.52,71.23) and (353.95,72.8) .. (352.01,72.8) .. controls (350.08,72.8) and (348.51,71.23) .. (348.51,69.29) -- cycle ;
+%Curve Lines [id:da41432590464613805] 
+draw    (372.01,32.29) .. controls (349.82,17.82) and (328.56,55.49) .. (316.3,67.77) ;
+draw [shift={(315,69)}, rotate = 318.3] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+draw (721,21) node    {};
+% Text Node
+draw (701,71) node    {};
+% Text Node
+draw (375,24.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {$displaystyle I^{+}$};
+% Text Node
+draw (445,134.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {$displaystyle J^{+}( P)$};
+
+
+end{tikzpicture}
+    caption{Where $I^{+}$ curve and $J^{+}$ is any causal or null curve}
+    label{fig:neighborhood3}
+end{figure}
+If $Q$ is in the causal future of $P$, then there exists a curve between $P + Q$ which has a max value of $tau$. 
+
+begin{figure}[H]
+    centering
+    
+
+tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+uncomment if require: path (0,177); %set diagram left start at 0, and has height of 177
+
+%Curve Lines [id:da26811716635691696] 
+draw    (285.01,141.75) .. controls (291.03,98.5) and (313.01,66.75) .. (353.01,36.75) ;
+%Shape: Circle [id:dp18724169171653393] 
+draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (349.51,36.75) .. controls (349.51,34.81) and (351.08,33.24) .. (353.01,33.24) .. controls (354.95,33.24) and (356.52,34.81) .. (356.52,36.75) .. controls (356.52,38.69) and (354.95,40.26) .. (353.01,40.26) .. controls (351.08,40.26) and (349.51,38.69) .. (349.51,36.75) -- cycle ;
+%Shape: Circle [id:dp09501062666442084] 
+draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (281.51,141.75) .. controls (281.51,139.81) and (283.08,138.24) .. (285.01,138.24) .. controls (286.95,138.24) and (288.52,139.81) .. (288.52,141.75) .. controls (288.52,143.69) and (286.95,145.26) .. (285.01,145.26) .. controls (283.08,145.26) and (281.51,143.69) .. (281.51,141.75) -- cycle ;
+
+% Text Node
+draw (721,21) node    {};
+% Text Node
+draw (701,71) node    {};
+% Text Node
+draw (369,24.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {$displaystyle Q$};
+% Text Node
+draw (293,136.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {$displaystyle P$};
+% Text Node
+draw (295,49.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {$displaystyle gamma $};
+
+
+end{tikzpicture}
+    caption{Curve from $P$ to $Q$}
+    label{fig:PQcurve1}
+end{figure}
+$tau(gamma)$ is a max of $tau$ on all curves $C(P,Q)$. Before, we saw that a curve with max length $tau$ is a geodesic with no conjugate points between $P$ and $Q$. In a globally hyperbolic space time, maximal length curves must exist, which is in conflict with previous ideas that conjugate points appear easily and geodesics cannot exist if there is a conjugate point along a geodesic (Figure 21).
+begin{figure}[H]
+    centering
+    
+
+tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+uncomment if require: path (0,177); %set diagram left start at 0, and has height of 177
+
+%Curve Lines [id:da26811716635691696] 
+draw    (285.01,141.75) .. controls (291.03,98.5) and (313.01,66.75) .. (353.01,36.75) ;
+%Shape: Circle [id:dp18724169171653393] 
+draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (349.51,36.75) .. controls (349.51,34.81) and (351.08,33.24) .. (353.01,33.24) .. controls (354.95,33.24) and (356.52,34.81) .. (356.52,36.75) .. controls (356.52,38.69) and (354.95,40.26) .. (353.01,40.26) .. controls (351.08,40.26) and (349.51,38.69) .. (349.51,36.75) -- cycle ;
+%Shape: Circle [id:dp09501062666442084] 
+draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (281.51,141.75) .. controls (281.51,139.81) and (283.08,138.24) .. (285.01,138.24) .. controls (286.95,138.24) and (288.52,139.81) .. (288.52,141.75) .. controls (288.52,143.69) and (286.95,145.26) .. (285.01,145.26) .. controls (283.08,145.26) and (281.51,143.69) .. (281.51,141.75) -- cycle ;
+%Curve Lines [id:da011295016746306397] 
+draw    (330.01,55.28) .. controls (299.01,51.28) and (270.01,113.28) .. (285.01,141.75) ;
+%Shape: Circle [id:dp494125099213402] 
+draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (326.51,55.28) .. controls (326.51,53.35) and (328.08,51.78) .. (330.01,51.78) .. controls (331.95,51.78) and (333.52,53.35) .. (333.52,55.28) .. controls (333.52,57.22) and (331.95,58.79) .. (330.01,58.79) .. controls (328.08,58.79) and (326.51,57.22) .. (326.51,55.28) -- cycle ;
+
+% Text Node
+draw (721,21) node    {};
+% Text Node
+draw (701,71) node    {};
+% Text Node
+draw (369,24.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {$displaystyle Q$};
+% Text Node
+draw (293,136.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {$displaystyle P$};
+% Text Node
+draw (337,51.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {$displaystyle R$};
+
+
+end{tikzpicture}
+    caption{Geodesic with neighboring geodesic colliding at a conjugate point}
+    label{fig:PQcurve2}
+end{figure}
+
+end{document}
