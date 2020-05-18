@@ -17,8 +17,8 @@
     \flushbottom
     \newpage
     \pagestyle{fancynotes}
-    \part{Practical tools for doing curvature calculation}
-	In this part we introduced Mathematica as a useful modern tool to do curvature calculation and went through the “Deriving the Schwarzschild Solution” notebook. I recommend people to check out video “Lecture28part1” by themselves since this is hard to be described by words. Aaron mentioned other tools as well. “xAct” is a great Mathematica package that currently under active development, and ”Sage” is a Python based package which might not supported anymore but works well.
+    \part{Practical tools for curvature calculation}
+	In this part we introduced Mathematica as a useful modern tool to do curvature calculation and went through the “Deriving the Schwarzschild Solution” notebook. I recommend people to check video “Lecture28part1” out by themselves since its content is hard to be described by words. Aaron also mentioned other tools. “xAct” is a great Mathematica package that currently under active development, and ”Sage” is a Python based package which might not supported anymore but still works well.
 	\newpage
 	\part{Spherical symmetric stars}
 	We solved for the exterior of the star which is Schwarzschild. What about the interior of the star? This is a much harder problem, kind of an arbitrary hard problem to solve because the star can be made up of all kind of weird matter. It can be dynamical. A normal star can be pulsed and undergo nuclear reactions, swallow up, come back down, even collapse and explode. All that can happen in spherical symmetry. So, we cannot solve this problem with generality. But we can tackle this problem if we make some assumptions. 
@@ -33,7 +33,7 @@ This is true even if the star is time variant.
 We are going to simplify this problem by assuming a static star. So the star will be in equilibrium and won’t be changing. We have a killing vector
 $\va{K}$ = $\vec{\partial_t} $
 
-And it is convenient for this problem to adopt a slightly different parameterization of the unknown functions $\alpha$ and $\beta$ as we used before. It would be a bit evocative. We are going to call this $\Phi(r)$ instead of $\alpha(t,r)$, $\Phi$ is going to be a direct analogy to the Newtonian potential of the inside of the star. We are going to have an even more evocative definition for the radial function. We are going to write it in a completely different way. Rather than writing it as $e^{2\beta}$, we are going to write it with a different unknown function M(r) which could still totally be arbitrary. This is a very nice way to parametrize the equation. So the metric is 
+And it is convenient for this problem to adopt a slightly different parameterization of the unknown functions $\alpha$ and $\beta$ as we used before. It would be a bit evocative. We are going to call this $\Phi(r)$ instead of $\alpha(t,r)$, $\Phi$ is going to be a direct analogy to the Newtonian potential of the inside of the star. We are going to have an even more evocative definition for the radial function. We are going to write it in a completely different way. Rather than writing it as $e^{2\beta}$, we are going to write it with a different unknown function M(r) which could still totally be arbitrary. This is a very nice way to parameterize the equation. So the metric is 
 \begin{align}\label{GenMet2}
                 ds^2 = -e^{2\Phi(r)}dt^2+(1-\frac{2M(r)}{r})^{-1}dr^2 +
                 r^2d\Omega^2,
@@ -41,7 +41,7 @@ And it is convenient for this problem to adopt a slightly different parameteriza
 
 Further to make progress, we need to know something about the right hand side of the Einstein’s equation, some about the matter content. So just assuming $T_{\mu\nu}$ is a perfect fluid, which is characterized by some unknown density $\rho(r)$ and unknown pressure P(r).
 
-But what we do know is that for this to be static, the perfect fluid must be at rest in these coordinates. So we can think about the four velocity of fluid. (Remember this strength-energy tensor of perfect fluid depends on four velocity.) The four velocity of fluid has to be proportional to $\vec{\partial_t}$. The $\va{U}$ have to be point in the time direction, or say align with the flow of time. So $U^\mu$ has to have components some $U^t$ potentially, but anything else has to be zero, otherwise the fluid is not at rest.
+But what we do know is that for this to be static, the perfect fluid must be at rest in these coordinates. So we can think about the four velocity of fluid. (Remember this stress-energy tensor of perfect fluid depends on four velocity.) The four velocity of fluid has to be proportional to $\vec{\partial_t}$. The $\va{U}$ have to be point in the time direction, or say align with the flow of time. So $U^\mu$ has to have components some $U^t$ potentially, but anything else has to be zero, otherwise the fluid is not at rest.
 \begin{align}\label{GenMet2}U^\mu=(U^t,0,0,0)\end{align}
 And we can also notice that $U^t$ is related to the unknown metric because we known that U has to satisfy the normalization condition
 \begin{align}-1=U^\mu U^\nu g_{\mu\nu}=(U^t)^2g_{tt}\end{align}
@@ -78,7 +78,7 @@ This is exactly what we has before at equation (0.4) .So the matrix equals to
            0&0&0&0\\
          \end{pmatrix}=$U^\mu U_\nu$
          \end{center}
-So look what happened. Before we didn’t know the U s looks like since it involves metric. The original form of the strength-energy tensor is hard to solve because it has unknown metric. After we write it as one index up, magically it now contains no components of metric at all. We get
+So look what happened. Before we didn’t know the U s looks like since it involves metric. The original form of the stress-energy tensor is hard to solve because it has unknown metric. After we write it as one index up, magically it now contains no components of metric at all. We get
 \begin{center}
 \tensor{T}{^\mu_\nu}= \begin{pmatrix}     -\rho & 0&0 &0 \\
 
@@ -90,10 +90,10 @@ So look what happened. Before we didn’t know the U s looks like since it invol
 This is a diagonal matrix.
 That is a trick to make the calculation easier.
 
-Our next goal then is to solve two equations as far as we can, potentially making some further assumptions to make progress. We want to make as much progress as we can with the former metric we already wrote down, and solving the equations $\tensor{G}{^\mu_\nu}=8\pi\tensor{T}{^\mu_\nu}$. Remember we also have conservation of strength-energy tensor $\nabla^\mu T_{\mu\nu}=0$, which could be written as $\nabla{_\mu} \tensor{T}{^\mu_\nu}=0$ by changing the raising and lowering indices.
+Our next goal then is to solve two equations as far as we can, potentially making some further assumptions to make progress. We want to make as much progress as we can with the former metric we already wrote down, and solving the equations $\tensor{G}{^\mu_\nu}=8\pi\tensor{T}{^\mu_\nu}$. Remember we also have conservation of stress-energy tensor $\nabla^\mu T_{\mu\nu}=0$, which could be written as $\nabla{_\mu} \tensor{T}{^\mu_\nu}=0$ by changing the raising and lowering indices.
 \newpage
 \part{TOV equation}
-We worked with Mathematica in this part. We went through the notebook "Deriving and solving the TOV equations" from the beginning of that to the section before "constant density". We have a knowledge recap at the beginning of Part 4.
+We worked with Mathematica in this part. We went through the notebook "Deriving and solving the TOV equations" from the beginning of that to the section before "constant density". We have a knowledge recap for this part at the beginning of Part 4.
 \newpage
 \part{Recap and ending for solving spherically symmetric static stars}
 We derived TOV equations for the perfect fluid star in the last part of this lecture. The main take ways was as follows:
@@ -123,7 +123,7 @@ So indeed the mass parameter used in the Schwarzschild spacetime is equals to th
 \newline\newline
 For this particular constant density solution there is one another thing which is that we can define a compactness parameter $\frac{2M}{r}$. This is something that if we want the surface of the star to be outside of the event horizon of a black hole,\sn{If R<2M we know that the stars are inside of the event horizon, inside of the black hole, we don't want that. We want instead use these other metric functions($M(r),\Phi(r)$) inside the star so there is no horizon, there is no singularity even through you got Schwarzschild outside the star.} we want $\frac{2M}{R}<1$, but it turns out that we find that the pressure at the center of the star goes to infinity when $\frac{2M}{R}\geq \frac{8}{9}$ this is known as the Buchdahl limit or the Buckdahl radius if we solve this for the special R. It says that if we take a certain mass of a star and we compact it inside two small radius, we can't get a stable static solution, instead it must collapse. So it's $\frac{2M}{R}< \frac{8}{9}$ for us to get a stable solution. So the compactness $\frac{2M_0}{R}$ cannot exceed $\frac{8}{9}$ for a solution for the $\rho=constant$ case. And if we solve that for R, we get that the $R>\frac{9}{4}M_0$. So instead of 2M which you might expected to, R has to be a bit bigger than that. And actually this is pretty generic, we can choose other equations of state and it's actually hard to get a star that is more compact than this whose radius is actually smaller than $\frac{9}{4}M_0$ when we measure the radius in the unit of mass. Remember that mass has units of length and remember our meter stake is that the mass of the sun which equals to about 1.5km. So the mass of the star in gravitational units is actually a size, and if the radius is smaller than a certain size we can't have that solution, so the radius must be larger. That is the is Buchdahl radius($R=\frac{9}{4}M_0$). 
 \newline\newline
-We've now solved for all the spherically symmetric static stars. We phrase the equations and sort of simplified them to a degree we can practically solve them all. All we needed is the equation of state and to numerically integrate some integrals. In the special case where the density is constant we can actually fully solve and we can find the analytical expression for M and for $\Phi$. That is in Aaron's Mathematica notebook and also in the Carroll 5.8. We've discussed how stars have a maximum compactness. They can't be too compact otherwise we can't get a stable solution. This is an indication that if we make a star too compact, it may actually collapse to form a black hole. And that is in fact the case you really can form black holes in our universe if stars get too compact. And this does actually happen in the real universe as we now know from a variety of observation.
+We've now solved for all the spherically symmetric static stars. We phrase the equations and sort of simplified them to a degree we can practically solve them all. All we needed is the equation of state and to numerically integrate some integrals. In the special case where the density is constant we can actually fully solve and we can find the analytical expression for M and for $\Phi$. That is in Aaron's Mathematica notebook and also in the Carroll 5.8. We've discussed how stars have a maximum compactness. They can't be too compact otherwise we can't get a stable solution. This is an indication that if we make a star too compact, it may actually collapse to form a black hole. And that is in fact the case you really can form black holes in our universe if stars get too compact. And this does actually happen in the real universe as we now know from a variety of observations.
 
 
 
