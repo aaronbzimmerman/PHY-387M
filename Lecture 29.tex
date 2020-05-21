@@ -1,0 +1,84 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+\usepackage{amsthm}
+\newtheorem*{remark}{Remark}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\theoremstyle{remark}
+
+
+\title{Lecture 29}
+\author{Alex Leviyev}
+\date{May 2020}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+This week we will be looking at an axisymmetric solution to Einsteins equation known as the Kerr solution. This solution was originally found by Kerr in 1963 (while working at UT Austin!), and describes the metric outside of a rotating black hole. 
+
+
+\section{Kerr black holes}
+The Kerr black hole is a rotating black hole, and is covered in Carroll 6.6. Another good reference is Teukolsky 2014, arXiv: 1410.2130. We will not derive the metric here, but will state it as a result:
+
+\begin{equation}
+    ds^2 = -(1 - \frac{2 M r}{\rho^2}) dt^2 - \frac{4 M a r}{\rho^2} \sin^2 \theta d \phi dt + \frac{\rho^2}{\Delta} dr^2 + \rho^2 d\theta^2 + \frac{\sin^2 \theta}{\rho^2}((r^2+a^2)^2-a^2 \Delta \sin ^2 \theta) d \phi^2
+\end{equation}\label{eq:kerr_metric}
+
+Given this form of the metric does not depend on $t$ or $\phi$, we see that $\Vec{\partial_t}$ and $\Vec{\partial_\phi}$ Killing symmetries. A rotating black hole is clearly not static, but it is indeed stationary since its metric does not explicitly depend on $t$. Note the two constant parameters, M, and $a = \frac{J}{M}$, where J is the total angular momentum, and M is the mass. $\rho^2 = r^2 + a^2 \cos ^2 \theta$, and $\Delta = r^2 - 2Mr+a^2.$ If we find the roots of this, then $\Delta = 0 \Rightarrow r_{\pm} = M \pm \sqrt{M^2 - a^2}$. This implies $\Delta = (r-r_+)(r-r_-)$. Since this $\Delta$ is in the denominator of the metric, this implies interesting singularities to investigate. These are known as the inner and outer horizons respectively. The stationary limit surface is defined by the following relation:
+
+$$
+r^2 + a^2 \cos^2 \theta - 2Mr=0 => r=M + \sqrt{M^2 - a^2 \cos^2\theta}
+$$
+
+
+\begin{remark}
+$g_{tt} = - \frac{1}{\rho^2}(\Delta - a^2 \sin^2 \theta)$ implies that $\Vec{\partial_t}$ becomes null at some $r > r_+$ and in spacelike outside of $r_+$
+\end{remark}
+
+\begin{remark}
+The ergosphere is the region outside of the outer horizon and inside the stationary limit surface.  $\Vec{\partial_t}$ is spacelike in this region.
+\end{remark}
+
+
+Remember, we don't actually know what these coordinates mean yet. They are simply labeled in a leading way thus far. We will see that the spacial coordinates are a generalization of ellipsoidal coordinates (suitable for studying oblate systems) and the time coordinate corresponds asymptotically to a flat space time coordinate.
+
+\begin{remark}
+Note that $g_{tt} = -(1- \frac{2Mr}{\rho^2}) \to -1$. This shows us that this t coordinate is indeed the asymptotic time measured by an observer at infinity. Setting $r \to \infty$ on the other hand, we see $ds^2 \to -dt^2 + dr^2 + r^2 d\Omega ^2$, which leads us to an asymptotically flat spacetime. Taking $a \to 0$ gives $ds^2 \to ds^2_{schw}$. This limit recovers the Schawrzchild metric in appropriate coordinates. Finally, setting $M \to 0$ recovers flat space in ellipsoidal coordinates. BL coordinates are thus naturally adapted to study oblate objects and is asymptotically flat. These coordinates are called Boyer-Lindquist coordinates!
+
+\end{remark}
+
+\section{Motion in Kerr Spacetime}
+Studying motion in a Kerr spacetime will lead us to discover frame dragging effects. Let us see how this comes about with the following thought experiment. Without loss of generality we will keep to the equitorial plane $\theta = \frac{\pi}{2}$. We begin with analyzing a photon that runs in circles at constant r. This form implies $ds^2 = 0$ because photons travel on null paths, leading us to:
+
+$$
+g_{tt} dt^2 + 2 g_{t \phi} dt d\phi + g_{\phi \phi} d\phi^2 = 0
+$$
+
+$$
+g_{tt} + 2g_{t \phi} \frac{d \phi}{dt} + g_{\phi \phi} (\frac{d \phi}{dt})^2 = 0
+$$
+If we define $\Omega := \frac{d \phi}{dt}$, then solving for the roots provides the following:
+
+$$
+\Omega_{\pm} = \frac{-g_{t \phi}}{g_{\phi \phi}} \pm \sqrt{(\frac{g_{t \phi}}{g_{\phi \phi}})^2 - \frac{g_{tt}}{g_{\phi \phi}}}
+$$
+
+\begin{remark}
+Thus we see that inside the ergosphere, both a clockwise or counterclockwise emitted photon appear to have a co-rotating angular velocity at infinity! This effect is known as "frame dragging".
+\end{remark}
+
+This is a limiting case for timelike observers undergoing circular motion in the plane. In fact, if we keep timelike observers at constant $r$, also known as "ring rider" observers (note that these are also not necessarily geodesic trajectories), their angular velocity as observed at infinity are bounded by:
+$$
+\Omega_- < \Omega < \Omega_+
+$$
+
+
+
+
+\end{document}
