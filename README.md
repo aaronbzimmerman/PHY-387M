@@ -35,8 +35,8 @@ This version might be a couple of days out of date. For the latest version check
 | Shobaki, Mohammad         | Mar 27     | DONE      | 25             |
 | Chen, Gina                | Mar 30     | DONE      | 26             |
 | Stubbs, Frank             | Apr 1      | DONE      | 27             |
-| Xue, Jiaxin               | Apr 3      | PAST DUE  | 28             |
-| Leviyev, Alex             | Apr 6      | PAST DUE  | 29             |
+| Xue, Jiaxin               | Apr 3      | DONE      | 28             |
+| Leviyev, Alex             | Apr 6      | DONE      | 29             |
 | Webb, Aaron               | Apr 8      | DONE      | 30             |
 | Wright, Josey             | Apr 10     | DONE      | 31             |
 | Zeng, Yongxin             | Apr 13     | DONE      | 32             |
@@ -44,13 +44,13 @@ This version might be a couple of days out of date. For the latest version check
 | Husain, Rabia             | Apr 17     | DONE      | 34             |
 | Slavkova, Kalina          | Apr 20     | PAST DUE  | 35             |
 | Layden, Christopher       | Apr 22     | DONE      | 36             |
-| Zhong, Kunhao             | Apr 24     | DUE       | 37             |
-| Nay, Jonathan             | Apr 27     | DUE       | 38             |
-| Leviyev, Alex             | Apr 29     |           | 39             |
-| Jokhadze, Irakli          | May 1      |           | 40             |
-| Saleh, Bassel             | May 4      |           | 41             |
-| UP FOR GRABS              | May 6      |           | 42             |
-| UP FOR GRABS              | May 8      |           | 43             |
+| Zhong, Kunhao             | Apr 24     | DONE      | 37             |
+| Nay, Jonathan             | Apr 27     | PAST DUE  | 38             |
+| Leviyev, Alex             | Apr 29     | DONE      | 39             |
+| Jokhadze, Irakli          | May 1      | DONE      | 40             |
+| Saleh, Bassel             | May 4      | DONE      | 41             |
+| Flores, Amanda            | May 6      | DONE      | 42             |
+| Hussain, Asad             | May 8      | DONE      | 43             |
 
 ## LECTURE UPLOAD INSTRUCTIONS
 
